@@ -1,0 +1,12 @@
+// from http://react-component.github.io/form-validation/
+export function toNumber(v) {
+  if (!v || !v.trim()) {
+    return undefined;
+  }
+  let num = Number(v);
+  // num === ' '
+  if (!isNaN(num)) {
+    num = parseInt(v, 10);
+  }
+  return isNaN(num) ? v : num;
+}
