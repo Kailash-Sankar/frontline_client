@@ -197,7 +197,7 @@ export const NOVField = () => (
 export const NodalNameField = () => (
   <Form.Item
     label="Name of Nodal Person"
-    name="org_head"
+    name="org_person"
     rules={[{ required: true, message: "Name of Nodal Person is required" }]}
   >
     <Row gutter={8}>

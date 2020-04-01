@@ -10,3 +10,9 @@ export function toNumber(v) {
   }
   return isNaN(num) ? v : num;
 }
+
+export function formatData(data) {
+  if ("dob" in data && data.dob) {
+    data.dob = data.dob.format();
+  }
+}

@@ -4,13 +4,14 @@ import FormToggle from "@components/FormToggle";
 import { connecter } from "@store/volunteerSignup";
 import options from "@utils/Options";
 
-function VolunteerSingup({ reset, mode, setMode }) {
+function VolunteerSingup({ reset, mode, setMode, save }) {
   useEffect(() => {}, []);
 
   function handleSubmit(formData) {
     if (formData) {
-      //save(formData);
       console.log("formdata", formData);
+      formData.mode = mode;
+      save(formData);
     }
   }
 

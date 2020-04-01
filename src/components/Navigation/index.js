@@ -2,27 +2,57 @@ import React from "react";
 import { Spacer } from "@components/Utils";
 import { Menu, Layout } from "antd";
 import { Link, useLocation } from "react-router-dom";
-
 import * as styles from "./index.module.less";
+
 //import logo from "@images/logo.png";
 
 import {
   FlagOutlined,
   DeploymentUnitOutlined,
   FileSearchOutlined,
-  UserOutlined,
+  HomeOutlined,
+  //UserOutlined,
+  LoginOutlined,
   LogoutOutlined
 } from "@ant-design/icons";
+import CountBadge from "@components/Misc/CountBadge";
 
 const { Header, Sider } = Layout;
 
-export const TopBar = () => {
+export const TopBar = ({ loggedIn, user, volunteerCount }) => {
   return (
     <Header style={{ background: "#fff", padding: 0 }}>
-      <div className={styles.userWrap}>
-        <UserOutlined />
-        <Spacer width={20} />
-        <LogoutOutlined />
+      <div className={styles.headFlex}>
+        <div className={styles.logoWrap}>
+          <Link to="/">
+            <span>
+              <FlagOutlined />
+            </span>
+            <span>Frontline</span>
+          </Link>
+        </div>
+
+        <div className={styles.statusWrap}>
+          Volunteers so far,&nbsp;
+          <CountBadge {...volunteerCount} />
+        </div>
+
+        <div className={styles.userWrap}>
+          <Spacer width={20} />
+          {loggedIn ? (
+            <span>
+              <span className={styles.userLabel}>Hello {user.name}</span>
+              <Spacer width={20} />
+              <Link to="/logout">
+                <LogoutOutlined />
+              </Link>
+            </span>
+          ) : (
+            <Link to="/login">
+              <LoginOutlined />
+            </Link>
+          )}
+        </div>
       </div>
     </Header>
   );
@@ -30,10 +60,17 @@ export const TopBar = () => {
 
 export function RenderMenu() {
   const location = useLocation();
-  const selected = location.pathname == "/" ? "/cf" : location.pathname;
+  const selected = location.pathname;
+  console.log("loc", location.pathname);
 
   return (
     <Menu theme="dark" mode="inline" defaultSelectedKeys={[selected]}>
+      <Menu.Item key="/">
+        <Link to="/">
+          <HomeOutlined />
+          <span className="nav-text">Home</span>
+        </Link>
+      </Menu.Item>
       <Menu.Item key="/volunteer">
         <Link to="/volunteer">
           <DeploymentUnitOutlined />
@@ -50,11 +87,15 @@ export function RenderMenu() {
   );
 }
 
-export function SideBar() {
+export const SideBar = ({ loggedIn }) => {
   const [collapsed, setCollapsed] = React.useState(false);
 
   function onCollapse(collapsed) {
     setCollapsed(collapsed);
+  }
+
+  if (!loggedIn) {
+    return <></>;
   }
 
   return (
@@ -79,4 +120,4 @@ export function SideBar() {
       <RenderMenu />
     </Sider>
   );
-}
+};

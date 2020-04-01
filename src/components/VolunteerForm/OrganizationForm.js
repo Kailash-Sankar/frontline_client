@@ -28,6 +28,7 @@ import {
   EssentialField,
   HealthField
 } from "./MultiFields";
+import { formatData } from "./utils";
 
 function OrganizationForm({
   initialValues,
@@ -38,8 +39,6 @@ function OrganizationForm({
   onSubmit,
   reset
 }) {
-  console.log("t", arguments[0]);
-
   const [form] = Form.useForm();
   const { resetFields } = form;
 
@@ -49,6 +48,7 @@ function OrganizationForm({
 
   // called if validation passes
   function handleSubmit(values) {
+    formatData(values);
     onSubmit(values);
   }
 

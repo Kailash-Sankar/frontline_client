@@ -15,4 +15,11 @@ function singup(status, name, extra = "") {
   });
 }
 
-export default { singup };
+function base(msg, desc = "") {
+  notification.open({
+    message: msg,
+    description: desc
+  });
+}
+
+export default { singup, base };

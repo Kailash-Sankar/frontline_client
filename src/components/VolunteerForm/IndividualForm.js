@@ -28,6 +28,8 @@ import {
   HealthField
 } from "./MultiFields";
 
+import { formatData } from "./utils";
+
 function IndividualForm({
   initialValues,
   other,
@@ -37,8 +39,6 @@ function IndividualForm({
   onSubmit,
   reset
 }) {
-  console.log("t", arguments[0]);
-
   const [form] = Form.useForm();
   const { resetFields } = form;
 
@@ -48,6 +48,7 @@ function IndividualForm({
 
   // called if validation passes
   function handleSubmit(values) {
+    formatData(values);
     onSubmit(values);
   }
 

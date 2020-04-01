@@ -10,3 +10,11 @@ export function createMap(data) {
   });
   return parsed;
 }
+
+export function buildUserInfo(data) {
+  const res = {
+    name: data.name || "",
+    email: "__NA__"
+  };
+  return res;
+}
