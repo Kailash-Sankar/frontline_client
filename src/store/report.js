@@ -8,7 +8,7 @@ const scope = "report";
 const initialState = {
   result: [],
   mode: undefined,
-  region: []
+  region: ["KA", "5"]
 };
 
 export const types = applyScope(scope, [

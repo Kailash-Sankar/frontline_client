@@ -18,3 +18,11 @@ export function createMap(data) {
   });
   return parsed;
 }
+
+export function formatSearchQuery({ mode, region }) {
+  const params = {
+    mode: mode || "all",
+    region: region || "all"
+  };
+  return params;
+}

@@ -3,7 +3,21 @@ import { Radio } from "antd";
 import { DeploymentUnitOutlined, UserOutlined } from "@ant-design/icons";
 import { Spacer } from "@components/Utils";
 
-function FormToggle({ value, handleChange }) {
+const iconMap = {
+  organization: DeploymentUnitOutlined,
+  individual: UserOutlined
+};
+
+// defined here temporarily
+const renderIcon = (id) => {
+  let Icon = () => <span></span>;
+  if (id in iconMap) {
+    Icon = iconMap[id];
+  }
+  return <Icon />;
+};
+
+function FormToggle({ value, handleChange, options }) {
   function onChange(e) {
     handleChange(e.target.value);
   }
@@ -11,16 +25,13 @@ function FormToggle({ value, handleChange }) {
   return (
     <div>
       <Radio.Group value={value} buttonStyle="solid" onChange={onChange}>
-        <Radio.Button value="individual">
-          <UserOutlined />
-          <Spacer />
-          Individual
-        </Radio.Button>
-        <Radio.Button value="organization">
-          <DeploymentUnitOutlined />
-          <Spacer />
-          Organization
-        </Radio.Button>
+        {options.map((o) => (
+          <Radio.Button key={o.id} value={o.id}>
+            {renderIcon(o.id)}
+            <Spacer />
+            {o.value}
+          </Radio.Button>
+        ))}
       </Radio.Group>
     </div>
   );

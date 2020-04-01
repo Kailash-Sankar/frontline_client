@@ -4,8 +4,9 @@ import SearchResults from "@components/SearchResults";
 import { Empty } from "antd";
 import { connecter } from "@store/report";
 import options from "@utils/Options";
+import { formatSearchQuery } from "./utils";
 
-function Report({ result, mode, setMode, region, setRegion }) {
+function Report({ result, mode, setMode, region, setRegion, search }) {
   function onModeChange(value) {
     setMode(value);
   }
@@ -14,13 +15,19 @@ function Report({ result, mode, setMode, region, setRegion }) {
     setRegion(value);
   }
 
+  function handleSearch() {
+    const params = formatSearchQuery({ mode, region });
+    search(params);
+  }
+
   const searchProps = {
     mode,
-    modes: options.other.orgTypeOptions,
+    modes: options.other.modeOptions,
     onModeChange,
     region,
     regions: options.regions,
-    onRegionChange
+    onRegionChange,
+    onSubmit: handleSearch
   };
 
   return (

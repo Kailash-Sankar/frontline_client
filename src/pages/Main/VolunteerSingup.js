@@ -23,7 +23,11 @@ function VolunteerSingup({ reset, mode, setMode, save }) {
   return (
     <div style={{ textAlign: "left" }}>
       <h2>Volunteer Singup Form</h2>
-      <FormToggle value={mode} handleChange={setMode} />
+      <FormToggle
+        value={mode}
+        handleChange={setMode}
+        options={options.other.modeOptions}
+      />
       <div style={{ margin: 30 }}>
         {mode === "individual" ? (
           <IndividualForm

@@ -41,7 +41,7 @@ export const TopBar = ({ loggedIn, user, volunteerCount }) => {
           <Spacer width={20} />
           {loggedIn ? (
             <span>
-              <span className={styles.userLabel}>Hello {user.name}</span>
+              <span className={styles.userLabel}>Hello, {user.name}</span>
               <Spacer width={20} />
               <Link to="/logout">
                 <LogoutOutlined />

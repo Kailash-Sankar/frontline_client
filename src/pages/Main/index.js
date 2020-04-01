@@ -17,6 +17,7 @@ import { connecter } from "@store/common";
 import classnames from "classnames";
 import Home from "./Home";
 import Logout from "./Logout";
+import LoginRequired from "./LoginRequired";
 
 const { Content, Footer } = Layout;
 
@@ -42,7 +43,9 @@ function App({ loggedIn, user, volunteerCount }) {
                 <VolunteerSingup {...pageProps} />
               </Route>
               <Route path="/report">
-                <Report {...pageProps} />
+                <LoginRequired loggedIn={loggedIn}>
+                  <Report {...pageProps} />
+                </LoginRequired>
               </Route>
               <Route path="/login">
                 <Login {...pageProps} />

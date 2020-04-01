@@ -2,8 +2,6 @@ import axios from "axios";
 import { authStorage } from "@utils/LocalStorage";
 export const serverUrl = "http://localhost:3000/api";
 
-// TODO: add try catch
-
 axios.defaults.baseURL = serverUrl;
 
 function authTokenHandler(config) {
@@ -18,16 +16,28 @@ function authTokenHandler(config) {
 
 axios.interceptors.request.use((config) => authTokenHandler(config));
 
+axios.interceptors.response.use(
+  function(response) {
+    // ignore 2xx response
+    return response;
+  },
+  function(error) {
+    console.log(error.response);
+    if (error.response.status == 401) {
+      // clear auth token
+      authStorage.remove();
+      //location.reload();
+    }
+    return Promise.reject(error);
+  }
+);
+
 async function getVolunteerCount() {
   const res = await axios.get(`/status`);
   return res.data.data || [];
 }
 
-async function search({ mode, region }) {
-  const params = {
-    mode: mode || "all",
-    region: region || "all"
-  };
+async function search(params) {
   const res = await axios.post(`/search/`, params);
   return res.data.data || [];
 }

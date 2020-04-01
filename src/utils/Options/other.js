@@ -11,7 +11,13 @@ const orgTypeOptions = [
   { id: "company", value: "Company" }
 ];
 
+const modeOptions = [
+  { id: "individual", value: "Individual" },
+  { id: "organization", value: "Organization" }
+];
+
 export default {
   genderOptions,
-  orgTypeOptions
+  orgTypeOptions,
+  modeOptions
 };

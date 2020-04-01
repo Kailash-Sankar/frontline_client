@@ -26,9 +26,6 @@ function* helloSaga() {
       }
     }
   } catch (err) {
-    if (err.response.status == 401) {
-      authStorage.remove();
-    }
     console.log("No active session");
   }
 }
@@ -39,8 +36,13 @@ function* initVolunteerCount() {
 }
 
 function* search(action) {
-  const res = yield call(Api.search, action.params);
-  yield put({ type: reportTypes.SET_RESULT, result: res });
+  try {
+    const res = yield call(Api.search, action.params);
+    yield put({ type: reportTypes.SET_RESULT, result: res });
+  } catch (err) {
+    notify.base("Session expired", "Please login again");
+    yield put({ type: commonTypes.LOGOUT });
+  }
 }
 
 function* saveData(action) {
