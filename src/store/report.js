@@ -11,7 +11,7 @@ const scope = "report";
 const initialState = {
   result: [],
   mode: undefined,
-  region: ["KA", "5"],
+  region: ["KA"],
   service: []
 };
 

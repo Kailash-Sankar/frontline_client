@@ -43,7 +43,8 @@ function SearchResults({ result }) {
               <div>
                 <Details record={record} />
               </div>
-            )
+            ),
+            expandRowByClick: true
           }}
         />
       </div>
