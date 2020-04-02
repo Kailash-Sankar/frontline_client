@@ -1,28 +1,35 @@
 import { createSelector } from "reselect";
 
+// global selector
 const selector = (state) => state;
-const getCount = (state) => state.common.volunteerCount;
 
-const countSelector = createSelector([getCount], (count) => {
-  return count;
-});
-
+// page scope selector
 const genScopeSelector = (scope) => {
   return createSelector([selector], (state) => state[scope]);
 };
 
 // generates a selector for each page
-// combines common data with page scope
-export const pageSelector = (scope) => {
+// selectors is an object
+// - key will become the result key
+// - value has to be a selector
+export const pageSelector = (scope, selectors = {}) => {
   const scopeSelector = genScopeSelector(scope);
+  const keys = Object.keys(selectors);
 
   return createSelector(
-    [countSelector, scopeSelector],
-    (count, scopedState) => {
+    [scopeSelector, ...keys.map((k) => selectors[k])],
+    (scopedState, ...args) => {
       // console.log("selector", customers, products, scopedState);
+
+      // build selector result set
+      const argMap = {};
+      args.forEach((r, i) => {
+        argMap[keys[i]] = r;
+      });
+
       return {
-        volunteerCount: count,
-        ...scopedState
+        ...scopedState,
+        ...argMap
       };
     }
   );

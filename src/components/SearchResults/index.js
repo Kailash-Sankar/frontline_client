@@ -1,6 +1,6 @@
 import React from "react";
-import { formatDate } from "@components/Utils";
-import { Table } from "antd";
+import { Table, Button } from "antd";
+import Details from "./Details";
 
 const columns = [
   {
@@ -14,8 +14,7 @@ const columns = [
   },
   {
     title: "Region",
-    dataIndex: "region",
-    render: (region) => <span>{region.join(",")}</span>
+    dataIndex: "region"
   },
   {
     title: "Mobile",
@@ -23,15 +22,38 @@ const columns = [
   },
   {
     title: "Signup Date",
-    dataIndex: "createdAt",
-    render: (date) => <span>{formatDate(date)}</span>
+    dataIndex: "createdAt"
+  },
+  {
+    title: "Action",
+    key: "action",
+    render: () => (
+      <span>
+        <a style={{ marginRight: 16 }}>
+          <Button>View</Button>
+        </a>
+      </span>
+    )
   }
 ];
 
 function SearchResults({ result }) {
   return (
     <div>
-      <Table columns={columns} dataSource={result} />
+      <div>
+        <Table
+          columns={columns}
+          dataSource={result}
+          rowKey={(r) => r._id}
+          expandable={{
+            expandedRowRender: (record) => (
+              <div>
+                <Details record={record} />
+              </div>
+            )
+          }}
+        />
+      </div>
     </div>
   );
 }

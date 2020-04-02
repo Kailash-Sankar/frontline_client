@@ -28,7 +28,7 @@ export const essentialOptions = {
     id: "disinfect",
     value: "Disinfection and cleaning services"
   },
-  info: {
+  information: {
     id: "information",
     value: "Door to door information and service management"
   }

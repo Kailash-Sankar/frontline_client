@@ -3,6 +3,9 @@ import { connect } from "react-redux";
 import { applyScope } from "./utils";
 import { pageSelector } from "./selectors";
 
+import { createSelector } from "reselect";
+import parseData from "@utils/Parser";
+
 const scope = "report";
 
 const initialState = {
@@ -60,8 +63,15 @@ const mapDispatchToProps = (dispatch) => ({
     })
 });
 
+// parsed result selector
+const getResult = (state) => state.report.result;
+export const parsedResultSelector = createSelector([getResult], (result) => {
+  const parsedResult = parseData(result);
+  return parsedResult;
+});
+
 // state from root state
-const mapStateToProps = pageSelector(scope);
+const mapStateToProps = pageSelector(scope, { result: parsedResultSelector });
 
 // connect
 export const connecter = (Report) =>

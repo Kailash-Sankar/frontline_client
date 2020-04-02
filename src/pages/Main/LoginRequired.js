@@ -5,8 +5,6 @@ import { Link } from "react-router-dom";
 import { Spacer } from "@components/Utils";
 
 function LoginRequired({ loggedIn, children }) {
-  console.log(loggedIn);
-
   if (loggedIn) {
     return children;
   }
