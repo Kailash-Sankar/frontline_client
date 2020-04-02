@@ -1,4 +1,4 @@
-export const serverUrl = "http://localhost:3000/api";
+import { SPTR } from "@utils/constants";
 
 // combine saved customer features with product features
 export const combineFeatures = (saved, base) => {
@@ -19,10 +19,24 @@ export function createMap(data) {
   return parsed;
 }
 
-export function formatSearchQuery({ mode, region }) {
+const formatService = (data = []) => {
+  const res = {};
+  data.forEach((r) => {
+    const [service, sub] = r.split(SPTR);
+    if (service in res) {
+      res[service].push(sub);
+    } else {
+      res[service] = [sub];
+    }
+  });
+  return res;
+};
+
+export function formatSearchQuery({ mode, region, service }) {
   const params = {
     mode: mode || "all",
-    region: region || "all"
+    region: region || "all",
+    ...formatService(service)
   };
   return params;
 }

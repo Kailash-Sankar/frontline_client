@@ -11,14 +11,16 @@ const scope = "report";
 const initialState = {
   result: [],
   mode: undefined,
-  region: ["KA", "5"]
+  region: ["KA", "5"],
+  service: []
 };
 
 export const types = applyScope(scope, [
   "SET_RESULT",
   "SEARCH",
   "SET_MODE",
-  "SET_REGION"
+  "SET_REGION",
+  "SET_SERVICE"
 ]);
 
 const reportReducer = (state = initialState, action) => {
@@ -34,6 +36,10 @@ const reportReducer = (state = initialState, action) => {
     case types.SET_REGION:
       return update(state, {
         region: { $set: action.region }
+      });
+    case types.SET_SERVICE:
+      return update(state, {
+        service: { $set: action.service }
       });
   }
   return state;
@@ -55,6 +61,11 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch({
       type: types.SET_REGION,
       region
+    }),
+  setService: (service) =>
+    dispatch({
+      type: types.SET_SERVICE,
+      service
     }),
   search: (params) =>
     dispatch({

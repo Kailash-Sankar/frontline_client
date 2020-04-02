@@ -43,9 +43,33 @@ export const healthOptions = {
   transport: { id: "transport", value: "Transportation of patients" }
 };
 
+export const servicesTree = [
+  {
+    title: "Communication",
+    id: "service_communications",
+    options: Object.values(communicationOptions)
+  },
+  {
+    title: "Essential",
+    id: "service_essential",
+    options: Object.values(essentialOptions)
+  },
+  {
+    title: "Health",
+    id: "service_health",
+    options: Object.values(healthOptions)
+  },
+  {
+    title: "Entrepreneurial",
+    id: "service_entrepreneurial",
+    options: Object.values(entrepreneurialOptions)
+  }
+];
+
 export default {
   communicationOptions,
   entrepreneurialOptions,
   essentialOptions,
-  healthOptions
+  healthOptions,
+  servicesTree
 };

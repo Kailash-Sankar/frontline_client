@@ -6,17 +6,29 @@ import { connecter } from "@store/report";
 import options from "@utils/Options";
 import { formatSearchQuery } from "./utils";
 
-function Report({ result, mode, setMode, region, setRegion, search }) {
+function Report({
+  result,
+  mode,
+  setMode,
+  region,
+  setRegion,
+  search,
+  service,
+  setService
+}) {
   function onModeChange(value) {
     setMode(value);
   }
-
   function onRegionChange(value) {
     setRegion(value);
   }
 
+  function onServiceChange(value) {
+    setService(value);
+  }
+
   function handleSearch() {
-    const params = formatSearchQuery({ mode, region });
+    const params = formatSearchQuery({ mode, region, service });
     search(params);
   }
 
@@ -24,9 +36,15 @@ function Report({ result, mode, setMode, region, setRegion, search }) {
     mode,
     modes: options.other.modeOptions,
     onModeChange,
+
     region,
     regions: options.regions,
     onRegionChange,
+
+    service,
+    services: options.services.servicesTree,
+    onServiceChange,
+
     onSubmit: handleSearch
   };
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Table, Button } from "antd";
+import { Table } from "antd";
 import Details from "./Details";
 
 const columns = [
@@ -25,15 +25,8 @@ const columns = [
     dataIndex: "createdAt"
   },
   {
-    title: "Action",
-    key: "action",
-    render: () => (
-      <span>
-        <a style={{ marginRight: 16 }}>
-          <Button>View</Button>
-        </a>
-      </span>
-    )
+    title: "Availability",
+    dataIndex: "availability"
   }
 ];
 

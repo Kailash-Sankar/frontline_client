@@ -6,6 +6,8 @@ import { Button } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import { ModeSelect, RegionSelect } from "./SelectFields";
 
+import { ServiceSelector } from "./TreeSelects";
+
 function SelectorPanel({
   // customer props
   mode,
@@ -17,9 +19,14 @@ function SelectorPanel({
   regions,
   onRegionChange,
 
+  // service props
+  service,
+  services,
+  onServiceChange,
+
   onSubmit
 }) {
-  console.log("sp", arguments[0]);
+  //console.log("sp", arguments[0]);
   return (
     <div>
       <div className={styles.selectorCo}>
@@ -35,6 +42,17 @@ function SelectorPanel({
           region={region}
           regions={regions}
           onRegionChange={onRegionChange}
+        />
+      </div>
+
+      <Spacer />
+
+      <div className={styles.selectorCo}>
+        <span>Services</span>
+        <ServiceSelector
+          service={service}
+          services={services}
+          onChange={onServiceChange}
         />
       </div>
 
