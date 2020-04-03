@@ -1,6 +1,6 @@
 import axios from "axios";
 import { authStorage } from "@utils/LocalStorage";
-export const serverUrl = "http://localhost:3080/api";
+export const serverUrl = "/api"; //"http://localhost:3080/api";
 
 axios.defaults.baseURL = serverUrl;
 

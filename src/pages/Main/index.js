@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 import { Layout } from "antd";
 import { HeartOutlined } from "@ant-design/icons";
 
-import VolunteerSingup from "./VolunteerSingup";
+import VolunteerSignup from "./VolunteerSignup";
 import Report from "./Report";
 import Login from "./Login";
 import { TopBar, SideBar } from "@components/Navigation";
@@ -40,7 +40,7 @@ function App({ loggedIn, user, volunteerCount }) {
                 <Home {...pageProps} />
               </Route>
               <Route path="/volunteer">
-                <VolunteerSingup {...pageProps} />
+                <VolunteerSignup {...pageProps} />
               </Route>
               <Route path="/report">
                 <LoginRequired loggedIn={loggedIn}>

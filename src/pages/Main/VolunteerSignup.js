@@ -4,7 +4,7 @@ import FormToggle from "@components/FormToggle";
 import { connecter } from "@store/volunteerSignup";
 import options from "@utils/Options";
 
-function VolunteerSingup({ reset, mode, setMode, save }) {
+function VolunteerSignup({ reset, mode, setMode, save }) {
   useEffect(() => {}, []);
 
   function handleSubmit(formData) {
@@ -22,7 +22,7 @@ function VolunteerSingup({ reset, mode, setMode, save }) {
 
   return (
     <div style={{ textAlign: "left" }}>
-      <h2>Volunteer Singup Form</h2>
+      <h2>Volunteer Signup Form</h2>
       <FormToggle
         value={mode}
         handleChange={setMode}
@@ -49,4 +49,4 @@ function VolunteerSingup({ reset, mode, setMode, save }) {
   );
 }
 
-export default connecter(VolunteerSingup);
+export default connecter(VolunteerSignup);
