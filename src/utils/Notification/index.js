@@ -9,16 +9,15 @@ function singup(status, name, extra = "") {
     desc = `Server: ${extra}`;
   }
 
-  notification.open({
-    message: msg,
-    description: desc
-  });
+  base(msg, desc);
 }
 
 function base(msg, desc = "") {
   notification.open({
     message: msg,
-    description: desc
+    description: desc,
+    top: 88,
+    duration: 3
   });
 }
 

@@ -4,13 +4,12 @@ import * as styles from "./index.module.less";
 import { connecter } from "@store/common";
 import { Spacer } from "@components/Utils";
 import { Redirect } from "react-router-dom";
+import { formatLogin } from "./utils";
 
 function Login({ login, loggedIn }) {
-  // TODO: check if user is already logged in
-
   function handleSubmit(values) {
-    console.log("Logging in:", values);
-    login(values);
+    const data = formatLogin(values);
+    login(data);
   }
 
   function handleError(errInfo) {

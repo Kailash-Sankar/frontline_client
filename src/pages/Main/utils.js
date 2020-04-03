@@ -40,3 +40,11 @@ export function formatSearchQuery({ mode, region, service }) {
   };
   return params;
 }
+
+export const formatLogin = ({ email = "", password = "" }) => {
+  const res = {
+    email: email,
+    password: btoa(password)
+  };
+  return res;
+};
