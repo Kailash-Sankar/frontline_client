@@ -5,6 +5,11 @@ const { Option } = Select;
 const renderOptions = (options) =>
   options.map((k) => <Option key={k.id}>{k.value || k.name}</Option>);
 
+const renderOptionsObject = (options) =>
+  Object.values(options).map((k) => (
+    <Option key={k.id}>{k.value || k.name}</Option>
+  ));
+
 export const RegionSelect = ({ options }) => (
   <Form.Item
     label="Region"
@@ -31,30 +36,6 @@ export const StateSelect = ({ options }) => (
   </Form.Item>
 );
 
-export const CitySelect = ({ options }) => (
-  <Form.Item
-    label="City"
-    name="city"
-    rules={[{ required: true, message: "City is required" }]}
-  >
-    <Select style={{ width: 200 }} placeholder="Select a value">
-      {renderOptions(options)}
-    </Select>
-  </Form.Item>
-);
-
-export const DistrictSelect = ({ options }) => (
-  <Form.Item
-    label="District"
-    name="district"
-    rules={[{ required: true, message: "District is required" }]}
-  >
-    <Select style={{ width: 200 }} placeholder="Select a value">
-      {renderOptions(options)}
-    </Select>
-  </Form.Item>
-);
-
 export const AvailabilitySelect = ({ options }) => (
   <Form.Item
     label="Availability"
@@ -70,7 +51,7 @@ export const AvailabilitySelect = ({ options }) => (
 export const QualificationSelect = ({ options }) => (
   <Form.Item
     label="Educational Qualification"
-    name="qualification"
+    name={["individual", "qualification"]}
     rules={[{ required: true, message: "Qualification is required" }]}
   >
     <Select style={{ width: 200 }} placeholder="Select a value">
@@ -82,7 +63,7 @@ export const QualificationSelect = ({ options }) => (
 export const ProfessionSelect = ({ options }) => (
   <Form.Item
     label="Profession"
-    name="profession"
+    name={["individual", "profession"]}
     rules={[{ required: true, message: "Profession is required" }]}
   >
     <Select style={{ width: 200 }} placeholder="Select a value">
@@ -92,7 +73,7 @@ export const ProfessionSelect = ({ options }) => (
 );
 
 export const GenderSelect = ({ options }) => (
-  <Form.Item label="Gender" name="gender">
+  <Form.Item label="Gender" name={["individual", "gender"]}>
     <Select style={{ width: 200 }} placeholder="Select a value">
       {renderOptions(options)}
     </Select>
@@ -102,11 +83,30 @@ export const GenderSelect = ({ options }) => (
 export const OrgTypeSelect = ({ options }) => (
   <Form.Item
     label="Type of Organization"
-    name="org_type"
+    name={["organization", "cat"]}
     rules={[{ required: true, message: "Organization type is required" }]}
   >
     <Select style={{ width: 200 }} placeholder="Select a value">
       {renderOptions(options)}
+    </Select>
+  </Form.Item>
+);
+
+export const MedicalField = ({ options, onChange }) => (
+  <Form.Item name={["services", "medical", "id"]} label="Medical Services">
+    <Select mode="multiple" onChange={onChange} style={{ width: 400 }}>
+      {renderOptionsObject(options)}
+    </Select>
+  </Form.Item>
+);
+
+export const NonMedicalField = ({ options, onChange }) => (
+  <Form.Item
+    name={["services", "nonmedical", "id"]}
+    label="Non-Medical Services"
+  >
+    <Select mode="multiple" onChange={onChange} style={{ width: 400 }}>
+      {renderOptionsObject(options)}
     </Select>
   </Form.Item>
 );

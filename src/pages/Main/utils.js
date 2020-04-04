@@ -1,16 +1,6 @@
 import { SPTR } from "@utils/constants";
 
-// combine saved customer features with product features
-export const combineFeatures = (saved, base) => {
-  const tempMap = {};
-  saved.forEach((s) => {
-    tempMap[s.id] = 1;
-  });
-  const features = saved;
-  features.push(...base.filter((b) => (tempMap[b.id] ? false : true)));
-  return features;
-};
-
+// create id based map
 export function createMap(data) {
   const parsed = {};
   data.forEach((row) => {
@@ -19,6 +9,7 @@ export function createMap(data) {
   return parsed;
 }
 
+// format service queries
 const formatService = (data = []) => {
   const res = {};
   data.forEach((r) => {
@@ -32,19 +23,21 @@ const formatService = (data = []) => {
   return res;
 };
 
+// format search queries
 export function formatSearchQuery({ mode, region, service }) {
   const params = {
     mode: mode || "all",
     region: region || "all",
-    ...formatService(service)
+    ...formatService(service),
   };
   return params;
 }
 
+// format login form
 export const formatLogin = ({ email = "", password = "" }) => {
   const res = {
     email: email,
-    password: btoa(password)
+    password: btoa(password),
   };
   return res;
 };

@@ -13,25 +13,31 @@ const renderOptions = (options) =>
   ));
 
 export const CommunicationsField = ({ options }) => (
-  <Form.Item name="service_communications" label="Communication Services">
+  <Form.Item
+    name={["services", "communications"]}
+    label="Communication Services"
+  >
     <Checkbox.Group>{renderOptions(options)}</Checkbox.Group>
   </Form.Item>
 );
 
 export const EntrepreneurialField = ({ options }) => (
-  <Form.Item name="service_entrepreneurial" label="Entrepreneurial Services">
+  <Form.Item
+    name={["services", "entrepreneurial"]}
+    label="Entrepreneurial Services"
+  >
     <Checkbox.Group>{renderOptions(options)}</Checkbox.Group>
   </Form.Item>
 );
 
 export const EssentialField = ({ options }) => (
-  <Form.Item name="service_essential" label="Essential Services">
+  <Form.Item name={["services", "essential"]} label="Essential Services">
     <Checkbox.Group>{renderOptions(options)}</Checkbox.Group>
   </Form.Item>
 );
 
 export const HealthField = ({ options }) => (
-  <Form.Item name="service_health" label="Health Services">
+  <Form.Item name={["services", "health"]} label="Health Services">
     <Checkbox.Group>{renderOptions(options)}</Checkbox.Group>
   </Form.Item>
 );

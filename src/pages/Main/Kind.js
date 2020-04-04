@@ -1,18 +1,20 @@
 import React, { useEffect } from "react";
-import { IndividualForm, OrganizationForm } from "@components/VolunteerForm";
+import {
+  IndividualKindForm,
+  OrganizationKindForm,
+} from "@components/VolunteerForm";
 import FormToggle from "@components/FormToggle";
-import { connecter } from "@store/volunteerSignup";
+import { connecter } from "@store/kind";
 import options from "@utils/Options";
 import formatter from "@utils/Formatter";
 
-function VolunteerSignup({ reset, mode, setMode, save }) {
+function Kind({ reset, mode, setMode, save }) {
   useEffect(() => {}, []);
 
   function handleSubmit(formData) {
     if (formData) {
       formData.mode = mode;
-      formData.act = "volunteer"; // fixed page type
-
+      formData.act = "kind";
       formatter(formData);
       console.log("after", formData);
       save(formData);
@@ -24,9 +26,16 @@ function VolunteerSignup({ reset, mode, setMode, save }) {
     region: ["KA", "5"],
   };
 
+  const formProps = {
+    ...options,
+    onSubmit: handleSubmit,
+    reset: reset,
+    initialValues: initialValues,
+  };
+
   return (
     <div style={{ textAlign: "left" }}>
-      <h2>Volunteer Signup Form</h2>
+      <h2>Donate in Kind</h2>
       <FormToggle
         value={mode}
         handleChange={setMode}
@@ -34,23 +43,13 @@ function VolunteerSignup({ reset, mode, setMode, save }) {
       />
       <div style={{ margin: 30 }}>
         {mode === "individual" ? (
-          <IndividualForm
-            onSubmit={handleSubmit}
-            reset={reset}
-            {...options}
-            initialValues={initialValues}
-          />
+          <IndividualKindForm {...formProps} />
         ) : (
-          <OrganizationForm
-            onSubmit={handleSubmit}
-            reset={reset}
-            {...options}
-            initialValues={initialValues}
-          />
+          <OrganizationKindForm {...formProps} />
         )}
       </div>
     </div>
   );
 }
 
-export default connecter(VolunteerSignup);
+export default connecter(Kind);
