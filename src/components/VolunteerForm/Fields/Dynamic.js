@@ -2,7 +2,7 @@ import React from "react";
 import { Form, Input, Row, Col, Select } from "antd";
 
 const { Option } = Select;
-import { toNumber } from "./utils";
+import { toNumber } from "../utils";
 
 const unitSelector = (baseName) => (
   <Form.Item name={[...baseName, "unit"]} noStyle>

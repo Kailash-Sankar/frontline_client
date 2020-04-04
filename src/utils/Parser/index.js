@@ -2,6 +2,8 @@ import { NA } from "@utils/constants";
 import getParseFn from "./parseConfig";
 
 function dataParser(data) {
+  console.log("input", data);
+
   const res = [];
   data.forEach((row) => {
     const parsedRow = {};

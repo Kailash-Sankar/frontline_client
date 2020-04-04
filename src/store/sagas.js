@@ -5,6 +5,7 @@ import { types as reportTypes } from "./report";
 import { types as volunteerTypes } from "./volunteerSignup";
 import { types as commonTypes } from "./common";
 import { types as kindTypes } from "./kind";
+import { types as kindReportTypes } from "./kindReport";
 
 import notify from "@utils/Notification";
 import { authStorage } from "@utils/LocalStorage";
@@ -36,13 +37,17 @@ function* initVolunteerCount() {
   yield put({ type: commonTypes.SET_COUNT, volunteerCount: res });
 }
 
-function* search(action) {
+function* search(scope, action) {
   try {
     const res = yield call(Api.search, action.params);
-    yield put({ type: reportTypes.SET_RESULT, result: res });
+    yield put({ type: scope.SET_RESULT, result: res });
   } catch (err) {
-    notify.base("Session expired", "Please login again");
-    yield put({ type: commonTypes.LOGOUT });
+    if (err.response.status === 401) {
+      notify.base("Session expired", "Please login again");
+      yield put({ type: commonTypes.LOGOUT });
+    } else {
+      notify.base("Error, please reload and try again");
+    }
   }
 }
 
@@ -101,8 +106,9 @@ function* logout() {
 }
 
 export function* initSaga() {
-  /// report
-  yield takeLatest(reportTypes.SEARCH, search);
+  /// reports
+  yield takeLatest(reportTypes.SEARCH, search, reportTypes);
+  yield takeLatest(kindReportTypes.SEARCH, search, kindReportTypes);
 
   // save volunteers and kind
   yield takeLatest(volunteerTypes.SAVE, saveData, volunteerTypes);

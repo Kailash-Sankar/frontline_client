@@ -16,6 +16,47 @@ export const arrMapper = (arr, lookup) => {
   return res.length > 0 ? res.join(", ") : NA;
 };
 
+// for nested objects
+export const nestedArrMapper = (data = [], lookupFnMap) => {
+  const res = {};
+  data.forEach((d) => {
+    if (d.id in lookupFnMap) {
+      res[d.id] = lookupFnMap[d.id](d.values);
+    } else {
+      res[d.id] = d.values;
+    }
+  });
+  return res;
+};
+
+export const nestedObjMapper = (data = {}, lookupFnMap) => {
+  const res = {};
+  Object.keys(data).forEach((k) => {
+    const val = data[k];
+    if (k in lookupFnMap) {
+      res[k] = lookupFnMap[k](val);
+    } else {
+      res[k] = val;
+    }
+  });
+  return res;
+};
+
+// attribute mapper
+export const attrMapper = (arr = [], lookup) => {
+  const res = [];
+  arr.forEach((obj) => {
+    const id = obj.id;
+    if (id in lookup) {
+      res.push({
+        label: lookup[id].value,
+        attributes: obj.attributes,
+      });
+    }
+  });
+  return res.length > 0 ? res : NA;
+};
+
 // format date
 export const formatDate = (dateString) =>
   new Date(dateString).toLocaleString("en-GB");

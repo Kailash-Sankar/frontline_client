@@ -8,7 +8,7 @@ import {
   RegionSelect,
   MedicalField,
   NonMedicalField,
-} from "./SelectFields";
+} from "./Fields/Select";
 
 import {
   MobileField,
@@ -19,9 +19,9 @@ import {
   EmailField,
   NotesField,
   AadharField,
-} from "./InputFields";
+} from "./Fields/Input";
 
-import { DynamicServicList } from "./DynamicFields";
+import { DynamicServicList } from "./Fields/Dynamic";
 
 import { formatData } from "./utils";
 

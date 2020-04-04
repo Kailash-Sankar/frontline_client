@@ -1,7 +1,7 @@
 import React from "react";
 import AppealForm from "@components/AppealForm";
 
-function Appeal() {
+function Request() {
   return (
     <div style={{ textAlign: "left" }}>
       <h2>Post Appeals</h2>
@@ -12,4 +12,4 @@ function Appeal() {
   );
 }
 
-export default Appeal;
+export default Request;

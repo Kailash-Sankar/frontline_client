@@ -75,12 +75,26 @@ export function RenderMenu() {
           <span className="nav-text">Volunteer</span>
         </Link>
       </Menu.Item>
+      <Menu.Item key="/kind">
+        <Link to="/kind">
+          <DeploymentUnitOutlined />
+          <span className="nav-text">Kind</span>
+        </Link>
+      </Menu.Item>
       <Menu.Item key="/report">
         <Link to="/report">
           <FileSearchOutlined />
           <span className="nav-text">Reports</span>
         </Link>
       </Menu.Item>
+
+      <Menu.Item key="/kind/reports">
+        <Link to="/kind/reports">
+          <FileSearchOutlined />
+          <span className="nav-text">Reports[Kind]</span>
+        </Link>
+      </Menu.Item>
+
       <Menu.Item key="/appeal">
         <Link to="/appeal">
           <FormOutlined />

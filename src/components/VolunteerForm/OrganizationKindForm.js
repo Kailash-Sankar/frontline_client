@@ -7,7 +7,7 @@ import {
   MedicalField,
   NonMedicalField,
   OrgTypeSelect,
-} from "./SelectFields";
+} from "./Fields/Select";
 
 import {
   MobileField,
@@ -19,9 +19,9 @@ import {
   NotesField,
   NodalNameField,
   RegNumField,
-} from "./InputFields";
+} from "./Fields/Input";
 
-import { DynamicServicList } from "./DynamicFields";
+import { DynamicServicList } from "./Fields/Dynamic";
 
 import { formatData } from "./utils";
 

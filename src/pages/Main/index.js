@@ -18,8 +18,10 @@ import classnames from "classnames";
 import Home from "./Home";
 import Logout from "./Logout";
 import LoginRequired from "./LoginRequired";
-import Appeal from "./Appeal";
 import Kind from "./Kind";
+import KindReport from "./KindReport";
+
+import RequestPage from "./Request";
 
 const { Content, Footer } = Layout;
 
@@ -41,22 +43,32 @@ function App({ loggedIn, user, volunteerCount }) {
               <Route exact path="/">
                 <Home {...pageProps} />
               </Route>
+
               <Route path="/volunteer">
                 <VolunteerSignup {...pageProps} />
-              </Route>
-              <Route path="/kind">
-                <Kind {...pageProps} />
               </Route>
               <Route path="/report">
                 <LoginRequired loggedIn={loggedIn}>
                   <Report {...pageProps} />
                 </LoginRequired>
               </Route>
-              <Route path="/appeal">
+
+              <Route exact path="/kind">
+                <Kind {...pageProps} />
+              </Route>
+
+              <Route exact path="/kind/reports">
                 <LoginRequired loggedIn={loggedIn}>
-                  <Appeal {...pageProps} />
+                  <KindReport {...pageProps} />
                 </LoginRequired>
               </Route>
+
+              <Route path="/request">
+                <LoginRequired loggedIn={loggedIn}>
+                  <RequestPage {...pageProps} />
+                </LoginRequired>
+              </Route>
+
               <Route path="/login">
                 <Login {...pageProps} />
               </Route>

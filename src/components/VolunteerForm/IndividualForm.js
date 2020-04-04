@@ -7,8 +7,8 @@ import {
   QualificationSelect,
   ProfessionSelect,
   GenderSelect,
-  RegionSelect
-} from "./SelectFields";
+  RegionSelect,
+} from "./Fields/Select";
 
 import {
   MobileField,
@@ -18,15 +18,15 @@ import {
   NameField,
   EmailField,
   DOBField,
-  NotesField
-} from "./InputFields";
+  NotesField,
+} from "./Fields/Input";
 
 import {
   CommunicationsField,
   EntrepreneurialField,
   EssentialField,
-  HealthField
-} from "./MultiFields";
+  HealthField,
+} from "./Fields/Multi";
 
 import { formatData } from "./utils";
 
@@ -37,7 +37,7 @@ function IndividualForm({
   domain,
   services,
   onSubmit,
-  reset
+  reset,
 }) {
   const [form] = Form.useForm();
   const { resetFields } = form;

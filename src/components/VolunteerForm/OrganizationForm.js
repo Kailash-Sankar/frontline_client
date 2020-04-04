@@ -5,8 +5,8 @@ import { formItemLayout, tailFormItemLayout } from "./layout";
 import {
   AvailabilitySelect,
   RegionSelect,
-  OrgTypeSelect
-} from "./SelectFields";
+  OrgTypeSelect,
+} from "./Fields/Select";
 
 import {
   MobileField,
@@ -19,15 +19,15 @@ import {
   OrgField,
   RegNumField,
   NOVField,
-  NotesField
-} from "./InputFields";
+  NotesField,
+} from "./Fields/Input";
 
 import {
   CommunicationsField,
   EntrepreneurialField,
   EssentialField,
-  HealthField
-} from "./MultiFields";
+  HealthField,
+} from "./Fields/Multi";
 import { formatData } from "./utils";
 
 function OrganizationForm({
@@ -37,7 +37,7 @@ function OrganizationForm({
   domain,
   services,
   onSubmit,
-  reset
+  reset,
 }) {
   const [form] = Form.useForm();
   const { resetFields } = form;
