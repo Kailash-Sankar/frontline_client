@@ -1,16 +1,37 @@
 import React from "react";
 import AppealForm from "@components/AppealForm";
 import options from "@utils/Options";
+import formatter from "@utils/Formatter";
+import { connecter } from "@store/appeal";
 
-function Appeal() {
+function Appeal({ save, reset }) {
+  // default to Karnataka, Bangalore
+  const initialValues = {
+    region: ["KA", "5"],
+  };
+
+  function handleSubmit(formData) {
+    if (formData) {
+      formData.act = "appeal";
+      formatter(formData);
+      console.log("after", formData);
+      save(formData);
+    }
+  }
+
   return (
     <div style={{ textAlign: "left" }}>
       <h2>Post Appeals</h2>
       <div style={{ marginTop: 20 }}>
-        <AppealForm {...options} />
+        <AppealForm
+          {...options}
+          onSubmit={handleSubmit}
+          initialValues={initialValues}
+          reset={reset}
+        />
       </div>
     </div>
   );
 }
 
-export default Appeal;
+export default connecter(Appeal);

@@ -19,6 +19,7 @@ import {
   NotesField,
   NodalNameField,
   RegNumField,
+  PubliciseField,
 } from "./Fields/Input";
 
 import { DynamicServicList } from "./Fields/Dynamic";
@@ -99,6 +100,7 @@ function OrganizationKindForm({
         />
         <DynamicServicList serviceType="nonmedical" options={nonMedical} />
 
+        <PubliciseField />
         <NotesField />
 
         <Form.Item {...tailFormItemLayout}>

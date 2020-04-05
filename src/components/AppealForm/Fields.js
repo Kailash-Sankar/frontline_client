@@ -5,19 +5,16 @@ const { Option } = Select;
 
 export const AppealField = () => (
   <Form.Item
-    label="Appeal"
-    name="appeal"
+    label="Description"
+    name="desc"
     rules={[
       {
-        required: true,
-        message: "A brief appeal is required.",
+        required: false,
+        message: "Describe your appeal briefly.",
       },
     ]}
   >
-    <TextArea
-      rows={4}
-      placeholder={"Please describe your need as precisely as possible"}
-    />
+    <TextArea rows={4} placeholder={"Describe your appeal briefly."} />
   </Form.Item>
 );
 
@@ -31,6 +28,7 @@ export const TagField = () => (
       <Option value="food">Food</Option>
       <Option value="groceries">Groceries</Option>
       <Option value="medicines">Medicines</Option>
+      <Option value="supplies">Supplies</Option>
     </Select>
   </Form.Item>
 );

@@ -62,8 +62,9 @@ export const TopBar = ({ loggedIn, user, volunteerCount }) => {
 export function RenderMenu() {
   const location = useLocation();
   const selected = location.pathname;
+
   return (
-    <Menu theme="dark" mode="inline" defaultSelectedKeys={[selected]}>
+    <Menu theme="dark" mode="inline" selectedKeys={[selected]}>
       <Menu.Item key="/">
         <Link to="/">
           <HomeOutlined />
@@ -85,14 +86,14 @@ export function RenderMenu() {
       <Menu.Item key="/report">
         <Link to="/report">
           <FileSearchOutlined />
-          <span className="nav-text">Reports</span>
+          <span className="nav-text">Reports[Volunteer]</span>
         </Link>
       </Menu.Item>
 
       <Menu.Item key="/kind/reports">
         <Link to="/kind/reports">
           <FileSearchOutlined />
-          <span className="nav-text">Reports[Kind]</span>
+          <span className="nav-text">Reports</span>
         </Link>
       </Menu.Item>
 

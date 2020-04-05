@@ -6,6 +6,9 @@ import { types as volunteerTypes } from "./volunteerSignup";
 import { types as commonTypes } from "./common";
 import { types as kindTypes } from "./kind";
 import { types as kindReportTypes } from "./kindReport";
+import { types as appealTypes } from "./appeal";
+import { types as homeTypes } from "./homeContent";
+import { types as appealReportTypes } from "./appealReport";
 
 import notify from "@utils/Notification";
 import { authStorage } from "@utils/LocalStorage";
@@ -37,6 +40,7 @@ function* initVolunteerCount() {
   yield put({ type: commonTypes.SET_COUNT, volunteerCount: res });
 }
 
+// volunteer and kind search
 function* search(scope, action) {
   try {
     const res = yield call(Api.search, action.params);
@@ -51,6 +55,33 @@ function* search(scope, action) {
   }
 }
 
+// appeals search
+function* searchAppeals(scope, action) {
+  try {
+    const res = yield call(Api.searchAppeals, action.params);
+    yield put({ type: scope.SET_RESULT, result: res });
+  } catch (err) {
+    if (err.response.status === 401) {
+      notify.base("Session expired", "Please login again");
+      yield put({ type: commonTypes.LOGOUT });
+    } else {
+      notify.base("Error, please reload and try again");
+    }
+  }
+}
+
+// get appeals for home page
+function* fetchAppeals(action) {
+  try {
+    const res = yield call(Api.searchAppeals, action.params);
+    yield put({ type: homeTypes.SET_APPEALS, appeals: res });
+  } catch (err) {
+    // fail silently
+    console.log("fetching failed", err);
+  }
+}
+
+// volunteer and kind save actions
 function* saveData(scope, action) {
   console.log(action);
   try {
@@ -64,6 +95,23 @@ function* saveData(scope, action) {
   } catch (err) {
     console.log(err);
     notify.info(false, "Backend error", "Try posting data again");
+  }
+}
+
+// appeal save action
+function* saveAppealData(scope, action) {
+  console.log(action);
+  try {
+    const res = yield call(Api.saveAppealForm, action.formData);
+    if (res.data.status === 1) {
+      notify.base(res.data.message);
+      yield put({ type: scope.SET_RESET });
+    } else {
+      notify.base("Unable to save appeal", res.data.message);
+    }
+  } catch (err) {
+    console.log(err);
+    notify.base("Server error", "Try posting data again");
   }
 }
 
@@ -109,14 +157,21 @@ export function* initSaga() {
   /// reports
   yield takeLatest(reportTypes.SEARCH, search, reportTypes);
   yield takeLatest(kindReportTypes.SEARCH, search, kindReportTypes);
+  yield takeLatest(appealReportTypes.SEARCH, searchAppeals, appealReportTypes);
 
   // save volunteers and kind
   yield takeLatest(volunteerTypes.SAVE, saveData, volunteerTypes);
   yield takeLatest(kindTypes.SAVE, saveData, kindTypes);
 
+  // save appeal
+  yield takeLatest(appealTypes.SAVE, saveAppealData, appealTypes);
+
   // auth
   yield takeLatest(commonTypes.LOGIN, login);
   yield takeLatest(commonTypes.LOGOUT, logout);
+
+  // home page
+  yield takeLatest(homeTypes.FETCH_APPEALS, fetchAppeals);
 
   // load test
   yield helloSaga();

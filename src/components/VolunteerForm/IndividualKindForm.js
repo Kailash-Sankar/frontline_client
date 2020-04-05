@@ -19,6 +19,7 @@ import {
   EmailField,
   NotesField,
   AadharField,
+  PubliciseField,
 } from "./Fields/Input";
 
 import { DynamicServicList } from "./Fields/Dynamic";
@@ -100,6 +101,8 @@ function IndividualKindForm({
           onChange={onNonMedicalChange}
         />
         <DynamicServicList serviceType="nonmedical" options={nonMedical} />
+
+        <PubliciseField />
 
         <NotesField />
 
