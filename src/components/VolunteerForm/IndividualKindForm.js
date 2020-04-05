@@ -3,11 +3,11 @@ import { Form, Button } from "antd";
 import { formItemLayout, tailFormItemLayout } from "./layout";
 
 import {
-  AvailabilitySelect,
-  QualificationSelect,
   ProfessionSelect,
   GenderSelect,
   RegionSelect,
+  MedicalField,
+  NonMedicalField,
 } from "./Fields/Select";
 
 import {
@@ -17,20 +17,15 @@ import {
   PinField,
   NameField,
   EmailField,
-  DOBField,
   NotesField,
+  AadharField,
 } from "./Fields/Input";
 
-import {
-  CommunicationsField,
-  EntrepreneurialField,
-  EssentialField,
-  HealthField,
-} from "./Fields/Multi";
+import { DynamicServicList } from "./Fields/Dynamic";
 
 import { formatData } from "./utils";
 
-function IndividualForm({
+function IndividualKindForm({
   initialValues,
   other,
   regions,
@@ -45,6 +40,22 @@ function IndividualForm({
   useEffect(() => {
     resetFields();
   }, [reset]);
+
+  const [medical, setMedical] = React.useState([]);
+  const [nonMedical, setNonMedical] = React.useState([]);
+
+  const getMetaMap = (meta) =>
+    meta.map((m) => ({ id: m.key, value: m.children }));
+
+  function onMedicalChange(values, meta) {
+    const res = getMetaMap(meta);
+    setMedical(res);
+  }
+
+  function onNonMedicalChange(values, meta) {
+    const res = getMetaMap(meta);
+    setNonMedical(res);
+  }
 
   // called if validation passes
   function handleSubmit(values) {
@@ -63,24 +74,32 @@ function IndividualForm({
       >
         <NameField />
         <EmailField />
-        <DOBField />
+
         <GenderSelect options={other.genderOptions} />
+        <AadharField />
 
         <MobileField />
         <ConfirmMobileField />
 
         <AddressField />
-        <RegionSelect options={regions} />
         <PinField />
 
-        <AvailabilitySelect options={domain.availabilityOptions} />
-        <QualificationSelect options={domain.qualificationOptions} />
         <ProfessionSelect options={domain.professionOptions} />
 
-        <EssentialField options={services.essentialOptions} />
-        <HealthField options={services.healthOptions} />
-        <CommunicationsField options={services.communicationOptions} />
-        <EntrepreneurialField options={services.entrepreneurialOptions} />
+        <RegionSelect options={regions} />
+
+        <MedicalField
+          options={services.medicalOptions}
+          onChange={onMedicalChange}
+        />
+
+        <DynamicServicList serviceType="medical" options={medical} />
+
+        <NonMedicalField
+          options={services.nonMedicalOptions}
+          onChange={onNonMedicalChange}
+        />
+        <DynamicServicList serviceType="nonmedical" options={nonMedical} />
 
         <NotesField />
 
@@ -94,4 +113,4 @@ function IndividualForm({
   );
 }
 
-export default IndividualForm;
+export default IndividualKindForm;

@@ -1,12 +1,12 @@
 import { notification } from "antd";
 
-function singup(status, name, extra = "") {
+function info(status, name, extra = "") {
   let msg = "Submitted successfully!";
   let desc = `Thank you ${name} for volunteering!`;
 
   if (!status) {
     msg = `Encountered ${name}`;
-    desc = `Server: ${extra}`;
+    desc = `${extra}`;
   }
 
   base(msg, desc);
@@ -17,8 +17,8 @@ function base(msg, desc = "") {
     message: msg,
     description: desc,
     top: 88,
-    duration: 3
+    duration: 3,
   });
 }
 
-export default { singup, base };
+export default { info, base };

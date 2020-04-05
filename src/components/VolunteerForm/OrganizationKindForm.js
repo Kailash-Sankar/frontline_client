@@ -3,8 +3,9 @@ import { Form, Button } from "antd";
 import { formItemLayout, tailFormItemLayout } from "./layout";
 
 import {
-  AvailabilitySelect,
   RegionSelect,
+  MedicalField,
+  NonMedicalField,
   OrgTypeSelect,
 } from "./Fields/Select";
 
@@ -15,26 +16,19 @@ import {
   PinField,
   NameField,
   EmailField,
-  NodalNameField,
-  OrgField,
-  RegNumField,
-  NOVField,
   NotesField,
+  NodalNameField,
+  RegNumField,
 } from "./Fields/Input";
 
-import {
-  CommunicationsField,
-  EntrepreneurialField,
-  EssentialField,
-  HealthField,
-} from "./Fields/Multi";
+import { DynamicServicList } from "./Fields/Dynamic";
+
 import { formatData } from "./utils";
 
-function OrganizationForm({
+function OrganizationKindForm({
   initialValues,
   other,
   regions,
-  domain,
   services,
   onSubmit,
   reset,
@@ -45,6 +39,22 @@ function OrganizationForm({
   useEffect(() => {
     resetFields();
   }, [reset]);
+
+  const [medical, setMedical] = React.useState([]);
+  const [nonMedical, setNonMedical] = React.useState([]);
+
+  const getMetaMap = (meta) =>
+    meta.map((m) => ({ id: m.key, value: m.children }));
+
+  function onMedicalChange(values, meta) {
+    const res = getMetaMap(meta);
+    setMedical(res);
+  }
+
+  function onNonMedicalChange(values, meta) {
+    const res = getMetaMap(meta);
+    setNonMedical(res);
+  }
 
   // called if validation passes
   function handleSubmit(values) {
@@ -62,28 +72,32 @@ function OrganizationForm({
         //hideRequiredMark={true}
       >
         <NameField />
-
-        <OrgField />
         <OrgTypeSelect options={other.orgTypeOptions} />
         <RegNumField />
-
-        <NOVField />
-
-        <AddressField />
-        <RegionSelect options={regions} />
-        <PinField />
-
         <NodalNameField />
+
         <EmailField />
+
         <MobileField />
         <ConfirmMobileField />
 
-        <AvailabilitySelect options={domain.availabilityOptions} />
+        <AddressField />
+        <PinField />
 
-        <EssentialField options={services.essentialOptions} />
-        <HealthField options={services.healthOptions} />
-        <CommunicationsField options={services.communicationOptions} />
-        <EntrepreneurialField options={services.entrepreneurialOptions} />
+        <RegionSelect options={regions} />
+
+        <MedicalField
+          options={services.medicalOptions}
+          onChange={onMedicalChange}
+        />
+
+        <DynamicServicList serviceType="medical" options={medical} />
+
+        <NonMedicalField
+          options={services.nonMedicalOptions}
+          onChange={onNonMedicalChange}
+        />
+        <DynamicServicList serviceType="nonmedical" options={nonMedical} />
 
         <NotesField />
 
@@ -97,4 +111,4 @@ function OrganizationForm({
   );
 }
 
-export default OrganizationForm;
+export default OrganizationKindForm;

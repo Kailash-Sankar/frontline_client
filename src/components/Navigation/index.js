@@ -11,9 +11,10 @@ import {
   DeploymentUnitOutlined,
   FileSearchOutlined,
   HomeOutlined,
-  //UserOutlined,
+  FormOutlined,
   LoginOutlined,
-  LogoutOutlined
+  LogoutOutlined,
+  GlobalOutlined,
 } from "@ant-design/icons";
 import CountBadge from "@components/Misc/CountBadge";
 
@@ -75,10 +76,30 @@ export function RenderMenu() {
           <span className="nav-text">Volunteer</span>
         </Link>
       </Menu.Item>
+      <Menu.Item key="/kind">
+        <Link to="/kind">
+          <GlobalOutlined />
+          <span className="nav-text">Kind</span>
+        </Link>
+      </Menu.Item>
       <Menu.Item key="/report">
         <Link to="/report">
           <FileSearchOutlined />
           <span className="nav-text">Reports</span>
+        </Link>
+      </Menu.Item>
+
+      <Menu.Item key="/kind/reports">
+        <Link to="/kind/reports">
+          <FileSearchOutlined />
+          <span className="nav-text">Reports[Kind]</span>
+        </Link>
+      </Menu.Item>
+
+      <Menu.Item key="/appeal">
+        <Link to="/appeal">
+          <FormOutlined />
+          <span className="nav-text">Appeal</span>
         </Link>
       </Menu.Item>
     </Menu>
@@ -102,7 +123,7 @@ export const SideBar = ({ loggedIn }) => {
         overflow: "auto",
         height: "100vh",
         position: "fixed",
-        left: 0
+        left: 0,
       }}
       collapsible
       collapsed={collapsed}

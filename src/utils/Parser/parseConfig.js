@@ -1,4 +1,11 @@
-import { objMapper, formatDate, regionMapper, arrMapper } from "./utils";
+import {
+  objMapper,
+  formatDate,
+  regionMapper,
+  nestedArrMapper,
+  nestedObjMapper,
+  attrMapper,
+} from "./utils";
 import lookup from "./lookup";
 
 const parseMap = {
@@ -8,19 +15,32 @@ const parseMap = {
   createdAt: (value) => formatDate(value),
 
   // services object lookup
-  service_communications: (id) => arrMapper(id, lookup.service_communications),
-  service_entrepreneurial: (id) =>
-    arrMapper(id, lookup.service_entrepreneurial),
-  service_essential: (id) => arrMapper(id, lookup.service_essential),
-  service_health: (id) => arrMapper(id, lookup.service_health),
+  services: (value) =>
+    nestedArrMapper(value, {
+      communications: (id) => attrMapper(id, lookup.services.communications),
+      entrepreneurial: (id) => attrMapper(id, lookup.services.entrepreneurial),
+      essential: (id) => attrMapper(id, lookup.services.essential),
+      health: (id) => attrMapper(id, lookup.services.health),
+      medical: (id) => attrMapper(id, lookup.services.medical),
+      nonmedical: (id) => attrMapper(id, lookup.services.nonmedical),
+    }),
+
+  // organization
+  organization: (value) =>
+    nestedObjMapper(value, {
+      cat: (id) => objMapper(id, lookup.organization.type),
+    }),
+
+  individual: (value) =>
+    nestedObjMapper(value, {
+      qualification: (id) => objMapper(id, lookup.individual.qualification),
+      profession: (id) => objMapper(id, lookup.individual.profession),
+      gender: (id) => objMapper(id, lookup.individual.gender),
+    }),
 
   // map object lookup
   mode: (id) => objMapper(id, lookup.mode),
-  gender: (id) => objMapper(id, lookup.gender),
   availability: (id) => objMapper(id, lookup.availability),
-  qualification: (id) => objMapper(id, lookup.qualification),
-  profession: (id) => objMapper(id, lookup.profession),
-  org_type: (id) => objMapper(id, lookup.org_type)
 };
 
 function getParseFn(id) {

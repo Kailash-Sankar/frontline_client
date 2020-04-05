@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { applyScope } from "./utils";
 import { pageSelector } from "./selectors";
 
-const scope = "volunteerSingup";
+const scope = "kind";
 
 const initialState = {
   mode: "organization",
@@ -12,7 +12,7 @@ const initialState = {
 
 export const types = applyScope(scope, ["SET_MODE", "SET_RESET", "SAVE"]);
 
-const volunteerSingupReducer = (state = initialState, action) => {
+const kindReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.SET_MODE:
       return update(state, {
@@ -51,4 +51,4 @@ const mapStateToProps = pageSelector(scope);
 export const connecter = (vs) =>
   connect(mapStateToProps, mapDispatchToProps)(vs);
 
-export default volunteerSingupReducer;
+export default kindReducer;

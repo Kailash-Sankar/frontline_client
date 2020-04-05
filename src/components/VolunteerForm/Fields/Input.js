@@ -1,6 +1,6 @@
 import React from "react";
 import { Form, Input, DatePicker, Row, Col } from "antd";
-import { toNumber } from "./utils";
+import { toNumber } from "../utils";
 const { TextArea } = Input;
 
 export const MobileField = () => (
@@ -10,17 +10,17 @@ export const MobileField = () => (
     rules={[
       {
         required: true,
-        message: "Mobile number is required"
+        message: "Mobile number is required",
       },
       {
         type: "number",
         transform: toNumber,
-        message: "Invalid number format"
+        message: "Invalid number format",
       },
       {
         len: 10,
-        message: "Mobile number must be 10 digits"
-      }
+        message: "Mobile number must be 10 digits",
+      },
     ]}
   >
     <Row gutter={8}>
@@ -40,12 +40,12 @@ export const ConfirmMobileField = () => (
     rules={[
       {
         required: true,
-        message: "Mobile number confirmation is required"
+        message: "Mobile number confirmation is required",
       },
       {
         type: "number",
         transform: toNumber,
-        message: "Invalid number format"
+        message: "Invalid number format",
       },
       ({ getFieldValue }) => ({
         validator(rule, value) {
@@ -53,8 +53,8 @@ export const ConfirmMobileField = () => (
             return Promise.resolve();
           }
           return Promise.reject("The two numbers you entered do not match!");
-        }
-      })
+        },
+      }),
     ]}
   >
     <Row gutter={8}>
@@ -87,17 +87,17 @@ export const PinField = () => (
     rules={[
       {
         required: true,
-        message: "Pin code is required"
+        message: "Pin code is required",
       },
       {
         type: "number",
         transform: toNumber,
-        message: "Invalid format"
+        message: "Invalid format",
       },
       {
         len: 6,
-        message: "Pin must be 6 digits"
-      }
+        message: "Pin must be 6 digits",
+      },
     ]}
   >
     <Row gutter={8}>
@@ -129,8 +129,8 @@ export const EmailField = () => (
     rules={[
       {
         type: "email",
-        message: "Input is not a valid E-mail!"
-      }
+        message: "Input is not a valid E-mail!",
+      },
     ]}
   >
     <Row gutter={8}>
@@ -142,15 +142,25 @@ export const EmailField = () => (
 );
 
 export const DOBField = () => (
-  <Form.Item name="dob" label="Date of Birth">
+  <Form.Item name={["individual", "dob"]} label="Date of Birth">
     <DatePicker />
+  </Form.Item>
+);
+
+export const AadharField = () => (
+  <Form.Item label="Aadhar Number" name={["individual", "aadhar"]}>
+    <Row gutter={8}>
+      <Col span={10}>
+        <Input maxLength={25} placeholder="Enter Aadhar number" />
+      </Col>
+    </Row>
   </Form.Item>
 );
 
 export const OrgField = () => (
   <Form.Item
     label="Head of Organization"
-    name="org_head"
+    name={["organization", "head"]}
     rules={[{ required: true, message: "Head of Organization is required" }]}
   >
     <Row gutter={8}>
@@ -162,7 +172,7 @@ export const OrgField = () => (
 );
 
 export const RegNumField = () => (
-  <Form.Item label="Registration Number" name="org_reg">
+  <Form.Item label="Registration Number" name={["organization", "reg"]}>
     <Row gutter={8}>
       <Col span={12}>
         <Input
@@ -177,13 +187,13 @@ export const RegNumField = () => (
 export const NOVField = () => (
   <Form.Item
     label="Number of Volunteers"
-    name="org_nov"
+    name={["organization", "nov"]}
     rules={[
       {
         type: "number",
         transform: toNumber,
-        message: "Invalid format"
-      }
+        message: "Invalid format",
+      },
     ]}
   >
     <Row gutter={8}>
@@ -197,7 +207,7 @@ export const NOVField = () => (
 export const NodalNameField = () => (
   <Form.Item
     label="Name of Nodal Person"
-    name="org_person"
+    name={["organization", "person"]}
     rules={[{ required: true, message: "Name of Nodal Person is required" }]}
   >
     <Row gutter={8}>
