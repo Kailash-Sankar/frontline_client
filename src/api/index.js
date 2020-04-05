@@ -17,11 +17,11 @@ function authTokenHandler(config) {
 axios.interceptors.request.use((config) => authTokenHandler(config));
 
 axios.interceptors.response.use(
-  function(response) {
+  function (response) {
     // ignore 2xx response
     return response;
   },
-  function(error) {
+  function (error) {
     console.log(error.response);
     if (error.response.status == 401) {
       // clear auth token
@@ -47,6 +47,11 @@ async function saveForm(formData) {
   return res;
 }
 
+async function saveAppealForm(formData) {
+  const res = await axios.post(`/appeal`, formData);
+  return res;
+}
+
 async function login(formData) {
   const res = await axios.post(`/auth/login`, formData);
   return res;
@@ -57,7 +62,7 @@ async function authCheck() {
   return res;
 }
 
-async function getHomePageData(url){
+async function getHomePageData(url) {
   const res = await axios.get(url);
   return res.data.data || [];
 }
@@ -68,5 +73,6 @@ export default {
   getVolunteerCount,
   login,
   authCheck,
-  getHomePageData
+  getHomePageData,
+  saveAppealForm,
 };

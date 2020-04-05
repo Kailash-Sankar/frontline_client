@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Input, DatePicker, Row, Col } from "antd";
+import { Form, Input, DatePicker, Row, Col, Radio } from "antd";
 import { toNumber } from "../utils";
 const { TextArea } = Input;
 
@@ -228,6 +228,19 @@ export const NotesField = () => (
           rows={4}
           placeholder="Leave additional notes here."
         />
+      </Col>
+    </Row>
+  </Form.Item>
+);
+
+export const PubliciseField = () => (
+  <Form.Item label="Publicise Contribution" name="publicise">
+    <Row gutter={8}>
+      <Col span={6}>
+        <Radio.Group>
+          <Radio value="y">Yes</Radio>
+          <Radio value="n">No</Radio>
+        </Radio.Group>
       </Col>
     </Row>
   </Form.Item>

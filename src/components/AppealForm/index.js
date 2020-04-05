@@ -28,7 +28,7 @@ const tailLayout = {
   },
 };
 
-function AppealForm({ handleSubmit, handleError, reset, regions, services }) {
+function AppealForm({ onSubmit, reset, regions, services, initialValues }) {
   const [form] = Form.useForm();
   const { resetFields } = form;
 
@@ -40,11 +40,11 @@ function AppealForm({ handleSubmit, handleError, reset, regions, services }) {
   const [nonMedical, setNonMedical] = React.useState([]);
 
   const onFinish = (values) => {
-    handleSubmit(values);
+    onSubmit(values);
   };
 
   const onFinishFailed = (errorInfo) => {
-    handleError(errorInfo);
+    console.log("form error", errorInfo);
   };
 
   const getMetaMap = (meta) =>
@@ -64,15 +64,10 @@ function AppealForm({ handleSubmit, handleError, reset, regions, services }) {
     <Form
       form={form}
       {...layout}
-      initialValues={{
-        remember: true,
-      }}
+      initialValues={initialValues}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
     >
-      <AppealField />
-      <TagField />
-
       <RegionSelect options={regions} />
       <PinField />
 
@@ -88,6 +83,9 @@ function AppealForm({ handleSubmit, handleError, reset, regions, services }) {
         onChange={onNonMedicalChange}
       />
       <DynamicServicList serviceType="nonmedical" options={nonMedical} />
+
+      <AppealField />
+      <TagField />
 
       <Form.Item {...tailLayout}>
         <Button type="primary" htmlType="submit">
