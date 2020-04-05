@@ -62,8 +62,9 @@ export const TopBar = ({ loggedIn, user, volunteerCount }) => {
 export function RenderMenu() {
   const location = useLocation();
   const selected = location.pathname;
+
   return (
-    <Menu theme="dark" mode="inline" defaultSelectedKeys={[selected]}>
+    <Menu theme="dark" mode="inline" selectedKeys={[selected]}>
       <Menu.Item key="/">
         <Link to="/">
           <HomeOutlined />

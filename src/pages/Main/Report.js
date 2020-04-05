@@ -5,6 +5,7 @@ import { Empty } from "antd";
 import { connecter } from "@store/report";
 import options from "@utils/Options";
 import { formatSearchQuery } from "./utils";
+import { queryLimit } from "@utils/constants";
 
 function Report({
   result,
@@ -28,9 +29,12 @@ function Report({
   }
 
   function handleSearch() {
-    const params = formatSearchQuery({ mode, region, service });
-    params.act = "volunteer"; // fixed type field
-    search(params);
+    const query = formatSearchQuery({ mode, region, service });
+    query.act = "volunteer"; // fixed type field
+    search({
+      query,
+      limit: queryLimit,
+    });
   }
 
   const searchProps = {
