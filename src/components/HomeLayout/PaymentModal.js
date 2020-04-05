@@ -14,13 +14,13 @@ const PaymentModal = props => {
         <Button key="close" type="secondary" onClick={() => props.setShowModal(false)}>Close</Button>,
       ]}
     >
-        <h3 className="payment-header">{"Click Below Button to donate to Chief Minister's Releafe fund"}</h3>
+        <h3 className="payment-header">{"Click Below Button to donate to Chief Minister's relief fund"}</h3>
         <p style={{textAlign:"center", marginBottom: "15px"}}>
             <a href="https://cmrf.karnataka.gov.in/English/index.html" target="_new">
                 <Button type="primary">Donate Now</Button>
             </a>
         </p>
-        <p className="payment-seperator-text"> OR, PLEASE DONATE TO FOLLOWING ACCOUNT.</p>
+        <p className="payment-seperator-text"></p>
          <Row>
              <Col span={24}>
                  <List>
@@ -29,11 +29,11 @@ const PaymentModal = props => {
                     </List.Item>
                     <List.Item>
                         <span className="payment-field-label">ACCOUNT NO:</span>  
-                        <span className="payment-field-value">38690610155</span>
+                        <span className="payment-field-value">XXXXXXXXXX</span>
                     </List.Item>
                     <List.Item>
                         <span className="payment-field-label">IFSC CODE:</span>  
-                        <span className="payment-field-value">SBIN0040277</span>
+                        <span className="payment-field-value">XXXXXXXXXX</span>
                     </List.Item>
                     <List.Item><span className="payment-field-label">SBI, VIDHANA SOUDHA BRANCH, BENGALURU</span></List.Item>
                  </List>
