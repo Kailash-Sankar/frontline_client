@@ -57,10 +57,16 @@ async function authCheck() {
   return res;
 }
 
+async function getHomePageData(url){
+  const res = await axios.get(url);
+  return res.data.data || [];
+}
+
 export default {
   search,
   saveForm,
   getVolunteerCount,
   login,
-  authCheck
+  authCheck,
+  getHomePageData
 };
