@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter as Router, Route } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 
 import { Layout } from "antd";
@@ -30,9 +30,11 @@ function App({ loggedIn, user, volunteerCount }) {
 
   return (
     <Router>
+      <Switch>
       <Route exact path="/">
         <Home {...pageProps} />
       </Route>
+      <Route>
       <Layout>
         <SideBar loggedIn={loggedIn} />
         <Layout className={classnames({ [styles.layout]: loggedIn })}>
@@ -82,6 +84,8 @@ function App({ loggedIn, user, volunteerCount }) {
           </Footer>
         </Layout>
       </Layout>
+      </Route>
+      </Switch>
     </Router>
   );
 }
