@@ -7,24 +7,24 @@ const Statistics = props => {
       return (
         <React.Fragment key={index}>
           <Row className="covid-stat">
-            <Col span="24"><h3 style={{margin:"0px"}}>{item.title}</h3></Col>
+            <Col span="24"><h3 style={{margin:"0px"}}>{item.title|| ''}</h3></Col>
           </Row>
           <Row>
             <Col span="6">
               <div className="covid-stat-header">CONFIRMED</div>
-              <div className="covid-stat-data">{item.confirmed}</div>
+              <div className="covid-stat-data">{item.confirmed || 0}</div>
             </Col>
             <Col span="6">
               <div className="covid-stat-header">ACTIVE</div>
-              <div className="covid-stat-data">{item.active}</div>
+              <div className="covid-stat-data">{item.active || 0}</div>
             </Col>
             <Col span="6">
               <div className="covid-stat-header">RECOVERED</div>
-              <div className="covid-stat-data">{item.recovered}</div>
+              <div className="covid-stat-data">{item.recovered || 0}</div>
             </Col>
             <Col span="6">
               <div className="covid-stat-header">DECEASED</div>
-              <div className="covid-stat-data">{item.deceased}</div>
+              <div className="covid-stat-data">{item.deaths || 0}</div>
             </Col>
           </Row>
         </React.Fragment>
