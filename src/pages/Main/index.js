@@ -30,20 +30,20 @@ function App({ loggedIn, user, volunteerCount }) {
 
   return (
     <Router>
+      <Route exact path="/">
+        <Home {...pageProps} />
+      </Route>
       <Layout>
         <SideBar loggedIn={loggedIn} />
         <Layout className={classnames({ [styles.layout]: loggedIn })}>
+          {loggedIn? 
           <TopBar
             loggedIn={loggedIn}
             user={user}
             volunteerCount={volunteerCount}
-          />
+          /> : null}
           <Content style={{ margin: "24px 16px 0", overflow: "initial" }}>
             <div className={styles.contentWrapper}>
-              <Route exact path="/">
-                <Home {...pageProps} />
-              </Route>
-
               <Route path="/volunteer">
                 <VolunteerSignup {...pageProps} />
               </Route>
