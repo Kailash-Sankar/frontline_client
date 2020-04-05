@@ -89,7 +89,7 @@ const HomePage = props => {
             <Spacer display="block" height={20} />
             <Row>
                 <Col span={24}>
-                   <ImageCarousel caurosalData={caurosalData}/>
+                   <ImageCarousel caurosalData={caurosalData} imageWidth="95%"/>
                 </Col>
             </Row>
             </Col>
