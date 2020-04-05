@@ -3,12 +3,13 @@ import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 
 import { Layout } from "antd";
-import { HeartOutlined } from "@ant-design/icons";
+//import { HeartOutlined } from "@ant-design/icons";
 
 import VolunteerSignup from "./VolunteerSignup";
 import Report from "./Report";
 import Login from "./Login";
 import { TopBar, SideBar } from "@components/Navigation";
+import PageFooter from '@components/Footer';
 
 import * as styles from "./index.module.less";
 
@@ -25,7 +26,7 @@ import Appeal from "./Appeal";
 
 const { Content, Footer } = Layout;
 
-function App({ loggedIn, user, volunteerCount }) {
+function App({ loggedIn, user }) {
   const pageProps = {};
 
   return (
@@ -38,12 +39,10 @@ function App({ loggedIn, user, volunteerCount }) {
       <Layout>
         <SideBar loggedIn={loggedIn} />
         <Layout className={classnames({ [styles.layout]: loggedIn })}>
-          {loggedIn? 
           <TopBar
             loggedIn={loggedIn}
             user={user}
-            volunteerCount={volunteerCount}
-          /> : null}
+          />
           <Content style={{ margin: "24px 16px 0", overflow: "initial" }}>
             <div className={styles.contentWrapper}>
               <Route path="/volunteer">
@@ -80,7 +79,7 @@ function App({ loggedIn, user, volunteerCount }) {
             </div>
           </Content>
           <Footer style={{ textAlign: "center" }}>
-            Volunteer and Support our community <HeartOutlined />
+            <PageFooter />
           </Footer>
         </Layout>
       </Layout>

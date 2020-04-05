@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Row, Col, Affix, Button } from "antd";
 import { Spacer } from "@components/Utils";
+import Footer from '@components/Footer';
 import { Link, useHistory } from "react-router-dom";
 import {
   ImageCarousel,
@@ -225,59 +226,12 @@ const HomePage = (props) => {
       </Col>
       <Spacer display="block" height={20} />
       <Col span={24}>
-        <Row>
-          <Col
-            md={3}
-            lg={3}
-            sm={12}
-            xs={12}
-            style={{ paddingLeft: "5px", marginBottom: "10px" }}
-          >
-            <h3 style={{ marginBottom: "0px" }}>CONTACT DETAILS</h3>
-            <h3>TO GET INVOLVED:</h3>
-          </Col>
-          <Col md={4} lg={4} sm={12} xs={12} className="border-right">
-            Phone
-            <br />
-            080-22284420
-          </Col>
-          <Col
-            md={7}
-            lg={7}
-            sm={24}
-            xs={24}
-            className="border-right"
-            style={{ paddingLeft: "8px", marginBottom: "10px" }}
-          >
-            Whatsapp
-            <br />
-            7760802872 / 8142941915
-          </Col>
-          <Col md={10} lg={10} sm={24} xs={24} style={{ paddingLeft: "8px" }}>
-            Email
-            <br />
-            <a
-              href="mailto:kafightskorona@karnataka.gov"
-              style={{ color: "#fff" }}
-            >
-              kafightskorona@karnataka.gov
-            </a>{" "}
-            /
-            <a
-              href="mailto:karnatakafightscorona@gmail.com"
-              style={{ color: "#fff" }}
-            >
-              {" "}
-              karnatakafightscorona@gmail.com
-            </a>
-          </Col>
-        </Row>
+        <Footer noBackground={true}/>
       </Col>
       <Spacer display="block" height={15} />
       <Affix
         offsetBottom={20}
-        style={{ right: 30, position: "fixed", bottom: 30 }}
-      >
+        style={{ right: 30, position: "fixed", bottom: 30 }}>
         <Button type="primary">Request for Help</Button>
       </Affix>
     </Row>
