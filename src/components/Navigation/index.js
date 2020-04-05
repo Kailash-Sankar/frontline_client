@@ -14,6 +14,7 @@ import {
   FormOutlined,
   LoginOutlined,
   LogoutOutlined,
+  GlobalOutlined,
 } from "@ant-design/icons";
 import CountBadge from "@components/Misc/CountBadge";
 
@@ -77,7 +78,7 @@ export function RenderMenu() {
       </Menu.Item>
       <Menu.Item key="/kind">
         <Link to="/kind">
-          <DeploymentUnitOutlined />
+          <GlobalOutlined />
           <span className="nav-text">Kind</span>
         </Link>
       </Menu.Item>

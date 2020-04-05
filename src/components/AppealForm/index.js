@@ -1,24 +1,44 @@
-import React from "react";
-import { Form, Input, Button, Select } from "antd";
-const { TextArea } = Input;
-const { Option } = Select;
+import React, { useEffect } from "react";
+import { Form, Button } from "antd";
+
+import {
+  MedicalField,
+  NonMedicalField,
+  RegionSelect,
+} from "@components/VolunteerForm/Fields/Select";
+
+import { PinField } from "@components/VolunteerForm/Fields/Input";
+
+import { DynamicServicList } from "@components/VolunteerForm/Fields/Dynamic";
+
+import { AppealField, TagField } from "./Fields";
 
 const layout = {
   labelCol: {
-    span: 4
+    span: 4,
   },
   wrapperCol: {
-    span: 12
-  }
+    span: 12,
+  },
 };
 const tailLayout = {
   wrapperCol: {
     offset: 8,
-    span: 16
-  }
+    span: 16,
+  },
 };
 
-function AppealForm({ handleSubmit, handleError }) {
+function AppealForm({ handleSubmit, handleError, reset, regions, services }) {
+  const [form] = Form.useForm();
+  const { resetFields } = form;
+
+  useEffect(() => {
+    resetFields();
+  }, [reset]);
+
+  const [medical, setMedical] = React.useState([]);
+  const [nonMedical, setNonMedical] = React.useState([]);
+
   const onFinish = (values) => {
     handleSubmit(values);
   };
@@ -27,43 +47,47 @@ function AppealForm({ handleSubmit, handleError }) {
     handleError(errorInfo);
   };
 
+  const getMetaMap = (meta) =>
+    meta.map((m) => ({ id: m.key, value: m.children }));
+
+  function onMedicalChange(values, meta) {
+    const res = getMetaMap(meta);
+    setMedical(res);
+  }
+
+  function onNonMedicalChange(values, meta) {
+    const res = getMetaMap(meta);
+    setNonMedical(res);
+  }
+
   return (
     <Form
+      form={form}
       {...layout}
-      name="basic"
       initialValues={{
-        remember: true
+        remember: true,
       }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
     >
-      <Form.Item
-        label="Appeal"
-        name="appeal"
-        rules={[
-          {
-            required: true,
-            message: "A brief appeal is required."
-          }
-        ]}
-      >
-        <TextArea
-          rows={4}
-          placeholder={"Please describe your need as precisely as possible"}
-        />
-      </Form.Item>
+      <AppealField />
+      <TagField />
 
-      <Form.Item
-        name="tags"
-        label="Tags"
-        //rules={[{ required: false, message: 'Please select', type: 'array' }]}
-      >
-        <Select mode="tags" placeholder="Please select applcable tags.">
-          <Option value="food">Food</Option>
-          <Option value="groceries">Groceries</Option>
-          <Option value="medicines">Medicines</Option>
-        </Select>
-      </Form.Item>
+      <RegionSelect options={regions} />
+      <PinField />
+
+      <MedicalField
+        options={services.medicalOptions}
+        onChange={onMedicalChange}
+      />
+
+      <DynamicServicList serviceType="medical" options={medical} />
+
+      <NonMedicalField
+        options={services.nonMedicalOptions}
+        onChange={onNonMedicalChange}
+      />
+      <DynamicServicList serviceType="nonmedical" options={nonMedical} />
 
       <Form.Item {...tailLayout}>
         <Button type="primary" htmlType="submit">

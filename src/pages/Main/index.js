@@ -21,7 +21,7 @@ import LoginRequired from "./LoginRequired";
 import Kind from "./Kind";
 import KindReport from "./KindReport";
 
-import RequestPage from "./Request";
+import Appeal from "./Appeal";
 
 const { Content, Footer } = Layout;
 
@@ -63,9 +63,9 @@ function App({ loggedIn, user, volunteerCount }) {
                 </LoginRequired>
               </Route>
 
-              <Route path="/request">
+              <Route path="/appeal">
                 <LoginRequired loggedIn={loggedIn}>
-                  <RequestPage {...pageProps} />
+                  <Appeal {...pageProps} />
                 </LoginRequired>
               </Route>
 
