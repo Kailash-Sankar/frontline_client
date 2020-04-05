@@ -14,7 +14,7 @@ const PaymentModal = props => {
         <Button key="close" type="secondary" onClick={() => props.setShowModal(false)}>Close</Button>,
       ]}
     >
-        <h3 className="payment-header">{"Click Below Button to donate to Chief Minister's relief fund"}</h3>
+        <h3 className="payment-header">{"Click the button below to donate to the Chief Minister's Relief Fund"}</h3>
         <p style={{textAlign:"center", marginBottom: "15px"}}>
             <a href="https://cmrf.karnataka.gov.in/English/index.html" target="_new">
                 <Button type="primary">Donate Now</Button>
