@@ -55,7 +55,7 @@ function KindReport({
 
   return (
     <div style={{ textAlign: "left" }}>
-      <h2>Kind Reports</h2>
+      <h2>Support in Kind (Reports)</h2>
       <div>
         <SelectorPanel {...searchProps} />
       </div>
