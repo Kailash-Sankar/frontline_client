@@ -35,7 +35,7 @@ function Kind({ reset, mode, setMode, save }) {
 
   return (
     <div style={{ textAlign: "left" }}>
-      <h2>Donate in Kind</h2>
+      <h2>Support in Kind</h2>
       <FormToggle
         value={mode}
         handleChange={setMode}
