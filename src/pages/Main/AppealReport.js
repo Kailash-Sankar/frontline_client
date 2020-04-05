@@ -2,24 +2,19 @@ import React from "react";
 import SelectorPanel from "@components/SelectorPanel";
 import { KindSearchResults } from "@components/SearchResults";
 import { Empty } from "antd";
-import { connecter } from "@store/kindReport";
+import { connecter } from "@store/appealReport";
 import options from "@utils/Options";
 import { formatSearchQuery } from "./utils";
 import { queryLimit } from "@utils/constants";
 
-function KindReport({
+function AppealReport({
   result,
-  mode,
-  setMode,
   region,
   setRegion,
   search,
   service,
   setService,
 }) {
-  function onModeChange(value) {
-    setMode(value);
-  }
   function onRegionChange(value) {
     setRegion(value);
   }
@@ -30,7 +25,7 @@ function KindReport({
 
   function handleSearch() {
     const query = formatSearchQuery({ mode, region, service });
-    query.act = "kind"; // fixed type field
+    query.act = "appeal"; // fixed type field
     search({
       query,
       limit: queryLimit,
@@ -38,10 +33,6 @@ function KindReport({
   }
 
   const searchProps = {
-    mode,
-    modes: options.other.modeOptions,
-    onModeChange,
-
     region,
     regions: options.regions,
     onRegionChange,
@@ -55,7 +46,7 @@ function KindReport({
 
   return (
     <div style={{ textAlign: "left" }}>
-      <h2>Kind Reports</h2>
+      <h2>Appeal Reports</h2>
       <div>
         <SelectorPanel {...searchProps} />
       </div>
@@ -72,4 +63,4 @@ function KindReport({
   );
 }
 
-export default connecter(KindReport);
+export default connecter(AppealReport);
