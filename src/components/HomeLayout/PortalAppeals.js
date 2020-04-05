@@ -2,10 +2,10 @@ import React from "react";
 import { List, Badge, Tag } from "antd";
 import { getStringAttr } from "@utils/Parser/strUtils";
 
-const renderRow = (label, rowData) => {
+const renderRow = (rowData) => {
   return (
     <span>
-      {label}: <Tag>{getStringAttr(rowData)}</Tag>
+      <Tag>{getStringAttr(rowData)}</Tag>
     </span>
   );
 };
@@ -19,8 +19,8 @@ const PortalAppeals = (props) => {
       >
         <Badge status="processing" />
         We need the following supplies,
-        <div>{renderRow("Medical", data.services.medical)}</div>
-        <div>{renderRow("Non-Medical", data.services.nonmedical)}</div>
+        <div>{renderRow(data.services.medical)}</div>
+        <div>{renderRow(data.services.nonmedical)}</div>
         at {data.region}
       </List.Item>
     );

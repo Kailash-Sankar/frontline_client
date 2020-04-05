@@ -3,7 +3,6 @@ import { Form, Button } from "antd";
 import { formItemLayout, tailFormItemLayout } from "./layout";
 
 import {
-  ProfessionSelect,
   GenderSelect,
   RegionSelect,
   MedicalField,
@@ -20,6 +19,7 @@ import {
   NotesField,
   AadharField,
   PubliciseField,
+  AreaField,
 } from "./Fields/Input";
 
 import { DynamicServicList } from "./Fields/Dynamic";
@@ -30,7 +30,6 @@ function IndividualKindForm({
   initialValues,
   other,
   regions,
-  domain,
   services,
   onSubmit,
   reset,
@@ -85,9 +84,8 @@ function IndividualKindForm({
         <AddressField />
         <PinField />
 
-        <ProfessionSelect options={domain.professionOptions} />
-
         <RegionSelect options={regions} />
+        <AreaField />
 
         <MedicalField
           options={services.medicalOptions}
