@@ -245,3 +245,13 @@ export const PubliciseField = () => (
     </Row>
   </Form.Item>
 );
+
+export const AreaField = () => (
+  <Form.Item label="Area" name="area">
+    <Row gutter={8}>
+      <Col span={10}>
+        <Input maxLength={25} placeholder="Enter area/locality" />
+      </Col>
+    </Row>
+  </Form.Item>
+);

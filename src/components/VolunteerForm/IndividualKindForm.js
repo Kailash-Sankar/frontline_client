@@ -19,6 +19,7 @@ import {
   NotesField,
   AadharField,
   PubliciseField,
+  AreaField,
 } from "./Fields/Input";
 
 import { DynamicServicList } from "./Fields/Dynamic";
@@ -84,6 +85,7 @@ function IndividualKindForm({
         <PinField />
 
         <RegionSelect options={regions} />
+        <AreaField />
 
         <MedicalField
           options={services.medicalOptions}

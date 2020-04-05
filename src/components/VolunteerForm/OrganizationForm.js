@@ -20,6 +20,7 @@ import {
   RegNumField,
   NOVField,
   NotesField,
+  AreaField,
 } from "./Fields/Input";
 
 import {
@@ -70,8 +71,9 @@ function OrganizationForm({
         <NOVField />
 
         <AddressField />
-        <RegionSelect options={regions} />
         <PinField />
+        <RegionSelect options={regions} />
+        <AreaField />
 
         <NodalNameField />
         <EmailField />
