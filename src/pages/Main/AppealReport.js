@@ -24,7 +24,7 @@ function AppealReport({
   }
 
   function handleSearch() {
-    const query = formatSearchQuery({ mode, region, service });
+    const query = formatSearchQuery({ region, service });
     query.act = "appeal"; // fixed type field
     search({
       query,

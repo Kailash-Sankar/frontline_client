@@ -2,7 +2,9 @@ import axios from "axios";
 import { authStorage } from "@utils/LocalStorage";
 export const serverUrl = "/api"; //"http://localhost:3080/api";
 
-axios.defaults.baseURL = serverUrl;
+const server = axios.create({
+  baseURL: "/api/",
+});
 
 function authTokenHandler(config) {
   if (config) {
@@ -14,9 +16,9 @@ function authTokenHandler(config) {
   return config;
 }
 
-axios.interceptors.request.use((config) => authTokenHandler(config));
+server.interceptors.request.use((config) => authTokenHandler(config));
 
-axios.interceptors.response.use(
+server.interceptors.response.use(
   function (response) {
     // ignore 2xx response
     return response;
@@ -33,42 +35,42 @@ axios.interceptors.response.use(
 );
 
 async function getVolunteerCount() {
-  const res = await axios.get(`/status`);
+  const res = await server.get(`/status`);
   return res.data.data || [];
 }
 
 async function search(params) {
-  const res = await axios.post(`/search/`, params);
+  const res = await server.post(`/search/`, params);
   return res.data.data || [];
 }
 
 async function searchAppeals(params) {
-  const res = await axios.post(`/appeal/search/`, params);
+  const res = await server.post(`/appeal/search/`, params);
   return res.data.data || [];
 }
 
 async function saveForm(formData) {
-  const res = await axios.post(`/volunteer`, formData);
+  const res = await server.post(`/volunteer`, formData);
   return res;
 }
 
 async function saveAppealForm(formData) {
-  const res = await axios.post(`/appeal`, formData);
+  const res = await server.post(`/appeal`, formData);
   return res;
 }
 
 async function login(formData) {
-  const res = await axios.post(`/auth/login`, formData);
+  const res = await server.post(`/auth/login`, formData);
   return res;
 }
 
 async function authCheck() {
-  const res = await axios.post(`/auth/check`);
+  const res = await server.post(`/auth/check`);
   return res;
 }
 
 async function getHomePageData(url) {
-  const res = await axios.get(url);
+  const res = await server.get(url);
   return res.data.data || [];
 }
 

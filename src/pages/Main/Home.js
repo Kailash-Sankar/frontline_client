@@ -114,27 +114,39 @@ const HomePage = (props) => {
           </Col>
         </Row>
 
-            <Spacer display="block" height={40} />
-            <Row>
-                <Col span={24} className="text-large">DONATE.</Col>
-                <Col span={24} className="text-large margin-adjust">SUPPORT.</Col>
-                <Col span={24} className="text-large margin-adjust">VOLUNTEER.</Col>
-            </Row>
-            <Spacer display="block" height={20} />
-            <Row>
-                <Col span={24}>
-                   <ImageCarousel caurosalData={caurosalData} imageWidth="95%"/>
-                </Col>
-            </Row>
-                <Row>
-                    <Col lg={20} sm={24} xs={24} md={20} className="home-text-message">
-                    <h3>The global coronavirus outbreak has forced all of us away from our everyday lives. Although apart, we are all in this fight together.</h3>
-                    <h3>The Government of Karnataka urges you to step forward and help us provide food for relief and healthcare for those in need.</h3>
-                    </Col>
-                </Row>
-            </Col>
-            <Col lg={6} sm={24} xs={24} md={6} className="gutter-row right-conteiner" >
-                <Statistics covidStats={props.covidStats}/>
+        <Spacer display="block" height={40} />
+        <Row>
+          <Col span={24} className="text-large">
+            DONATE.
+          </Col>
+          <Col span={24} className="text-large margin-adjust">
+            SUPPORT.
+          </Col>
+          <Col span={24} className="text-large margin-adjust">
+            VOLUNTEER.
+          </Col>
+        </Row>
+        <Spacer display="block" height={20} />
+        <Row>
+          <Col span={24}>
+            <ImageCarousel caurosalData={caurosalData} imageWidth="95%" />
+          </Col>
+        </Row>
+        <Row>
+          <Col lg={20} sm={24} xs={24} md={20} className="home-text-message">
+            <h3>
+              The global coronavirus outbreak has forced all of us away from our
+              everyday lives. Although apart, we are all in this fight together.
+            </h3>
+            <h3>
+              The Government of Karnataka urges you to step forward and help us
+              provide food for relief and healthcare for those in need.
+            </h3>
+          </Col>
+        </Row>
+      </Col>
+      <Col lg={6} sm={24} xs={24} md={6} className="gutter-row right-conteiner">
+        <Statistics covidStats={props.covidStats} />
         <Row style={{ padding: "5px" }}>
           <Col span="24">
             <PortalAppeals
