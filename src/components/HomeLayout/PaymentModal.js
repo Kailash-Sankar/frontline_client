@@ -17,10 +17,10 @@ const PaymentModal = props => {
         <h3 className="payment-header">{"Click the button below to donate to the Chief Minister's Relief Fund"}</h3>
         <p style={{textAlign:"center", marginBottom: "15px"}}>
             <a href="https://cmrf.karnataka.gov.in/English/index.html" target="_new">
-                <Button type="primary">Donate Now</Button>
+                <Button type="primary">{"Donate to the Chief Minister's Relief Fund"}</Button>
             </a>
         </p>
-        <p className="payment-seperator-text"></p>
+        <p className="payment-seperator-text">OR</p>
          <Row>
              <Col span={24}>
                  <List>
