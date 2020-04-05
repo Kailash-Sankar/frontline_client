@@ -5,9 +5,6 @@ import { Provider } from "react-redux";
 import { Layout } from "antd";
 import { HeartOutlined } from "@ant-design/icons";
 
-import VolunteerSignup from "./VolunteerSignup";
-import Report from "./Report";
-import Login from "./Login";
 import { TopBar, SideBar } from "@components/Navigation";
 
 import * as styles from "./index.module.less";
@@ -15,14 +12,16 @@ import * as styles from "./index.module.less";
 import store from "@store/root";
 import { connecter } from "@store/common";
 import classnames from "classnames";
+
 import Home from "./Home";
+import Login from "./Login";
 import Logout from "./Logout";
 import LoginRequired from "./LoginRequired";
-import Kind from "./Kind";
-import KindReport from "./KindReport";
 
+import VolunteerSignup from "./VolunteerSignup";
+import Kind from "./Kind";
 import Appeal from "./Appeal";
-import AppealReport from "./AppealReport";
+import Report from "./Report";
 
 const { Content, Footer } = Layout;
 
@@ -46,25 +45,14 @@ function App({ loggedIn, user, volunteerCount }) {
                   volunteerCount={volunteerCount}
                 />
               ) : null}
-              <Content style={{ margin: "24px 16px 0", overflow: "initial" }}>
+              <Content className={styles.content}>
                 <div className={styles.contentWrapper}>
                   <Route path="/volunteer">
                     <VolunteerSignup {...pageProps} />
                   </Route>
-                  <Route path="/report">
-                    <LoginRequired loggedIn={loggedIn}>
-                      <Report {...pageProps} />
-                    </LoginRequired>
-                  </Route>
 
                   <Route exact path="/kind">
                     <Kind {...pageProps} />
-                  </Route>
-
-                  <Route exact path="/kind/report">
-                    <LoginRequired loggedIn={loggedIn}>
-                      <KindReport {...pageProps} />
-                    </LoginRequired>
                   </Route>
 
                   <Route exact path="/appeal">
@@ -73,9 +61,9 @@ function App({ loggedIn, user, volunteerCount }) {
                     </LoginRequired>
                   </Route>
 
-                  <Route path="/appeal/report">
+                  <Route path="/report">
                     <LoginRequired loggedIn={loggedIn}>
-                      <AppealReport {...pageProps} />
+                      <Report {...pageProps} />
                     </LoginRequired>
                   </Route>
 

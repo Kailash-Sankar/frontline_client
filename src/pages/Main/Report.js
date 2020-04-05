@@ -1,83 +1,48 @@
 import React from "react";
-import SelectorPanel from "@components/SelectorPanel";
-import { VolunteerSearchResults } from "@components/SearchResults";
-import { Empty } from "antd";
-import { connecter } from "@store/report";
-import options from "@utils/Options";
-import { formatSearchQuery } from "./utils";
-import { queryLimit } from "@utils/constants";
+import VolunteerReport from "./VolunteerReport";
+import KindReport from "./KindReport";
+import AppealReport from "./AppealReport";
+import FormToggle from "@components/FormToggle";
+import { Spacer } from "@components/Utils";
+import { Typography } from "antd";
+const { Title } = Typography;
 
-function Report({
-  result,
-  mode,
-  setMode,
-  region,
-  setRegion,
-  search,
-  service,
-  setService,
-}) {
-  function onModeChange(value) {
-    setMode(value);
+const reportsMap = {
+  volunteer: { id: "volunteer", value: "Volunteer", render: VolunteerReport },
+  kind: { id: "kind", value: "Support in Kind", render: KindReport },
+  appeal: { id: "appeal", value: "Appeal", render: AppealReport },
+};
+
+const Placeholder = () => (
+  <div>
+    <Spacer height={25} display="block" />
+    <Title level={4}>Please select a report type.</Title>
+  </div>
+);
+
+const RenderPage = ({ type }) => {
+  const PageToRender = type in reportsMap ? KindReport : Placeholder;
+  return <PageToRender />;
+};
+
+function Report() {
+  const [type, setType] = React.useState(undefined);
+  function onTypeChange(value) {
+    setType(value);
   }
-  function onRegionChange(value) {
-    setRegion(value);
-  }
-
-  function onServiceChange(value) {
-    setService(value);
-  }
-
-  function handleSearch() {
-    const query = formatSearchQuery({ mode, region, service });
-    query.act = "volunteer"; // fixed type field
-    search({
-      query,
-      limit: queryLimit,
-    });
-  }
-
-  const searchProps = {
-    mode,
-    modes: options.other.modeOptions,
-    onModeChange,
-
-    region,
-    regions: options.regions,
-    onRegionChange,
-
-    service,
-    services: options.services.servicesTree,
-    onServiceChange,
-
-    onSubmit: handleSearch,
-  };
 
   return (
-    <div style={{ textAlign: "left" }}>
-      <h2>Volunteer Reports</h2>
+    <div>
+      <FormToggle
+        options={Object.values(reportsMap)}
+        handleChange={onTypeChange}
+        value={type}
+      />
       <div>
-        <SelectorPanel {...searchProps} />
+        <RenderPage type={type} />
       </div>
-      {result && result.length > 0 ? (
-        <div style={{ margin: 30 }}>
-          <VolunteerSearchResults result={result} />
-        </div>
-      ) : (
-        <div style={{ marginTop: 100 }}>
-          <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />
-        </div>
-      )}
     </div>
   );
 }
 
-/*
-  <div style={{ marginTop: 20 }}>
-    <Button type="primary" onClick={handleDownload}>
-      Download
-    </Button>
-  </div>
-*/
-
-export default connecter(Report);
+export default Report;
