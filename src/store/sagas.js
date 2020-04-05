@@ -7,6 +7,8 @@ import { types as commonTypes } from "./common";
 import { types as kindTypes } from "./kind";
 import { types as kindReportTypes } from "./kindReport";
 import { types as appealTypes } from "./appeal";
+import { types as homeTypes } from "./homeContent";
+import { types as appealReportTypes } from "./appealReport";
 
 import notify from "@utils/Notification";
 import { authStorage } from "@utils/LocalStorage";
@@ -38,6 +40,7 @@ function* initVolunteerCount() {
   yield put({ type: commonTypes.SET_COUNT, volunteerCount: res });
 }
 
+// volunteer and kind search
 function* search(scope, action) {
   try {
     const res = yield call(Api.search, action.params);
@@ -49,6 +52,32 @@ function* search(scope, action) {
     } else {
       notify.base("Error, please reload and try again");
     }
+  }
+}
+
+// appeals search
+function* searchAppeals(scope, action) {
+  try {
+    const res = yield call(Api.searchAppeals, action.params);
+    yield put({ type: scope.SET_RESULT, result: res });
+  } catch (err) {
+    if (err.response.status === 401) {
+      notify.base("Session expired", "Please login again");
+      yield put({ type: commonTypes.LOGOUT });
+    } else {
+      notify.base("Error, please reload and try again");
+    }
+  }
+}
+
+// get appeals for home page
+function* fetchAppeals(action) {
+  try {
+    const res = yield call(Api.searchAppeals, action.params);
+    yield put({ type: homeTypes.SET_APPEALS, appeals: res });
+  } catch (err) {
+    // fail silently
+    console.log("fetching failed", err);
   }
 }
 
@@ -128,6 +157,7 @@ export function* initSaga() {
   /// reports
   yield takeLatest(reportTypes.SEARCH, search, reportTypes);
   yield takeLatest(kindReportTypes.SEARCH, search, kindReportTypes);
+  yield takeLatest(appealReportTypes.SEARCH, searchAppeals, appealReportTypes);
 
   // save volunteers and kind
   yield takeLatest(volunteerTypes.SAVE, saveData, volunteerTypes);
@@ -139,6 +169,9 @@ export function* initSaga() {
   // auth
   yield takeLatest(commonTypes.LOGIN, login);
   yield takeLatest(commonTypes.LOGOUT, logout);
+
+  // home page
+  yield takeLatest(homeTypes.FETCH_APPEALS, fetchAppeals);
 
   // load test
   yield helloSaga();

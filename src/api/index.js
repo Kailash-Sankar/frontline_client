@@ -42,6 +42,11 @@ async function search(params) {
   return res.data.data || [];
 }
 
+async function searchAppeals(params) {
+  const res = await axios.post(`/appeal/search/`, params);
+  return res.data.data || [];
+}
+
 async function saveForm(formData) {
   const res = await axios.post(`/volunteer`, formData);
   return res;
@@ -75,4 +80,5 @@ export default {
   authCheck,
   getHomePageData,
   saveAppealForm,
+  searchAppeals,
 };
