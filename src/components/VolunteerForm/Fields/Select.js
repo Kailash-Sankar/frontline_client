@@ -93,7 +93,7 @@ export const OrgTypeSelect = ({ options }) => (
 );
 
 export const MedicalField = ({ options, onChange }) => (
-  <Form.Item name={["services", "medical", "id"]} label="Medical Services">
+  <Form.Item name={["services", "medical", "id"]} label="Medical Supplies">
     <Select mode="multiple" onChange={onChange} style={{ width: 400 }}>
       {renderOptionsObject(options)}
     </Select>
@@ -103,7 +103,7 @@ export const MedicalField = ({ options, onChange }) => (
 export const NonMedicalField = ({ options, onChange }) => (
   <Form.Item
     name={["services", "nonmedical", "id"]}
-    label="Non-Medical Services"
+    label="Food &amp; Essential Supplies"
   >
     <Select mode="multiple" onChange={onChange} style={{ width: 400 }}>
       {renderOptionsObject(options)}

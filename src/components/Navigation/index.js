@@ -67,8 +67,6 @@ export function RenderMenu() {
 
   console.log("selected", selected);
 
-  selected = ["appeal", "post"];
-
   return (
     <Menu
       theme="dark"
@@ -124,8 +122,8 @@ export function RenderMenu() {
           </Link>
         </Menu.Item>
 
-        <Menu.Item key="/kind/reports">
-          <Link to="/kind/reports">
+        <Menu.Item key="/kind/report">
+          <Link to="/kind/report">
             <FileSearchOutlined />
             <span className="nav-text">Reports</span>
           </Link>
@@ -148,16 +146,16 @@ export function RenderMenu() {
           </Link>
         </Menu.Item>
 
-        <Menu.Item key="reports">
-          <Link to="/appeal/reports">
+        <Menu.Item key="/appeal/report">
+          <Link to="/appeal/report">
             <FileSearchOutlined />
             <span className="nav-text">Reports</span>
           </Link>
         </Menu.Item>
       </SubMenu>
 
-      <Menu.Item key="requests">
-        <Link to="/requests">
+      <Menu.Item key="/request">
+        <Link to="/request">
           <FileSearchOutlined />
           <span className="nav-text">Request for help</span>
         </Link>

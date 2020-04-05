@@ -3,7 +3,6 @@ import { Form, Button } from "antd";
 import { formItemLayout, tailFormItemLayout } from "./layout";
 
 import {
-  ProfessionSelect,
   GenderSelect,
   RegionSelect,
   MedicalField,
@@ -30,7 +29,6 @@ function IndividualKindForm({
   initialValues,
   other,
   regions,
-  domain,
   services,
   onSubmit,
   reset,
@@ -84,8 +82,6 @@ function IndividualKindForm({
 
         <AddressField />
         <PinField />
-
-        <ProfessionSelect options={domain.professionOptions} />
 
         <RegionSelect options={regions} />
 
