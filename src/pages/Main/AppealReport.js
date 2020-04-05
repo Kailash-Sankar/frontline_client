@@ -1,6 +1,6 @@
 import React from "react";
 import SelectorPanel from "@components/SelectorPanel";
-import { KindSearchResults } from "@components/SearchResults";
+import { AppealSearchResults } from "@components/SearchResults";
 import { Empty } from "antd";
 import { connecter } from "@store/appealReport";
 import options from "@utils/Options";
@@ -52,7 +52,7 @@ function AppealReport({
       </div>
       {result && result.length > 0 ? (
         <div style={{ margin: 30 }}>
-          <KindSearchResults result={result} />
+          <AppealSearchResults result={result} />
         </div>
       ) : (
         <div style={{ marginTop: 100 }}>
