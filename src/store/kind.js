@@ -46,9 +46,11 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const getSelectedAppeal = (state) => state.home.selAppeal;
+const getAppeals = (state) => state.home.appeals;
+
 export const selAppealSelector = createSelector(
-  [getSelectedAppeal],
-  (id) => id
+  [getAppeals, getSelectedAppeal],
+  (appeals, id) => appeals.find((r) => r._id == id)
 );
 
 // state from root state
