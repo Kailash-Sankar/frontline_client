@@ -231,9 +231,10 @@ const HomePage = (props) => {
       <Spacer display="block" height={15} />
       <Affix
         offsetBottom={20}
-        style={{ right: 30, position: "fixed", bottom: 30 }}
-      >
-        <Button type="primary">Request for Help</Button>
+        style={{ right: 30, position: "fixed", bottom: 30 }}>
+        <Link to="/request">
+          <Button type="primary">Request for Help</Button>
+        </Link>
       </Affix>
     </Row>
   );

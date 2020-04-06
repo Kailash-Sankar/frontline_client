@@ -49,6 +49,11 @@ async function searchAppeals(params) {
   return res.data.data || [];
 }
 
+async function searchRequests(params){
+  const res = await server.post(`/request/search`, params);
+  return res.data.data || [];
+}
+
 async function saveForm(formData) {
   const res = await server.post(`/volunteer`, formData);
   return res;
@@ -74,6 +79,11 @@ async function getHomePageData(url) {
   return res.data.data || [];
 }
 
+async function saveHelpRequest(formData){
+  const res = await server.post('/request', formData);
+  return res.data.data || null;
+}
+
 export default {
   search,
   saveForm,
@@ -83,4 +93,6 @@ export default {
   getHomePageData,
   saveAppealForm,
   searchAppeals,
+  saveHelpRequest,
+  searchRequests,
 };
