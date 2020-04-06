@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Row, Col, Affix, Button } from "antd";
 import { Spacer } from "@components/Utils";
-import Footer from '@components/Footer';
+import Footer from "@components/Footer";
 import { Link, useHistory } from "react-router-dom";
 import {
   ImageCarousel,
@@ -97,17 +97,17 @@ const HomePage = (props) => {
         <Row>
           <Col span={24} className="layout-header">
             <Row>
-              <Col lg={6} md={6} sm={8} xs={8} style={{textAlign:'center'}}>
-                <img src={StateLogo} className="state-logo" /><br/>
-                <span className="header-text">
-                  #karnatakafightscovid19
-                </span>
+              <Col lg={6} md={6} sm={8} xs={8} style={{ textAlign: "center" }}>
+                <img src={StateLogo} className="state-logo" />
+                <br />
+                <span className="header-text">#karnatakafightscorona</span>
               </Col>
               <Col lg={12} md={12} sm={8} xs={8} className="logo-banner">
-                SANKALPA
+                Sankalpa
               </Col>
               <Col lg={6} md={6} sm={8} xs={8} className="cm-image-container">
-                <img src={cmIMG} className="cm-logo" /><br/>
+                <img src={cmIMG} className="cm-logo" />
+                <br />
                 <span className="header-text">#donatemadona</span>
               </Col>
             </Row>
@@ -137,8 +137,6 @@ const HomePage = (props) => {
             <h3>
               The global coronavirus outbreak has forced all of us away from our
               everyday lives. Although apart, we are all in this fight together.
-            </h3>
-            <h3>
               The Government of Karnataka urges you to step forward and help us
               provide food for relief and healthcare for those in need.
             </h3>
@@ -161,7 +159,9 @@ const HomePage = (props) => {
         <Row>
           <Col lg={8} sm={24} xs={24} className="bottom-btn-containers">
             <div className="goto-text" onClick={() => setShowModal(true)}>
-              DONATE FUNDS <ArrowRightOutlined />
+              <a>
+                DONATE FUNDS <ArrowRightOutlined />
+              </a>
             </div>
             <div>
               <div>
@@ -226,12 +226,13 @@ const HomePage = (props) => {
       </Col>
       <Spacer display="block" height={20} />
       <Col span={24}>
-        <Footer noBackground={true}/>
+        <Footer noBackground={true} />
       </Col>
       <Spacer display="block" height={15} />
       <Affix
         offsetBottom={20}
-        style={{ right: 30, position: "fixed", bottom: 30 }}>
+        style={{ right: 30, position: "fixed", bottom: 30 }}
+      >
         <Button type="primary">Request for Help</Button>
       </Affix>
     </Row>
