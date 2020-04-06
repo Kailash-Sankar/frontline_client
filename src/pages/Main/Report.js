@@ -1,7 +1,7 @@
 import React from "react";
-import VolunteerReport from "./VolunteerReport";
-import KindReport from "./KindReport";
-import AppealReport from "./AppealReport";
+import VolunteerReport from "../Reports/VolunteerReport";
+import KindReport from "../Reports/KindReport";
+import AppealReport from "../Reports/AppealReport";
 import FormToggle from "@components/FormToggle";
 import { Spacer } from "@components/Utils";
 import { Typography } from "antd";

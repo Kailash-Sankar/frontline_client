@@ -6,7 +6,7 @@ import { Layout } from "antd";
 //import { HeartOutlined } from "@ant-design/icons";
 
 import { TopBar, SideBar } from "@components/Navigation";
-import PageFooter from '@components/Footer';
+import PageFooter from "@components/Footer";
 
 import * as styles from "./index.module.less";
 
@@ -26,7 +26,7 @@ import Report from "./Report";
 
 const { Content, Footer } = Layout;
 
-function App({ loggedIn, user }) {
+function App({ loggedIn, user, volunteerCount }) {
   const pageProps = {};
 
   return (
@@ -77,7 +77,7 @@ function App({ loggedIn, user }) {
                 </div>
               </Content>
               <Footer style={{ textAlign: "center" }}>
-                Volunteer and Support our community <HeartOutlined />
+                <PageFooter />
               </Footer>
             </Layout>
           </Layout>
@@ -86,6 +86,8 @@ function App({ loggedIn, user }) {
     </Router>
   );
 }
+
+//  Volunteer and Support our community <HeartOutlined />
 
 const AppHOC = connecter(App);
 

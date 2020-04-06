@@ -1,25 +1,20 @@
 import React from "react";
 import SelectorPanel from "@components/SelectorPanel";
-import { KindSearchResults } from "@components/SearchResults";
+import { AppealSearchResults } from "@components/SearchResults";
 import { Empty } from "antd";
-import { connecter } from "@store/kindReport";
+import { connecter } from "@store/appealReport";
 import options from "@utils/Options";
-import { formatSearchQuery } from "./utils";
+import { formatSearchQuery } from "../utils";
 import { queryLimit } from "@utils/constants";
 
-function KindReport({
+function AppealReport({
   result,
-  mode,
-  setMode,
   region,
   setRegion,
   search,
   service,
   setService,
 }) {
-  function onModeChange(value) {
-    setMode(value);
-  }
   function onRegionChange(value) {
     setRegion(value);
   }
@@ -29,8 +24,8 @@ function KindReport({
   }
 
   function handleSearch() {
-    const query = formatSearchQuery({ mode, region, service });
-    query.act = "kind"; // fixed type field
+    const query = formatSearchQuery({ region, service });
+    query.act = "appeal"; // fixed type field
     search({
       query,
       limit: queryLimit,
@@ -38,10 +33,6 @@ function KindReport({
   }
 
   const searchProps = {
-    mode,
-    modes: options.other.modeOptions,
-    onModeChange,
-
     region,
     regions: options.regions,
     onRegionChange,
@@ -55,13 +46,13 @@ function KindReport({
 
   return (
     <div style={{ textAlign: "left" }}>
-      <h2>Support in Kind (Reports)</h2>
+      <h2>Appeal Reports</h2>
       <div>
         <SelectorPanel {...searchProps} />
       </div>
       {result && result.length > 0 ? (
         <div style={{ margin: 30 }}>
-          <KindSearchResults result={result} />
+          <AppealSearchResults result={result} />
         </div>
       ) : (
         <div style={{ marginTop: 100 }}>
@@ -72,4 +63,4 @@ function KindReport({
   );
 }
 
-export default connecter(KindReport);
+export default connecter(AppealReport);
