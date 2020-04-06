@@ -24,17 +24,22 @@ function SelectorPanel({
   services,
   onServiceChange,
 
-  onSubmit
+  onSubmit,
 }) {
   //console.log("sp", arguments[0]);
   return (
     <div>
-      <div className={styles.selectorCo}>
-        <span>Type</span>
-        <ModeSelect mode={mode} modes={modes} onModeChange={onModeChange} />
-      </div>
-
-      <Spacer />
+      {onModeChange ? (
+        <>
+          <div className={styles.selectorCo}>
+            <span>Type</span>
+            <ModeSelect mode={mode} modes={modes} onModeChange={onModeChange} />
+          </div>
+          <Spacer />
+        </>
+      ) : (
+        ""
+      )}
 
       <div className={styles.selectorCo}>
         <span>Region</span>

@@ -19,6 +19,7 @@ import {
   EmailField,
   DOBField,
   NotesField,
+  AreaField,
 } from "./Fields/Input";
 
 import {
@@ -70,8 +71,10 @@ function IndividualForm({
         <ConfirmMobileField />
 
         <AddressField />
-        <RegionSelect options={regions} />
         <PinField />
+
+        <RegionSelect options={regions} />
+        <AreaField />
 
         <AvailabilitySelect options={domain.availabilityOptions} />
         <QualificationSelect options={domain.qualificationOptions} />

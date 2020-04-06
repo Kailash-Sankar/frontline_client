@@ -8,6 +8,7 @@ import { initSaga } from "./sagas";
 import kindReducer from "./kind";
 import kindReportReducer from "./kindReport";
 import appealReducer from "./appeal";
+import appealReportReducer from "./appealReport";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
   kindReport: kindReportReducer,
   home: homeContentReducer,
   appeal: appealReducer,
+  appealReport: appealReportReducer,
 });
 
 const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));

@@ -20,6 +20,7 @@ import {
   NodalNameField,
   RegNumField,
   PubliciseField,
+  AreaField,
 } from "./Fields/Input";
 
 import { DynamicServicList } from "./Fields/Dynamic";
@@ -86,6 +87,7 @@ function OrganizationKindForm({
         <PinField />
 
         <RegionSelect options={regions} />
+        <AreaField />
 
         <MedicalField
           options={services.medicalOptions}

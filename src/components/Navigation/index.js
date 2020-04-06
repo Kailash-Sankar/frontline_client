@@ -3,8 +3,8 @@ import { Spacer } from "@components/Utils";
 import { Menu, Layout } from "antd";
 import { Link, useLocation } from "react-router-dom";
 import * as styles from "./index.module.less";
-const { SubMenu } = Menu;
 import StateLogo from "@images/state-logo.png";
+
 
 //import logo from "@images/logo.png";
 
@@ -61,8 +61,6 @@ export function RenderMenu() {
 
   console.log("selected", selected);
 
-  selected = ["appeal", "post"];
-
   return (
     <Menu
       theme="dark"
@@ -77,83 +75,38 @@ export function RenderMenu() {
         </Link>
       </Menu.Item>
 
-      <SubMenu
-        key="volunteer"
-        title={
-          <span>
-            <DeploymentUnitOutlined />
-            <span className="nav-text">Volunteer</span>
-          </span>
-        }
-        disabled
-      >
-        <Menu.Item key="/volunteer">
-          <Link to="/volunteer">
-            <FormOutlined />
-            <span className="nav-text"> Post </span>
-          </Link>
-        </Menu.Item>
+      <Menu.Item key="/volunteer" disabled>
+        <Link to="/volunteer">
+          <DeploymentUnitOutlined />
+          <span className="nav-text"> Volunteer </span>
+        </Link>
+      </Menu.Item>
 
-        <Menu.Item key="/report">
-          <Link to="/report">
-            <FileSearchOutlined />
-            <span className="nav-text">Reports</span>
-          </Link>
-        </Menu.Item>
-      </SubMenu>
+      <Menu.Item key="/kind">
+        <Link to="/kind">
+          <GlobalOutlined />
+          <span className="nav-text">Support in Kind</span>
+        </Link>
+      </Menu.Item>
 
-      <SubMenu
-        key="kind"
-        title={
-          <span>
-            <GlobalOutlined />
-            <span className="nav-text">Support in Kind</span>
-          </span>
-        }
-      >
-        <Menu.Item key="/kind">
-          <Link to="/kind">
-            <FormOutlined />
-            <span className="nav-text">Post</span>
-          </Link>
-        </Menu.Item>
+      <Menu.Item key="/appeal">
+        <Link to="/appeal">
+          <PicLeftOutlined />
+          <span className="nav-text">Appeal</span>
+        </Link>
+      </Menu.Item>
 
-        <Menu.Item key="/kind/reports">
-          <Link to="/kind/reports">
-            <FileSearchOutlined />
-            <span className="nav-text">Reports</span>
-          </Link>
-        </Menu.Item>
-      </SubMenu>
-
-      <SubMenu
-        key="appeal"
-        title={
-          <span>
-            <PicLeftOutlined />
-            <span className="nav-text">Appeal</span>
-          </span>
-        }
-      >
-        <Menu.Item key="/appeal">
-          <Link to="/appeal">
-            <FormOutlined />
-            <span className="nav-text">Post</span>
-          </Link>
-        </Menu.Item>
-
-        <Menu.Item key="reports">
-          <Link to="/appeal/reports">
-            <FileSearchOutlined />
-            <span className="nav-text">Reports</span>
-          </Link>
-        </Menu.Item>
-      </SubMenu>
-
-      <Menu.Item key="requests">
-        <Link to="/requests">
-          <FileSearchOutlined />
+      <Menu.Item key="/request">
+        <Link to="/request">
+          <FormOutlined />
           <span className="nav-text">Request for help</span>
+        </Link>
+      </Menu.Item>
+
+      <Menu.Item key="/report">
+        <Link to="/report">
+          <FileSearchOutlined />
+          <span className="nav-text">Reports</span>
         </Link>
       </Menu.Item>
     </Menu>
