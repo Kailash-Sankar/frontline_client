@@ -11,10 +11,10 @@ function Details({ record }) {
 
   return (
     <Descriptions title="Details" bordered>
-      <Item label="Medical Services" span={3}>
+      <Item label="Medical Services" span={2}>
         {getStringAttr(record.services.medical)}
       </Item>
-      <Item label="Non-Medical Services" span={3}>
+      <Item label="Non-Medical Services" span={2}>
         {getStringAttr(record.services.nonmedical)}
       </Item>
 
