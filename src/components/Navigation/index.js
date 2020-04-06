@@ -3,11 +3,12 @@ import { Spacer } from "@components/Utils";
 import { Menu, Layout } from "antd";
 import { Link, useLocation } from "react-router-dom";
 import * as styles from "./index.module.less";
+import StateLogo from "@images/state-logo.png";
+
 
 //import logo from "@images/logo.png";
 
 import {
-  FlagOutlined,
   DeploymentUnitOutlined,
   FileSearchOutlined,
   HomeOutlined,
@@ -17,27 +18,21 @@ import {
   GlobalOutlined,
   PicLeftOutlined,
 } from "@ant-design/icons";
-import CountBadge from "@components/Misc/CountBadge";
 
 const { Header, Sider } = Layout;
 
-export const TopBar = ({ loggedIn, user, volunteerCount }) => {
+export const TopBar = ({ loggedIn, user }) => {
   return (
     <Header style={{ background: "#fff", padding: 0 }}>
       <div className={styles.headFlex}>
         <div className={styles.logoWrap}>
           <Link to="/">
-            <span>
-              <FlagOutlined />
-            </span>
-            <span>Frontline</span>
+            <img src={StateLogo} className="state-logo" />
+            <span style={{paddingLeft: "10px", fontWeight: "600"}}>SANKALPA</span>
           </Link>
         </div>
 
-        <div className={styles.statusWrap}>
-          Volunteers so far,&nbsp;
-          <CountBadge {...volunteerCount} />
-        </div>
+        <div className={styles.statusWrap}></div>
 
         <div className={styles.userWrap}>
           <Spacer width={20} />
@@ -142,8 +137,7 @@ export const SideBar = ({ loggedIn }) => {
       onCollapse={onCollapse}
     >
       <div className="logo" style={{ height: 64 }}>
-        <FlagOutlined />
-        <span className="logo-text"> Frontline </span>
+        <span className="logo-text"> SANKALPA </span>
         {/*
           <img className="logo-img" src={logo} alt="LOGO" />
         */}

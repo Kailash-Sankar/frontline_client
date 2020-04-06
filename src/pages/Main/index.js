@@ -3,9 +3,10 @@ import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 
 import { Layout } from "antd";
-import { HeartOutlined } from "@ant-design/icons";
+//import { HeartOutlined } from "@ant-design/icons";
 
 import { TopBar, SideBar } from "@components/Navigation";
+import PageFooter from '@components/Footer';
 
 import * as styles from "./index.module.less";
 
@@ -25,7 +26,7 @@ import Report from "./Report";
 
 const { Content, Footer } = Layout;
 
-function App({ loggedIn, user, volunteerCount }) {
+function App({ loggedIn, user }) {
   const pageProps = {};
 
   return (

@@ -10,6 +10,11 @@ a {
   text-decoration: underline;
 }
 
+.ant-layout-header{
+  min-height: 75px;
+}
+
+
 .showcase {
   text-align: center;
   .row {
@@ -122,7 +127,7 @@ a {
 .cm-logo{
   max-height: 70px;
   max-width: 70px;
-  float: right;
+  //float: right;
 }
 
 .hashtag-2{
@@ -130,14 +135,19 @@ a {
 }
 
 .header-text{
-  font-size: 2rem;
+  font-size: 1.2rem;
   font-weight: 700;
 }
 
 .cm-image-container{
-  align-items: right;
-  float: right;
+  text-align: center;
   padding-right: 20px;
+}
+
+.logo-banner{
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 600;
 }
 
 .text-large{
@@ -256,6 +266,21 @@ a {
   font-size: 18px;
 }
 
+.footer-container{
+  color: #fff;
+  min-height: 80px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.footer-container h3{
+  color: #fff;
+}
+
+.ant-layout-footer{
+  padding: 0px 0px 5px 0px;
+}
+
 /* End Payment popup */
 
 @media only screen and (max-width: 801px) {
@@ -266,15 +291,6 @@ a {
 
   .margin-adjust{
     margin-top: -5px;
-  }
-
-   
-  .hashtag-1{
-    float: right;
-  }
-  
-  .hashtag-2{
-    float: left;
   }
 
   .layout-conteiner{
@@ -311,6 +327,13 @@ a {
     font-weight: 700;
   }
 
+  .logo-banner{
+    font-size: 1.5rem;
+  }
+  .header-text{
+    font-size: .8rem;
+    font-weight: 700;
+  }
   .margin-adjust{
     margin-top: 0px;
   }
@@ -318,14 +341,6 @@ a {
   .layout-conteiner{
     padding-left: 8px;
     padding-right: 8px;
-  }
-
-  .hashtag-1{
-    float: right;
-  }
-  
-  .hashtag-2{
-    float: left;
   }
 
   .layout-header{
