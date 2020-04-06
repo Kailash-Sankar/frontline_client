@@ -5,7 +5,6 @@ import { Link, useLocation } from "react-router-dom";
 import * as styles from "./index.module.less";
 import StateLogo from "@images/state-logo.png";
 
-
 //import logo from "@images/logo.png";
 
 import {
@@ -28,7 +27,9 @@ export const TopBar = ({ loggedIn, user }) => {
         <div className={styles.logoWrap}>
           <Link to="/">
             <img src={StateLogo} className="state-logo" />
-            <span style={{paddingLeft: "10px", fontWeight: "600"}}>SANKALPA</span>
+            <span style={{ paddingLeft: "10px", fontWeight: "600" }}>
+              Sankalpa
+            </span>
           </Link>
         </div>
 
@@ -137,7 +138,7 @@ export const SideBar = ({ loggedIn }) => {
       onCollapse={onCollapse}
     >
       <div className="logo" style={{ height: 64 }}>
-        <span className="logo-text"> SANKALPA </span>
+        <span className="logo-text"> Sankalpa </span>
         {/*
           <img className="logo-img" src={logo} alt="LOGO" />
         */}
