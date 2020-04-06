@@ -23,6 +23,7 @@ import VolunteerSignup from "./VolunteerSignup";
 import Kind from "./Kind";
 import Appeal from "./Appeal";
 import Report from "./Report";
+import RequestForHelp from './RequestForHelp';
 
 const { Content, Footer } = Layout;
 
@@ -39,13 +40,11 @@ function App({ loggedIn, user, volunteerCount }) {
           <Layout>
             <SideBar loggedIn={loggedIn} />
             <Layout className={classnames({ [styles.layout]: loggedIn })}>
-              {loggedIn ? (
                 <TopBar
                   loggedIn={loggedIn}
                   user={user}
                   volunteerCount={volunteerCount}
                 />
-              ) : null}
               <Content className={styles.content}>
                 <div className={styles.contentWrapper}>
                   <Route path="/volunteer">
@@ -66,6 +65,10 @@ function App({ loggedIn, user, volunteerCount }) {
                     <LoginRequired loggedIn={loggedIn}>
                       <Report {...pageProps} />
                     </LoginRequired>
+                  </Route>
+
+                  <Route path="/request">
+                    <RequestForHelp {...pageProps} />
                   </Route>
 
                   <Route path="/login">

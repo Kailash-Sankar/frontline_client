@@ -9,6 +9,7 @@ import { types as kindReportTypes } from "./kindReport";
 import { types as appealTypes } from "./appeal";
 import { types as homeTypes } from "./homeContent";
 import { types as appealReportTypes } from "./appealReport";
+import { types as requestReportTypes } from './requestReport';
 
 import notify from "@utils/Notification";
 import { authStorage } from "@utils/LocalStorage";
@@ -59,6 +60,20 @@ function* search(scope, action) {
 function* searchAppeals(scope, action) {
   try {
     const res = yield call(Api.searchAppeals, action.params);
+    yield put({ type: scope.SET_RESULT, result: res });
+  } catch (err) {
+    if (err.response.status === 401) {
+      notify.base("Session expired", "Please login again");
+      yield put({ type: commonTypes.LOGOUT });
+    } else {
+      notify.base("Error, please reload and try again");
+    }
+  }
+}
+
+function* searchRequests(scope, action) {
+  try {
+    const res = yield call(Api.searchRequests, action.params);
     yield put({ type: scope.SET_RESULT, result: res });
   } catch (err) {
     if (err.response.status === 401) {
@@ -158,6 +173,8 @@ export function* initSaga() {
   yield takeLatest(reportTypes.SEARCH, search, reportTypes);
   yield takeLatest(kindReportTypes.SEARCH, search, kindReportTypes);
   yield takeLatest(appealReportTypes.SEARCH, searchAppeals, appealReportTypes);
+  yield takeLatest(requestReportTypes.SEARCH, searchRequests, requestReportTypes);
+
 
   // save volunteers and kind
   yield takeLatest(volunteerTypes.SAVE, saveData, volunteerTypes);

@@ -232,7 +232,9 @@ const HomePage = (props) => {
       <Affix
         offsetBottom={20}
         style={{ right: 30, position: "fixed", bottom: 30 }}>
-        <Button type="primary">Request for Help</Button>
+        <Link to="/request">
+          <Button type="primary">Request for Help</Button>
+        </Link>
       </Affix>
     </Row>
   );
