@@ -14,7 +14,7 @@ const PortalAppeals = (props) => {
   const RenderItem = (data) => {
     return (
       <List.Item
-        onClick={() => props.appealClick(data._id)}
+        onClick={() => props.appealClick(data)}
         style={{ cursor: "pointer" }}
       >
         <Badge status="processing" />

@@ -2,6 +2,7 @@ import update from "immutability-helper";
 import { connect } from "react-redux";
 import { applyScope } from "./utils";
 import { pageSelector } from "./selectors";
+import { createSelector } from "reselect";
 
 const scope = "kind";
 
@@ -44,8 +45,14 @@ const mapDispatchToProps = (dispatch) => ({
     }),
 });
 
+const getSelectedAppeal = (state) => state.home.selAppeal;
+export const selAppealSelector = createSelector(
+  [getSelectedAppeal],
+  (id) => id
+);
+
 // state from root state
-const mapStateToProps = pageSelector(scope);
+const mapStateToProps = pageSelector(scope, { appeal: selAppealSelector });
 
 // connect
 export const connecter = (vs) =>

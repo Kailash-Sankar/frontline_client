@@ -1,13 +1,13 @@
 import React from "react";
 import SelectorPanel from "@components/SelectorPanel";
-import { VolunteerSearchResults } from "@components/SearchResults";
+import { KindSearchResults } from "@components/SearchResults";
 import { Empty } from "antd";
-import { connecter } from "@store/report";
+import { connecter } from "@store/kindReport";
 import options from "@utils/Options";
-import { formatSearchQuery } from "./utils";
+import { formatSearchQuery } from "../utils";
 import { queryLimit } from "@utils/constants";
 
-function Report({
+function KindReport({
   result,
   mode,
   setMode,
@@ -30,7 +30,7 @@ function Report({
 
   function handleSearch() {
     const query = formatSearchQuery({ mode, region, service });
-    query.act = "volunteer"; // fixed type field
+    query.act = "kind"; // fixed type field
     search({
       query,
       limit: queryLimit,
@@ -55,13 +55,13 @@ function Report({
 
   return (
     <div style={{ textAlign: "left" }}>
-      <h2>Volunteer Reports</h2>
+      <h2>Support in Kind (Reports)</h2>
       <div>
         <SelectorPanel {...searchProps} />
       </div>
       {result && result.length > 0 ? (
         <div style={{ margin: 30 }}>
-          <VolunteerSearchResults result={result} />
+          <KindSearchResults result={result} />
         </div>
       ) : (
         <div style={{ marginTop: 100 }}>
@@ -72,12 +72,4 @@ function Report({
   );
 }
 
-/*
-  <div style={{ marginTop: 20 }}>
-    <Button type="primary" onClick={handleDownload}>
-      Download
-    </Button>
-  </div>
-*/
-
-export default connecter(Report);
+export default connecter(KindReport);

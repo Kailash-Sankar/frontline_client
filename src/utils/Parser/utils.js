@@ -49,6 +49,7 @@ export const attrMapper = (arr = [], lookup) => {
     const id = obj.id;
     if (id in lookup) {
       res.push({
+        id, // meta
         label: lookup[id].value,
         attributes: obj.attributes,
       });

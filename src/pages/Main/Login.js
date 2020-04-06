@@ -4,7 +4,7 @@ import * as styles from "./index.module.less";
 import { connecter } from "@store/common";
 import { Spacer } from "@components/Utils";
 import { Redirect } from "react-router-dom";
-import { formatLogin } from "./utils";
+import { formatLogin } from "../utils";
 
 function Login({ login, loggedIn }) {
   function handleSubmit(values) {
@@ -24,7 +24,7 @@ function Login({ login, loggedIn }) {
           <div>
             <Redirect
               to={{
-                pathname: "/report"
+                pathname: "/report",
               }}
             />
           </div>
