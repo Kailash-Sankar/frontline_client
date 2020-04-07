@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Form, Input, Row, Col, Button } from 'antd';
 import {RegionSelect} from '@components/VolunteerForm/Fields/Select';
 const { TextArea } = Input;
+import { 
+    MobileField,
+    AddressField, 
+    PinField,
+    NameField
+
+} from '@components/VolunteerForm/Fields/Input'
 
 const RequestForHelpForm = props => {
     
@@ -29,63 +36,25 @@ const RequestForHelpForm = props => {
         }
     };
 
+    const [form] = Form.useForm();
+    const { resetFields } = form;
+
+    useEffect(() => {
+        resetFields();
+      }, [props.reset]);
+
     return (
         <div style={{textAlign: "left", paddingLeft: '10px'}}>
             <h2>Request For Help</h2>
             <Form
+                form={form}
                 {...formItemLayout}
                 initialValues={props.initialValues}
                 onFinish={props.handleSubmit}>
-                <Form.Item label="Name" name="name"
-                    rules={[
-                        {
-                            required: true,
-                            message: "Name is required.",
-                        },
-                    ]}>
-                    <Row gutter={8}>
-                        <Col span={8}>
-                            <Input placeholder="Enter your Name" />
-                        </Col>
-                    </Row>
-                </Form.Item>
-
-                <Form.Item label="Mobile Number" name="mobile"
-                    rules={[
-                        {
-                            required: true,
-                            message: "Mobile number is required.",
-                        },
-                        {
-                        len: 10,
-                        message: "Mobile number must be 10 digits.",
-                        },
-                    ]}>
-                    <Row gutter={8}>
-                        <Col span={8}>
-                            <Input placeholder="Enter your Mobile Number" />
-                        </Col>
-                    </Row>
-                </Form.Item>
-
-                <Form.Item label="Address" name="address"
-                    rules={[
-                        {
-                            required: true,
-                            message: "Address Field is required.",
-                        },
-                    ]}>
-                    <Row gutter={8}>
-                        <Col span={12}>
-                            <TextArea
-                            maxLength={100}
-                            type="textarea"
-                            rows={4}
-                            placeholder="Enter your address"
-                            />
-                        </Col>
-                    </Row>
-                </Form.Item>
+                
+                <NameField/>
+                <MobileField/>
+                <AddressField/>
 
                 <Form.Item label="Area" name="area"
                     rules={[
@@ -103,24 +72,7 @@ const RequestForHelpForm = props => {
 
                 <RegionSelect options={props.options}/>
 
-                <Form.Item label="Pin" name="pin"
-                    rules={[
-                        {
-                            required: true,
-                            message: "Pin is required",
-                        },
-
-                        {
-                            len: 6,
-                            message: "Pin must be 6 digits.",
-                        },
-                    ]}>
-                    <Row gutter={8}>
-                        <Col span={8}>
-                            <Input placeholder="Enter pin code." />
-                        </Col>
-                    </Row>
-                </Form.Item>
+                <PinField/>
 
                 <Form.Item label="Description" name="desc"
                     rules={[

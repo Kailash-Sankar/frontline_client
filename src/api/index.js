@@ -81,7 +81,7 @@ async function getHomePageData(url) {
 
 async function saveHelpRequest(formData){
   const res = await server.post('/request', formData);
-  return res.data.data || null;
+  return res || null;
 }
 
 export default {

@@ -1,35 +1,23 @@
 import React from 'react';
 import  RequestForHelpForm  from '@components/RequestForHelp';
+import { connector } from '@store/requestForHelp';
 import options from "@utils/Options";
-import { notification } from 'antd';
-import Api from '@api';
 
-const openNotification = (message, desc) => {
-    notification.open({
-      message: message,
-      description: desc,
-    });
-  };
-
-const RequestForHelp = () => {
+const RequestForHelp = ({reset, save}) => {
     const initialValues = {region: ["KA", "5"]};
 
-    const handleSubmit = async (formData) => {
+    const handleSubmit = (formData) => {
         formData['act'] = 'request';
-        const response = await Api.saveHelpRequest(formData);
-        if (response){
-            openNotification('Request Submitted', 'Your request has been submitted.');
-        }else{
-            openNotification('Error', 'Some error occured');
-        }
+        save(formData);
     }
 
     return (
         <RequestForHelpForm
+            reset={reset}
             initialValues={initialValues}
             handleSubmit={handleSubmit}
             options={options.regions}/>
     );
 }
 
-export default RequestForHelp;
+export default connector(RequestForHelp);
