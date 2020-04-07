@@ -10,6 +10,7 @@ import { types as appealTypes } from "./appeal";
 import { types as homeTypes } from "./homeContent";
 import { types as appealReportTypes } from "./appealReport";
 import { types as requestReportTypes } from './requestReport';
+import { types as requestForHelpTypes } from './requestForHelp';
 
 import notify from "@utils/Notification";
 import { authStorage } from "@utils/LocalStorage";
@@ -113,6 +114,21 @@ function* saveData(scope, action) {
   }
 }
 
+function* saveRequestForHelp(scope, action) {
+  try{
+    const res = yield call(Api.saveHelpRequest, action.formData);
+    console.log(res);
+    if (res.data.status === 1) {
+      notify.base('Request submitted successfully.');
+      yield put({ type: scope.SET_RESET });
+    } else {
+      notify.info(false, res.data.message, res.data.data[0].msg);
+    }
+  }catch (err){
+    notify.info(false, "Backend error", "Try posting data again")
+  }
+}
+
 // appeal save action
 function* saveAppealData(scope, action) {
   console.log(action);
@@ -179,6 +195,9 @@ export function* initSaga() {
   // save volunteers and kind
   yield takeLatest(volunteerTypes.SAVE, saveData, volunteerTypes);
   yield takeLatest(kindTypes.SAVE, saveData, kindTypes);
+
+  // save request for help form
+  yield takeLatest(requestForHelpTypes.SAVE, saveRequestForHelp, requestForHelpTypes);
 
   // save appeal
   yield takeLatest(appealTypes.SAVE, saveAppealData, appealTypes);
