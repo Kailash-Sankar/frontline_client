@@ -59,11 +59,43 @@ export const medicalOptions = {
   ppe: { id: "ppe", value: "PPE" },
   testing_kits: { id: "testing_kits", value: "Testing kits" },
   triple_layer_masks: { id: "triple_layer_masks", value: "Triple layer masks" },
+  n95: { id: "n95", value: "N95 Masks" },
+  face_mask: { id: "face_mask", value: "Face Masks" },
 };
 
 export const nonMedicalOptions = {
-  adult_diapers: { id: "adult_diapers", value: "Adult Diapers" },
   baby_food: { id: "baby_food", value: "Baby Food" },
+  packed_cooked_food: { id: "packed_cooked_food", value: "Packed Cooked Food" },
+  packed_dry_food: { id: "packed_dry_food", value: "Packed Dry Food" },
+  rice: { id: "rice", value: "Rice" },
+  wheat: { id: "wheat", value: "Wheat" },
+  flour: { id: "flour", value: "Flour" },
+  dal: { id: "dal", value: "Dal" },
+  milk: { id: "milk", value: "Milk" },
+  fruits: { id: "fruits", value: "Fruits" },
+  vegetables: { id: "vegetables", value: "Vegetables" },
+  ration: { id: "ration", value: "Other Ration" },
+  water: { id: "water", value: "Water" },
+  diapers: { id: "diapers", value: "Diapers" },
+  adult_diapers: { id: "adult_diapers", value: "Adult Diapers" },
+  sanitary_napkins: { id: "sanitary_napkins", value: "Sanitary Napkins" },
+  clothes: { id: "clothes", value: "Clothes" },
+  soaps: { id: "soaps", value: "Soaps" },
+  coir_beds: { id: "coir_beds", value: "Coir Beds" },
+  coir_pillows: { id: "coir_pillows", value: "Coir Pillows" },
+  cots: { id: "cots", value: "Cots" },
+  bedsheets: { id: "bedsheets", value: "Bedsheets" },
+  pillow_covers: { id: "pillow_covers", value: "Pillow Covers" },
+  matresses: { id: "matresses", value: "Mattresses" },
+  hand_towels: { id: "hand_towels", value: "Hand Towels" },
+  floor_clean_deter: {
+    id: "floor_clean_deter",
+    value: "Floor Cleaning Detergent",
+  },
+  toilet_clean_deter: {
+    id: "toilet_clean_deter",
+    value: "Toilet Cleaning Detergent",
+  },
 };
 
 export const servicesTree = [

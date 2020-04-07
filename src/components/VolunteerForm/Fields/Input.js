@@ -218,7 +218,9 @@ export const NodalNameField = () => (
   </Form.Item>
 );
 
-export const NotesField = () => (
+export const NotesField = ({
+  placeholder = "Leave additional notes here.",
+}) => (
   <Form.Item label="Notes" name="notes">
     <Row gutter={8}>
       <Col span={12}>
@@ -226,7 +228,7 @@ export const NotesField = () => (
           maxLength={200}
           type="textarea"
           rows={4}
-          placeholder="Leave additional notes here."
+          placeholder={placeholder}
         />
       </Col>
     </Row>

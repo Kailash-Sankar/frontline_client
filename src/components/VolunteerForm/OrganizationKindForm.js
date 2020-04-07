@@ -110,7 +110,7 @@ function OrganizationKindForm({
         <DynamicServicList serviceType="nonmedical" options={nonMedical} />
 
         <PubliciseField />
-        <NotesField />
+        <NotesField placeholder="Add extra items/supplies you wish to donate or any other details here." />
 
         <Form.Item {...tailFormItemLayout}>
           <Button type="primary" htmlType="submit">
