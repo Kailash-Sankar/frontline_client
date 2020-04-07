@@ -5,7 +5,6 @@ import { Empty } from "antd";
 import { connecter } from "@store/appealReport";
 import options from "@utils/Options";
 import { formatSearchQuery } from "../utils";
-import { queryLimit } from "@utils/constants";
 
 function AppealReport({
   result,
@@ -14,6 +13,7 @@ function AppealReport({
   search,
   service,
   setService,
+  pagination,
 }) {
   function onRegionChange(value) {
     setRegion(value);
@@ -23,13 +23,31 @@ function AppealReport({
     setService(value);
   }
 
-  function handleSearch() {
+  function formatParams() {
     const query = formatSearchQuery({ region, service });
     query.act = "appeal"; // fixed type field
+    return query;
+  }
+
+  function triggerSearch({ page = 1, limit = pagination.limit }) {
     search({
-      query,
-      limit: queryLimit,
+      query: formatParams(),
+      page,
+      limit,
     });
+  }
+
+  // handle search and pagination actions
+  function handleSearch() {
+    triggerSearch({}); // need empty braces here
+  }
+
+  function handlePageChange(page = 1) {
+    triggerSearch({ page });
+  }
+
+  function handleSizeChange(page, limit) {
+    triggerSearch({ limit });
   }
 
   const searchProps = {
@@ -52,7 +70,12 @@ function AppealReport({
       </div>
       {result && result.length > 0 ? (
         <div style={{ margin: 30 }}>
-          <AppealSearchResults result={result} />
+          <AppealSearchResults
+            result={result}
+            pagination={pagination}
+            onPageChange={handlePageChange}
+            onShowSizeChange={handleSizeChange}
+          />
         </div>
       ) : (
         <div style={{ marginTop: 100 }}>

@@ -12,7 +12,13 @@ const initialState = {
   result: [],
   mode: undefined,
   region: ["KA"],
-  service: []
+  service: [],
+  pagination: {
+    total: null,
+    limit: 10,
+    page: 1,
+    pages: null,
+  },
 };
 
 export const types = applyScope(scope, [
@@ -20,26 +26,31 @@ export const types = applyScope(scope, [
   "SEARCH",
   "SET_MODE",
   "SET_REGION",
-  "SET_SERVICE"
+  "SET_SERVICE",
+  "SET_PAGINATION",
 ]);
 
 const reportReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.SET_RESULT:
       return update(state, {
-        result: { $set: action.result }
+        result: { $set: action.result },
       });
     case types.SET_MODE:
       return update(state, {
-        mode: { $set: action.mode }
+        mode: { $set: action.mode },
       });
     case types.SET_REGION:
       return update(state, {
-        region: { $set: action.region }
+        region: { $set: action.region },
       });
     case types.SET_SERVICE:
       return update(state, {
-        service: { $set: action.service }
+        service: { $set: action.service },
+      });
+    case types.SET_PAGINATION:
+      return update(state, {
+        pagination: { $set: action.pagination },
       });
   }
   return state;
@@ -50,28 +61,28 @@ const mapDispatchToProps = (dispatch) => ({
   setResult: (result) =>
     dispatch({
       type: types.SET_RESULT,
-      result
+      result,
     }),
   setMode: (mode) =>
     dispatch({
       type: types.SET_MODE,
-      mode
+      mode,
     }),
   setRegion: (region) =>
     dispatch({
       type: types.SET_REGION,
-      region
+      region,
     }),
   setService: (service) =>
     dispatch({
       type: types.SET_SERVICE,
-      service
+      service,
     }),
   search: (params) =>
     dispatch({
       type: types.SEARCH,
-      params
-    })
+      params,
+    }),
 });
 
 // parsed result selector

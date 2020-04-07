@@ -12,6 +12,12 @@ const initialState = {
   result: [],
   region: ["KA"],
   service: [],
+  pagination: {
+    total: null,
+    limit: 10,
+    page: 1,
+    pages: null,
+  },
 };
 
 export const types = applyScope(scope, [
@@ -19,6 +25,7 @@ export const types = applyScope(scope, [
   "SEARCH",
   "SET_REGION",
   "SET_SERVICE",
+  "SET_PAGINATION",
 ]);
 
 const appealReportReducer = (state = initialState, action) => {
@@ -38,6 +45,10 @@ const appealReportReducer = (state = initialState, action) => {
     case types.SET_SERVICE:
       return update(state, {
         service: { $set: action.service },
+      });
+    case types.SET_PAGINATION:
+      return update(state, {
+        pagination: { $set: action.pagination },
       });
   }
   return state;
