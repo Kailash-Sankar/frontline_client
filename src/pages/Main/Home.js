@@ -16,10 +16,10 @@ import axios from "axios";
 import background from "../../images/background.png";
 import StateLogo from "../../images/state-logo.png";
 import cmIMG from "../../images/cm-img.png";
-import carousel1 from "../../images/carousel-1.png";
-import carousel2 from "../../images/carousel-2.png";
+//import carousel1 from "../../images/carousel-1.png";
+//import carousel2 from "../../images/carousel-2.png";
 import carousel3 from "../../images/carousel-3.jpg";
-import carousel4 from "../../images/carousel-4.jpg";
+//import carousel4 from "../../images/carousel-4.jpg";
 
 const HomePage = (props) => {
   const [showModal, setShowModal] = useState(false);
@@ -59,20 +59,6 @@ const HomePage = (props) => {
     {
       text: "img-3",
       url: carousel3,
-    },
-
-    {
-      text: "img-4",
-      url: carousel4,
-    },
-    {
-      text: "img-1",
-      url: carousel1,
-    },
-
-    {
-      text: "img-2",
-      url: carousel2,
     },
   ];
 
