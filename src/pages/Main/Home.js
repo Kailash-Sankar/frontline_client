@@ -159,9 +159,7 @@ const HomePage = (props) => {
         <Row>
           <Col lg={8} sm={24} xs={24} className="bottom-btn-containers">
             <div className="goto-text" onClick={() => setShowModal(true)}>
-              <a>
                 DONATE FUNDS <ArrowRightOutlined />
-              </a>
             </div>
             <div>
               <div>
