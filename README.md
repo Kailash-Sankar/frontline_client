@@ -5,18 +5,17 @@
 Manage volunteers, requests, supporters and kind donations.
 
 ## To setup locally
-
-		git clone <repo>
-		npm install
-		npm start
+    git clone <repo>
+    npm install
+    npm start
 
 ## install from docker hub
-		docker pull kailashsankar/frontline_client:latest
-		docker run -d --restart=always --name=frontline_client -p 0.0.0.0:3000:80 kailashsankar/frontline_client:latest
+	docker pull kailashsankar/frontline_client:latest
+	docker run -d --restart=always --name=frontline_client -p 0.0.0.0:3000:80 kailashsankar/frontline_client:latest
 
 ## docker build
-		docker build -t frontline_client:latest .
-		docker run -d --restart=always --name=frontline_client -p 0.0.0.0:3000:80 frontline_client:latest
+	docker build -t frontline_client:latest .
+	docker run -d --restart=always --name=frontline_client -p 0.0.0.0:3000:80 frontline_client:latest
 
 ## alfred config
 
