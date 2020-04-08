@@ -2,11 +2,14 @@ import React from "react";
 import * as styles from "./styles.module.less";
 import { Spacer } from "@components/Utils";
 
-import { Button } from "antd";
+import { Button, DatePicker } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import { ModeSelect, RegionSelect } from "./SelectFields";
 
 import { ServiceSelector } from "./TreeSelects";
+
+const { RangePicker } = DatePicker;
+const dateFormatList = ['DD/MM/YYYY', 'DD/MM/YYYY'];
 
 function SelectorPanel({
   // customer props
@@ -23,6 +26,9 @@ function SelectorPanel({
   service,
   services,
   onServiceChange,
+
+  dateRange,
+  onDateRangeChange,
 
   onSubmit,
 }) {
@@ -49,20 +55,34 @@ function SelectorPanel({
           onRegionChange={onRegionChange}
         />
       </div>
-
       <Spacer />
+      { service && 1==0 ? 
+        
+        (<React.Fragment><div className={styles.selectorCo}>
+          <span>Services</span>
+          <ServiceSelector
+            service={service}
+            services={services}
+            onChange={onServiceChange}
+          />
+        </div>
 
-      <div className={styles.selectorCo}>
-        <span>Services</span>
-        <ServiceSelector
-          service={service}
-          services={services}
-          onChange={onServiceChange}
-        />
-      </div>
-
-      <Spacer />
-
+        <Spacer /></React.Fragment>)
+      : null}
+      
+      { dateRange ? 
+        (<React.Fragment>
+        <div className={styles.selectorCo}>
+          <span>Date Range</span>
+          <RangePicker
+            defaultValue={dateRange}
+            format={dateFormatList}
+            onChange={onDateRangeChange}/>
+        </div>
+        <Spacer />
+        </React.Fragment>)
+      : null }
+      
       <div className={styles.selectorCo}>
         <span>&nbsp;</span>
         <Button onClick={onSubmit} icon={<SearchOutlined />}>

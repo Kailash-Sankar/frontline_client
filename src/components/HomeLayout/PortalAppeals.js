@@ -1,11 +1,11 @@
 import React from "react";
-import { List, Badge, Tag } from "antd";
+import { List, Badge } from "antd";
 import { getStringAttr } from "@utils/Parser/strUtils";
 
 const renderRow = (rowData) => {
   return (
     <span>
-      <Tag>{getStringAttr(rowData)}</Tag>
+      <strong>{getStringAttr(rowData)}</strong>
     </span>
   );
 };

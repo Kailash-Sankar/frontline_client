@@ -14,17 +14,23 @@ function AppealReport({
   service,
   setService,
   pagination,
+  dateRange,
+  setDateRange,
 }) {
   function onRegionChange(value) {
     setRegion(value);
   }
+
+  const onDateRangeChange = (value) => {
+    value ? setDateRange(value) : setDateRange([null, null]);
+  };
 
   function onServiceChange(value) {
     setService(value);
   }
 
   function formatParams() {
-    const query = formatSearchQuery({ region, service });
+    const query = formatSearchQuery({ region, service, dateRange });
     query.act = "appeal"; // fixed type field
     return query;
   }
@@ -58,6 +64,9 @@ function AppealReport({
     service,
     services: options.services.servicesTree,
     onServiceChange,
+
+    dateRange: dateRange,
+    onDateRangeChange,
 
     onSubmit: handleSearch,
   };
