@@ -36,6 +36,7 @@ function Kind({ reset, mode, setMode, save, appeal = null }) {
   // default to Karnataka, Bangalore
   const [initialValues, setinitialValues] = useState({
     region: ["KA", "5"],
+    meta: {},
   });
 
   useEffect(() => {
