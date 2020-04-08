@@ -1,5 +1,5 @@
 import React from "react";
-import VolunteerReport from "../Reports/VolunteerReport";
+//import VolunteerReport from "../Reports/VolunteerReport";
 import KindReport from "../Reports/KindReport";
 import AppealReport from "../Reports/AppealReport";
 import RequestReport from '../Reports/RequestReport';
@@ -9,7 +9,7 @@ import { Typography } from "antd";
 const { Title } = Typography;
 
 const reportsMap = {
-  volunteer: { id: "volunteer", value: "Volunteer", render: VolunteerReport },
+  //volunteer: { id: "volunteer", value: "Volunteer", render: VolunteerReport },
   kind: { id: "kind", value: "Support in Kind", render: KindReport },
   appeal: { id: "appeal", value: "Appeal", render: AppealReport },
   request: { id: "request", value: "Request for help", render: RequestReport },

@@ -16,10 +16,17 @@ function KindReport({
   service,
   setService,
   pagination,
+  dateRange,
+  setDateRange,
 }) {
   function onModeChange(value) {
     setMode(value);
   }
+
+  const onDateRangeChange = (value) => {
+    value ? setDateRange(value) : setDateRange([null, null]);
+  };
+
   function onRegionChange(value) {
     setRegion(value);
   }
@@ -29,7 +36,7 @@ function KindReport({
   }
 
   function formatParams() {
-    const query = formatSearchQuery({ mode, region, service });
+    const query = formatSearchQuery({ mode, region, service, dateRange });
     query.act = "kind"; // fixed type field
     return query;
   }
@@ -67,6 +74,9 @@ function KindReport({
     service,
     services: options.services.servicesTree,
     onServiceChange,
+
+    dateRange: dateRange,
+    onDateRangeChange,
 
     onSubmit: handleSearch,
   };

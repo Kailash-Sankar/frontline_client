@@ -14,6 +14,8 @@ const RequestReport = ({
   service,
   setService,
   pagination,
+  dateRange,
+  setDateRange,
 }) => {
   function onRegionChange(value) {
     setRegion(value);
@@ -23,8 +25,12 @@ const RequestReport = ({
     setService(value);
   }
 
+  const onDateRangeChange = (value) => {
+    value ? setDateRange(value) : setDateRange([null, null]);
+  };
+
   function formatParams() {
-    const query = formatSearchQuery({ region, service });
+    const query = formatSearchQuery({ region, service, dateRange });
     query.act = "request"; // fixed type field
     return query;
   }
@@ -58,6 +64,9 @@ const RequestReport = ({
     service,
     services: options.services.servicesTree,
     onServiceChange,
+
+    dateRange: dateRange,
+    onDateRangeChange,
 
     onSubmit: handleSearch,
   };

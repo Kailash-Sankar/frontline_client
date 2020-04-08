@@ -19,6 +19,7 @@ const initialState = {
     page: 1,
     pages: null,
   },
+  dateRange: [null, null],
 };
 
 export const types = applyScope(scope, [
@@ -27,6 +28,7 @@ export const types = applyScope(scope, [
   "SET_REGION",
   "SET_SERVICE",
   "SET_PAGINATION",
+  "SET_DATE_RANGE",
 ]);
 
 const appealReportReducer = (state = initialState, action) => {
@@ -50,6 +52,10 @@ const appealReportReducer = (state = initialState, action) => {
     case types.SET_PAGINATION:
       return update(state, {
         pagination: { $set: action.pagination },
+      });
+    case types.SET_DATE_RANGE:
+      return update(state, {
+        dateRange: { $set: action.dateRange },
       });
   }
   return state;
@@ -81,6 +87,11 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch({
       type: types.SEARCH,
       params,
+    }),
+  setDateRange: (dateRange) =>
+    dispatch({
+      type: types.SET_DATE_RANGE,
+      dateRange,
     }),
 });
 
