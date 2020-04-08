@@ -5,6 +5,7 @@ import { pageSelector } from "./selectors";
 
 import { createSelector } from "reselect";
 import parseData from "@utils/Parser";
+import { defaultLimit } from "@utils/constants";
 
 const scope = "kindReport";
 
@@ -15,7 +16,7 @@ const initialState = {
   service: [],
   pagination: {
     total: null,
-    limit: 10,
+    limit: defaultLimit,
     page: 1,
     pages: null,
   },
