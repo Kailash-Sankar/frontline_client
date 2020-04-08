@@ -46,10 +46,10 @@ function OrganizationKindForm({
   }, [initialValues]);
 
   const [medical, setMedical] = React.useState(
-    initialValues.meta ? initialValues.meta.medical : []
+    initialValues.meta.medical || []
   );
   const [nonMedical, setNonMedical] = React.useState(
-    initialValues.meta ? initialValues.meta.nonmedical : []
+    initialValues.meta.nonmedical || []
   );
 
   const getMetaMap = (meta) =>
