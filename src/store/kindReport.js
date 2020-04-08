@@ -5,6 +5,7 @@ import { pageSelector } from "./selectors";
 
 import { createSelector } from "reselect";
 import parseData from "@utils/Parser";
+import { defaultLimit } from "@utils/constants";
 
 const scope = "kindReport";
 
@@ -13,6 +14,12 @@ const initialState = {
   mode: undefined,
   region: ["KA"],
   service: [],
+  pagination: {
+    total: null,
+    limit: defaultLimit,
+    page: 1,
+    pages: null,
+  },
 };
 
 export const types = applyScope(scope, [
@@ -21,6 +28,7 @@ export const types = applyScope(scope, [
   "SET_MODE",
   "SET_REGION",
   "SET_SERVICE",
+  "SET_PAGINATION",
 ]);
 
 const kindReportReducer = (state = initialState, action) => {
@@ -40,6 +48,10 @@ const kindReportReducer = (state = initialState, action) => {
     case types.SET_SERVICE:
       return update(state, {
         service: { $set: action.service },
+      });
+    case types.SET_PAGINATION:
+      return update(state, {
+        pagination: { $set: action.pagination },
       });
   }
   return state;

@@ -5,79 +5,90 @@ import { pageSelector } from "./selectors";
 
 import { createSelector } from "reselect";
 import parseData from "@utils/Parser";
-
+import { defaultLimit } from "@utils/constants";
 
 const scope = "requestReport";
 
 const initialState = {
-    result: [],
-    region: ["KA"],
-    service: [],
+  result: [],
+  region: ["KA"],
+  service: [],
+  pagination: {
+    total: null,
+    limit: defaultLimit,
+    page: 1,
+    pages: null,
+  },
 };
 
 export const types = applyScope(scope, [
-    "SET_RESULT",
-    "SEARCH",
-    "SET_REGION",
-    "SET_SERVICE",
+  "SET_RESULT",
+  "SEARCH",
+  "SET_REGION",
+  "SET_SERVICE",
+  "SET_PAGINATION",
 ]);
 
 const requestReportReducer = (state = initialState, action) => {
-switch (action.type) {
+  switch (action.type) {
     case types.SET_RESULT:
-    return update(state, {
+      return update(state, {
         result: { $set: action.result },
-    });
+      });
     case types.SET_MODE:
-    return update(state, {
+      return update(state, {
         mode: { $set: action.mode },
-    });
+      });
     case types.SET_REGION:
-    return update(state, {
+      return update(state, {
         region: { $set: action.region },
-    });
+      });
     case types.SET_SERVICE:
-    return update(state, {
+      return update(state, {
         service: { $set: action.service },
-    });
-}
-return state;
+      });
+    case types.SET_PAGINATION:
+      return update(state, {
+        pagination: { $set: action.pagination },
+      });
+  }
+  return state;
 };
 
 // dispatch actions
 const mapDispatchToProps = (dispatch) => ({
-setResult: (result) =>
+  setResult: (result) =>
     dispatch({
-    type: types.SET_RESULT,
-    result,
+      type: types.SET_RESULT,
+      result,
     }),
-setMode: (mode) =>
+  setMode: (mode) =>
     dispatch({
-    type: types.SET_MODE,
-    mode,
+      type: types.SET_MODE,
+      mode,
     }),
-setRegion: (region) =>
+  setRegion: (region) =>
     dispatch({
-    type: types.SET_REGION,
-    region,
+      type: types.SET_REGION,
+      region,
     }),
-setService: (service) =>
+  setService: (service) =>
     dispatch({
-    type: types.SET_SERVICE,
-    service,
+      type: types.SET_SERVICE,
+      service,
     }),
-search: (params) =>
+  search: (params) =>
     dispatch({
-    type: types.SEARCH,
-    params,
+      type: types.SEARCH,
+      params,
     }),
 });
 
 // parsed requests selector
 const getResult = (state) => state[scope].result;
 export const parsedResultSelector = createSelector([getResult], (result) => {
-const parsedResult = parseData(result);
-return parsedResult;
+  const parsedResult = parseData(result);
+  return parsedResult;
 });
 
 // state from root state
@@ -85,7 +96,6 @@ const mapStateToProps = pageSelector(scope, { result: parsedResultSelector });
 
 // connect
 export const connecter = (Report) =>
-connect(mapStateToProps, mapDispatchToProps)(Report);
+  connect(mapStateToProps, mapDispatchToProps)(Report);
 
 export default requestReportReducer;
-  

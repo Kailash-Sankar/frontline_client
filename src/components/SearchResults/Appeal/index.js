@@ -2,6 +2,7 @@ import React from "react";
 import { Table } from "antd";
 import Details from "./Details";
 import { getStringAttr } from "@utils/Parser/strUtils";
+import { getPaginationObject } from "../utils";
 
 const columns = [
   {
@@ -26,7 +27,7 @@ const columns = [
   },
 ];
 
-function SearchResults({ result }) {
+function SearchResults({ result, pagination, onPageChange, onShowSizeChange }) {
   return (
     <div>
       <div>
@@ -42,6 +43,11 @@ function SearchResults({ result }) {
             ),
             expandRowByClick: true,
           }}
+          pagination={getPaginationObject(
+            pagination,
+            onPageChange,
+            onShowSizeChange
+          )}
         />
       </div>
     </div>

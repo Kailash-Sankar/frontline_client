@@ -5,7 +5,6 @@ import { Empty } from "antd";
 import { connecter } from "@store/report";
 import options from "@utils/Options";
 import { formatSearchQuery } from "../utils";
-import { queryLimit } from "@utils/constants";
 
 function Report({
   result,
@@ -16,6 +15,7 @@ function Report({
   search,
   service,
   setService,
+  pagination,
 }) {
   function onModeChange(value) {
     setMode(value);
@@ -28,13 +28,31 @@ function Report({
     setService(value);
   }
 
-  function handleSearch() {
+  function formatParams() {
     const query = formatSearchQuery({ mode, region, service });
     query.act = "volunteer"; // fixed type field
+    return query;
+  }
+
+  function triggerSearch({ page = 1, limit = pagination.limit }) {
     search({
-      query,
-      limit: queryLimit,
+      query: formatParams(),
+      page,
+      limit,
     });
+  }
+
+  // handle search and pagination actions
+  function handleSearch() {
+    triggerSearch({}); // need empty braces here
+  }
+
+  function handlePageChange(page = 1) {
+    triggerSearch({ page });
+  }
+
+  function handleSizeChange(page, limit) {
+    triggerSearch({ limit });
   }
 
   const searchProps = {
@@ -61,7 +79,12 @@ function Report({
       </div>
       {result && result.length > 0 ? (
         <div style={{ margin: 30 }}>
-          <VolunteerSearchResults result={result} />
+          <VolunteerSearchResults
+            result={result}
+            pagination={pagination}
+            onPageChange={handlePageChange}
+            onShowSizeChange={handleSizeChange}
+          />
         </div>
       ) : (
         <div style={{ marginTop: 100 }}>
