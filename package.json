@@ -83,7 +83,7 @@
     "extract-css-chunks-webpack-plugin": "^4.7.4",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.0.4",
-    "husky": "^4.2.3",
+    "husky": "^4.2.5",
     "jest": "^25.2.6",
     "jest-canvas-mock": "^2.2.0",
     "less": "^3.11.1",
