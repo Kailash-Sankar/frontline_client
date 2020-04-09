@@ -106,8 +106,8 @@ async function getHomePageData(url) {
 }
 
 // Update status
-async function updateStatus(url) {
-  const res = await server.put(url, { status: "closed" });
+async function updateStatus(url, formData) {
+  const res = await server.put(url, formData);
   return res || null;
 }
 

@@ -22,6 +22,7 @@ function AppealReport({
   exportCSV,
   setStatus,
   status,
+  updateStatus
 }) {
   function onRegionChange(value) {
     setRegion(value);
@@ -37,6 +38,11 @@ function AppealReport({
 
   function onStatusChange(value) {
     setStatus(value);
+  }
+
+  function onResultClose(id){
+    const url = `/appeal/update/${id}`;
+    updateStatus(url, {status: 'closed'});
   }
 
   function formatParams() {
@@ -103,6 +109,7 @@ function AppealReport({
             pagination={pagination}
             onPageChange={handlePageChange}
             onShowSizeChange={handleSizeChange}
+            onResultClose={onResultClose}
           />
 
           <ExportButton onClick={handleExport} />

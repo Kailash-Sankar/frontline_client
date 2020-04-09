@@ -175,9 +175,7 @@ function* exportCSV(scope, apiFn, action) {
 }
 
 function* updateStatusVal(action) {
-  console.log("reached here", action);
-  const res = yield call(Api.updateStatus, action.endPoint);
-  console.log("response:", res);
+  yield call(Api.updateStatus, action.endPoint, action.formData);
 }
 
 export function* initSaga() {
@@ -225,6 +223,8 @@ export function* initSaga() {
 
   //update the status column of entry.
   yield takeLatest(requestReportTypes.UPDATE_STATUS, updateStatusVal);
+  yield takeLatest(appealReportTypes.UPDATE_STATUS, updateStatusVal);
+  yield takeLatest(kindReportTypes.UPDATE_STATUS, updateStatusVal);
 
   // save volunteers and kind
   yield takeLatest(volunteerTypes.SAVE, saveData, volunteerTypes);

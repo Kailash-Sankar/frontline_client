@@ -24,6 +24,7 @@ function KindReport({
   exportCSV,
   setStatus,
   status,
+  updateStatus,
 }) {
   function onModeChange(value) {
     setMode(value);
@@ -43,6 +44,11 @@ function KindReport({
 
   function onStatusChange(value) {
     setStatus(value);
+  }
+
+  function onResultClose(id){
+    const url = `/update/${id}`;
+    updateStatus(url, {status: 'closed'});
   }
 
   function formatParams() {
@@ -119,6 +125,7 @@ function KindReport({
             pagination={pagination}
             onPageChange={handlePageChange}
             onShowSizeChange={handleSizeChange}
+            onResultClose={onResultClose}
           />
 
           <ExportButton onClick={handleExport} />

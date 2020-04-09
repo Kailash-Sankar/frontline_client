@@ -1,33 +1,49 @@
 import React from "react";
-import { Table } from "antd";
+import { Table, Button, Popconfirm } from "antd";
 import Details from "./Details";
 import { getPaginationObject } from "../utils";
 
-const columns = [
-  {
-    title: "Name",
-    dataIndex: "name",
-    key: "name",
-  },
-  {
-    title: "Type",
-    dataIndex: "mode",
-  },
-  {
-    title: "Region",
-    dataIndex: "region",
-  },
-  {
-    title: "Mobile",
-    dataIndex: "mobile",
-  },
-  {
-    title: "Submitted At",
-    dataIndex: "createdAt",
-  },
-];
+function SearchResults({ result, pagination, onPageChange, onShowSizeChange, onResultClose }) {
 
-function SearchResults({ result, pagination, onPageChange, onShowSizeChange }) {
+  const columns = [
+    {
+      title: "Name",
+      dataIndex: "name",
+      key: "name",
+    },
+    {
+      title: "Type",
+      dataIndex: "mode",
+    },
+    {
+      title: "Region",
+      dataIndex: "region",
+    },
+    {
+      title: "Mobile",
+      dataIndex: "mobile",
+    },
+    {
+      title: "Submitted At",
+      dataIndex: "createdAt",
+    },
+    {
+      title: "Action",
+      dataIndex: "_id",
+      render: (id, row) => row.status == 'open' ?(
+        <Popconfirm
+          title="Are you sure want to close this request?"
+          onConfirm={() => onResultClose(id)}
+          onCancel={() => {}}
+          okText="Yes"
+          cancelText="No">
+          <Button
+          size={"small"}
+            type="primary">Close</Button>
+        </Popconfirm>
+      ): (<span style={{color: 'red'}}>{row.status}</span>)
+    },
+  ];
   return (
     <div>
       <div>
@@ -41,7 +57,7 @@ function SearchResults({ result, pagination, onPageChange, onShowSizeChange }) {
                 <Details record={record} />
               </div>
             ),
-            expandRowByClick: true,
+            expandRowByClick: false,
           }}
           pagination={getPaginationObject(
             pagination,

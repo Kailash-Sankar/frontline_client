@@ -41,9 +41,8 @@ const RequestReport = ({
   }
 
   function onResultClose(id){
-    console.log('id: ', id);
     const url = `/request/update/${id}`;
-    updateStatus(url);
+    updateStatus(url, {status: 'closed'});
   }
 
   function formatParams() {

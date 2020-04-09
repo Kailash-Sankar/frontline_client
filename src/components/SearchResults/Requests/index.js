@@ -39,7 +39,7 @@ const RequestSearchResults = ({
         <Popconfirm
           title="Are you sure want to close this request?"
           onConfirm={() => onResultClose(id)}
-          onCancel={() => {console.log(row)}}
+          onCancel={() => {}}
           okText="Yes"
           cancelText="No">
           <Button
