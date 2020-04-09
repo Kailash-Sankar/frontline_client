@@ -174,6 +174,12 @@ function* exportCSV(scope, apiFn, action) {
   }
 }
 
+function* updateStatusVal(action) {
+  console.log("reached here", action);
+  const res = yield call(Api.updateStatus, action.endPoint);
+  console.log("response:", res);
+}
+
 export function* initSaga() {
   // reports
   yield takeLatest(reportTypes.SEARCH, search, reportTypes, Api.search);
@@ -216,6 +222,9 @@ export function* initSaga() {
     reportTypes,
     Api.exportKind
   );
+
+  //update the status column of entry.
+  yield takeLatest(requestReportTypes.UPDATE_STATUS, updateStatusVal);
 
   // save volunteers and kind
   yield takeLatest(volunteerTypes.SAVE, saveData, volunteerTypes);

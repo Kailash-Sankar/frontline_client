@@ -22,6 +22,7 @@ const RequestReport = ({
   exportCSV,
   setStatus,
   status,
+  updateStatus
 }) => {
   function onRegionChange(value) {
     setRegion(value);
@@ -37,6 +38,12 @@ const RequestReport = ({
 
   function onStatusChange(value) {
     setStatus(value);
+  }
+
+  function onResultClose(id){
+    console.log('id: ', id);
+    const url = `/request/update/${id}`;
+    updateStatus(url);
   }
 
   function formatParams() {
@@ -103,6 +110,7 @@ const RequestReport = ({
             pagination={pagination}
             onPageChange={handlePageChange}
             onShowSizeChange={handleSizeChange}
+            onResultClose={onResultClose}
           />
           <ExportButton onClick={handleExport} />
         </div>
