@@ -43,6 +43,7 @@ function AppealReport({
   function onResultClose(id){
     const url = `/appeal/update/${id}`;
     updateStatus(url, {status: 'closed'});
+    handleSearch();
   }
 
   function formatParams() {

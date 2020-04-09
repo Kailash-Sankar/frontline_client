@@ -43,6 +43,7 @@ const RequestReport = ({
   function onResultClose(id){
     const url = `/request/update/${id}`;
     updateStatus(url, {status: 'closed'});
+    handleSearch();
   }
 
   function formatParams() {
