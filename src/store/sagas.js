@@ -175,7 +175,16 @@ function* exportCSV(scope, apiFn, action) {
 }
 
 function* updateStatusVal(action) {
-  yield call(Api.updateStatus, action.endPoint, action.formData);
+  const res = yield call(Api.updateStatus, action.endPoint, action.formData);
+  try {
+    if (res.data.data) {
+      notify.base("Updated successfully");
+    } else {
+      notify.base("Unable to update the status.");
+    }
+  } catch (err) {
+    notify.base("Server error", "Try posting data again");
+  }
 }
 
 export function* initSaga() {
