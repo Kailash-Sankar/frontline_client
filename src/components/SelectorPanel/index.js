@@ -4,7 +4,7 @@ import { Spacer } from "@components/Utils";
 
 import { Button, DatePicker } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
-import { ModeSelect, RegionSelect } from "./SelectFields";
+import { ModeSelect, RegionSelect, StatusSelect } from "./SelectFields";
 
 import { ServiceSelector } from "./TreeSelects";
 
@@ -29,6 +29,9 @@ function SelectorPanel({
 
   dateRange,
   onDateRangeChange,
+
+  status,
+  onStatusChange,
 
   onSubmit,
 }) {
@@ -56,8 +59,8 @@ function SelectorPanel({
         />
       </div>
       <Spacer />
-      { service && 1==0 ? 
-        
+      { service && 1==0 ?
+
         (<React.Fragment><div className={styles.selectorCo}>
           <span>Services</span>
           <ServiceSelector
@@ -69,8 +72,8 @@ function SelectorPanel({
 
         <Spacer /></React.Fragment>)
       : null}
-      
-      { dateRange ? 
+
+      { dateRange ?
         (<React.Fragment>
         <div className={styles.selectorCo}>
           <span>Date Range</span>
@@ -82,7 +85,13 @@ function SelectorPanel({
         <Spacer />
         </React.Fragment>)
       : null }
-      
+
+        <div className={styles.selectorCo}>
+          <span>Status</span>
+          <StatusSelect status={status} onStatusChannge={onStatusChange} />
+        </div>
+        <Spacer />
+
       <div className={styles.selectorCo}>
         <span>&nbsp;</span>
         <Button onClick={onSubmit} icon={<SearchOutlined />}>

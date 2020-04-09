@@ -27,7 +27,7 @@ const formatDateRange = (dateRange) => {
   let res = {}
   if (dateRange && dateRange[0] && dateRange[1]){
     try{
-      
+
       const dates = []
       dates.push(dateRange[0].set({hour:'00',minute:'00',second:'00'}));
       dates.push(dateRange[1].set({hour:'23',minute:'59',second:'59'}));
@@ -40,13 +40,16 @@ const formatDateRange = (dateRange) => {
 }
 
 // format search queries
-export function formatSearchQuery({ mode, region, service, dateRange }) {
+export function formatSearchQuery({ mode, region, service, dateRange, status }) {
   const params = {
     mode: mode || "all",
     region: region || "all",
     ...formatService(service),
     ...formatDateRange(dateRange),
   };
+  if (status){
+    params.status = [status];
+  }
   return params;
 }
 

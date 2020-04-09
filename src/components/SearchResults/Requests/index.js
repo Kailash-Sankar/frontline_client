@@ -1,5 +1,5 @@
 import React from "react";
-import { Table } from "antd";
+import { Table, Button, Popconfirm } from "antd";
 import Details from "./Details";
 import { getPaginationObject } from "../utils";
 
@@ -23,6 +23,23 @@ const columns = [
     title: "Created",
     dataIndex: "createdAt",
   },
+
+  {
+    title: "Action",
+    dataIndex: "_id",
+    render: id => (
+      <Popconfirm
+        title="Are you sure want to close this request?"
+        onConfirm={() => {console.log('yes', id)}}
+        onCancel={() => {console.log('no', id)}}
+        okText="Yes"
+        cancelText="No">
+        <Button
+        size={"small"}
+        type="primary">Close</Button>
+      </Popconfirm>
+    )
+  },
 ];
 
 const RequestSearchResults = ({
@@ -44,7 +61,7 @@ const RequestSearchResults = ({
                 <Details record={record} />
               </div>
             ),
-            expandRowByClick: true,
+            expandRowByClick: false,
           }}
           pagination={getPaginationObject(
             pagination,

@@ -22,6 +22,8 @@ function KindReport({
   dateRange,
   setDateRange,
   exportCSV,
+  setStatus,
+  status,
 }) {
   function onModeChange(value) {
     setMode(value);
@@ -39,8 +41,18 @@ function KindReport({
     setService(value);
   }
 
+  function onStatusChange(value) {
+    setStatus(value);
+  }
+
   function formatParams() {
-    const query = formatSearchQuery({ mode, region, service, dateRange });
+    const query = formatSearchQuery({
+      mode,
+      region,
+      service,
+      dateRange,
+      status,
+    });
     query.act = ACT; // fixed type field
     return query;
   }
@@ -84,6 +96,9 @@ function KindReport({
     service,
     services: options.services.servicesTree,
     onServiceChange,
+
+    status,
+    onStatusChange,
 
     dateRange: dateRange,
     onDateRangeChange,

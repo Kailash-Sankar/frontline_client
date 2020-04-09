@@ -38,6 +38,11 @@ function generateReportDispatcher(types, custom = {}) {
         type: types.EXPORT_CSV,
         params,
       }),
+    setStatus: (status) =>
+      dispatch({
+        type: types.SET_STATUS,
+        status,
+      }),
     ...custom,
   });
 }
@@ -69,6 +74,10 @@ function generateReportReducer(types, initialState, customReducer = null) {
       case types.SET_DATE_RANGE:
         return update(state, {
           dateRange: { $set: action.dateRange },
+        });
+      case types.SET_STATUS:
+        return update(state, {
+          status: { $set: action.status },
         });
     }
     if (customReducer) {

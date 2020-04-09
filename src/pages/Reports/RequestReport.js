@@ -20,6 +20,8 @@ const RequestReport = ({
   dateRange,
   setDateRange,
   exportCSV,
+  setStatus,
+  status,
 }) => {
   function onRegionChange(value) {
     setRegion(value);
@@ -33,8 +35,12 @@ const RequestReport = ({
     value ? setDateRange(value) : setDateRange([null, null]);
   };
 
+  function onStatusChange(value) {
+    setStatus(value);
+  }
+
   function formatParams() {
-    const query = formatSearchQuery({ region, service, dateRange });
+    const query = formatSearchQuery({ region, service, dateRange, status });
     query.act = ACT; // fixed type field
     return query;
   }
@@ -77,6 +83,9 @@ const RequestReport = ({
 
     dateRange: dateRange,
     onDateRangeChange,
+
+    status,
+    onStatusChange,
 
     onSubmit: handleSearch,
   };

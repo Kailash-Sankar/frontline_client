@@ -13,6 +13,7 @@ const reportInitState = {
     pages: null,
   },
   dateRange: [moment(), moment()],
+  status: "open",
 };
 
 export { reportInitState };

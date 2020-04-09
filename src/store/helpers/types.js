@@ -6,6 +6,7 @@ const reportTypes = [
   "SET_PAGINATION",
   "SET_DATE_RANGE",
   "EXPORT_CSV",
+  "SET_STATUS",
 ];
 
 export { reportTypes };
