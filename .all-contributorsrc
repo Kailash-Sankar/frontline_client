@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "kishorkumarj",
+      "name": "Kishor K Jagadeesan",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/3972218?v=4",
+      "profile": "https://github.com/kishorkumarj",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "frontline_client",
+  "projectOwner": "Kailash-Sankar",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
