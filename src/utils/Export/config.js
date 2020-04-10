@@ -42,7 +42,6 @@ const headerSections = {
   tracking: [
     ["status", "Status"],
     ["createdAt", "Submitted on"],
-    ["tags", "Tags"],
   ],
 
   publicise: [["publicise", "Publicise"]],

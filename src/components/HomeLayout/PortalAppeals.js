@@ -2,10 +2,15 @@ import React from "react";
 import { List, Badge } from "antd";
 import { getStringAttr } from "@utils/Parser/strUtils";
 
+import { Typography } from "antd";
+const { Text } = Typography;
+
 const renderRow = (rowData) => {
   return (
     <span>
-      <strong>{getStringAttr(rowData)}</strong>
+      <Text style={{ color: "rgb(249, 198, 62)" }}>
+        {getStringAttr(rowData)}
+      </Text>
     </span>
   );
 };
@@ -17,7 +22,7 @@ const PortalAppeals = (props) => {
         onClick={() => props.appealClick(data._id)}
         style={{ cursor: "pointer" }}
       >
-        <Badge status="processing" />
+        <Badge status="yellow" />
         We need the following supplies,
         <div>{renderRow(data.services.medical)}</div>
         <div>{renderRow(data.services.nonmedical)}</div>

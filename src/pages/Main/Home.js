@@ -129,6 +129,7 @@ const HomePage = (props) => {
           </Col>
         </Row>
       </Col>
+
       <Col lg={6} sm={24} xs={24} md={6} className="gutter-row right-conteiner">
         <Statistics covidStats={props.covidStats} />
         <Row style={{ padding: "5px" }}>
@@ -140,12 +141,14 @@ const HomePage = (props) => {
           </Col>
         </Row>
       </Col>
+
       <Spacer display="block" height={20} />
+
       <Col span={24}>
         <Row>
           <Col lg={8} sm={24} xs={24} className="bottom-btn-containers">
             <div className="goto-text" onClick={() => setShowModal(true)}>
-                DONATE FUNDS <ArrowRightOutlined />
+              DONATE FUNDS <ArrowRightOutlined />
             </div>
             <div>
               <div>
@@ -167,7 +170,8 @@ const HomePage = (props) => {
               </div>
             </div>
           </Col>
-          <Col lg={8} sm={24} xs={24} className="bottom-btn-containers2">
+
+          <Col lg={8} sm={24} xs={24} className="bottom-btn-containers-alt">
             <Link to="/kind">
               <div className="goto-text">
                 SUPPORT IN KIND <ArrowRightOutlined />
@@ -185,6 +189,7 @@ const HomePage = (props) => {
               <li>Food for relief, for those in need.</li>
             </ul>
           </Col>
+
           <Col lg={8} sm={24} xs={24} className="bottom-btn-containers">
             <a
               href="https://covid19.karnataka.gov.in/coronawarrior.html"
@@ -208,16 +213,21 @@ const HomePage = (props) => {
           </Col>
         </Row>
       </Col>
+
       <Spacer display="block" height={20} />
+
       <Col span={24}>
         <Footer noBackground={true} />
       </Col>
       <Spacer display="block" height={15} />
       <Affix
         offsetBottom={20}
-        style={{ right: 30, position: "fixed", bottom: 30 }}>
+        style={{ right: 30, position: "fixed", bottom: 30 }}
+      >
         <Link to="/request">
-          <Button type="primary">Request for Help</Button>
+          <Button type="primary" style={{ backgroundColor: "#14497a" }}>
+            Request for Help
+          </Button>
         </Link>
       </Affix>
     </Row>

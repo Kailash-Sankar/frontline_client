@@ -1,4 +1,5 @@
 import { defaultLimit } from "@utils/constants";
+import moment from "moment";
 
 const reportInitState = {
   result: [],
@@ -11,7 +12,7 @@ const reportInitState = {
     page: 1,
     pages: null,
   },
-  dateRange: [null, null],
+  dateRange: [moment(), moment()],
 };
 
 export { reportInitState };
