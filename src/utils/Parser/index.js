@@ -2,7 +2,7 @@ import { NA } from "@utils/constants";
 import getParseFn from "./parseConfig";
 
 function dataParser(data) {
-  console.log("input", data);
+  //console.log("input", data);
 
   const res = [];
   data.forEach((row) => {
@@ -21,7 +21,7 @@ function dataParser(data) {
         row[k] = NA;
       }
     });
-    console.log("pr", parsedRow);
+    //console.log("pr", parsedRow);
     if (parsedRow && Object.keys(parsedRow).length > 0) {
       res.push(parsedRow);
     }

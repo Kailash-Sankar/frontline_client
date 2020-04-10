@@ -5,6 +5,9 @@ import { Empty } from "antd";
 import { connecter } from "@store/appealReport";
 import options from "@utils/Options";
 import { formatSearchQuery } from "../utils";
+import ExportButton from "@components/Misc/ExportButton";
+
+const ACT = "appeal"; // fixed type field
 
 function AppealReport({
   result,
@@ -16,6 +19,7 @@ function AppealReport({
   pagination,
   dateRange,
   setDateRange,
+  exportCSV,
 }) {
   function onRegionChange(value) {
     setRegion(value);
@@ -31,7 +35,7 @@ function AppealReport({
 
   function formatParams() {
     const query = formatSearchQuery({ region, service, dateRange });
-    query.act = "appeal"; // fixed type field
+    query.act = ACT;
     return query;
   }
 
@@ -54,6 +58,12 @@ function AppealReport({
 
   function handleSizeChange(page, limit) {
     triggerSearch({ limit });
+  }
+
+  function handleExport() {
+    exportCSV({
+      query: formatParams(),
+    });
   }
 
   const searchProps = {
@@ -85,6 +95,8 @@ function AppealReport({
             onPageChange={handlePageChange}
             onShowSizeChange={handleSizeChange}
           />
+
+          <ExportButton onClick={handleExport} />
         </div>
       ) : (
         <div style={{ marginTop: 100 }}>

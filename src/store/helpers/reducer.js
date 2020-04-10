@@ -33,6 +33,11 @@ function generateReportDispatcher(types, custom = {}) {
         type: types.SET_DATE_RANGE,
         dateRange,
       }),
+    exportCSV: (params) =>
+      dispatch({
+        type: types.EXPORT_CSV,
+        params,
+      }),
     ...custom,
   });
 }

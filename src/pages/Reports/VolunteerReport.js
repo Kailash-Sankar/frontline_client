@@ -5,6 +5,7 @@ import { Empty } from "antd";
 import { connecter } from "@store/report";
 import options from "@utils/Options";
 import { formatSearchQuery } from "../utils";
+import ExportButton from "@components/Misc/ExportButton";
 
 function Report({
   result,
@@ -16,6 +17,7 @@ function Report({
   service,
   setService,
   pagination,
+  exportCSV,
 }) {
   function onModeChange(value) {
     setMode(value);
@@ -55,6 +57,12 @@ function Report({
     triggerSearch({ limit });
   }
 
+  function handleExport() {
+    exportCSV({
+      query: formatParams(),
+    });
+  }
+
   const searchProps = {
     mode,
     modes: options.other.modeOptions,
@@ -85,6 +93,7 @@ function Report({
             onPageChange={handlePageChange}
             onShowSizeChange={handleSizeChange}
           />
+          <ExportButton onClick={handleExport} />
         </div>
       ) : (
         <div style={{ marginTop: 100 }}>

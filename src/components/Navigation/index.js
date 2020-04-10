@@ -60,8 +60,6 @@ export function RenderMenu() {
   const location = useLocation();
   let selected = location.pathname;
 
-  console.log("selected", selected);
-
   return (
     <Menu
       theme="dark"

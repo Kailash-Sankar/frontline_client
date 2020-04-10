@@ -14,7 +14,6 @@ function VolunteerSignup({ reset, mode, setMode, save }) {
       formData.act = "volunteer"; // fixed page type
 
       formatter(formData);
-      console.log("after", formData);
       save(formData);
     }
   }

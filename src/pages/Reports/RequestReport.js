@@ -5,6 +5,9 @@ import options from "@utils/Options";
 import { Empty } from "antd";
 import { RequestSearchResults } from "@components/SearchResults";
 import { formatSearchQuery } from "../utils";
+import ExportButton from "@components/Misc/ExportButton";
+
+const ACT = "request";
 
 const RequestReport = ({
   result,
@@ -16,6 +19,7 @@ const RequestReport = ({
   pagination,
   dateRange,
   setDateRange,
+  exportCSV,
 }) => {
   function onRegionChange(value) {
     setRegion(value);
@@ -31,7 +35,7 @@ const RequestReport = ({
 
   function formatParams() {
     const query = formatSearchQuery({ region, service, dateRange });
-    query.act = "request"; // fixed type field
+    query.act = ACT; // fixed type field
     return query;
   }
 
@@ -54,6 +58,12 @@ const RequestReport = ({
 
   function handleSizeChange(page, limit) {
     triggerSearch({ limit });
+  }
+
+  function handleExport() {
+    exportCSV({
+      query: formatParams(),
+    });
   }
 
   const searchProps = {
@@ -85,6 +95,7 @@ const RequestReport = ({
             onPageChange={handlePageChange}
             onShowSizeChange={handleSizeChange}
           />
+          <ExportButton onClick={handleExport} />
         </div>
       ) : (
         <div style={{ marginTop: 100 }}>

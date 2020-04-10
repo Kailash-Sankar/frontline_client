@@ -48,6 +48,7 @@ function SearchResults({ result, pagination, onPageChange, onShowSizeChange }) {
             onPageChange,
             onShowSizeChange
           )}
+          size="middle"
         />
       </div>
     </div>

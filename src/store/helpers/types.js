@@ -5,6 +5,7 @@ const reportTypes = [
   "SET_SERVICE",
   "SET_PAGINATION",
   "SET_DATE_RANGE",
+  "EXPORT_CSV",
 ];
 
 export { reportTypes };

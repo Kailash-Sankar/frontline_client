@@ -5,6 +5,9 @@ import { Empty } from "antd";
 import { connecter } from "@store/kindReport";
 import options from "@utils/Options";
 import { formatSearchQuery } from "../utils";
+import ExportButton from "@components/Misc/ExportButton";
+
+const ACT = "kind";
 
 function KindReport({
   result,
@@ -18,6 +21,7 @@ function KindReport({
   pagination,
   dateRange,
   setDateRange,
+  exportCSV,
 }) {
   function onModeChange(value) {
     setMode(value);
@@ -37,7 +41,7 @@ function KindReport({
 
   function formatParams() {
     const query = formatSearchQuery({ mode, region, service, dateRange });
-    query.act = "kind"; // fixed type field
+    query.act = ACT; // fixed type field
     return query;
   }
 
@@ -60,6 +64,12 @@ function KindReport({
 
   function handleSizeChange(page, limit) {
     triggerSearch({ limit });
+  }
+
+  function handleExport() {
+    exportCSV({
+      query: formatParams(),
+    });
   }
 
   const searchProps = {
@@ -95,6 +105,8 @@ function KindReport({
             onPageChange={handlePageChange}
             onShowSizeChange={handleSizeChange}
           />
+
+          <ExportButton onClick={handleExport} />
         </div>
       ) : (
         <div style={{ marginTop: 100 }}>

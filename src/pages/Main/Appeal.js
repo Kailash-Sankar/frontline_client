@@ -14,7 +14,6 @@ function Appeal({ save, reset }) {
     if (formData) {
       formData.act = "appeal";
       formatter(formData);
-      console.log("after", formData);
       save(formData);
     }
   }

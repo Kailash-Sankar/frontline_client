@@ -19,8 +19,6 @@ export const pageSelector = (scope, selectors = {}) => {
   return createSelector(
     [scopeSelector, ...keys.map((k) => selectors[k])],
     (scopedState, ...args) => {
-      // console.log("selector", customers, products, scopedState);
-
       // build selector result set
       const argMap = {};
       args.forEach((r, i) => {
@@ -29,7 +27,7 @@ export const pageSelector = (scope, selectors = {}) => {
 
       return {
         ...scopedState,
-        ...argMap
+        ...argMap,
       };
     }
   );
