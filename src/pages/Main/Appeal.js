@@ -1,5 +1,5 @@
 import React from "react";
-import AppealForm from "@components/AppealForm";
+import AppealForm from "@components/VolunteerForm/AppealForm";
 import options from "@utils/Options";
 import formatter from "@utils/Formatter";
 import { connecter } from "@store/appeal";
@@ -14,7 +14,6 @@ function Appeal({ save, reset }) {
     if (formData) {
       formData.act = "appeal";
       formatter(formData);
-      console.log("after", formData);
       save(formData);
     }
   }
@@ -22,7 +21,7 @@ function Appeal({ save, reset }) {
   return (
     <div style={{ textAlign: "left" }}>
       <h2>Post Appeals</h2>
-      <div style={{ marginTop: 20 }}>
+      <div style={{ marginTop: 30 }}>
         <AppealForm
           {...options}
           onSubmit={handleSubmit}

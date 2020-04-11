@@ -51,6 +51,7 @@ const RequestSearchResults = ({
             onPageChange,
             onShowSizeChange
           )}
+          size="middle"
         />
       </div>
     </div>

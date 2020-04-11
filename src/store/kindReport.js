@@ -1,111 +1,31 @@
-import update from "immutability-helper";
 import { connect } from "react-redux";
 import { applyScope } from "./utils";
 import { pageSelector } from "./selectors";
 
-import { createSelector } from "reselect";
-import parseData from "@utils/Parser";
-import { defaultLimit } from "@utils/constants";
+import {
+  generateReportDispatcher,
+  generateReportReducer,
+} from "./helpers/reducer";
+import { generateResultSelector } from "./helpers/selector";
+import { reportTypes } from "./helpers/types";
+import { reportInitState } from "./helpers/initialState";
 
 const scope = "kindReport";
 
-const initialState = {
-  result: [],
-  mode: undefined,
-  region: ["KA"],
-  service: [],
-  pagination: {
-    total: null,
-    limit: defaultLimit,
-    page: 1,
-    pages: null,
-  },
-  dateRange: [null, null],
-};
+const initialState = reportInitState;
 
-export const types = applyScope(scope, [
-  "SET_RESULT",
-  "SEARCH",
-  "SET_MODE",
-  "SET_REGION",
-  "SET_SERVICE",
-  "SET_PAGINATION",
-  "SET_DATE_RANGE",
-]);
+export const types = applyScope(scope, reportTypes);
 
-const kindReportReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case types.SET_RESULT:
-      return update(state, {
-        result: { $set: action.result },
-      });
-    case types.SET_MODE:
-      return update(state, {
-        mode: { $set: action.mode },
-      });
-    case types.SET_REGION:
-      return update(state, {
-        region: { $set: action.region },
-      });
-    case types.SET_SERVICE:
-      return update(state, {
-        service: { $set: action.service },
-      });
-    case types.SET_PAGINATION:
-      return update(state, {
-        pagination: { $set: action.pagination },
-      });
-    case types.SET_DATE_RANGE:
-      return update(state, {
-        dateRange: { $set: action.dateRange },
-      });
-  }
-  return state;
-};
+// reducer actions, pass callback function for custom actions
+const kindReportReducer = generateReportReducer(types, initialState);
 
-// dispatch actions
-const mapDispatchToProps = (dispatch) => ({
-  setResult: (result) =>
-    dispatch({
-      type: types.SET_RESULT,
-      result,
-    }),
-  setMode: (mode) =>
-    dispatch({
-      type: types.SET_MODE,
-      mode,
-    }),
-  setRegion: (region) =>
-    dispatch({
-      type: types.SET_REGION,
-      region,
-    }),
-  setService: (service) =>
-    dispatch({
-      type: types.SET_SERVICE,
-      service,
-    }),
-  search: (params) =>
-    dispatch({
-      type: types.SEARCH,
-      params,
-    }),
-  setDateRange: (dateRange) =>
-    dispatch({
-      type: types.SET_DATE_RANGE,
-      dateRange,
-    }),
+// dispatch actions, pass custom actions if any
+const mapDispatchToProps = generateReportDispatcher(types);
+
+// state with selectors
+const mapStateToProps = pageSelector(scope, {
+  result: generateResultSelector(scope),
 });
-
-// parsed result selector
-const getResult = (state) => state.kindReport.result;
-export const parsedResultSelector = createSelector([getResult], (result) => {
-  const parsedResult = parseData(result);
-  return parsedResult;
-});
-
-// state from root state
-const mapStateToProps = pageSelector(scope, { result: parsedResultSelector });
 
 // connect
 export const connecter = (Report) =>

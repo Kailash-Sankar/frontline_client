@@ -1,5 +1,10 @@
 @import "colors.less";
 
+.app {
+  height: 100%;
+  font-family: "Quicksand", sans-serif;
+}
+
 a {
   color: #002140;
 }
@@ -10,10 +15,9 @@ a {
   text-decoration: underline;
 }
 
-.ant-layout-header{
+.ant-layout-header {
   min-height: 75px;
 }
-
 
 .showcase {
   text-align: center;
@@ -63,7 +67,6 @@ a {
   }
 }
 
-
 .ant-carousel .slick-slide {
   text-align: center;
   height: 400px;
@@ -76,295 +79,327 @@ a {
   color: #fff;
 }
 
-
-.appeals-container{
+.appeals-container {
   border: 1px solid #f0f0f0;
 }
 
-.home-stats-container .region-stats{
+.home-stats-container .region-stats {
   text-align: left;
 }
 
-.home-stats-container .ant-row{
+.home-stats-container .ant-row {
   padding-top: 3px;
   padding-bottom: 3px;
   margin-bottom: 5px;
 }
 
-
 /* Home content Styles */
 
-.layout-conteiner{
+.layout-conteiner {
   text-align: left;
   color: #fff;
   //background-image: url('../images/background.png');
   background-repeat: no-repeat;
-  padding-left: 50px;
-  padding-right: 5px;
+  padding-left: 1%;
+  padding-right: 1%;
   padding-top: 5px;
 }
 
-.layout-conteiner h3{
+.layout-conteiner h3 {
   color: #fff;
 }
 
-.ant-layout-content{
+.ant-layout-content {
   background-color: #fff;
   margin: 0px;
 }
 
-.layout-header{
+.layout-header {
   min-height: 80px;
   //padding: 30px
   padding-top: 10px;
 }
 
-.state-logo{
+.state-logo {
   max-height: 70px;
   max-width: 70px;
 }
 
-.cm-logo{
+.cm-logo {
   max-height: 70px;
   max-width: 70px;
   //float: right;
 }
 
-.hashtag-2{
+.hashtag-2 {
   float: right;
 }
 
-.header-text{
+.header-text {
   font-size: 1.2rem;
   font-weight: 700;
 }
 
-.cm-image-container{
+.cm-image-container {
   text-align: center;
   padding-right: 20px;
 }
 
-.logo-banner{
+.logo-banner {
   text-align: center;
   font-size: 3rem;
   font-weight: 600;
 }
 
-.text-large{
+.text-large {
   font-size: 3rem;
   font-weight: 700;
 }
 
-.right-conteiner{
+.right-conteiner {
   border-left: 1px solid #8c8a8a;
 }
 
-.covid-stat{
+.covid-stat {
   padding: 10px 10px 10px 15px;
 }
 
-.covid-stat h3{
+.covid-stat h3 {
   color: #fff;
   font-weight: 600;
 }
 
-.covid-stat-header{
+.covid-stat-header {
   font-size: 10px;
   padding-left: 10px;
   font-weight: 700;
-  opacity: .6;
+  opacity: 0.6;
 }
 
-.covid-stat-data{
+.covid-stat-data {
   font-size: 10px;
   padding-left: 10px;
   font-weight: 800;
   padding-bottom: 20px;
 }
 
-.appeals-data .ant-list-item{
-  color: #fff;
+.appeals-data .ant-list-item {
+  color: snow;
+  background-color: #3339;
 }
 
-.appeals-header{
+.appeals-header {
   font-weight: 700;
   color: #fff;
   text-align: center;
 }
 
-
-.bottom-btn-containers{
-  background-color: yellow;
+.bottom-btn-containers {
+  background-color: #dada27;
   color: black;
   padding: 20px;
   margin-top: 5px;
   margin-bottom: 10px;
 }
 
-.bottom-btn-containers2{
-  background-color: #d0d026;
-  color: black;
-  padding: 20px;
-  margin-top: 5px;
-  margin-bottom: 10px;
+.bottom-btn-containers-alt {
+  .bottom-btn-containers();
+  background-color: #dada27;
+  border-left: 1px solid #333;
+  border-right: 1px solid #333;
 }
 
-.goto-text{
+.goto-text {
   font-weight: 700;
   font-size: 16px;
   margin-bottom: 5px;
   cursor: pointer;
-  color: #337ab7;
+  color: #14497a;
 }
-.goto-container-text{
+.goto-container-text {
   display: flex;
   justify-content: center;
   font-weight: 500;
 }
 
-.home-text-message h2{
+.home-text-message h2 {
   color: #fff;
 }
 
-
-.home-text-message{
+.home-text-message {
   margin-top: 15px;
   margin-bottom: 10px;
 }
 
-.border-right{
+.border-right {
   border-right: 1px solid #8c8a8a;
 }
 
-.margin-adjust{
+.margin-adjust {
   margin-top: -22px;
+}
+
+.caption-co {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 /* Payment popup */
 
-.payment-header{
- color: #337ab7;
- font-weight: 700;
- text-align: center;
+.payment-header {
+  color: #337ab7;
+  font-weight: 700;
+  text-align: center;
 }
 
-.payment-field-label{
+.payment-field-label {
   color: #337ab7;
   font-weight: 400;
 }
 
-.payment-field-value{
+.payment-field-value {
   color: #e67300;
   font-weight: 700;
 }
 
-.payment-seperator-text{
+.payment-seperator-text {
   color: #f1c13f;
   text-align: center;
   font-weight: 700;
   font-size: 18px;
 }
 
-.footer-container{
-  color: #fff;
-  min-height: 80px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
+/* -- footer -- */
 
-.footer-container h3{
+.footer-container {
   color: #fff;
 }
 
-.ant-layout-footer{
-  padding: 0px 0px 5px 0px;
+.footer-container h3 {
+  color: #fff;
+  padding: 5px;
+}
+
+.ant-layout-footer {
+  padding: 0px 0px 0px 0px;
+  max-height: 100px;
+  font-size: 12px;
+}
+
+.footer-cell {
+  display: flex;
+  flex-direction: column;
+  padding-left: 8px;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-box {
+  div {
+    border: 0px solid #aaa;
+  }
+}
+
+.footer-icon {
+  font-size: 24px;
+  padding-right: 5px;
+}
+
+.footer-item-wrap {
+  padding: 5px;
+  display: inline-block;
 }
 
 /* End Payment popup */
 
 @media only screen and (max-width: 801px) {
-  .header-text{
+  .header-text {
     font-size: 1.2rem;
     font-weight: 700;
   }
 
-  .margin-adjust{
+  .margin-adjust {
     margin-top: -5px;
   }
 
-  .layout-conteiner{
+  .layout-conteiner {
     padding-left: 8px;
     padding-right: 8px;
   }
-  
-  .layout-header{
+
+  .layout-header {
     align-items: center;
   }
-  .layout-header div{
+  .layout-header div {
     align-items: center;
     text-align: center;
     float: none;
   }
-  .layout-header div img{
+  .layout-header div img {
     align-items: center;
     text-align: center;
     float: none;
   }
 
-  .layout-header div span{
+  .layout-header div span {
     align-items: center;
     text-align: center;
     float: none;
   }
-  .cm-image-container{
+  .cm-image-container {
     padding-right: 0px;
   }
 }
 @media only screen and (max-width: 575px) {
-  .text-large{
+  .text-large {
     font-size: 1.2rem;
     font-weight: 700;
   }
 
-  .logo-banner{
+  .logo-banner {
     font-size: 1.5rem;
   }
-  .header-text{
-    font-size: .8rem;
+  .header-text {
+    font-size: 0.8rem;
     font-weight: 700;
   }
-  .margin-adjust{
+  .margin-adjust {
     margin-top: 0px;
   }
 
-  .layout-conteiner{
+  .layout-conteiner {
     padding-left: 8px;
     padding-right: 8px;
   }
 
-  .layout-header{
+  .layout-header {
     align-items: center;
   }
-  .layout-header div{
+  .layout-header div {
     align-items: center;
     text-align: center;
     float: none;
   }
-  .layout-header div img{
+  .layout-header div img {
     align-items: center;
     text-align: center;
     float: none;
   }
 
-  .layout-header div span{
+  .layout-header div span {
     align-items: center;
     text-align: center;
     float: none;
   }
-  .cm-image-container{
+  .cm-image-container {
     padding-right: 0px;
   }
 }
-
 
 /* END Home content Styles */

@@ -13,12 +13,12 @@ import { ArrowRightOutlined } from "@ant-design/icons";
 import { connector } from "@store/homeContent";
 import axios from "axios";
 
-import background from "../../images/background.png";
-import StateLogo from "../../images/state-logo.png";
-import cmIMG from "../../images/cm-img.png";
+import background from "@images/background.png";
+import StateLogo from "@images/state-logo.png";
+import cmIMG from "@images/cm-img.png";
 //import carousel1 from "../../images/carousel-1.png";
 //import carousel2 from "../../images/carousel-2.png";
-import carousel3 from "../../images/carousel-3.jpg";
+import carousel3 from "@images/carousel-3.jpg";
 //import carousel4 from "../../images/carousel-4.jpg";
 
 const HomePage = (props) => {
@@ -101,25 +101,24 @@ const HomePage = (props) => {
         </Row>
 
         <Spacer display="block" height={40} />
+
         <Row>
-          <Col span={24} className="text-large">
-            DONATE.
+          <Col lg={8} md={24} sm={24}>
+            <div className="caption-co">
+              <Row className="text-large">DONATE.</Row>
+              <Row className="text-large margin-adjust">SUPPORT.</Row>
+              <Row className="text-large margin-adjust">VOLUNTEER.</Row>
+            </div>
           </Col>
-          <Col span={24} className="text-large margin-adjust">
-            SUPPORT.
-          </Col>
-          <Col span={24} className="text-large margin-adjust">
-            VOLUNTEER.
-          </Col>
-        </Row>
-        <Spacer display="block" height={20} />
-        <Row>
-          <Col span={24}>
+          <Col lg={16} md={24} sm={24}>
             <ImageCarousel caurosalData={caurosalData} imageWidth="95%" />
           </Col>
         </Row>
+
+        <Spacer display="block" height={20} />
+
         <Row>
-          <Col lg={20} sm={24} xs={24} md={20} className="home-text-message">
+          <Col lg={24} sm={24} xs={24} md={24} className="home-text-message">
             <h3>
               The global coronavirus outbreak has forced all of us away from our
               everyday lives. Although apart, we are all in this fight together.
@@ -129,6 +128,7 @@ const HomePage = (props) => {
           </Col>
         </Row>
       </Col>
+
       <Col lg={6} sm={24} xs={24} md={6} className="gutter-row right-conteiner">
         <Statistics covidStats={props.covidStats} />
         <Row style={{ padding: "5px" }}>
@@ -140,12 +140,14 @@ const HomePage = (props) => {
           </Col>
         </Row>
       </Col>
+
       <Spacer display="block" height={20} />
+
       <Col span={24}>
         <Row>
           <Col lg={8} sm={24} xs={24} className="bottom-btn-containers">
             <div className="goto-text" onClick={() => setShowModal(true)}>
-                DONATE FUNDS <ArrowRightOutlined />
+              DONATE FUNDS <ArrowRightOutlined />
             </div>
             <div>
               <div>
@@ -167,7 +169,8 @@ const HomePage = (props) => {
               </div>
             </div>
           </Col>
-          <Col lg={8} sm={24} xs={24} className="bottom-btn-containers2">
+
+          <Col lg={8} sm={24} xs={24} className="bottom-btn-containers-alt">
             <Link to="/kind">
               <div className="goto-text">
                 SUPPORT IN KIND <ArrowRightOutlined />
@@ -185,6 +188,7 @@ const HomePage = (props) => {
               <li>Food for relief, for those in need.</li>
             </ul>
           </Col>
+
           <Col lg={8} sm={24} xs={24} className="bottom-btn-containers">
             <a
               href="https://covid19.karnataka.gov.in/coronawarrior.html"
@@ -208,16 +212,21 @@ const HomePage = (props) => {
           </Col>
         </Row>
       </Col>
+
       <Spacer display="block" height={20} />
+
       <Col span={24}>
         <Footer noBackground={true} />
       </Col>
       <Spacer display="block" height={15} />
       <Affix
         offsetBottom={20}
-        style={{ right: 30, position: "fixed", bottom: 30 }}>
+        style={{ right: 30, position: "fixed", bottom: 30 }}
+      >
         <Link to="/request">
-          <Button type="primary">Request for Help</Button>
+          <Button type="primary" style={{ backgroundColor: "#14497a" }}>
+            Request for Help
+          </Button>
         </Link>
       </Affix>
     </Row>

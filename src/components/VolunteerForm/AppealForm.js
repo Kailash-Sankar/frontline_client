@@ -1,32 +1,12 @@
 import React, { useEffect } from "react";
 import { Form, Button } from "antd";
+import { formItemLayout, tailFormItemLayout } from "./layout";
 
-import {
-  MedicalField,
-  NonMedicalField,
-  RegionSelect,
-} from "@components/VolunteerForm/Fields/Select";
+import { MedicalField, NonMedicalField, RegionSelect } from "./Fields/Select";
 
-import { PinField } from "@components/VolunteerForm/Fields/Input";
-
-import { DynamicServicList } from "@components/VolunteerForm/Fields/Dynamic";
-
-import { AppealField, TagField } from "./Fields";
-
-const layout = {
-  labelCol: {
-    span: 4,
-  },
-  wrapperCol: {
-    span: 12,
-  },
-};
-const tailLayout = {
-  wrapperCol: {
-    offset: 8,
-    span: 16,
-  },
-};
+import { PinField } from "./Fields/Input";
+import { DynamicServicList } from "./Fields/Dynamic";
+import { AppealField, TagField } from "./Fields/Other";
 
 function AppealForm({ onSubmit, reset, regions, services, initialValues }) {
   const [form] = Form.useForm();
@@ -63,7 +43,7 @@ function AppealForm({ onSubmit, reset, regions, services, initialValues }) {
   return (
     <Form
       form={form}
-      {...layout}
+      {...formItemLayout}
       initialValues={initialValues}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
@@ -87,7 +67,7 @@ function AppealForm({ onSubmit, reset, regions, services, initialValues }) {
       <AppealField />
       <TagField />
 
-      <Form.Item {...tailLayout}>
+      <Form.Item {...tailFormItemLayout}>
         <Button type="primary" htmlType="submit">
           Submit
         </Button>

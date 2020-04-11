@@ -24,7 +24,7 @@ server.interceptors.response.use(
     return response;
   },
   function (error) {
-    console.log(error.response);
+    console.log("Interceptor err", error.response);
     if (error.response.status == 401) {
       // clear auth token
       authStorage.remove();
@@ -34,9 +34,16 @@ server.interceptors.response.use(
   }
 );
 
+// TODO: pending update
 async function getVolunteerCount() {
   const res = await server.get(`/status`);
   return res.data.data || [];
+}
+
+// -- volunteer and kind --
+async function saveForm(formData) {
+  const res = await server.post(`/volunteer`, formData);
+  return res;
 }
 
 async function search(params) {
@@ -44,26 +51,44 @@ async function search(params) {
   return res.data.data || [];
 }
 
-async function searchAppeals(params) {
-  const res = await server.post(`/appeal/search/`, params);
+async function exportKind(params) {
+  const res = await server.post(`/export/`, params);
   return res.data.data || [];
 }
 
-async function searchRequests(params){
-  const res = await server.post(`/request/search`, params);
-  return res.data.data || [];
-}
-
-async function saveForm(formData) {
-  const res = await server.post(`/volunteer`, formData);
-  return res;
-}
-
+//  -- appeals --
 async function saveAppealForm(formData) {
   const res = await server.post(`/appeal`, formData);
   return res;
 }
 
+async function searchAppeals(params) {
+  const res = await server.post(`/appeal/search/`, params);
+  return res.data.data || [];
+}
+
+async function exportAppeals(params) {
+  const res = await server.post(`/appeal/export/`, params);
+  return res.data.data || [];
+}
+
+// -- requests --
+async function saveHelpRequest(formData) {
+  const res = await server.post("/request", formData);
+  return res || null;
+}
+
+async function searchRequests(params) {
+  const res = await server.post(`/request/search`, params);
+  return res.data.data || [];
+}
+
+async function exportRequests(params) {
+  const res = await server.post(`/request/export/`, params);
+  return res.data.data || [];
+}
+
+// -- auth
 async function login(formData) {
   const res = await server.post(`/auth/login`, formData);
   return res;
@@ -74,14 +99,10 @@ async function authCheck() {
   return res;
 }
 
+// -- home page --
 async function getHomePageData(url) {
   const res = await server.get(url);
   return res.data.data || [];
-}
-
-async function saveHelpRequest(formData){
-  const res = await server.post('/request', formData);
-  return res || null;
 }
 
 export default {
@@ -95,4 +116,7 @@ export default {
   searchAppeals,
   saveHelpRequest,
   searchRequests,
+  exportAppeals,
+  exportKind,
+  exportRequests,
 };

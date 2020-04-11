@@ -14,7 +14,6 @@ function VolunteerSignup({ reset, mode, setMode, save }) {
       formData.act = "volunteer"; // fixed page type
 
       formatter(formData);
-      console.log("after", formData);
       save(formData);
     }
   }
@@ -32,7 +31,7 @@ function VolunteerSignup({ reset, mode, setMode, save }) {
         handleChange={setMode}
         options={options.other.modeOptions}
       />
-      <div style={{ margin: 30 }}>
+      <div style={{ marginTop: 30 }}>
         {mode === "individual" ? (
           <IndividualForm
             onSubmit={handleSubmit}

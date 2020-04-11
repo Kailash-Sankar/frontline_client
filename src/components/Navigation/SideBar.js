@@ -1,9 +1,6 @@
 import React from "react";
-import { Spacer } from "@components/Utils";
 import { Menu, Layout } from "antd";
 import { Link, useLocation } from "react-router-dom";
-import * as styles from "./index.module.less";
-import StateLogo from "@images/state-logo.png";
 
 //import logo from "@images/logo.png";
 
@@ -12,55 +9,15 @@ import {
   FileSearchOutlined,
   HomeOutlined,
   FormOutlined,
-  LoginOutlined,
-  LogoutOutlined,
   GlobalOutlined,
   PicLeftOutlined,
 } from "@ant-design/icons";
 
-const { Header, Sider } = Layout;
+const { Sider } = Layout;
 
-export const TopBar = ({ loggedIn, user }) => {
-  return (
-    <Header style={{ background: "#fff", padding: 0 }}>
-      <div className={styles.headFlex}>
-        <div className={styles.logoWrap}>
-          <Link to="/">
-            <img src={StateLogo} className="state-logo" />
-            <span style={{ paddingLeft: "10px", fontWeight: "600" }}>
-              Sankalpa
-            </span>
-          </Link>
-        </div>
-
-        <div className={styles.statusWrap}></div>
-
-        <div className={styles.userWrap}>
-          <Spacer width={20} />
-          {loggedIn ? (
-            <span>
-              <span className={styles.userLabel}>Hello, {user.name}</span>
-              <Spacer width={20} />
-              <Link to="/logout">
-                <LogoutOutlined />
-              </Link>
-            </span>
-          ) : (
-            <Link to="/login">
-              <LoginOutlined />
-            </Link>
-          )}
-        </div>
-      </div>
-    </Header>
-  );
-};
-
-export function RenderMenu() {
+function RenderMenu() {
   const location = useLocation();
   let selected = location.pathname;
-
-  console.log("selected", selected);
 
   return (
     <Menu
@@ -114,7 +71,7 @@ export function RenderMenu() {
   );
 }
 
-export const SideBar = ({ loggedIn }) => {
+const SideBar = ({ loggedIn }) => {
   const [collapsed, setCollapsed] = React.useState(false);
 
   function onCollapse(collapsed) {
@@ -147,3 +104,5 @@ export const SideBar = ({ loggedIn }) => {
     </Sider>
   );
 };
+
+export default SideBar;

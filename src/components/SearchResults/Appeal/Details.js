@@ -1,16 +1,6 @@
 import React from "react";
 import { Descriptions } from "antd";
-//import { getStringAttr } from "@utils/Parser/strUtils";
 const { Item } = Descriptions;
-
-/*
-  <Item label="Medical Services" span={2}>
-    {getStringAttr(record.services.medical)}
-  </Item>
-  <Item label="Non-Medical Services" span={2}>
-    {getStringAttr(record.services.nonmedical)}
-  </Item>
-*/
 
 function Details({ record }) {
   return (
