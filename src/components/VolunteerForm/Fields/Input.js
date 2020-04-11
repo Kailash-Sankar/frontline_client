@@ -24,7 +24,7 @@ export const MobileField = () => (
     ]}
   >
     <Row gutter={8}>
-      <Col span={8}>
+      <Col span={20}>
         <Input maxLength={10} placeholder="Enter your mobile number" />
       </Col>
     </Row>
@@ -58,7 +58,7 @@ export const ConfirmMobileField = () => (
     ]}
   >
     <Row gutter={8}>
-      <Col span={8}>
+      <Col span={20}>
         <Input maxLength={10} placeholder="Enter re-enter your mobile number" />
       </Col>
     </Row>
@@ -68,7 +68,7 @@ export const ConfirmMobileField = () => (
 export const AddressField = () => (
   <Form.Item label="Address" name="address">
     <Row gutter={8}>
-      <Col span={12}>
+      <Col span={20}>
         <TextArea
           maxLength={100}
           type="textarea"
@@ -101,7 +101,7 @@ export const PinField = () => (
     ]}
   >
     <Row gutter={8}>
-      <Col span={4}>
+      <Col span={20}>
         <Input maxLength={6} placeholder="Enter pin code" />
       </Col>
     </Row>
@@ -115,7 +115,7 @@ export const NameField = () => (
     rules={[{ required: true, message: "Name is required" }]}
   >
     <Row gutter={8}>
-      <Col span={10}>
+      <Col span={20}>
         <Input maxLength={25} placeholder="Enter your full name" />
       </Col>
     </Row>
@@ -134,7 +134,7 @@ export const EmailField = () => (
     ]}
   >
     <Row gutter={8}>
-      <Col span={10}>
+      <Col span={20}>
         <Input maxLength={25} placeholder="Enter an email id" />
       </Col>
     </Row>
@@ -150,7 +150,7 @@ export const DOBField = () => (
 export const AadharField = () => (
   <Form.Item label="Aadhar Number" name={["individual", "aadhar"]}>
     <Row gutter={8}>
-      <Col span={10}>
+      <Col span={20}>
         <Input maxLength={25} placeholder="Enter Aadhar number" />
       </Col>
     </Row>
@@ -164,7 +164,7 @@ export const OrgField = () => (
     rules={[{ required: true, message: "Head of Organization is required" }]}
   >
     <Row gutter={8}>
-      <Col span={10}>
+      <Col span={20}>
         <Input maxLength={25} placeholder="Enter name of organization head" />
       </Col>
     </Row>
@@ -174,7 +174,7 @@ export const OrgField = () => (
 export const RegNumField = () => (
   <Form.Item label="Registration Number" name={["organization", "reg"]}>
     <Row gutter={8}>
-      <Col span={12}>
+      <Col span={20}>
         <Input
           maxLength={100}
           placeholder="Enter organization registration number"
@@ -197,7 +197,7 @@ export const NOVField = () => (
     ]}
   >
     <Row gutter={8}>
-      <Col span={5}>
+      <Col span={20}>
         <Input maxLength={10} placeholder="Enter number of volunteers" />
       </Col>
     </Row>
@@ -211,7 +211,7 @@ export const NodalNameField = () => (
     rules={[{ required: true, message: "Name of Nodal Person is required" }]}
   >
     <Row gutter={8}>
-      <Col span={10}>
+      <Col span={20}>
         <Input maxLength={25} placeholder="Enter name of nodal person" />
       </Col>
     </Row>
@@ -223,7 +223,7 @@ export const NotesField = ({
 }) => (
   <Form.Item label="Notes" name="notes">
     <Row gutter={8}>
-      <Col span={12}>
+      <Col span={20}>
         <TextArea
           maxLength={200}
           type="textarea"
@@ -238,7 +238,7 @@ export const NotesField = ({
 export const PubliciseField = () => (
   <Form.Item label="Publicise Contribution" name="publicise">
     <Row gutter={8}>
-      <Col span={6}>
+      <Col span={20}>
         <Radio.Group>
           <Radio value="y">Yes</Radio>
           <Radio value="n">No</Radio>
@@ -251,7 +251,7 @@ export const PubliciseField = () => (
 export const AreaField = () => (
   <Form.Item label="Area" name="area">
     <Row gutter={8}>
-      <Col span={10}>
+      <Col span={20}>
         <Input maxLength={25} placeholder="Enter area/locality" />
       </Col>
     </Row>

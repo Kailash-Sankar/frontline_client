@@ -6,12 +6,16 @@ import { toNumber } from "../utils";
 
 const unitSelector = (baseName) => (
   <Form.Item name={[...baseName, "unit"]} noStyle>
-    <Select style={{ width: 100 }}>
-      <Option value="count">Count</Option>
-      <Option value="kilo">kg</Option>
-      <Option value="litre">litres</Option>
-      <Option value="na">NA</Option>
-    </Select>
+    <Row>
+      <Col span={20}>
+        <Select style={{ width: 90 }}>
+          <Option value="count">Count</Option>
+          <Option value="kilo">kg</Option>
+          <Option value="litre">litres</Option>
+          <Option value="na">NA</Option>
+        </Select>
+      </Col>
+    </Row>
   </Form.Item>
 );
 
@@ -32,7 +36,7 @@ export const DynamicServicList = ({ serviceType, options }) => {
         ]}
       >
         <Row gutter={8}>
-          <Col span={8}>
+          <Col span={20}>
             <Input
               addonAfter={unitSelector(baseName)}
               maxLength={5}

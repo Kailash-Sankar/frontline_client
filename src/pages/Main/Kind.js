@@ -80,7 +80,7 @@ function Kind({ reset, mode, setMode, save, appeal = null }) {
             handleChange={setMode}
             options={options.other.modeOptions}
           />
-          <div style={{ margin: 30 }}>
+          <div style={{ marginTop: 30 }}>
             {mode === "individual" ? (
               <IndividualKindForm {...formProps} />
             ) : (

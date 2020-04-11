@@ -4,7 +4,7 @@ import { Form, Checkbox, Row, Col } from "antd";
 const renderOptions = (options) =>
   Object.keys(options).map((k) => (
     <Row key={options[k].id}>
-      <Col span={24}>
+      <Col span={20}>
         <Checkbox value={options[k].id} style={{ lineHeight: "32px" }}>
           {options[k].value}
         </Checkbox>

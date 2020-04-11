@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Select, Cascader } from "antd";
+import { Form, Select, Cascader, Row, Col } from "antd";
 const { Option } = Select;
 
 const renderOptions = (options) =>
@@ -16,11 +16,11 @@ export const RegionSelect = ({ options }) => (
     name="region"
     rules={[{ required: true, message: "Region is required" }]}
   >
-    <Cascader
-      style={{ width: 300 }}
-      placeholder="Select your region"
-      options={options}
-    />
+    <Row>
+      <Col span={20}>
+        <Cascader placeholder="Select your region" options={options} />
+      </Col>
+    </Row>
   </Form.Item>
 );
 
@@ -30,9 +30,11 @@ export const StateSelect = ({ options }) => (
     name="state"
     rules={[{ required: true, message: "State is required" }]}
   >
-    <Select style={{ width: 200 }} placeholder="Select a value">
-      {renderOptions(options)}
-    </Select>
+    <Row>
+      <Col span={20}>
+        <Select placeholder="Select a value">{renderOptions(options)}</Select>
+      </Col>
+    </Row>
   </Form.Item>
 );
 
@@ -42,9 +44,11 @@ export const AvailabilitySelect = ({ options }) => (
     name="availability"
     rules={[{ required: true, message: "Availability is required" }]}
   >
-    <Select style={{ width: 200 }} placeholder="Select a value">
-      {renderOptions(options)}
-    </Select>
+    <Row>
+      <Col span={20}>
+        <Select placeholder="Select a value">{renderOptions(options)}</Select>
+      </Col>
+    </Row>
   </Form.Item>
 );
 
@@ -54,9 +58,11 @@ export const QualificationSelect = ({ options }) => (
     name={["individual", "qualification"]}
     rules={[{ required: true, message: "Qualification is required" }]}
   >
-    <Select style={{ width: 200 }} placeholder="Select a value">
-      {renderOptions(options)}
-    </Select>
+    <Row>
+      <Col span={20}>
+        <Select placeholder="Select a value">{renderOptions(options)}</Select>
+      </Col>
+    </Row>
   </Form.Item>
 );
 
@@ -66,17 +72,21 @@ export const ProfessionSelect = ({ options }) => (
     name={["individual", "profession"]}
     rules={[{ required: true, message: "Profession is required" }]}
   >
-    <Select style={{ width: 200 }} placeholder="Select a value">
-      {renderOptions(options)}
-    </Select>
+    <Row>
+      <Col span={20}>
+        <Select placeholder="Select a value">{renderOptions(options)}</Select>
+      </Col>
+    </Row>
   </Form.Item>
 );
 
 export const GenderSelect = ({ options }) => (
   <Form.Item label="Gender" name={["individual", "gender"]}>
-    <Select style={{ width: 200 }} placeholder="Select a value">
-      {renderOptions(options)}
-    </Select>
+    <Row>
+      <Col span={20}>
+        <Select placeholder="Select a value">{renderOptions(options)}</Select>
+      </Col>
+    </Row>
   </Form.Item>
 );
 
@@ -86,17 +96,23 @@ export const OrgTypeSelect = ({ options }) => (
     name={["organization", "cat"]}
     rules={[{ required: true, message: "Organization type is required" }]}
   >
-    <Select style={{ width: 200 }} placeholder="Select a value">
-      {renderOptions(options)}
-    </Select>
+    <Row>
+      <Col span={20}>
+        <Select placeholder="Select a value">{renderOptions(options)}</Select>
+      </Col>
+    </Row>
   </Form.Item>
 );
 
 export const MedicalField = ({ options, onChange }) => (
   <Form.Item name={["services", "medical", "id"]} label="Medical Supplies">
-    <Select mode="multiple" onChange={onChange} style={{ width: 400 }}>
-      {renderOptionsObject(options)}
-    </Select>
+    <Row>
+      <Col span={20}>
+        <Select mode="multiple" onChange={onChange}>
+          {renderOptionsObject(options)}
+        </Select>
+      </Col>
+    </Row>
   </Form.Item>
 );
 
@@ -105,8 +121,12 @@ export const NonMedicalField = ({ options, onChange }) => (
     name={["services", "nonmedical", "id"]}
     label="Food &amp; Essential Supplies"
   >
-    <Select mode="multiple" onChange={onChange} style={{ width: 400 }}>
-      {renderOptionsObject(options)}
-    </Select>
+    <Row>
+      <Col span={20}>
+        <Select mode="multiple" onChange={onChange}>
+          {renderOptionsObject(options)}
+        </Select>
+      </Col>
+    </Row>
   </Form.Item>
 );
