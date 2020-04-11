@@ -1,6 +1,6 @@
 # Frontline app client
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/15a9d95d956743fdbf55e81fbfbe1b21)](https://app.codacy.com/manual/Kailash-Sankar/frontline_client?utm_source=github.com&utm_medium=referral&utm_content=Kailash-Sankar/frontline_client&utm_campaign=Badge_Grade_Settings) [![Known Vulnerabilities](https://snyk.io/test/github/Kailash-Sankar/frontline_client/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Kailash-Sankar/frontline_client?targetFile=package.json) ![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/kailashsankar/frontline_client)
@@ -36,6 +36,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://wolfs-bane.herokuapp.com/"><img src="https://avatars0.githubusercontent.com/u/3972209?v=4" width="100px;" alt=""/><br /><sub><b>Kailash Sankar</b></sub></a><br /><a href="https://github.com/Kailash-Sankar/frontline_client/commits?author=Kailash-Sankar" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/kishorkumarj"><img src="https://avatars1.githubusercontent.com/u/3972218?v=4" width="100px;" alt=""/><br /><sub><b>Kishor K Jagadeesan</b></sub></a><br /><a href="https://github.com/Kailash-Sankar/frontline_client/commits?author=kishorkumarj" title="Code">💻</a></td>
   </tr>
 </table>
 
