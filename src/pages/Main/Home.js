@@ -13,10 +13,10 @@ import { ArrowRightOutlined } from "@ant-design/icons";
 import { connector } from "@store/homeContent";
 import axios from "axios";
 
-import background from "@images/background.webp";
-import StateLogo from "@images/state-logo.webp";
-import cmIMG from "@images/cm-img.webp";
-import carousel3 from "@images/carousel-3.webp";
+import background from "@images/background.png";
+import StateLogo from "@images/state-logo.png";
+import cmIMG from "@images/cm-img.png";
+import carousel3 from "@images/carousel-3.jpg";
 
 const HomePage = (props) => {
   const [showModal, setShowModal] = useState(false);
@@ -67,6 +67,7 @@ const HomePage = (props) => {
   return (
     <Row
       style={{
+        backgroundColor: "#333",
         backgroundImage: "url(" + background + ")",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
@@ -81,7 +82,11 @@ const HomePage = (props) => {
           <Col span={24} className="layout-header">
             <Row>
               <Col lg={6} md={6} sm={8} xs={8} style={{ textAlign: "center" }}>
-                <img src={StateLogo} className="state-logo" />
+                <img
+                  src={StateLogo}
+                  className="state-logo"
+                  alt="Karnataka Gov"
+                />
                 <br />
                 <span className="header-text">#karnatakafightscorona</span>
               </Col>
