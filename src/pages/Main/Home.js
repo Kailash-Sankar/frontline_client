@@ -13,12 +13,12 @@ import { ArrowRightOutlined } from "@ant-design/icons";
 import { connector } from "@store/homeContent";
 import axios from "axios";
 
-import background from "../../images/background.png";
-import StateLogo from "../../images/state-logo.png";
-import cmIMG from "../../images/cm-img.png";
+import background from "@images/background.png";
+import StateLogo from "@images/state-logo.png";
+import cmIMG from "@images/cm-img.png";
 //import carousel1 from "../../images/carousel-1.png";
 //import carousel2 from "../../images/carousel-2.png";
-import carousel3 from "../../images/carousel-3.jpg";
+import carousel3 from "@images/carousel-3.jpg";
 //import carousel4 from "../../images/carousel-4.jpg";
 
 const HomePage = (props) => {
@@ -101,25 +101,24 @@ const HomePage = (props) => {
         </Row>
 
         <Spacer display="block" height={40} />
+
         <Row>
-          <Col span={24} className="text-large">
-            DONATE.
+          <Col lg={8} md={24} sm={24}>
+            <div className="caption-co">
+              <Row className="text-large">DONATE.</Row>
+              <Row className="text-large margin-adjust">SUPPORT.</Row>
+              <Row className="text-large margin-adjust">VOLUNTEER.</Row>
+            </div>
           </Col>
-          <Col span={24} className="text-large margin-adjust">
-            SUPPORT.
-          </Col>
-          <Col span={24} className="text-large margin-adjust">
-            VOLUNTEER.
-          </Col>
-        </Row>
-        <Spacer display="block" height={20} />
-        <Row>
-          <Col span={24}>
+          <Col lg={16} md={24} sm={24}>
             <ImageCarousel caurosalData={caurosalData} imageWidth="95%" />
           </Col>
         </Row>
+
+        <Spacer display="block" height={20} />
+
         <Row>
-          <Col lg={20} sm={24} xs={24} md={20} className="home-text-message">
+          <Col lg={24} sm={24} xs={24} md={24} className="home-text-message">
             <h3>
               The global coronavirus outbreak has forced all of us away from our
               everyday lives. Although apart, we are all in this fight together.
