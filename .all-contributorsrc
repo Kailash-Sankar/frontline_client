@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "Kailash-Sankar",
+      "name": "Kailash Sankar",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3972209?v=4",
+      "profile": "https://wolfs-bane.herokuapp.com/",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "frontline_client",
+  "projectOwner": "Kailash-Sankar",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
