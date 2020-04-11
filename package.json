@@ -32,7 +32,7 @@
     "antd": "^4.1.1",
     "axios": "^0.19.2",
     "classnames": "^2.2.6",
-    "core-js": "^3.6.4",
+    "core-js": "^3.6.5",
     "immutability-helper": "^3.0.2",
     "jsonexport": "^2.4.1",
     "memoize-one": "^5.1.1",
