@@ -28,7 +28,10 @@ const Footer = (props) => {
           style={{ paddingLeft: "5px" }}
           className="border-right flex-center"
         >
-          <Text strong style={{ color: "snow" }}>
+          <Text
+            strong
+            style={{ color: "snow", minWidth: 70, display: "inline-block" }}
+          >
             Get Involved
           </Text>
         </Col>
