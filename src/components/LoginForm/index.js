@@ -36,8 +36,8 @@ function LoginForm({ handleSubmit, handleError }) {
         ]}
       >
         <Row>
-          <Col span={20}>
-            <Input />
+          <Col span={22}>
+            <Input style={{ minWidth: 250 }} />
           </Col>
         </Row>
       </Form.Item>
@@ -53,8 +53,8 @@ function LoginForm({ handleSubmit, handleError }) {
         ]}
       >
         <Row>
-          <Col span={20}>
-            <Input.Password />
+          <Col span={22}>
+            <Input.Password style={{ minWidth: 250 }} />
           </Col>
         </Row>
       </Form.Item>
