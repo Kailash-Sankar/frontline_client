@@ -1,20 +1,9 @@
 import React from "react";
-import { Form, Input, Button, Checkbox } from "antd";
-
-const layout = {
-  labelCol: {
-    span: 8
-  },
-  wrapperCol: {
-    span: 16
-  }
-};
-const tailLayout = {
-  wrapperCol: {
-    offset: 8,
-    span: 16
-  }
-};
+import { Form, Input, Button, Row, Col } from "antd";
+import {
+  formItemLayout,
+  tailFormItemLayout,
+} from "@components/VolunteerForm/layout";
 
 function LoginForm({ handleSubmit, handleError }) {
   const onFinish = (values) => {
@@ -27,11 +16,8 @@ function LoginForm({ handleSubmit, handleError }) {
 
   return (
     <Form
-      {...layout}
+      {...formItemLayout}
       name="basic"
-      initialValues={{
-        remember: true
-      }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
     >
@@ -41,15 +27,19 @@ function LoginForm({ handleSubmit, handleError }) {
         rules={[
           {
             required: true,
-            message: "Please input your username!"
+            message: "Please input your username!",
           },
           {
             type: "email",
-            message: "Input is not a valid E-mail!"
-          }
+            message: "Input is not a valid E-mail!",
+          },
         ]}
       >
-        <Input />
+        <Row>
+          <Col span={20}>
+            <Input />
+          </Col>
+        </Row>
       </Form.Item>
 
       <Form.Item
@@ -58,18 +48,18 @@ function LoginForm({ handleSubmit, handleError }) {
         rules={[
           {
             required: true,
-            message: "Please input your password!"
-          }
+            message: "Please input your password!",
+          },
         ]}
       >
-        <Input.Password />
+        <Row>
+          <Col span={20}>
+            <Input.Password />
+          </Col>
+        </Row>
       </Form.Item>
 
-      <Form.Item {...tailLayout} name="remember" valuePropName="checked">
-        <Checkbox>Remember me</Checkbox>
-      </Form.Item>
-
-      <Form.Item {...tailLayout}>
+      <Form.Item {...tailFormItemLayout}>
         <Button type="primary" htmlType="submit">
           Submit
         </Button>

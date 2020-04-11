@@ -2,7 +2,6 @@ import React from "react";
 import LoginForm from "@components/LoginForm";
 import * as styles from "./index.module.less";
 import { connecter } from "@store/common";
-import { Spacer } from "@components/Utils";
 import { Redirect } from "react-router-dom";
 import { formatLogin } from "../utils";
 
@@ -17,8 +16,8 @@ function Login({ login, loggedIn }) {
   }
 
   return (
-    <div>
-      <Spacer display="block" height={20} />
+    <div style={{ textAlign: "left" }}>
+      <h2>Post Appeals</h2>
       <div className={styles.loginWrapper}>
         {loggedIn ? (
           <div>
