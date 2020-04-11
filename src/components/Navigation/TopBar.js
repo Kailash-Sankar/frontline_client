@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Layout } from "antd";
 import { Spacer } from "@components/Utils";
 import * as styles from "./index.module.less";
-import StateLogo from "@images/state-logo.png";
+import StateLogo from "@images/state-logo.webp";
 
 import { LoginOutlined, LogoutOutlined } from "@ant-design/icons";
 

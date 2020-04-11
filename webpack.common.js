@@ -20,12 +20,12 @@ console.log("Node Environment", process.env.NODE_ENV);
 
 module.exports = {
   entry: {
-    app: "./src/index.js"
+    app: "./src/index.js",
   },
   output: {
     path: __dirname + "/dist",
     publicPath: "",
-    filename: "[name].js"
+    filename: "[name].js",
   },
   resolve: {
     extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
@@ -35,8 +35,8 @@ module.exports = {
       "@images": path.resolve(__dirname, "./src/images/"),
       "@store": path.resolve(__dirname, "./src/store/"),
       "@api": path.resolve(__dirname, "./src/api/"),
-      "@mocks": path.resolve(__dirname, "./src/__mocks__/")
-    }
+      "@mocks": path.resolve(__dirname, "./src/__mocks__/"),
+    },
   },
   module: {
     rules: [
@@ -44,7 +44,7 @@ module.exports = {
       {
         test: /\.(js|ts)x?$/,
         exclude: /node_modules/,
-        use: ["babel-loader", "eslint-loader"] // babel for ES6 syntax and eslint for js best practices
+        use: ["babel-loader", "eslint-loader"], // babel for ES6 syntax and eslint for js best practices
       },
       // parse and extract all less/css files
       {
@@ -52,18 +52,18 @@ module.exports = {
         use: [
           {
             loader: CssExtractPlugin.loader,
-            options: { hot: is_dev, reloadAll: is_dev }
+            options: { hot: is_dev, reloadAll: is_dev },
           },
           {
             loader: "css-loader",
             options: {
               modules: {
                 localIdentName: "[local]___[hash:base64:5]",
-                getLocalIdent: getLocalIdent
+                getLocalIdent: getLocalIdent,
               },
               localsConvention: "camelCaseOnly",
-              importLoaders: 2
-            }
+              importLoaders: 2,
+            },
           },
           "postcss-loader",
           {
@@ -72,32 +72,32 @@ module.exports = {
               javascriptEnabled: true,
               paths: [
                 path.resolve(__dirname, "./src/styles"),
-                path.resolve(__dirname, "node_modules")
-              ]
-            }
-          }
-        ]
+                path.resolve(__dirname, "node_modules"),
+              ],
+            },
+          },
+        ],
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.(png|jpe?g|gif|webp)$/i,
         use: [
           {
-            loader: "file-loader"
-          }
-        ]
-      }
-    ]
+            loader: "file-loader",
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: "./src/index.html"
+      template: "./src/index.html",
     }),
     new CssExtractPlugin({
       filename: "static/css/[name].[contenthash:5].css",
-      chunkFilename: "static/css/vendors.[contenthash:5].css"
-    })
-  ]
+      chunkFilename: "static/css/vendors.[contenthash:5].css",
+    }),
+  ],
 };
 
 // this is a copy of the default function, modified slightly to achieve our goal
