@@ -22,7 +22,7 @@ function AppealReport({
   exportCSV,
   setStatus,
   status,
-  updateStatus
+  updateStatus,
 }) {
   function onRegionChange(value) {
     setRegion(value);
@@ -40,10 +40,9 @@ function AppealReport({
     setStatus(value);
   }
 
-  function onResultClose(id){
+  function onResultClose(id) {
     const url = `/appeal/update/${id}`;
-    updateStatus(url, {status: 'closed'});
-    handleSearch();
+    updateStatus(url, { status: "closed" });
   }
 
   function formatParams() {

@@ -174,10 +174,15 @@ function* exportCSV(scope, apiFn, action) {
   }
 }
 
-function* updateStatusVal(action) {
+function* updateStatusVal(scope, action) {
   const res = yield call(Api.updateStatus, action.endPoint, action.formData);
   try {
-    if (res.data.data) {
+    if (res.data.status === 1) {
+      yield put({
+        type: scope.UPDATE_RESULT,
+        id: res.data.data._id,
+        status: res.data.data.status,
+      });
       notify.base("Updated successfully");
     } else {
       notify.base("Unable to update the status.");
@@ -231,9 +236,21 @@ export function* initSaga() {
   );
 
   //update the status column of entry.
-  yield takeLatest(requestReportTypes.UPDATE_STATUS, updateStatusVal);
-  yield takeLatest(appealReportTypes.UPDATE_STATUS, updateStatusVal);
-  yield takeLatest(kindReportTypes.UPDATE_STATUS, updateStatusVal);
+  yield takeLatest(
+    requestReportTypes.UPDATE_STATUS,
+    updateStatusVal,
+    requestReportTypes
+  );
+  yield takeLatest(
+    appealReportTypes.UPDATE_STATUS,
+    updateStatusVal,
+    appealReportTypes
+  );
+  yield takeLatest(
+    kindReportTypes.UPDATE_STATUS,
+    updateStatusVal,
+    kindReportTypes
+  );
 
   // save volunteers and kind
   yield takeLatest(volunteerTypes.SAVE, saveData, volunteerTypes);

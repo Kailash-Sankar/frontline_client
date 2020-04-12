@@ -85,6 +85,12 @@ function generateReportReducer(types, initialState, customReducer = null) {
         return update(state, {
           status: { $set: action.status },
         });
+      case types.UPDATE_RESULT: {
+        const idx = state.result.findIndex((r) => r._id == action.id);
+        return update(state, {
+          result: { [idx]: { status: { $set: action.status } } },
+        });
+      }
     }
     if (customReducer) {
       return customReducer(action);

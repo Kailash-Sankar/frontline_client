@@ -8,6 +8,7 @@ const reportTypes = [
   "EXPORT_CSV",
   "SET_STATUS",
   "UPDATE_STATUS",
+  "UPDATE_RESULT",
 ];
 
 export { reportTypes };

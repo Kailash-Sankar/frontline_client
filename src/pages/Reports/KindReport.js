@@ -46,10 +46,9 @@ function KindReport({
     setStatus(value);
   }
 
-  function onResultClose(id){
+  function onResultClose(id) {
     const url = `/update/${id}`;
-    updateStatus(url, {status: 'closed'});
-    handleSearch();
+    updateStatus(url, { status: "closed" });
   }
 
   function formatParams() {
