@@ -43,6 +43,12 @@ function generateReportDispatcher(types, custom = {}) {
         type: types.SET_STATUS,
         status,
       }),
+    updateStatus: (endPoint, formData) =>
+      dispatch({
+        type: types.UPDATE_STATUS,
+        endPoint,
+        formData,
+      }),
     ...custom,
   });
 }

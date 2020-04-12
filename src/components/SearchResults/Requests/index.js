@@ -1,16 +1,15 @@
 import React from "react";
-import { Table, Button, Popconfirm } from "antd";
+import { Table } from "antd";
 import Details from "./Details";
-import { getPaginationObject } from "../utils";
+import { getPaginationObject, renderStatus } from "../utils";
 
 const RequestSearchResults = ({
   result,
   pagination,
   onPageChange,
   onShowSizeChange,
-  onResultClose
+  onResultClose,
 }) => {
-
   const columns = [
     {
       title: "Name",
@@ -35,18 +34,7 @@ const RequestSearchResults = ({
     {
       title: "Action",
       dataIndex: "_id",
-      render: (id, row) => row.status == 'open' ?(
-        <Popconfirm
-          title="Are you sure want to close this request?"
-          onConfirm={() => onResultClose(id)}
-          onCancel={() => {}}
-          okText="Yes"
-          cancelText="No">
-          <Button
-          size={"small"}
-            type="primary">Close</Button>
-        </Popconfirm>
-      ): (<span style={{color: 'red'}}>{row.status}</span>)
+      render: (id, row) => renderStatus(id, row, onResultClose),
     },
   ];
 

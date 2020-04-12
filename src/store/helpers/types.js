@@ -7,6 +7,7 @@ const reportTypes = [
   "SET_DATE_RANGE",
   "EXPORT_CSV",
   "SET_STATUS",
+  "UPDATE_STATUS",
 ];
 
 export { reportTypes };
