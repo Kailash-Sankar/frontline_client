@@ -1,5 +1,6 @@
 // source https://github.com/Dhaneshmonds/webiste-utilities/blob/master/state-districts.json
 const regions = [
+  /*
   {
     id: "1",
     type: "Union Territory",
@@ -1204,6 +1205,7 @@ const regions = [
       }
     ]
   },
+  */
   {
     id: "17",
     type: "State",
@@ -1333,6 +1335,7 @@ const regions = [
       }
     ]
   },
+  /*
   {
     id: "18",
     type: "State",
@@ -3241,6 +3244,7 @@ const regions = [
       }
     ]
   }
+  */
 ];
 
 export default regions;

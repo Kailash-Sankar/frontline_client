@@ -2,32 +2,44 @@ import React from "react";
 import { Table } from "antd";
 import Details from "./Details";
 import { getStringAttr } from "@utils/Parser/strUtils";
-import { getPaginationObject } from "../utils";
+import { getPaginationObject, renderStatus } from "../utils";
 
-const columns = [
-  {
-    title: "Medical",
-    dataIndex: "services",
-    key: "medical",
-    render: (services) => getStringAttr(services.medical),
-  },
-  {
-    title: "Food & Essential",
-    dataIndex: "services",
-    key: "nonmedical",
-    render: (services) => getStringAttr(services.nonmedical),
-  },
-  {
-    title: "Region",
-    dataIndex: "region",
-  },
-  {
-    title: "Submitted At",
-    dataIndex: "createdAt",
-  },
-];
+function SearchResults({
+  result,
+  pagination,
+  onPageChange,
+  onShowSizeChange,
+  onResultClose,
+}) {
+  const columns = [
+    {
+      title: "Medical",
+      dataIndex: "services",
+      key: "medical",
+      render: (services) => getStringAttr(services.medical),
+    },
+    {
+      title: "Food & Essential",
+      dataIndex: "services",
+      key: "nonmedical",
+      render: (services) => getStringAttr(services.nonmedical),
+    },
+    {
+      title: "Region",
+      dataIndex: "region",
+    },
+    {
+      title: "Submitted At",
+      dataIndex: "createdAt",
+    },
 
-function SearchResults({ result, pagination, onPageChange, onShowSizeChange }) {
+    {
+      title: "Action",
+      dataIndex: "_id",
+      render: (id, row) => renderStatus(id, row, onResultClose),
+    },
+  ];
+
   return (
     <div>
       <div>
@@ -41,7 +53,7 @@ function SearchResults({ result, pagination, onPageChange, onShowSizeChange }) {
                 <Details record={record} />
               </div>
             ),
-            expandRowByClick: true,
+            expandRowByClick: false,
           }}
           pagination={getPaginationObject(
             pagination,

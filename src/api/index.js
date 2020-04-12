@@ -105,6 +105,12 @@ async function getHomePageData(url) {
   return res.data.data || [];
 }
 
+// Update status
+async function updateStatus(url, formData) {
+  const res = await server.put(url, formData);
+  return res || null;
+}
+
 export default {
   search,
   saveForm,
@@ -119,4 +125,5 @@ export default {
   exportAppeals,
   exportKind,
   exportRequests,
+  updateStatus,
 };

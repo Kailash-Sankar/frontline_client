@@ -20,6 +20,9 @@ function AppealReport({
   dateRange,
   setDateRange,
   exportCSV,
+  setStatus,
+  status,
+  updateStatus,
 }) {
   function onRegionChange(value) {
     setRegion(value);
@@ -33,9 +36,18 @@ function AppealReport({
     setService(value);
   }
 
+  function onStatusChange(value) {
+    setStatus(value);
+  }
+
+  function onResultClose(id) {
+    const url = `/appeal/update/${id}`;
+    updateStatus(url, { status: "closed" });
+  }
+
   function formatParams() {
-    const query = formatSearchQuery({ region, service, dateRange });
-    query.act = ACT;
+    const query = formatSearchQuery({ region, service, dateRange, status });
+    query.act = ACT; // fixed type field
     return query;
   }
 
@@ -78,6 +90,9 @@ function AppealReport({
     dateRange: dateRange,
     onDateRangeChange,
 
+    status,
+    onStatusChange,
+
     onSubmit: handleSearch,
   };
 
@@ -94,6 +109,7 @@ function AppealReport({
             pagination={pagination}
             onPageChange={handlePageChange}
             onShowSizeChange={handleSizeChange}
+            onResultClose={onResultClose}
           />
 
           <ExportButton onClick={handleExport} />

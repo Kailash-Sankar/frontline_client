@@ -1,3 +1,6 @@
+import React from "react";
+import { Button, Popconfirm } from "antd";
+
 // search results pagination format helper
 export function getPaginationObject(
   pagination,
@@ -13,4 +16,23 @@ export function getPaginationObject(
     showSizeChanger: true,
     onShowSizeChange: onShowSizeChange,
   };
+}
+
+export function renderStatus(id, row, onResultClose) {
+  if (row.status == "open") {
+    return (
+      <Popconfirm
+        title="Are you sure want to close this request?"
+        onConfirm={() => onResultClose(id)}
+        onCancel={() => {}}
+        okText="Yes"
+        cancelText="No"
+      >
+        <Button size={"small"} type="default" danger>
+          Close
+        </Button>
+      </Popconfirm>
+    );
+  }
+  return <span style={{ color: "red" }}>{row.status}</span>;
 }

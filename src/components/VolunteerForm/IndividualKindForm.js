@@ -104,9 +104,8 @@ function IndividualKindForm({
         />
         <DynamicServicList serviceType="nonmedical" options={nonMedical} />
 
-        <PubliciseField />
-
         <NotesField placeholder="Add extra items/supplies you wish to donate or any other details here." />
+        <PubliciseField />
 
         <Form.Item {...tailFormItemLayout}>
           <Button type="primary" htmlType="submit">

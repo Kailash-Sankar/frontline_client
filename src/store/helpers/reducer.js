@@ -38,6 +38,17 @@ function generateReportDispatcher(types, custom = {}) {
         type: types.EXPORT_CSV,
         params,
       }),
+    setStatus: (status) =>
+      dispatch({
+        type: types.SET_STATUS,
+        status,
+      }),
+    updateStatus: (endPoint, formData) =>
+      dispatch({
+        type: types.UPDATE_STATUS,
+        endPoint,
+        formData,
+      }),
     ...custom,
   });
 }
@@ -70,6 +81,16 @@ function generateReportReducer(types, initialState, customReducer = null) {
         return update(state, {
           dateRange: { $set: action.dateRange },
         });
+      case types.SET_STATUS:
+        return update(state, {
+          status: { $set: action.status },
+        });
+      case types.UPDATE_RESULT: {
+        const idx = state.result.findIndex((r) => r._id == action.id);
+        return update(state, {
+          result: { [idx]: { status: { $set: action.status } } },
+        });
+      }
     }
     if (customReducer) {
       return customReducer(action);

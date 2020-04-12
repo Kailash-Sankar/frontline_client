@@ -22,6 +22,9 @@ function KindReport({
   dateRange,
   setDateRange,
   exportCSV,
+  setStatus,
+  status,
+  updateStatus,
 }) {
   function onModeChange(value) {
     setMode(value);
@@ -39,8 +42,23 @@ function KindReport({
     setService(value);
   }
 
+  function onStatusChange(value) {
+    setStatus(value);
+  }
+
+  function onResultClose(id) {
+    const url = `/update/${id}`;
+    updateStatus(url, { status: "closed" });
+  }
+
   function formatParams() {
-    const query = formatSearchQuery({ mode, region, service, dateRange });
+    const query = formatSearchQuery({
+      mode,
+      region,
+      service,
+      dateRange,
+      status,
+    });
     query.act = ACT; // fixed type field
     return query;
   }
@@ -85,6 +103,9 @@ function KindReport({
     services: options.services.servicesTree,
     onServiceChange,
 
+    status,
+    onStatusChange,
+
     dateRange: dateRange,
     onDateRangeChange,
 
@@ -104,6 +125,7 @@ function KindReport({
             pagination={pagination}
             onPageChange={handlePageChange}
             onShowSizeChange={handleSizeChange}
+            onResultClose={onResultClose}
           />
 
           <ExportButton onClick={handleExport} />

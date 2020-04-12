@@ -18,6 +18,19 @@ export function ModeSelect({ mode, modes, onModeChange }) {
   );
 }
 
+export function StatusSelect({ status, onStatusChannge }){
+  return (
+    <Select
+      style={{ width: 100 }}
+      value={status}
+      onChange={onStatusChannge}>
+      <Option value="">All</Option>
+      <Option value="open">Open</Option>
+      <Option value="closed">Closed</Option>
+    </Select>
+  )
+}
+
 export function RegionSelect({ region, regions, onRegionChange }) {
   return (
     <Cascader

@@ -1,36 +1,43 @@
 import React from "react";
 import { Table } from "antd";
 import Details from "./Details";
-import { getPaginationObject } from "../utils";
-
-const columns = [
-  {
-    title: "Name",
-    dataIndex: "name",
-    key: "name",
-  },
-  {
-    title: "Mobile",
-    dataIndex: "mobile",
-  },
-
-  {
-    title: "Region",
-    dataIndex: "region",
-  },
-
-  {
-    title: "Created",
-    dataIndex: "createdAt",
-  },
-];
+import { getPaginationObject, renderStatus } from "../utils";
 
 const RequestSearchResults = ({
   result,
   pagination,
   onPageChange,
   onShowSizeChange,
+  onResultClose,
 }) => {
+  const columns = [
+    {
+      title: "Name",
+      dataIndex: "name",
+      key: "name",
+    },
+    {
+      title: "Mobile",
+      dataIndex: "mobile",
+    },
+
+    {
+      title: "Region",
+      dataIndex: "region",
+    },
+
+    {
+      title: "Created",
+      dataIndex: "createdAt",
+    },
+
+    {
+      title: "Action",
+      dataIndex: "_id",
+      render: (id, row) => renderStatus(id, row, onResultClose),
+    },
+  ];
+
   return (
     <div>
       <div>
@@ -44,7 +51,7 @@ const RequestSearchResults = ({
                 <Details record={record} />
               </div>
             ),
-            expandRowByClick: true,
+            expandRowByClick: false,
           }}
           pagination={getPaginationObject(
             pagination,
