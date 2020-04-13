@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Input, DatePicker, Row, Col, Radio } from "antd";
+import { Form, Input, DatePicker, Radio } from "antd";
 import { toNumber } from "../utils";
 const { TextArea } = Input;
 
@@ -23,11 +23,7 @@ export const MobileField = () => (
       },
     ]}
   >
-    <Row gutter={8}>
-      <Col span={20}>
-        <Input maxLength={10} placeholder="Enter your mobile number" />
-      </Col>
-    </Row>
+    <Input maxLength={10} placeholder="Enter your mobile number" />
   </Form.Item>
 );
 
@@ -57,26 +53,18 @@ export const ConfirmMobileField = () => (
       }),
     ]}
   >
-    <Row gutter={8}>
-      <Col span={20}>
-        <Input maxLength={10} placeholder="Enter re-enter your mobile number" />
-      </Col>
-    </Row>
+    <Input maxLength={10} placeholder="Enter re-enter your mobile number" />
   </Form.Item>
 );
 
 export const AddressField = () => (
   <Form.Item label="Address" name="address">
-    <Row gutter={8}>
-      <Col span={20}>
-        <TextArea
-          maxLength={100}
-          type="textarea"
-          rows={4}
-          placeholder="Enter your address"
-        />
-      </Col>
-    </Row>
+    <TextArea
+      maxLength={100}
+      type="textarea"
+      rows={4}
+      placeholder="Enter your address"
+    />
   </Form.Item>
 );
 
@@ -100,11 +88,7 @@ export const PinField = () => (
       },
     ]}
   >
-    <Row gutter={8}>
-      <Col span={20}>
-        <Input maxLength={6} placeholder="Enter pin code" />
-      </Col>
-    </Row>
+    <Input maxLength={6} placeholder="Enter pin code" />
   </Form.Item>
 );
 
@@ -114,11 +98,7 @@ export const NameField = () => (
     name="name"
     rules={[{ required: true, message: "Name is required" }]}
   >
-    <Row gutter={8}>
-      <Col span={20}>
-        <Input maxLength={25} placeholder="Enter your full name" />
-      </Col>
-    </Row>
+    <Input maxLength={25} placeholder="Enter your full name" />
   </Form.Item>
 );
 
@@ -133,11 +113,7 @@ export const EmailField = () => (
       },
     ]}
   >
-    <Row gutter={8}>
-      <Col span={20}>
-        <Input maxLength={25} placeholder="Enter an email id" />
-      </Col>
-    </Row>
+    <Input maxLength={25} placeholder="Enter an email id" />
   </Form.Item>
 );
 
@@ -149,11 +125,7 @@ export const DOBField = () => (
 
 export const AadharField = () => (
   <Form.Item label="Aadhar Number" name={["individual", "aadhar"]}>
-    <Row gutter={8}>
-      <Col span={20}>
-        <Input maxLength={25} placeholder="Enter Aadhar number" />
-      </Col>
-    </Row>
+    <Input maxLength={25} placeholder="Enter Aadhar number" />
   </Form.Item>
 );
 
@@ -163,24 +135,16 @@ export const OrgField = () => (
     name={["organization", "head"]}
     rules={[{ required: true, message: "Head of Organization is required" }]}
   >
-    <Row gutter={8}>
-      <Col span={20}>
-        <Input maxLength={25} placeholder="Enter name of organization head" />
-      </Col>
-    </Row>
+    <Input maxLength={25} placeholder="Enter name of organization head" />
   </Form.Item>
 );
 
 export const RegNumField = () => (
   <Form.Item label="Registration Number" name={["organization", "reg"]}>
-    <Row gutter={8}>
-      <Col span={20}>
-        <Input
-          maxLength={100}
-          placeholder="Enter organization registration number"
-        />
-      </Col>
-    </Row>
+    <Input
+      maxLength={100}
+      placeholder="Enter organization registration number"
+    />
   </Form.Item>
 );
 
@@ -196,11 +160,7 @@ export const NOVField = () => (
       },
     ]}
   >
-    <Row gutter={8}>
-      <Col span={20}>
-        <Input maxLength={10} placeholder="Enter number of volunteers" />
-      </Col>
-    </Row>
+    <Input maxLength={10} placeholder="Enter number of volunteers" />
   </Form.Item>
 );
 
@@ -210,11 +170,7 @@ export const NodalNameField = () => (
     name={["organization", "person"]}
     rules={[{ required: true, message: "Name of Nodal Person is required" }]}
   >
-    <Row gutter={8}>
-      <Col span={20}>
-        <Input maxLength={25} placeholder="Enter name of nodal person" />
-      </Col>
-    </Row>
+    <Input maxLength={25} placeholder="Enter name of nodal person" />
   </Form.Item>
 );
 
@@ -222,38 +178,26 @@ export const NotesField = ({
   placeholder = "Leave additional notes here.",
 }) => (
   <Form.Item label="Notes" name="notes">
-    <Row gutter={8}>
-      <Col span={20}>
-        <TextArea
-          maxLength={200}
-          type="textarea"
-          rows={4}
-          placeholder={placeholder}
-        />
-      </Col>
-    </Row>
+    <TextArea
+      maxLength={200}
+      type="textarea"
+      rows={4}
+      placeholder={placeholder}
+    />
   </Form.Item>
 );
 
 export const PubliciseField = () => (
   <Form.Item label="Publicise Contribution" name="publicise">
-    <Row gutter={8}>
-      <Col span={20}>
-        <Radio.Group>
-          <Radio value="y">Yes</Radio>
-          <Radio value="n">No</Radio>
-        </Radio.Group>
-      </Col>
-    </Row>
+    <Radio.Group>
+      <Radio value="y">Yes</Radio>
+      <Radio value="n">No</Radio>
+    </Radio.Group>
   </Form.Item>
 );
 
 export const AreaField = () => (
   <Form.Item label="Area" name="area">
-    <Row gutter={8}>
-      <Col span={20}>
-        <Input maxLength={25} placeholder="Enter area/locality" />
-      </Col>
-    </Row>
+    <Input maxLength={25} placeholder="Enter area/locality" />
   </Form.Item>
 );

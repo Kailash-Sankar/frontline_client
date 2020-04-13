@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Input, Select, Row, Col } from "antd";
+import { Form, Input, Select } from "antd";
 const { TextArea } = Input;
 const { Option } = Select;
 
@@ -14,11 +14,7 @@ export const AppealField = () => (
       },
     ]}
   >
-    <Row>
-      <Col span={20}>
-        <TextArea rows={4} placeholder={"Describe your appeal briefly."} />
-      </Col>
-    </Row>
+    <TextArea rows={4} placeholder={"Describe your appeal briefly."} />
   </Form.Item>
 );
 
@@ -28,15 +24,11 @@ export const TagField = () => (
     label="Tags"
     //rules={[{ required: false, message: 'Please select', type: 'array' }]}
   >
-    <Row>
-      <Col span={20}>
-        <Select mode="tags" placeholder="Please select applcable tags.">
-          <Option value="food">Food</Option>
-          <Option value="groceries">Groceries</Option>
-          <Option value="medicines">Medicines</Option>
-          <Option value="supplies">Supplies</Option>
-        </Select>
-      </Col>
-    </Row>
+    <Select mode="tags" placeholder="Please select applcable tags.">
+      <Option value="food">Food</Option>
+      <Option value="groceries">Groceries</Option>
+      <Option value="medicines">Medicines</Option>
+      <Option value="supplies">Supplies</Option>
+    </Select>
   </Form.Item>
 );
