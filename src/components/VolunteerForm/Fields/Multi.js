@@ -1,15 +1,15 @@
 import React from "react";
-import { Form, Checkbox, Row, Col } from "antd";
+import { Form, Checkbox } from "antd";
 
 const renderOptions = (options) =>
   Object.keys(options).map((k) => (
-    <Row key={options[k].id}>
-      <Col span={20}>
-        <Checkbox value={options[k].id} style={{ lineHeight: "32px" }}>
-          {options[k].value}
-        </Checkbox>
-      </Col>
-    </Row>
+    <Checkbox
+      key={options[k].id}
+      value={options[k].id}
+      style={{ lineHeight: "32px" }}
+    >
+      {options[k].value}
+    </Checkbox>
   ));
 
 export const CommunicationsField = ({ options }) => (

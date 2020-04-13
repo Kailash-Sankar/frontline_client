@@ -1,6 +1,7 @@
 const reportTypes = [
   "SET_RESULT",
   "SEARCH",
+  "SET_MODE",
   "SET_REGION",
   "SET_SERVICE",
   "SET_PAGINATION",

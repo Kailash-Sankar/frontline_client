@@ -1,10 +1,16 @@
 import React, { useEffect } from "react";
-import { Form, Input, Row, Col, Button } from "antd";
+import { Form, Input, Button } from "antd";
 import { RegionSelect } from "@components/VolunteerForm/Fields/Select";
 import { formItemLayout, tailFormItemLayout } from "./layout";
 
 const { TextArea } = Input;
-import { MobileField, AddressField, PinField, NameField } from "./Fields/Input";
+import {
+  MobileField,
+  AddressField,
+  PinField,
+  NameField,
+  ConfirmMobileField,
+} from "./Fields/Input";
 
 const RequestForHelpForm = (props) => {
   const [form] = Form.useForm();
@@ -24,6 +30,7 @@ const RequestForHelpForm = (props) => {
       >
         <NameField />
         <MobileField />
+        <ConfirmMobileField />
         <AddressField />
 
         <Form.Item
@@ -36,11 +43,7 @@ const RequestForHelpForm = (props) => {
             },
           ]}
         >
-          <Row gutter={8}>
-            <Col span={20}>
-              <Input placeholder="Enter area/locality" />
-            </Col>
-          </Row>
+          <Input placeholder="Enter area/locality" />
         </Form.Item>
 
         <RegionSelect options={props.options} />
@@ -57,15 +60,11 @@ const RequestForHelpForm = (props) => {
             },
           ]}
         >
-          <Row gutter={8}>
-            <Col span={20}>
-              <TextArea
-                type="textarea"
-                rows={4}
-                placeholder="Please enter description."
-              />
-            </Col>
-          </Row>
+          <TextArea
+            type="textarea"
+            rows={4}
+            placeholder="Please enter description."
+          />
         </Form.Item>
 
         <Form.Item {...tailFormItemLayout}>

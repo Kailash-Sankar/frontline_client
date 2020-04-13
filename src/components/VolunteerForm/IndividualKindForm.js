@@ -46,6 +46,8 @@ function IndividualKindForm({
 
   useEffect(() => {
     resetFields();
+    setMedical([]);
+    setNonMedical([]);
   }, [reset]);
 
   const getMetaMap = (meta) =>
