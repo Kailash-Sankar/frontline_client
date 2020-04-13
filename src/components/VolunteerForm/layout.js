@@ -9,7 +9,7 @@ export const formItemLayout = {
     xs: { span: 14 },
     sm: { span: 14 },
     md: { span: 12 },
-    lg: { span: 12 },
+    lg: { span: 10 },
   },
 };
 
