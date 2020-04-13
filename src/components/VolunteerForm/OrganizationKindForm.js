@@ -37,20 +37,18 @@ function OrganizationKindForm({
 }) {
   const [form] = Form.useForm();
 
-  useEffect(() => {
-    form.resetFields();
-  }, [reset]);
-
-  useEffect(() => {
-    form.setFieldsValue(initialValues);
-  }, [initialValues]);
-
   const [medical, setMedical] = React.useState(
     initialValues.meta.medical || []
   );
   const [nonMedical, setNonMedical] = React.useState(
     initialValues.meta.nonmedical || []
   );
+
+  useEffect(() => {
+    form.resetFields();
+    setMedical([]);
+    setNonMedical([]);
+  }, [reset]);
 
   const getMetaMap = (meta) =>
     meta.map((m) => ({ id: m.key, value: m.children }));

@@ -124,7 +124,21 @@ export const DOBField = () => (
 );
 
 export const AadharField = () => (
-  <Form.Item label="Aadhar Number" name={["individual", "aadhar"]}>
+  <Form.Item
+    label="Aadhar Number"
+    name={["individual", "aadhar"]}
+    rules={[
+      {
+        type: "number",
+        transform: toNumber,
+        message: "Aadhar must be a number",
+      },
+      {
+        len: 12,
+        message: "Aadhar must be 12 digits",
+      },
+    ]}
+  >
     <Input maxLength={25} placeholder="Enter Aadhar number" />
   </Form.Item>
 );

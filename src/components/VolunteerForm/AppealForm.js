@@ -12,12 +12,15 @@ function AppealForm({ onSubmit, reset, regions, services, initialValues }) {
   const [form] = Form.useForm();
   const { resetFields } = form;
 
-  useEffect(() => {
-    resetFields();
-  }, [reset]);
-
   const [medical, setMedical] = React.useState([]);
   const [nonMedical, setNonMedical] = React.useState([]);
+
+  useEffect(() => {
+    resetFields();
+
+    setMedical([]);
+    setNonMedical([]);
+  }, [reset]);
 
   const onFinish = (values) => {
     onSubmit(values);

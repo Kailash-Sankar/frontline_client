@@ -13,7 +13,7 @@ const RequestForHelp = ({ reset, save }) => {
 
   return (
     <div style={{ textAlign: "left" }}>
-      <h2>Post Appeals</h2>
+      <h2>Request for Help</h2>
       <div style={{ marginTop: 30 }}>
         <RequestForHelpForm
           reset={reset}
