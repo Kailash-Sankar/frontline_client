@@ -30,3 +30,20 @@
       # restart and test
       # check nginx logs for debug info if required
     
+  
+  ## Pulling updates
+    # cd to repo folder
+    git pull origin master
+    
+    # install dependency updates
+    npm install
+    
+    # build app
+    npm run build
+    
+    # copy code to nginx folder
+    # or rsync
+    cp -R ./dist/* /usr/share/nginx/html/
+    
+    # restart nginx
+    service nginx restart
