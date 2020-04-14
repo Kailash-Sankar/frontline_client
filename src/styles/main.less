@@ -401,12 +401,14 @@ a {
     padding-right: 0px;
   }
 }
+
 /* define the animation */
 @-webkit-keyframes marquee {
   0%   { -webkit-transform: translate(0, 0); }
   100% { -webkit-transform: translate(0, -100%); }
 }
-  @keyframes marquee {
+
+@keyframes marquee {
   0%   { -webkit-transform: translate(0, 0); }
   100% { -webkit-transform: translate(0, -100%); }
 }
@@ -416,8 +418,6 @@ a {
   100% { -webkit-transform: translate(0, -100%); }
   }
 
-
-/* define your limiting container */
 .marquee {
   overflow: hidden;
   height: 450px;
@@ -428,13 +428,13 @@ a {
   margin-top: 10px;
   margin-bottom: 20px;
 }
-/* this is the tray moving around your container */
+
 .marquee p {
   padding-top: 400px;
-  animation: marquee 15s linear infinite; /* here you select the animation */
-  -webkit-animation: marquee 15s linear infinite; /* here you select the animation */
+  animation: marquee 15s linear infinite;
+  -webkit-animation: marquee 15s linear infinite;
 }
-/* pause the animation on mouse over */
+
 .marquee p:hover {
   animation-play-state: paused;
     -webkit-animation-play-state: paused;
