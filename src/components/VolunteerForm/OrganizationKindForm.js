@@ -46,8 +46,11 @@ function OrganizationKindForm({
 
   useEffect(() => {
     form.resetFields();
-    setMedical([]);
-    setNonMedical([]);
+    // skip first render
+    if (reset > 1) {
+      setMedical([]);
+      setNonMedical([]);
+    }
   }, [reset]);
 
   const getMetaMap = (meta) =>

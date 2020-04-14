@@ -35,7 +35,6 @@ function IndividualKindForm({
   reset,
 }) {
   const [form] = Form.useForm();
-  const { resetFields } = form;
 
   const [medical, setMedical] = React.useState(
     initialValues.meta.medical || []
@@ -45,9 +44,12 @@ function IndividualKindForm({
   );
 
   useEffect(() => {
-    resetFields();
-    setMedical([]);
-    setNonMedical([]);
+    form.resetFields();
+    // skip first render
+    if (reset > 1) {
+      setMedical([]);
+      setNonMedical([]);
+    }
   }, [reset]);
 
   const getMetaMap = (meta) =>
