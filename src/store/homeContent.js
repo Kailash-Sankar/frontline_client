@@ -66,10 +66,9 @@ const mapDispatchToProps = (dispatch) => ({
       type: types.SET_SEL_APPEAL,
       selAppeal,
     }),
-  fetchAppeals: (params) =>
+  fetchAppeals: () =>
     dispatch({
       type: types.FETCH_APPEALS,
-      params,
     }),
 });
 

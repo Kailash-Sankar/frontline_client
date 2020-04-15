@@ -1,7 +1,8 @@
 import React from "react";
-import { Form, Input, Select } from "antd";
+import { Form, Input, Select, Row, Col } from "antd";
 const { TextArea } = Input;
 const { Option } = Select;
+import * as styles from "./index.module.less";
 
 export const AppealField = () => (
   <Form.Item
@@ -31,4 +32,15 @@ export const TagField = () => (
       <Option value="supplies">Supplies</Option>
     </Select>
   </Form.Item>
+);
+
+export const Section = ({ label }) => (
+  <Row>
+    <Col xs={10} sm={10} md={6} lg={6}>
+      <span></span>
+    </Col>
+    <Col>
+      <div className={styles.section}>{label}</div>
+    </Col>
+  </Row>
 );

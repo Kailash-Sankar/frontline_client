@@ -5,7 +5,7 @@ import { Spacer } from "@components/Utils";
 import * as styles from "./index.module.less";
 import StateLogo from "@images/state-logo.webp";
 
-import { LoginOutlined, LogoutOutlined } from "@ant-design/icons";
+import { LogoutOutlined } from "@ant-design/icons";
 
 const { Header } = Layout;
 const TopBar = ({ loggedIn, user }) => {
@@ -25,19 +25,22 @@ const TopBar = ({ loggedIn, user }) => {
 
         <div className={styles.userWrap}>
           <Spacer width={20} />
-          {loggedIn ? (
-            <span>
-              <span className={styles.userLabel}>Hello, {user.name}</span>
-              <Spacer width={20} />
-              <Link to="/logout">
-                <LogoutOutlined />
-              </Link>
-            </span>
-          ) : (
-            <Link to="/login">
-              <LoginOutlined />
-            </Link>
-          )}
+          {
+            loggedIn ? (
+              <span>
+                <span className={styles.userLabel}>Hello, {user.name}</span>
+                <Spacer width={20} />
+                <Link to="/logout">
+                  <LogoutOutlined />
+                </Link>
+              </span>
+            ) : (
+              ""
+            )
+            // <Link to="/login">
+            //   <LoginOutlined />
+            // </Link>
+          }
         </div>
       </div>
     </Header>

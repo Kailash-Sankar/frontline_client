@@ -65,9 +65,9 @@ function* search(scope, apiFn, action) {
 }
 
 // get appeals for home page
-function* fetchAppeals(action) {
+function* fetchAppeals() {
   try {
-    const res = yield call(Api.searchAppeals, action.params);
+    const res = yield call(Api.fetchAppeals);
     yield put({ type: homeTypes.SET_APPEALS, appeals: res.docs || [] });
   } catch (err) {
     // fail silently

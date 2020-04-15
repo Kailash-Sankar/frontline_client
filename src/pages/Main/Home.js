@@ -21,10 +21,7 @@ import carousel3 from "@images/carousel-3.jpg";
 const HomePage = (props) => {
   const [showModal, setShowModal] = useState(false);
   useEffect(() => {
-    props.fetchAppeals({
-      query: {},
-      limit: 10,
-    });
+    props.fetchAppeals();
 
     const getCovidData = async () => {
       let covidData = [];
