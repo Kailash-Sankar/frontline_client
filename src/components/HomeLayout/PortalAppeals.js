@@ -33,20 +33,14 @@ const PortalAppeals = (props) => {
   return (
     <div>
       <h2 className="appeals-header">Appeals</h2>
-      <div
-        style={{
-          textAlign: "left",
-          maxHeight: "450px",
-          overflowY: "auto",
-          fontSize: "12px",
-        }}
-        className="appeals-data"
-      >
-        <List
-          size="small"
-          dataSource={props.appealsData}
-          renderItem={(item) => RenderItem(item)}
-        />
+      <div className="marquee">
+        <div className="appeals-data" style={{ display: "inline-block" }}>
+          <List
+            size="small"
+            dataSource={props.appealsData}
+            renderItem={(item) => RenderItem(item)}
+          />
+        </div>
       </div>
     </div>
   );
