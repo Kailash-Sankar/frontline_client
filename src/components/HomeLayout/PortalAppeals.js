@@ -34,13 +34,13 @@ const PortalAppeals = (props) => {
     <div>
       <h2 className="appeals-header">Appeals</h2>
       <div className="marquee">
-        <p className="appeals-data" style={{display: "inline-block"}}>
-        <List
-          size="small"
-          dataSource={props.appealsData}
-          renderItem={(item) => RenderItem(item)}
-        />
-        </p>
+        <div className="appeals-data" style={{ display: "inline-block" }}>
+          <List
+            size="small"
+            dataSource={props.appealsData}
+            renderItem={(item) => RenderItem(item)}
+          />
+        </div>
       </div>
     </div>
   );
