@@ -11,6 +11,7 @@ import {
   NameField,
   ConfirmMobileField,
 } from "./Fields/Input";
+import { Section } from "./Fields/Other";
 
 const RequestForHelpForm = (props) => {
   const [form] = Form.useForm();
@@ -28,10 +29,23 @@ const RequestForHelpForm = (props) => {
         initialValues={props.initialValues}
         onFinish={props.handleSubmit}
       >
-        <NameField />
-        <MobileField />
-        <ConfirmMobileField />
-        <AddressField />
+        <Section label="Help Required At" />
+        <Form.Item
+          label="Description"
+          name="desc"
+          rules={[
+            {
+              required: true,
+              message: "Description is required.",
+            },
+          ]}
+        >
+          <TextArea
+            type="textarea"
+            rows={4}
+            placeholder="Please enter description."
+          />
+        </Form.Item>
 
         <Form.Item
           label="Area"
@@ -50,22 +64,12 @@ const RequestForHelpForm = (props) => {
 
         <PinField />
 
-        <Form.Item
-          label="Description"
-          name="desc"
-          rules={[
-            {
-              required: true,
-              message: "Description is required.",
-            },
-          ]}
-        >
-          <TextArea
-            type="textarea"
-            rows={4}
-            placeholder="Please enter description."
-          />
-        </Form.Item>
+        <Section label="Request Raised By" />
+
+        <NameField />
+        <MobileField />
+        <ConfirmMobileField />
+        <AddressField />
 
         <Form.Item {...tailFormItemLayout}>
           <Button type="primary" htmlType="submit">

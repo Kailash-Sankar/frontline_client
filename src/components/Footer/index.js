@@ -74,7 +74,10 @@ const Footer = (props) => {
         </Col>
       </Row>
       <div style={{ textAlign: "center" }}>
-        <a href="https://github.com/Kailash-Sankar/frontline_client/">
+        <a
+          className="alt"
+          href="https://github.com/Kailash-Sankar/frontline_client/"
+        >
           Developed by Volunteers &amp; Open sourced <GithubOutlined />
         </a>
       </div>

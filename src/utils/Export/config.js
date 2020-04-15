@@ -47,14 +47,25 @@ const headerSections = {
   publicise: [["publicise", "Publicise"]],
   description: [["desc", "Description"]],
   mode: [["mode", "Type"]],
+  meta: [
+    ["services.medical.id", "Meta_mid"],
+    ["services.nonmedical.id", "Meta_nmid"],
+  ],
 };
 
 const reportSectionList = {
   appeal: {
-    sections: ["location", "medical", "nonmedical", "description", "tracking"],
+    sections: [
+      "location",
+      "medical",
+      "nonmedical",
+      "description",
+      "tracking",
+      "meta",
+    ],
   },
   request: {
-    sections: ["location", "contact", "description", "tracking"],
+    sections: ["location", "contact", "description", "tracking", "meta"],
   },
   kind: {
     sections: [
@@ -68,6 +79,7 @@ const reportSectionList = {
       "organization",
       "publicise",
       "others",
+      "meta",
     ],
   },
 };

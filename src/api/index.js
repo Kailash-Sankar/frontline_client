@@ -67,6 +67,11 @@ async function searchAppeals(params) {
   return res.data.data || [];
 }
 
+async function fetchAppeals() {
+  const res = await server.get(`/appeal/recent`);
+  return res.data.data || [];
+}
+
 async function exportAppeals(params) {
   const res = await server.post(`/appeal/export/`, params);
   return res.data.data || [];
@@ -120,6 +125,7 @@ export default {
   getHomePageData,
   saveAppealForm,
   searchAppeals,
+  fetchAppeals,
   saveHelpRequest,
   searchRequests,
   exportAppeals,
