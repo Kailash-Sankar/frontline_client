@@ -24,7 +24,8 @@ Manage volunteers, requests, supporters and kind donations.
 	it's a hacked up cli util to avoid typing large docker commands one by one,
 	help guide is in the repo: https://github.com/Kailash-Sankar/alfred
 
-NOTE: The instructions for setting up the server are in it's readme.md
+## Server 
+   The instructions for setting up the server are here, [frontline_server](https://github.com/Kailash-Sankar/frontline_server)
 
 ## Contributors ✨
 
