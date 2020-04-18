@@ -8,6 +8,7 @@ import {
   PortalAppeals,
   Statistics,
   PaymentModal,
+  VolunteerModal,
 } from "@components/HomeLayout";
 import { ArrowRightOutlined } from "@ant-design/icons";
 import { connector } from "@store/homeContent";
@@ -20,6 +21,7 @@ import carousel3 from "@images/carousel-3.jpg";
 
 const HomePage = (props) => {
   const [showModal, setShowModal] = useState(false);
+  const [showVolunteerModal, setshowVolunteerModal] = useState(false);
   useEffect(() => {
     props.fetchAppeals();
 
@@ -74,6 +76,10 @@ const HomePage = (props) => {
     >
       <Col lg={18} xs={24} sm={24} md={18} className="gutter-row">
         <PaymentModal showModal={showModal} setShowModal={setShowModal} />
+        <VolunteerModal
+          showModal={showVolunteerModal}
+          setShowModal={setshowVolunteerModal}
+        />
 
         <Row>
           <Col span={24} className="layout-header">
@@ -146,7 +152,9 @@ const HomePage = (props) => {
         <Row>
           <Col lg={8} sm={24} xs={24} className="bottom-btn-containers">
             <div className="goto-text" onClick={() => setShowModal(true)}>
-              DONATE FUNDS <ArrowRightOutlined />
+              <Button>
+                DONATE FUNDS <ArrowRightOutlined />
+              </Button>
             </div>
             <div>
               <div>
@@ -172,7 +180,9 @@ const HomePage = (props) => {
           <Col lg={8} sm={24} xs={24} className="bottom-btn-containers-alt">
             <Link to="/kind">
               <div className="goto-text">
-                SUPPORT IN KIND <ArrowRightOutlined />
+                <Button>
+                  SUPPORT IN KIND <ArrowRightOutlined />
+                </Button>
               </div>
             </Link>
             <ul>
@@ -189,14 +199,14 @@ const HomePage = (props) => {
           </Col>
 
           <Col lg={8} sm={24} xs={24} className="bottom-btn-containers">
-            <a
-              href="https://covid19.karnataka.gov.in/coronawarrior.html"
-              target="_new"
+            <div
+              className="goto-text"
+              onClick={() => setshowVolunteerModal(true)}
             >
-              <div className="goto-text">
+              <Button>
                 VOLUNTEER <ArrowRightOutlined />
-              </div>
-            </a>
+              </Button>
+            </div>
             <ul>
               <li>
                 Doctors can volunteer for telemedical services by giving missed

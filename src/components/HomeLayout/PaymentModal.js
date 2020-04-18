@@ -35,11 +35,11 @@ const PaymentModal = (props) => {
           <List>
             <List.Item>
               <span className="payment-field-label">ACCOUNT NO:</span>
-              <span className="payment-field-value">XXXXXXXXXX</span>
+              <span className="payment-field-value">38690610155</span>
             </List.Item>
             <List.Item>
               <span className="payment-field-label">IFSC CODE:</span>
-              <span className="payment-field-value">XXXXXXXXXX</span>
+              <span className="payment-field-value">SBIN0040277</span>
             </List.Item>
             <List.Item>
               <span className="payment-field-label">
