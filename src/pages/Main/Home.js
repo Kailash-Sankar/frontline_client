@@ -2,15 +2,16 @@ import React, { useEffect, useState } from "react";
 import { Row, Col, Affix, Button } from "antd";
 import { Spacer } from "@components/Utils";
 import Footer from "@components/Footer";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   ImageCarousel,
-  PortalAppeals,
+  //PortalAppeals,
   Statistics,
   PaymentModal,
   VolunteerModal,
+  TwitterWidget,
 } from "@components/HomeLayout";
-import { ArrowRightOutlined } from "@ant-design/icons";
+import { ArrowRightOutlined, DownCircleOutlined } from "@ant-design/icons";
 import { connector } from "@store/homeContent";
 import axios from "axios";
 
@@ -50,7 +51,7 @@ const HomePage = (props) => {
     getCovidData();
   }, []);
 
-  const history = useHistory();
+  //const history = useHistory();
   const caurosalData = [
     {
       text: "img-3",
@@ -58,10 +59,12 @@ const HomePage = (props) => {
     },
   ];
 
+  /*
   const onClickAppeal = (appealData) => {
     props.setSelAppeals(appealData);
     history.push("/kind");
   };
+  */
 
   return (
     <Row
@@ -113,35 +116,47 @@ const HomePage = (props) => {
               <Row className="text-large">DONATE.</Row>
               <Row className="text-large margin-adjust">SUPPORT.</Row>
               <Row className="text-large margin-adjust">VOLUNTEER.</Row>
+              <Row>
+                <Col className="home-text-message">
+                  The global coronavirus outbreak has forced all of us away from
+                  our everyday lives. Although apart, we are all in this fight
+                  together. The Government of Karnataka urges you to step
+                  forward and help us provide food for relief and healthcare for
+                  those in need.
+                </Col>
+              </Row>
             </div>
           </Col>
           <Col lg={16} md={24} sm={24}>
             <ImageCarousel caurosalData={caurosalData} imageWidth="95%" />
           </Col>
         </Row>
-
-        <Spacer display="block" height={20} />
-
         <Row>
-          <Col lg={24} sm={24} xs={24} md={24} className="home-text-message">
-            <h3>
-              The global coronavirus outbreak has forced all of us away from our
-              everyday lives. Although apart, we are all in this fight together.
-              The Government of Karnataka urges you to step forward and help us
-              provide food for relief and healthcare for those in need.
-            </h3>
-          </Col>
+          <div style={{ "text-align": "center", width: "100%" }}>
+            <Button
+              type="link"
+              className="scroll-ico"
+              ghost
+              onClick={() => window.scrollTo(0, document.body.scrollHeight)}
+            >
+              <DownCircleOutlined />
+            </Button>
+          </div>
         </Row>
+        <Spacer display="block" height={20} />
       </Col>
 
       <Col lg={6} sm={24} xs={24} md={6} className="gutter-row right-conteiner">
         <Statistics covidStats={props.covidStats} />
         <Row style={{ padding: "5px" }}>
           <Col span="24">
-            <PortalAppeals
-              appealsData={props.appeals}
-              appealClick={onClickAppeal}
-            />
+            {/*
+              <PortalAppeals
+                appealsData={props.appeals}
+                appealClick={onClickAppeal}
+              />
+            */}
+            <TwitterWidget />
           </Col>
         </Row>
       </Col>

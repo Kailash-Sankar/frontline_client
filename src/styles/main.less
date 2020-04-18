@@ -445,14 +445,19 @@ a.alt {
 }
 
 .marquee {
-  overflow: hidden;
+  overflow: scroll;
   height: 450px;
+  text-align: left;
+}
+
+.appeals-header {
   text-align: left;
 }
 
 .appeals-data {
   margin-top: 10px;
   margin-bottom: 20px;
+  width: 100%;
   li:hover {
     background-color: #0908089e;
   }
@@ -461,13 +466,33 @@ a.alt {
 .marquee div.appeals-data {
   display: inline-block;
   padding-top: 400px;
-  animation: marquee 18s linear infinite;
-  -webkit-animation: marquee 18s linear infinite;
+  animation: marquee 35s linear infinite;
+  -webkit-animation: marquee 35s linear infinite;
 }
 
 .marquee div:hover {
   animation-play-state: paused;
   -webkit-animation-play-state: paused;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.scroll-ico {
+  text-align: center;
+  margin: auto;
+  margin-top: 40px;
+  font-size: 30px;
+  animation: flash 2s linear infinite;
 }
 
 /* END Home content Styles */
