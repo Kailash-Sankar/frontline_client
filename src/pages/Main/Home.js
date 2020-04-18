@@ -76,7 +76,10 @@ const HomePage = (props) => {
     >
       <Col lg={18} xs={24} sm={24} md={18} className="gutter-row">
         <PaymentModal showModal={showModal} setShowModal={setShowModal} />
-        <VolunteerModal showModal={showVolunteerModal} setShowModal={setshowVolunteerModal} />
+        <VolunteerModal
+          showModal={showVolunteerModal}
+          setShowModal={setshowVolunteerModal}
+        />
 
         <Row>
           <Col span={24} className="layout-header">
@@ -149,7 +152,9 @@ const HomePage = (props) => {
         <Row>
           <Col lg={8} sm={24} xs={24} className="bottom-btn-containers">
             <div className="goto-text" onClick={() => setShowModal(true)}>
-              DONATE FUNDS <ArrowRightOutlined />
+              <Button>
+                DONATE FUNDS <ArrowRightOutlined />
+              </Button>
             </div>
             <div>
               <div>
@@ -175,7 +180,9 @@ const HomePage = (props) => {
           <Col lg={8} sm={24} xs={24} className="bottom-btn-containers-alt">
             <Link to="/kind">
               <div className="goto-text">
-                SUPPORT IN KIND <ArrowRightOutlined />
+                <Button>
+                  SUPPORT IN KIND <ArrowRightOutlined />
+                </Button>
               </div>
             </Link>
             <ul>
@@ -192,8 +199,13 @@ const HomePage = (props) => {
           </Col>
 
           <Col lg={8} sm={24} xs={24} className="bottom-btn-containers">
-            <div className="goto-text" onClick={() => setshowVolunteerModal(true)}>
-              VOLUNTEER <ArrowRightOutlined />
+            <div
+              className="goto-text"
+              onClick={() => setshowVolunteerModal(true)}
+            >
+              <Button>
+                VOLUNTEER <ArrowRightOutlined />
+              </Button>
             </div>
             <ul>
               <li>
