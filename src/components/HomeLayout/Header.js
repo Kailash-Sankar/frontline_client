@@ -12,7 +12,16 @@ const Header = () => (
           <img src={StateLogo} className="state-logo" alt="Karnataka Gov" />
           <br />
         </Col>
-        <Col lg={12} md={12} sm={8} xs={8}>
+        <Col
+          lg={12}
+          md={12}
+          sm={8}
+          xs={8}
+          style={{
+            position: "relative",
+            top: -10,
+          }}
+        >
           <div className="logo-banner">Sankalpa</div>
           <div className="header-text">#karnatakafightscorona</div>
         </Col>

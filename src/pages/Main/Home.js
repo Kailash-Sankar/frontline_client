@@ -57,9 +57,9 @@ const HomePage = (props) => {
       <Row style={{ flexGrow: 1 }}>
         <Col lg={18} xs={24} sm={24} md={18} className="gutter-row">
           <Header />
-          <Spacer display="block" height={20} />
+          <Spacer display="block" height={10} />
           <Content />
-          <Spacer display="block" height={20} />
+          <Spacer display="block" height={5} />
           <Actions />
         </Col>
 
@@ -81,6 +81,7 @@ const HomePage = (props) => {
 
       <Row>
         <Col span={24}>
+          <Spacer display="block" height={20} />
           <Footer noBackground={true} />
           <Affix
             offsetBottom={20}
