@@ -1,8 +1,20 @@
 @import "colors.less";
 
+@font-face {
+  font-family: "samarkan";
+  src: url("./SAMAN.TTF");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .app {
-  height: 100%;
+  //height: 100%;
   font-family: "Quicksand", sans-serif;
+  //background: black;
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 a {
@@ -60,6 +72,7 @@ a.alt {
   font-size: 18px;
   text-align: center;
   .logo-text {
+    font-family: "samarkan";
     opacity: 1;
     transition: opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
       width 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -108,8 +121,15 @@ a.alt {
   //background-image: url('../images/background.png');
   background-repeat: no-repeat;
   padding-left: 1%;
-  padding-right: 1%;
+  padding-right: 0.2%;
   padding-top: 5px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .layout-conteiner h3 {
@@ -143,8 +163,11 @@ a.alt {
 }
 
 .header-text {
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   font-weight: 700;
+  text-align: center;
+  top: -10px;
+  position: relative;
 }
 
 .cm-image-container {
@@ -155,7 +178,7 @@ a.alt {
 .logo-banner {
   text-align: center;
   font-size: 3rem;
-  font-weight: 600;
+  font-family: "samarkan";
 }
 
 .text-large {
@@ -165,6 +188,7 @@ a.alt {
 
 .right-conteiner {
   border-left: 1px solid #8c8a8a;
+  background-color: #1a1919bf;
 }
 
 .covid-stat {
@@ -202,27 +226,18 @@ a.alt {
 }
 
 .bottom-btn-containers {
-  background-color: #dada27;
   color: black;
-  padding: 20px;
+  padding: 5px;
   margin-top: 5px;
   margin-bottom: 10px;
 }
 
 .bottom-btn-containers-alt {
   .bottom-btn-containers();
-  background-color: #dada27;
   border-left: 1px solid #333;
   border-right: 1px solid #333;
 }
 
-.goto-text {
-  font-weight: 700;
-  font-size: 16px;
-  margin-bottom: 5px;
-  cursor: pointer;
-  color: #14497a;
-}
 .goto-container-text {
   display: flex;
   justify-content: center;
@@ -234,8 +249,8 @@ a.alt {
 }
 
 .home-text-message {
-  margin-top: 15px;
-  margin-bottom: 10px;
+  margin: 10px;
+  font-size: 1rem;
 }
 
 .border-right {
@@ -253,7 +268,28 @@ a.alt {
   height: 100%;
 }
 
-/* Payment popup */
+.home-actions {
+  text-align: center;
+  width: 100%;
+  margin-top: 10px;
+  .action-btn {
+    background-color: #f9c63e;
+    color: black;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    width: 210px;
+    text-align: left;
+  }
+  .action-img {
+    padding: 1px;
+    height: 40px;
+    width: 40px;
+    margin-right: 5px;
+  }
+}
+
+/* popup */
 
 .payment-header {
   color: #337ab7;
@@ -276,6 +312,14 @@ a.alt {
   text-align: center;
   font-weight: 700;
   font-size: 18px;
+}
+
+.modal-txt {
+  margin-bottom: 10px;
+  span {
+    margin-left: 3px;
+    margin-right: 3px;
+  }
 }
 
 /* -- footer -- */
@@ -321,6 +365,25 @@ a.alt {
 .footer-item-wrap {
   padding: 5px;
   display: inline-block;
+}
+
+.req-help {
+  .action-btn {
+    background-color: #14497a;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 500px;
+    &:hover {
+      background-color: #1890ff;
+    }
+  }
+  .action-img {
+    padding: 1px;
+    height: 30px;
+    width: 30px;
+    margin-right: 4px;
+  }
 }
 
 /* End Payment popup */
@@ -438,14 +501,21 @@ a.alt {
 }
 
 .marquee {
-  overflow: hidden;
-  height: 450px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  text-align: left;
+  min-height: 400px;
+  height: 60vh;
+}
+
+.appeals-header {
   text-align: left;
 }
 
 .appeals-data {
   margin-top: 10px;
   margin-bottom: 20px;
+  width: 100%;
   li:hover {
     background-color: #0908089e;
   }
@@ -453,14 +523,34 @@ a.alt {
 
 .marquee div.appeals-data {
   display: inline-block;
-  padding-top: 400px;
-  animation: marquee 18s linear infinite;
-  -webkit-animation: marquee 18s linear infinite;
+  // padding-top: 350px;
+  //animation: marquee 40s linear infinite;
+  //-webkit-animation: marquee 40s linear infinite;
 }
 
 .marquee div:hover {
   animation-play-state: paused;
   -webkit-animation-play-state: paused;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.scroll-ico {
+  text-align: center;
+  margin: auto;
+  margin-top: 40px;
+  font-size: 30px;
+  animation: flash 2s linear infinite;
 }
 
 /* END Home content Styles */

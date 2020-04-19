@@ -86,6 +86,20 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(ttf)$/i,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "static/fonts/",
+              mimetype: "application/font-woff",
+              publicPath: "../fonts/",
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [

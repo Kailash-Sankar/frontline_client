@@ -25,12 +25,17 @@ const Footer = (props) => {
       <Row style={style} className="footer-container">
         <Col
           span={3}
-          style={{ paddingLeft: "5px" }}
+          style={{ paddingLeft: 5, paddingRight: 3 }}
           className="border-right flex-center"
         >
           <Text
             strong
-            style={{ color: "snow", minWidth: 70, display: "inline-block" }}
+            style={{
+              color: "snow",
+              minWidth: 70,
+              display: "inline-block",
+              wordBreak: "break-word",
+            }}
           >
             Get Involved
           </Text>
@@ -78,7 +83,8 @@ const Footer = (props) => {
           className="alt"
           href="https://github.com/Kailash-Sankar/frontline_client/"
         >
-          Developed by Volunteers &amp; Open sourced <GithubOutlined />
+          Developed by Volunteers &amp; SPYKK App Labs, hosted by IIT-B | Open
+          sourced <GithubOutlined />
         </a>
       </div>
     </>
