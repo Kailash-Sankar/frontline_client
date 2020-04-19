@@ -83,7 +83,7 @@ const Footer = (props) => {
           className="alt"
           href="https://github.com/Kailash-Sankar/frontline_client/"
         >
-          Developed by Volunteers &amp; Spykk App Labs, hosted by IIT-B | Open
+          Developed by Volunteers &amp; SPYKK App Labs, hosted by IIT-B | Open
           sourced <GithubOutlined />
         </a>
       </div>
