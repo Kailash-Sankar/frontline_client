@@ -12,7 +12,7 @@ const Content = () => {
   ];
 
   return (
-    <Row style={{ marginTop: "10vh" }}>
+    <Row style={{ marginTop: "5vh" }}>
       <Col lg={8} md={24} sm={24}>
         <div className="caption-co">
           <Row className="text-large">DONATE.</Row>

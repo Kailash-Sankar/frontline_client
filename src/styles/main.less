@@ -14,6 +14,7 @@
   display: flex;
   min-height: 100vh;
   width: 100vw;
+  overflow-x: hidden;
 }
 
 a {
@@ -271,7 +272,7 @@ a.alt {
 .home-actions {
   text-align: center;
   width: 100%;
-  margin-top: 25px;
+  margin-top: 10px;
   .action-btn {
     background-color: #f9c63e;
     color: black;
@@ -501,10 +502,11 @@ a.alt {
 }
 
 .marquee {
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   text-align: left;
   min-height: 400px;
-  height: 70vh;
+  height: 60vh;
 }
 
 .appeals-header {
