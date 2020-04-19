@@ -49,6 +49,15 @@
       "contributions": [
         "design"
       ]
+    },
+    {
+      "login": "vivekprocoder",
+      "name": "vivek yadav",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1491268?v=4",
+      "profile": "https://github.com/vivekprocoder",
+      "contributions": [
+        "infra"
+      ]
     }
   ],
   "contributorsPerLine": 7,
