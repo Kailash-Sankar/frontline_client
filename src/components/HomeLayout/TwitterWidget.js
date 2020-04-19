@@ -9,16 +9,16 @@ const TwitterWidget = () => {
         <div className="appeals-data">
           <TwitterTimelineEmbed
             sourceType="profile"
-            screenName="DHFWKA"
+            screenName="karnataka_team"
             options={{
               tweetLimit: "10",
               width: "100%",
               height: "100%",
             }}
             theme="dark"
-            noHeader="true"
-            noBorders="true"
-            noFooter="true"
+            noHeader={true}
+            noBorders={true}
+            noFooter={true}
           ></TwitterTimelineEmbed>
         </div>
       </div>

@@ -26,6 +26,7 @@ import {
 import { DynamicServicList } from "./Fields/Dynamic";
 
 import { formatData } from "./utils";
+import { Spacer } from "@components/Utils";
 
 function OrganizationKindForm({
   initialValues,
@@ -74,6 +75,20 @@ function OrganizationKindForm({
 
   return (
     <div>
+      <div>
+        <ul>
+          <li>
+            Medical equipment such as PPE, masks, ventilators testing kits,
+            pulse oximeters, etc.
+          </li>
+          <li>
+            Hospital equipment such as cots, mattresses, pillows bed sheets,
+            blankets, and other support.
+          </li>
+          <li>Food for relief, for those in need.</li>
+        </ul>
+      </div>
+      <Spacer height={10} />
       <Form
         form={form}
         {...formItemLayout}

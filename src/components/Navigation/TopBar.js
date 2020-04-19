@@ -15,9 +15,7 @@ const TopBar = ({ loggedIn, user }) => {
         <div className={styles.logoWrap}>
           <Link to="/">
             <img src={StateLogo} className="state-logo" />
-            <span style={{ paddingLeft: "10px", fontWeight: "600" }}>
-              Sankalpa
-            </span>
+            <span style={{ paddingLeft: "10px" }}>Sankalpa</span>
           </Link>
         </div>
 
