@@ -16,11 +16,15 @@ const Actions = () => {
   return (
     <Row>
       <div className="home-actions">
+        <PaymentModal showModal={showModal} setShowModal={setShowModal} />
+        <VolunteerModal
+          showModal={showVolunteerModal}
+          setShowModal={setshowVolunteerModal}
+        />
+
         <Row>
           <Col lg={8} sm={24} xs={24} className="bottom-btn-containers">
             <div className="goto-text" onClick={() => setShowModal(true)}>
-              <PaymentModal showModal={showModal} setShowModal={setShowModal} />
-
               <Button className="action-btn">
                 <img className="action-img" src={donateIco} />
                 DONATE FUNDS
@@ -44,10 +48,6 @@ const Actions = () => {
               className="goto-text"
               onClick={() => setshowVolunteerModal(true)}
             >
-              <VolunteerModal
-                showModal={showVolunteerModal}
-                setShowModal={setshowVolunteerModal}
-              />
               <Button className="action-btn">
                 <img className="action-img" src={volunteerIco} />
                 VOLUNTEER

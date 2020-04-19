@@ -11,7 +11,7 @@ const VolunteerModal = (props) => {
       footer={null}
     >
       <div style={{ textAlign: "left" }}>
-        <p className="modal-txt">
+        <div className="modal-txt">
           <ul>
             <li>
               Doctors can volunteer for telemedical services by giving missed
@@ -23,7 +23,7 @@ const VolunteerModal = (props) => {
             </li>
             <li>Inform us about anyone in need of relief. </li>
           </ul>
-        </p>
+        </div>
         <p className="modal-txt">
           <span> Register as an </span>
           <span>

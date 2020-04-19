@@ -20,10 +20,13 @@ const Content = () => {
           <Row className="text-large margin-adjust">VOLUNTEER.</Row>
           <Row>
             <Col className="home-text-message">
-              The global coronavirus outbreak has forced all of us away from our
-              everyday lives. Although apart, we are all in this fight together.
-              The Government of Karnataka urges you to step forward and help us
-              provide food for relief and healthcare for those in need.
+              Karnataka! While we gave our nation a global pedestal and millions
+              their dream jobs, we also strive to make sure that no one sleeps
+              hungry, no one is denied basic amenties and healthcare, no one
+              feels helpless. This is the call of humanity we answer every
+              single day. Today, when the world is fighting an unprecedented
+              fight for survival, the call just got louder. Let&apos;s do it yet
+              again, our way - Humane! Unique! Effective!
             </Col>
           </Row>
         </div>
