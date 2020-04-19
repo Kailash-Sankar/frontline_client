@@ -1,6 +1,6 @@
 # Frontline app client
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/15a9d95d956743fdbf55e81fbfbe1b21)](https://app.codacy.com/manual/Kailash-Sankar/frontline_client?utm_source=github.com&utm_medium=referral&utm_content=Kailash-Sankar/frontline_client&utm_campaign=Badge_Grade_Settings) [![Known Vulnerabilities](https://snyk.io/test/github/Kailash-Sankar/frontline_client/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Kailash-Sankar/frontline_client?targetFile=package.json) ![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/kailashsankar/frontline_client)
@@ -41,6 +41,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/rtkanan"><img src="https://avatars3.githubusercontent.com/u/1004509?v=4" width="100px;" alt=""/><br /><sub><b>Kannan Nagarajan</b></sub></a><br /><a href="#projectManagement-rtkanan" title="Project Management">📆</a></td>
     <td align="center"><a href="http://www.spykk.com"><img src="https://avatars2.githubusercontent.com/u/63699386?v=4" width="100px;" alt=""/><br /><sub><b>SPYKK APP LABS</b></sub></a><br /><a href="#projectManagement-SPYKKAPPLABS" title="Project Management">📆</a></td>
     <td align="center"><a href="https://github.com/RajeeshVK"><img src="https://avatars3.githubusercontent.com/u/54164341?v=4" width="100px;" alt=""/><br /><sub><b>Rajeesh V K</b></sub></a><br /><a href="#design-RajeeshVK" title="Design">🎨</a></td>
+    <td align="center"><a href="https://github.com/vivekprocoder"><img src="https://avatars1.githubusercontent.com/u/1491268?v=4" width="100px;" alt=""/><br /><sub><b>vivek yadav</b></sub></a><br /><a href="#infra-vivekprocoder" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
   </tr>
 </table>
 
