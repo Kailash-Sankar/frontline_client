@@ -6,6 +6,10 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/15a9d95d956743fdbf55e81fbfbe1b21)](https://app.codacy.com/manual/Kailash-Sankar/frontline_client?utm_source=github.com&utm_medium=referral&utm_content=Kailash-Sankar/frontline_client&utm_campaign=Badge_Grade_Settings) [![Known Vulnerabilities](https://snyk.io/test/github/Kailash-Sankar/frontline_client/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Kailash-Sankar/frontline_client?targetFile=package.json) ![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/kailashsankar/frontline_client)
 
 Manage volunteers, requests, supporters and kind donations.
+Currently hosted at [karnatakafightscorona.org](https://karnatakafightscorona.org/#/)
+
+If you want to use the app for a differnt cause or authority, update the home page and associated components.
+
 
 ## To setup locally
     git clone <repo>
