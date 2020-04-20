@@ -14,13 +14,7 @@ const ImageCarousel = (props) => {
   };
 
   const caurosalData = props.caurosalData.map((image, index) => {
-    return (
-      <div key={index}>
-        <h3>
-          <img src={image.url} style={styleObj} />
-        </h3>
-      </div>
-    );
+    return <img key={index} src={image.url} style={styleObj} />;
   });
 
   return <Carousel autoplay={props.autoPlay || true}>{caurosalData}</Carousel>;
