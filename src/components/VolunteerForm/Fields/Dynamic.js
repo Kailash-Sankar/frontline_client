@@ -33,7 +33,7 @@ export const DynamicServicList = ({ serviceType, options }) => {
       >
         <Input
           addonAfter={unitSelector(baseName)}
-          maxLength={5}
+          maxLength={10}
           size={15}
           placeholder="Quantity"
         />

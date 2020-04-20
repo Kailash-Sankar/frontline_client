@@ -29,7 +29,7 @@ const Content = () => {
         <Col className="home-text-message">
           Karnataka! While we gave our nation a global pedestal and millions
           their dream jobs, we also strive to make sure that no one sleeps
-          hungry, no one is denied basic amenties and healthcare, no one feels
+          hungry, no one is denied basic amenities and healthcare, no one feels
           helpless. This is the call of humanity we answer every single day.
           Today, when the world is fighting an unprecedented fight for survival,
           the call just got louder. Let&apos;s do it yet again, our way -

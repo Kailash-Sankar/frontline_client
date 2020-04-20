@@ -113,7 +113,7 @@ export const EmailField = () => (
       },
     ]}
   >
-    <Input maxLength={25} placeholder="Enter an email id" />
+    <Input maxLength={200} placeholder="Enter an email id" />
   </Form.Item>
 );
 
