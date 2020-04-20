@@ -28,6 +28,7 @@ Manage volunteers, requests, supporters and kind donations.
    The instructions for setting up the server are here, [frontline_server](https://github.com/Kailash-Sankar/frontline_server)
 
 ## Contributors ✨
+[Contribution Guidelines](CONTRIBUTING.md)
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
