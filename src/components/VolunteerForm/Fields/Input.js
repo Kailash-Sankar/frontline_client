@@ -204,15 +204,6 @@ export const NotesField = ({
   </Form.Item>
 );
 
-export const PubliciseField = () => (
-  <Form.Item label="Publicise Contribution" name="publicise">
-    <Radio.Group>
-      <Radio value="y">Yes</Radio>
-      <Radio value="n">No</Radio>
-    </Radio.Group>
-  </Form.Item>
-);
-
 export const AreaField = () => (
   <Form.Item label="Area" name="area">
     <Input maxLength={25} placeholder="Enter area/locality" />
