@@ -96,7 +96,10 @@ function OrganizationKindForm({
         initialValues={initialValues}
         //hideRequiredMark={true}
       >
-        <NameField />
+        <NameField
+          label="Organization Name"
+          placeholder="Enter organization name"
+        />
         <OrgTypeSelect options={other.orgTypeOptions} />
         <RegNumField />
         <NodalNameField />
