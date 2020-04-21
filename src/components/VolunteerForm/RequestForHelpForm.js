@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Form, Input, Button } from "antd";
 import { RegionSelect } from "@components/VolunteerForm/Fields/Select";
 import { formItemLayout, tailFormItemLayout } from "./layout";
+import { toNumber } from "./utils";
 
 const { TextArea } = Input;
 import {
@@ -48,6 +49,24 @@ const RequestForHelpForm = (props) => {
         </Form.Item>
 
         <Form.Item
+          label="No. of Persons"
+          name="persons"
+          rules={[
+            {
+              required: true,
+              message: "Number of Persons is required",
+            },
+            {
+              type: "number",
+              transform: toNumber,
+              message: "Invalid number format",
+            },
+          ]}
+        >
+          <Input maxLength={5} placeholder="Enter number of persons need help" />
+        </Form.Item>
+
+        <Form.Item
           label="Area"
           name="area"
           rules={[
@@ -63,6 +82,24 @@ const RequestForHelpForm = (props) => {
         <RegionSelect options={props.options} />
 
         <PinField />
+
+        <Form.Item
+          label="Point of Contact"
+          name="poc"
+          rules={[
+            {
+              type: "number",
+              transform: toNumber,
+              message: "Invalid number format",
+            },
+            {
+              len: 10,
+              message: "Mobile number must be 10 digits",
+            },
+          ]}
+        >
+          <Input maxLength={10} placeholder="Enter point of contact's mobile number" />
+        </Form.Item>
 
         <Section label="Request Raised By" />
 
