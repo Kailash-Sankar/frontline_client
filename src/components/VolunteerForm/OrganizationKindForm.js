@@ -19,7 +19,6 @@ import {
   NotesField,
   NodalNameField,
   RegNumField,
-  PubliciseField,
   AreaField,
 } from "./Fields/Input";
 
@@ -126,7 +125,7 @@ function OrganizationKindForm({
         <DynamicServicList serviceType="nonmedical" options={nonMedical} />
 
         <NotesField placeholder="Add extra items/supplies you wish to donate or any other details here." />
-        <PubliciseField />
+
         <Form.Item {...tailFormItemLayout}>
           <Button type="primary" htmlType="submit">
             Submit
