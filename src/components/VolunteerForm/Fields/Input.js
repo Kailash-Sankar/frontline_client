@@ -101,7 +101,7 @@ export const NameField = ({
     name="name"
     rules={[{ required: true, message: "Name is required" }]}
   >
-    <Input maxLength={25} placeholder={placeholder} />
+    <Input maxLength={200} placeholder={placeholder} />
   </Form.Item>
 );
 
