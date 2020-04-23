@@ -7,6 +7,7 @@ import TwitterWidget from "./TwitterWidget";
 import Header from "./Header";
 import Content from "./Content";
 import Actions from "./Actions";
+import Helpline from "./Helpline";
 
 export {
   PortalAppeals,
@@ -18,4 +19,5 @@ export {
   Header,
   Content,
   Actions,
+  Helpline,
 };
