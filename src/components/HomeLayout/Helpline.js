@@ -3,6 +3,7 @@ import { Modal, Row, Col, Button } from "antd";
 
 import { WomanOutlined } from "@ant-design/icons";
 import { Spacer } from "@components/Utils";
+import { helplineLinks } from "@utils/constants";
 
 const HelplineModal = ({ showModal, setShowModal }) => (
   <Modal
@@ -16,19 +17,13 @@ const HelplineModal = ({ showModal, setShowModal }) => (
       <div className="modal-txt">
         <p> Helpline numbers are available in the links below, </p>
         <span>
-          <a
-            href="https://drive.google.com/open?id=1vBTp1pG92sjgv6U6LIHbCu7rC3R-b648"
-            target="_new"
-          >
+          <a href={helplineLinks.kannada} target="_new">
             <Button type="primary">ಕನ್ನಡ</Button>
           </a>
         </span>
         <Spacer width={10} />
         <span>
-          <a
-            href="https://drive.google.com/open?id=1Mv0CuqmqV5jBv2sX2utuqXfPHIZ01_V_"
-            target="_new"
-          >
+          <a href={helplineLinks.english} target="_new">
             <Button type="primary">English</Button>
           </a>
         </span>

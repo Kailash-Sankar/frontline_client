@@ -1,5 +1,6 @@
 import React from "react";
 import { Form, Select, Cascader, Button } from "antd";
+import { specLink } from "@utils/constants";
 const { Option } = Select;
 
 const renderOptions = (options) =>
@@ -79,10 +80,7 @@ export const OrgTypeSelect = ({ options }) => (
 export const SpecLink = () => {
   return (
     <div>
-      <a
-        href="https://drive.google.com/open?id=1D2nO7pharSoL5UnRrNRCOrIT8kJeHSQb"
-        target="_new"
-      >
+      <a href={specLink} target="_new">
         <Button type="link">Approved Specifications</Button>
       </a>
     </div>
