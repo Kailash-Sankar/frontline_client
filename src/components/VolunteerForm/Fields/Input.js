@@ -1,12 +1,16 @@
 import React from "react";
-import { Form, Input, DatePicker, Radio } from "antd";
+import { Form, Input, DatePicker } from "antd";
 import { toNumber } from "../utils";
 const { TextArea } = Input;
 
-export const MobileField = () => (
+export const MobileField = ({
+  label = "Mobile Number",
+  name = "mobile",
+  placeholder = "Enter your mobile number",
+}) => (
   <Form.Item
-    label="Mobile Number"
-    name="mobile"
+    label={label}
+    name={name}
     rules={[
       {
         required: true,
@@ -23,7 +27,7 @@ export const MobileField = () => (
       },
     ]}
   >
-    <Input maxLength={10} placeholder="Enter your mobile number" />
+    <Input maxLength={10} placeholder={placeholder} />
   </Form.Item>
 );
 
@@ -207,5 +211,28 @@ export const NotesField = ({
 export const AreaField = () => (
   <Form.Item label="Area" name="area">
     <Input maxLength={25} placeholder="Enter area/locality" />
+  </Form.Item>
+);
+
+export const NOPField = () => (
+  <Form.Item
+    label="Number of Persons"
+    name="nop"
+    rules={[
+      {
+        type: "number",
+        transform: toNumber,
+        message: "Invalid format",
+      },
+      {
+        required: true,
+        message: "Number of Persons is required",
+      },
+    ]}
+  >
+    <Input
+      maxLength={5}
+      placeholder="Enter number of individuals who need help"
+    />
   </Form.Item>
 );

@@ -10,6 +10,7 @@ import {
   PinField,
   NameField,
   ConfirmMobileField,
+  NOPField,
 } from "./Fields/Input";
 import { Section } from "./Fields/Other";
 
@@ -46,6 +47,14 @@ const RequestForHelpForm = (props) => {
             placeholder="Please enter description."
           />
         </Form.Item>
+
+        <NOPField />
+
+        <MobileField
+          name="poc_mobile"
+          label="Point of Contact"
+          placeholder="Enter point of contact's mobile number"
+        />
 
         <Form.Item
           label="Area"
