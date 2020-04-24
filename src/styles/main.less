@@ -28,6 +28,19 @@ a.alt {
   }
 }
 
+/* custom elements, nested for specificity */
+.ftl {
+  .orange-btn {
+    background-color: #f9c63e;
+    border: 1px solid #ffb900;
+    color: #333;
+    &:hover {
+      color: black;
+      background-color: snow;
+    }
+  }
+}
+
 .header {
   color: @orange;
   text-align: center;
@@ -280,6 +293,9 @@ a.alt {
     font-weight: 700;
     width: 210px;
     text-align: left;
+    &:hover {
+      background-color: snow;
+    }
   }
   .action-img {
     padding: 1px;

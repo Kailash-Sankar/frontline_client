@@ -1,5 +1,6 @@
 import React from "react";
-import { Form, Select, Cascader } from "antd";
+import { Form, Select, Cascader, Button } from "antd";
+import { specLink } from "@utils/constants";
 const { Option } = Select;
 
 const renderOptions = (options) =>
@@ -76,11 +77,22 @@ export const OrgTypeSelect = ({ options }) => (
   </Form.Item>
 );
 
+export const SpecLink = () => {
+  return (
+    <div>
+      <a href={specLink} target="_new">
+        <Button type="link">Approved Specifications</Button>
+      </a>
+    </div>
+  );
+};
+
 export const MedicalField = ({ options, onChange }) => (
   <Form.Item name={["services", "medical", "id"]} label="Medical Supplies">
     <Select mode="multiple" onChange={onChange}>
       {renderOptionsObject(options)}
     </Select>
+    <SpecLink />
   </Form.Item>
 );
 

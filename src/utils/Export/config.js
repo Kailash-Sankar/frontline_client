@@ -44,7 +44,6 @@ const headerSections = {
     ["createdAt", "Submitted on"],
   ],
 
-  publicise: [["publicise", "Publicise"]],
   description: [["desc", "Description"]],
   mode: [["mode", "Type"]],
   meta: [
@@ -77,7 +76,6 @@ const reportSectionList = {
       "mode",
       "individual",
       "organization",
-      "publicise",
       "others",
       "meta",
     ],

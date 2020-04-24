@@ -30,6 +30,19 @@ const RequestForHelpForm = (props) => {
         onFinish={props.handleSubmit}
       >
         <Section label="Help Required At" />
+
+        <NameField
+          label="Point of Contact - Name"
+          placeholder="Enter point of contact's name"
+          name="poc_name"
+        />
+
+        <MobileField
+          name="poc_mobile"
+          label="Point of Contact - Mobile"
+          placeholder="Enter point of contact's mobile number"
+        />
+
         <Form.Item
           label="Description"
           name="desc"
@@ -43,7 +56,7 @@ const RequestForHelpForm = (props) => {
           <TextArea
             type="textarea"
             rows={4}
-            placeholder="Please enter description."
+            placeholder="Please describe your request along with secondary contact info if any"
           />
         </Form.Item>
 

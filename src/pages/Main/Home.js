@@ -9,6 +9,7 @@ import {
   Content,
   Header,
   Actions,
+  Helpline,
 } from "@components/HomeLayout";
 
 import { connector } from "@store/homeContent";
@@ -71,6 +72,7 @@ const HomePage = (props) => {
           className="gutter-row right-conteiner"
         >
           <Statistics covidStats={props.covidStats} />
+          <Helpline />
           <Row style={{ padding: "5px" }}>
             <Col span="24">
               <TwitterWidget />
