@@ -99,10 +99,11 @@ export const PinField = () => (
 export const NameField = ({
   label = "Name",
   placeholder = "Enter your full name",
+  name = "name",
 }) => (
   <Form.Item
     label={label}
-    name="name"
+    name={name}
     rules={[{ required: true, message: "Name is required" }]}
   >
     <Input maxLength={200} placeholder={placeholder} />
