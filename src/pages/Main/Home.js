@@ -11,6 +11,7 @@ import {
   Actions,
   Helpline,
 } from "@components/HomeLayout";
+import { useTranslation } from 'react-i18next';
 
 import { connector } from "@store/homeContent";
 import axios from "axios";
@@ -47,6 +48,8 @@ const HomePage = (props) => {
 
     getCovidData();
   }, []);
+
+  const [t] = useTranslation();
 
   return (
     <div
@@ -93,7 +96,7 @@ const HomePage = (props) => {
             <Link to="/request">
               <Button type="primary" className="action-btn">
                 <img className="action-img" src={helpIco} />
-                Request for Help
+                {t('request_for_help')}
               </Button>
             </Link>
           </Affix>
