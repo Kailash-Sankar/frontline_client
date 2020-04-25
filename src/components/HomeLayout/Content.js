@@ -1,13 +1,15 @@
 import React from "react";
 import { Row, Col } from "antd";
-import carousel3 from "@images/carousel-3.jpg";
+
+import img2 from "@images/c2.jpg";
+//import img3 from "@images/c3.jpg";
 import ImageCarousel from "./ImageCarousel";
 
 const Content = () => {
   const caurosalData = [
     {
-      text: "img-3",
-      url: carousel3,
+      text: "img-2",
+      url: img2,
     },
   ];
 
