@@ -17,9 +17,9 @@ const Content = () => {
       <Row style={{ marginTop: "1vh" }}>
         <Col lg={8} md={24} sm={24}>
           <div className="caption-co">
-            <Row className="text-large">DONATE.</Row>
-            <Row className="text-large margin-adjust">SUPPORT.</Row>
-            <Row className="text-large margin-adjust">VOLUNTEER.</Row>
+            <Row className="text-large">{t('donate')}</Row>
+  <Row className="text-large margin-adjust">{t('support')}</Row>
+            <Row className="text-large margin-adjust">{t('volunteer')}.</Row>
           </div>
         </Col>
         <Col lg={16} md={24} sm={24} style={{ overflow: "hidden" }}>
