@@ -49,7 +49,7 @@ const HomePage = (props) => {
     getCovidData();
   }, []);
 
-  const [t] = useTranslation();
+  const [t, i18n] = useTranslation();
 
   return (
     <div
@@ -58,6 +58,8 @@ const HomePage = (props) => {
       }}
       className="layout-conteiner"
     >
+      
+      <button onClick={() => i18n.changeLanguage('en')}>English</button>
       <Row style={{ flexGrow: 1 }}>
         <Col lg={18} xs={24} sm={24} md={18} className="gutter-row">
           <Header />
@@ -66,7 +68,8 @@ const HomePage = (props) => {
           <Spacer display="block" height={5} />
           <Actions />
         </Col>
-
+        
+        
         <Col
           lg={6}
           sm={24}
@@ -74,6 +77,7 @@ const HomePage = (props) => {
           md={6}
           className="gutter-row right-conteiner"
         >
+          <Button onClick={() => i18n.changeLanguage(i18n.language == 'kn' ? "en" : "kn")}>{i18n.language == 'kn' ? "English" : "ಕನ್ನಡ"}</Button>
           <Statistics covidStats={props.covidStats} />
           <Helpline />
           <Row style={{ padding: "5px" }}>
