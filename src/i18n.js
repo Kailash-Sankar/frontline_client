@@ -17,6 +17,22 @@ i18n.use(LanguageDetector).init({
                 name: "ಹೆಸರು",
                 confirm_mobile_number: "ಮೊಬೈಲ್ ಸಂಖ್ಯೆ ದೃಢೀಕರಿಸಿ",
                 submit: "ಸಲ್ಲಿಸು",
+                India_covid_19: "ಇಂಡಿಯಾ ಕೋವಿಡ್ -19",
+                Karnataka_covid_19: "ಕರ್ನಾಟಕ ಕೋವಿಡ್ -19",
+                reenter_number: "ನಿಮ್ಮ ಮೊಬೈಲ್ ಸಂಖ್ಯೆಯನ್ನು ಮರು ನಮೂದಿಸಿ",
+                address: "ವಿಳಾಸ",
+                pin_code: "ಪಿನ್ ಕೋಡ್",
+                email: "ಇಮೇಲ್",
+                region: "ಪ್ರದೇಶ ಅಗತ್ಯವಿದೆ",
+                mobile_number: "ಮೊಬೈಲ್ ನಂಬರ",
+                placeholder: {
+                    enter_address: "ನಿಮ್ಮ ವಿಳಾಸವನ್ನು ನಮೂದಿಸಿ",
+                    pin_code: "ಪಿನ್ ಕೋಡ್ ನಮೂದಿಸಿ",
+                    email: "ಇಮೇಲ್ ಐಡಿ ನಮೂದಿಸಿ",
+                    name: "ನಿಮ್ಮ ಪೂರ್ಣ ಹೆಸರನ್ನು ನಮೂದಿಸಿ",
+                    mobile_number: "ನಿಮ್ಮ ಮೊಬೈಲ್ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ",
+                },
+
                 request_for_help_form:{
                 
                     point_of_contact_name: "ಸಂಪರ್ಕದ ಸ್ಥಳ - ಹೆಸರು",
@@ -38,7 +54,20 @@ i18n.use(LanguageDetector).init({
                 validation_messages:{
                     description: "ವಿವರಣೆ ಅಗತ್ಯವಿದೆ.",
                     area: "ಪ್ರದೇಶ ಅಗತ್ಯವಿದೆ.",
+                    mobile_number_required: "ಇಮೇಲ್ ಐಡಿ ನಮೂದಿಸಿ",
+                    mobile_number_invalid_format: "ಅಮಾನ್ಯ ಸಂಖ್ಯೆ ಸ್ವರೂಪ",
+                    mobile_number_length: "ಮೊಬೈಲ್ ಸಂಖ್ಯೆ 10 ಅಂಕೆಗಳಾಗಿರಬೇಕು",
+                    pin_code_required: "ಪಿನ್ ಕೋಡ್ ಅಗತ್ಯವಿದೆ",
+                    pin_code_invalid_format: "ಅಮಾನ್ಯ ಸ್ವರೂಪ",
+                    pin_code_length: "ಪಿನ್ 6 ಅಂಕೆಗಳಾಗಿರಬೇಕು",
+                    email_validation: "ಇನ್ಪುಟ್ ಮಾನ್ಯ ಇ-ಮೇಲ್ ಅಲ್ಲ!",
+                    name_required: "ಹೆಸರು ಅಗತ್ಯವಿದೆ",
+                    region_required: "ಪ್ರದೇಶ ಅಗತ್ಯವಿದೆ",
 
+                },
+
+                select_dropdown:{
+                    select_region: "ನಿಮ್ಮ ಪ್ರದೇಶವನ್ನು ಆಯ್ಕೆಮಾಡಿ"
                 },
 
             }
@@ -58,6 +87,22 @@ i18n.use(LanguageDetector).init({
                 name: "Name",
                 confirm_mobile_number: "Confirm Mobile Number",
                 submit: "Submit",
+                India_covid_19: "INDIA COVID-19",
+                Karnataka_covid_19: "KARNATAKA COVID-19",
+                reenter_number: "Enter re-enter your mobile number",
+                address: "Address",
+                pin_code: "Pin Code",
+                email: "Email",
+                region: "Region",
+                mobile_number: "Mobile Number",
+                placeholder: {
+                    enter_address: "Enter your address",
+                    pin_code: "Enter pin code",
+                    email: "Enter an email id",
+                    name: "Enter your full name",
+                    mobile_number: "Enter your mobile number",
+                },
+
                 request_for_help_form:{
                 
                     point_of_contact_name: "Point of Contact - Name",
@@ -72,15 +117,26 @@ i18n.use(LanguageDetector).init({
                         enter_point_of_contacts_mobile: "Enter point of contact's mobile number",
                         description: "Please describe your request along with secondary contact info if any",
                         area: "Enter area/locality",
+                        
                     },
-
-
                 },
                 validation_messages:{
                     description: "Description is required.",
                     area: "Area is required.",
-                    mobile_number_required: "Mobile number is required",
+                    mobile_number_required: "Mobile number confirmation is required",
+                    mobile_number_invalid_format: "Invalid number format",
+                    mobile_number_length: "Mobile number must be 10 digits",
+                    pin_code_required: "Pin code is required",
+                    pin_code_invalid_format: "Invalid format",
+                    pin_code_length: "Pin must be 6 digits",
+                    email_validation: "Input is not a valid E-mail!",
+                    name_required: "Name is required",
+                    region_required: "Region is required",
 
+                },
+
+                select_dropdown:{
+                    select_region: "Select your region"
                 },
             }
         },
