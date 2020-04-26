@@ -40,9 +40,9 @@ function AppealReport({
     setStatus(value);
   }
 
-  function onResultClose(id) {
+  function onResultClose(id, status) {
     const url = `/appeal/update/${id}`;
-    updateStatus(url, { status: "closed" });
+    updateStatus(url, { status: status });
   }
 
   function formatParams() {
