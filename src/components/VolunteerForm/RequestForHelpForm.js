@@ -12,10 +12,12 @@ import {
   ConfirmMobileField,
 } from "./Fields/Input";
 import { Section } from "./Fields/Other";
+import { useTranslation } from 'react-i18next';
 
 const RequestForHelpForm = (props) => {
   const [form] = Form.useForm();
   const { resetFields } = form;
+  const [t] = useTranslation();
 
   useEffect(() => {
     resetFields();
@@ -29,55 +31,55 @@ const RequestForHelpForm = (props) => {
         initialValues={props.initialValues}
         onFinish={props.handleSubmit}
       >
-        <Section label="Help Required At" />
+        <Section label={t("request_for_help_form.help_required_at")} />
 
         <NameField
-          label="Point of Contact - Name"
-          placeholder="Enter point of contact's name"
+          label= {t("request_for_help_form.point_of_contact_name")}
+          placeholder={t("request_for_help_form.placeholder.enter_point_of_contacts_name")}
           name="poc_name"
         />
 
         <MobileField
           name="poc_mobile"
-          label="Point of Contact - Mobile"
-          placeholder="Enter point of contact's mobile number"
+          label= {t("request_for_help_form.point_of_contact_mobile")}
+          placeholder={t("request_for_help_form.placeholder.enter_point_of_contacts_mobile")}
         />
 
         <Form.Item
-          label="Description"
+          label={t("request_for_help_form.description")}
           name="desc"
           rules={[
             {
               required: true,
-              message: "Description is required.",
+              message: t("validation_messages.description"),
             },
           ]}
         >
           <TextArea
             type="textarea"
             rows={4}
-            placeholder="Please describe your request along with secondary contact info if any"
+            placeholder={t("request_for_help_form.placeholder.description")}
           />
         </Form.Item>
 
         <Form.Item
-          label="Area"
+          label={t("request_for_help_form.area")}
           name="area"
           rules={[
             {
               required: true,
-              message: "Area is required.",
+              message: t("validation_messages.area"),
             },
           ]}
         >
-          <Input placeholder="Enter area/locality" />
+          <Input placeholder={t("request_for_help_form.placeholder.area")} />
         </Form.Item>
 
         <RegionSelect options={props.options} />
 
         <PinField />
 
-        <Section label="Request Raised By" />
+        <Section label={t("request_for_help_form.request_raised_by")} />
 
         <NameField />
         <MobileField />
@@ -86,7 +88,7 @@ const RequestForHelpForm = (props) => {
 
         <Form.Item {...tailFormItemLayout}>
           <Button type="primary" htmlType="submit">
-            Submit
+            {t("submit")}
           </Button>
         </Form.Item>
       </Form>
