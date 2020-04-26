@@ -10,6 +10,7 @@ import {
   MailOutlined,
   PhoneOutlined,
   GithubOutlined,
+  RobotOutlined
 } from "@ant-design/icons";
 
 const Footer = (props) => {
@@ -72,6 +73,16 @@ const Footer = (props) => {
                   <a href={`mailto:${x}`} style={{ color: "snow" }}>
                     {x}
                   </a>
+                </span>
+              ))}
+            </Col>
+            <Col offset={1}>
+              <span className="footer-icon">
+                <RobotOutlined />
+              </span>
+              {contact.chatbot.map((x) => (
+                <span className="footer-item-wrap" key={x}>
+                  {x}
                 </span>
               ))}
             </Col>
