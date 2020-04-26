@@ -13,6 +13,33 @@ i18n.use(LanguageDetector).init({
                 get_involved: "ತೊಡಗಿಸಿಕೊಳ್ಳಿ",
                 donate: "ದಾನ.",
                 support: "ಬೆಂಬಲ.",
+                women_helpline: "ಮಹಿಳಾ ಸಹಾಯವಾಣಿ",
+                name: "ಹೆಸರು",
+                confirm_mobile_number: "ಮೊಬೈಲ್ ಸಂಖ್ಯೆ ದೃಢೀಕರಿಸಿ",
+                submit: "ಸಲ್ಲಿಸು",
+                request_for_help_form:{
+                
+                    point_of_contact_name: "ಸಂಪರ್ಕದ ಸ್ಥಳ - ಹೆಸರು",
+                    point_of_contact_mobile: "ಸಂಪರ್ಕದ ಸ್ಥಳ - ಮೊಬೈಲ್",
+                    description: "ವಿವರಣೆ",
+                    area: "ಪ್ರದೇಶ",
+                    request_raised_by: "ವಿನಂತಿಯನ್ನು ಹೆಚ್ಚಿಸಲಾಗಿದೆ",
+                    help_required_at: "ಸಹಾಯ ಅಗತ್ಯವಿದೆ",
+
+                    placeholder: {
+                        enter_point_of_contacts_name: "ಸಂಪರ್ಕದ ಹೆಸರಿನ ಬಿಂದುವನ್ನು ನಮೂದಿಸಿ",
+                        enter_point_of_contacts_mobile: "ಸಂಪರ್ಕದ ಮೊಬೈಲ್ ಸಂಖ್ಯೆಯ ಬಿಂದುವನ್ನು ನಮೂದಿಸಿ",
+                        description: "ದಯವಿಟ್ಟು ನಿಮ್ಮ ವಿನಂತಿಯನ್ನು ದ್ವಿತೀಯ ಸಂಪರ್ಕ ಮಾಹಿತಿಯೊಂದಿಗೆ ವಿವರಿಸಿ",
+                        area: "ಪ್ರದೇಶ / ಪ್ರದೇಶವನ್ನು ನಮೂದಿಸಿ",
+                    },
+
+                },
+
+                validation_messages:{
+                    description: "ವಿವರಣೆ ಅಗತ್ಯವಿದೆ.",
+                    area: "ಪ್ರದೇಶ ಅಗತ್ಯವಿದೆ.",
+
+                },
 
             }
         },
@@ -27,7 +54,34 @@ i18n.use(LanguageDetector).init({
                 get_involved: "Get Involved",
                 donate: "Donate.",
                 support: "Support.",
+                women_helpline: "Women Helpline",
+                name: "Name",
+                confirm_mobile_number: "Confirm Mobile Number",
+                submit: "Submit",
+                request_for_help_form:{
                 
+                    point_of_contact_name: "Point of Contact - Name",
+                    point_of_contact_mobile: "Point of Contact - Mobile",
+                    description: "Description",
+                    area: "Area",
+                    request_raised_by: "Request Raised By",
+                    help_required_at: "Help Required At",
+
+                    placeholder: {
+                        enter_point_of_contacts_name: "Enter point of contact's name",
+                        enter_point_of_contacts_mobile: "Enter point of contact's mobile number",
+                        description: "Please describe your request along with secondary contact info if any",
+                        area: "Enter area/locality",
+                    },
+
+
+                },
+                validation_messages:{
+                    description: "Description is required.",
+                    area: "Area is required.",
+                    mobile_number_required: "Mobile number is required",
+
+                },
             }
         },
 
@@ -38,7 +92,7 @@ i18n.use(LanguageDetector).init({
     ns: ["translations"],
     defaultNS: "translations",
 
-    keySeparator: false, // we use content as keys
+    // keySeparator: false, // we use content as keys
 
     interpolation: {
         escapeValue: false, // not needed for react!!
