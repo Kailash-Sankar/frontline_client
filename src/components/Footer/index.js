@@ -9,8 +9,7 @@ import {
   WhatsAppOutlined,
   MailOutlined,
   PhoneOutlined,
-  GithubOutlined,
-  RobotOutlined
+  GithubOutlined
 } from "@ant-design/icons";
 
 const Footer = (props) => {
@@ -76,16 +75,6 @@ const Footer = (props) => {
                 </span>
               ))}
             </Col>
-            <Col offset={1}>
-              <span className="footer-icon">
-                <RobotOutlined />
-              </span>
-              {contact.chatbot.map((x) => (
-                <span className="footer-item-wrap" key={x}>
-                  {x}
-                </span>
-              ))}
-            </Col>
           </Row>
         </Col>
       </Row>
@@ -94,7 +83,7 @@ const Footer = (props) => {
           className="alt"
           href="https://github.com/Kailash-Sankar/frontline_client/"
         >
-          Developed by Volunteers &amp; SPYKK App Labs, hosted by IIIT-B | Open
+          Developed by Volunteers, SPYKK App Labs &amp; SAP Labs India, hosted by IIIT-B | Open
           sourced <GithubOutlined />
         </a>
       </div>
