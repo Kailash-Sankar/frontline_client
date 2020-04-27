@@ -12,6 +12,7 @@ export const contact = {
   ],
   phone: ["080-22284420"],
   whatsapp: ["9480850031", "9480850033"],
+  chatbot: ["8750971717"]
 };
 
 export const specLink =
