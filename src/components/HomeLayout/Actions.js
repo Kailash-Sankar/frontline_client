@@ -27,7 +27,7 @@ const Actions = () => {
             <div className="goto-text" onClick={() => setShowModal(true)}>
               <Button className="action-btn">
                 <img className="action-img" src={donateIco} />
-                DONATE FUNDS
+                DONATE
               </Button>
             </div>
           </Col>
@@ -37,7 +37,7 @@ const Actions = () => {
               <div className="goto-text">
                 <Button className="action-btn">
                   <img className="action-img" src={supportIco} />
-                  SUPPORT IN KIND
+                  SUPPORT
                 </Button>
               </div>
             </Link>
