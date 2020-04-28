@@ -14,7 +14,7 @@ const RequestForHelp = ({ reset, save }) => {
   const [t] = useTranslation();
   return (
     <div style={{ textAlign: "left" }}>
-      <h2>{t("common.request_for_help")}</h2>
+      <h2>{t("request_for_help")}</h2>
       <div style={{ marginTop: 30 }}>
         <RequestForHelpForm
           reset={reset}

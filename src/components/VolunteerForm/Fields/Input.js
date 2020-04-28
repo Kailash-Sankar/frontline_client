@@ -8,25 +8,25 @@ export const MobileField = () => {
   const [t] = useTranslation();
   return (
     <Form.Item
-      label={t("common.form.label.mobile_number")}
+      label={t("form.label.mobile_number")}
       name="mobile"
       rules={[
         {
           required: true,
-          message: t("common.form.validation_messages.mobile_number_required"),
+          message: t("form.validation_messages.mobile_number_required"),
         },
         {
           type: "number",
           transform: toNumber,
-          message: t("common.form.validation_messages.mobile_number_invalid_format"),
+          message: t("form.validation_messages.mobile_number_invalid_format"),
         },
         {
           len: 10,
-          message: t("common.form.validation_messages.mobile_number_length"),
+          message: t("form.validation_messages.mobile_number_length"),
         },
       ]}
     >
-      <Input maxLength={10} placeholder={t("common.placeholder.mobile_number")} />
+      <Input maxLength={10} placeholder={t("placeholder.mobile_number")} />
     </Form.Item>
   )
 };
@@ -36,19 +36,19 @@ export const ConfirmMobileField = () => {
   return (
 
     <Form.Item
-      label={t("common.confirm_mobile_number")}
+      label={t("confirm_mobile_number")}
       name="co_mobile"
       dependencies={["mobile"]}
       hasFeedback
       rules={[
         {
           required: true,
-          message: t("common.form.validation_messages.mobile_number_required"),
+          message: t("form.validation_messages.mobile_number_required"),
         },
         {
           type: "number",
           transform: toNumber,
-          message: t("common.form.validation_messages.mobile_number_invalid_format"),
+          message: t("form.validation_messages.mobile_number_invalid_format"),
         },
         ({ getFieldValue }) => ({
           validator(rule, value) {
@@ -60,7 +60,7 @@ export const ConfirmMobileField = () => {
         }),
       ]}
     >
-      <Input maxLength={10} placeholder={t("common.reenter_number")} />
+      <Input maxLength={10} placeholder={t("reenter_number")} />
     </Form.Item>
   )
 };
@@ -68,12 +68,12 @@ export const ConfirmMobileField = () => {
 export const AddressField = () => {
   const [t] = useTranslation();
   return (
-    <Form.Item label={t("common.form.label.address")} name="address">
+    <Form.Item label={t("form.label.address")} name="address">
       <TextArea
         maxLength={100}
         type="textarea"
         rows={4}
-        placeholder={t("common.placeholder.enter_address")}
+        placeholder={t("placeholder.enter_address")}
       />
     </Form.Item>
   )
@@ -83,25 +83,25 @@ export const PinField = () => {
   const [t] = useTranslation();
   return (
     <Form.Item
-      label={t("common.form.label.pin_code")}
+      label={t("form.label.pin_code")}
       name="pin"
       rules={[
         {
           required: true,
-          message: t("common.form.validation_messages.pin_code_required"),
+          message: t("form.validation_messages.pin_code_required"),
         },
         {
           type: "number",
           transform: toNumber,
-          message: t("common.form.validation_messages.pin_code_invalid_format"),
+          message: t("form.validation_messages.pin_code_invalid_format"),
         },
         {
           len: 6,
-          message: t("common.form.validation_messages.pin_code_length"),
+          message: t("form.validation_messages.pin_code_length"),
         },
       ]}
     >
-      <Input maxLength={6} placeholder={t("common.placeholder.pin_code")} />
+      <Input maxLength={6} placeholder={t("placeholder.pin_code")} />
     </Form.Item>
   )
 };
@@ -110,11 +110,11 @@ export const NameField = () => {
   const [t] = useTranslation();
   return (
     <Form.Item
-      label={t("common.name")}
+      label={t("name")}
       name={name}
-      rules={[{ required: true, message: t("common.form.validation_messages.name_required") }]}
+      rules={[{ required: true, message: t("form.validation_messages.name_required") }]}
     >
-      <Input maxLength={200} placeholder={t("common.placeholder.name")} />
+      <Input maxLength={200} placeholder={t("placeholder.name")} />
     </Form.Item>
   )
 };
@@ -123,16 +123,16 @@ export const EmailField = () => {
   const [t] = useTranslation();
   return (
     <Form.Item
-      label={t("common.form.label.email")}
+      label={t("form.label.email")}
       name="email"
       rules={[
         {
           type: "email",
-          message: t("common.form.validation_messages.email_validation"),
+          message: t("form.validation_messages.email_validation"),
         },
       ]}
     >
-      <Input maxLength={200} placeholder={t("common.placeholder.email")} />
+      <Input maxLength={200} placeholder={t("placeholder.email")} />
     </Form.Item>
   )
 };

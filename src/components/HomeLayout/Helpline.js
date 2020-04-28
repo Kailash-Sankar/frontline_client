@@ -46,7 +46,7 @@ const Helpline = () => {
           onClick={() => setShowModal(true)}
         >
           <Button className="orange-btn">
-            <WomanOutlined /> {t("common.women_helpline")}
+            <WomanOutlined /> {t("women_helpline")}
           </Button>
         </div>
       </Col>

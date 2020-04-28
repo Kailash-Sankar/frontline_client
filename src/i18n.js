@@ -6,21 +6,17 @@ import common_kn from './translations/kn/common.json';
 i18n.use(LanguageDetector).init({
     resources: {
         kn: {
-            translations: {
-                common: common_kn,
-            }
+            common: common_kn,
         },
 
         en: {
-            translations: {
-                common: common_en, // 'common' is our custom namespace
-            },
+            common: common_en, // 'common' is our custom namespace
         },
     },
     fallbackLng: "en",
     debug: true,
     ns: ["translations"],
-    defaultNS: "translations",
+    defaultNS: "common",
 
     // keySeparator: false, // we use content as keys
 

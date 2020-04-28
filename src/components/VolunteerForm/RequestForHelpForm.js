@@ -31,55 +31,55 @@ const RequestForHelpForm = (props) => {
         initialValues={props.initialValues}
         onFinish={props.handleSubmit}
       >
-        <Section label={t("common.request_for_help_form.help_required_at")} />
+        <Section label={t("request_for_help_form.help_required_at")} />
 
         <NameField
-          label={t("common.request_for_help_form.point_of_contact_name")}
-          placeholder={t("common.request_for_help_form.placeholder.enter_point_of_contacts_name")}
+          label={t("request_for_help_form.point_of_contact_name")}
+          placeholder={t("request_for_help_form.placeholder.enter_point_of_contacts_name")}
           name="poc_name"
         />
 
         <MobileField
           name="poc_mobile"
-          label={t("common.request_for_help_form.point_of_contact_mobile")}
-          placeholder={t("common.request_for_help_form.placeholder.enter_point_of_contacts_mobile")}
+          label={t("request_for_help_form.point_of_contact_mobile")}
+          placeholder={t("request_for_help_form.placeholder.enter_point_of_contacts_mobile")}
         />
 
         <Form.Item
-          label={t("common.request_for_help_form.description")}
+          label={t("request_for_help_form.description")}
           name="desc"
           rules={[
             {
               required: true,
-              message: t("common.form.validation_messages.description"),
+              message: t("form.validation_messages.description"),
             },
           ]}
         >
           <TextArea
             type="textarea"
             rows={4}
-            placeholder={t("common.request_for_help_form.placeholder.description")}
+            placeholder={t("request_for_help_form.placeholder.description")}
           />
         </Form.Item>
 
         <Form.Item
-          label={t("common.request_for_help_form.area")}
+          label={t("request_for_help_form.area")}
           name="area"
           rules={[
             {
               required: true,
-              message: t("common.form.validation_messages.area"),
+              message: t("form.validation_messages.area"),
             },
           ]}
         >
-          <Input placeholder={t("common.request_for_help_form.placeholder.area")} />
+          <Input placeholder={t("request_for_help_form.placeholder.area")} />
         </Form.Item>
 
         <RegionSelect options={props.options} />
 
         <PinField />
 
-        <Section label={t("common.request_for_help_form.request_raised_by")} />
+        <Section label={t("request_for_help_form.request_raised_by")} />
 
         <NameField />
         <MobileField />
@@ -88,7 +88,7 @@ const RequestForHelpForm = (props) => {
 
         <Form.Item {...tailFormItemLayout}>
           <Button type="primary" htmlType="submit">
-            {t("common.submit")}
+            {t("submit")}
           </Button>
         </Form.Item>
       </Form>

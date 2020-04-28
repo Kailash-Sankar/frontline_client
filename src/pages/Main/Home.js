@@ -50,7 +50,7 @@ const HomePage = (props) => {
   }, []);
 
   const [t, i18n] = useTranslation();
-
+  const [currentLang, toggleLang] = i18n.language == 'en' ? ['en', 'kn'] : ['kn', 'en'];
   return (
     <div
       style={{
@@ -73,7 +73,7 @@ const HomePage = (props) => {
           md={6}
           className="gutter-row right-conteiner"
         >
-          <Button type="primary" className="orange-btn" onClick={() => i18n.changeLanguage(i18n.language == 'kn' ? "en" : "kn")}>{i18n.language == 'kn' ? "English" : "ಕನ್ನಡ"}</Button>
+          <Button type="primary" className="orange-btn" onClick={() => i18n.changeLanguage(toggleLang)}>{currentLang == 'kn' ? "English" : "ಕನ್ನಡ"}</Button>
           <Statistics covidStats={props.covidStats} />
           <Helpline />
           <Row style={{ padding: "5px" }}>
@@ -96,7 +96,7 @@ const HomePage = (props) => {
             <Link to="/request">
               <Button type="primary" className="action-btn">
                 <img className="action-img" src={helpIco} />
-                {t('common.request_for_help')}
+                {t('request_for_help')}
               </Button>
             </Link>
           </Affix>

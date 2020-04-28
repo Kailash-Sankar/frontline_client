@@ -29,7 +29,7 @@ const Actions = () => {
             <div className="goto-text" onClick={() => setShowModal(true)}>
               <Button className="action-btn">
                 <img className="action-img" src={donateIco} />
-                {t("common.donate_funds")}
+                {t("donate_funds")}
               </Button>
             </div>
           </Col>
@@ -39,7 +39,7 @@ const Actions = () => {
               <div className="goto-text">
                 <Button className="action-btn">
                   <img className="action-img" src={supportIco} />
-                  {t("common.support_in_kind")}
+                  {t("support_in_kind")}
                 </Button>
               </div>
             </Link>
@@ -52,7 +52,7 @@ const Actions = () => {
             >
               <Button className="action-btn">
                 <img className="action-img" src={volunteerIco} />
-                {t("common.volunteer")}
+                {t("volunteer")}
               </Button>
             </div>
           </Col>

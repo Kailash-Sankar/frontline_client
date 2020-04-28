@@ -16,11 +16,11 @@ export const RegionSelect = ({ options }) => {
   const [t] = useTranslation();
   return (
     <Form.Item
-      label={t("common.form.label.region")}
+      label={t("form.label.region")}
       name="region"
-      rules={[{ required: true, message: t("common.form.validation_messages.region_required") }]}
+      rules={[{ required: true, message: t("form.validation_messages.region_required") }]}
     >
-      <Cascader placeholder={t("common.select_dropdown.select_region")} options={options} />
+      <Cascader placeholder={t("select_dropdown.select_region")} options={options} />
     </Form.Item>
   )
 };
