@@ -58,8 +58,6 @@ const HomePage = (props) => {
       }}
       className="layout-conteiner"
     >
-      
-      <button onClick={() => i18n.changeLanguage('en')}>English</button>
       <Row style={{ flexGrow: 1 }}>
         <Col lg={18} xs={24} sm={24} md={18} className="gutter-row">
           <Header />
@@ -77,7 +75,7 @@ const HomePage = (props) => {
           md={6}
           className="gutter-row right-conteiner"
         >
-          <Button onClick={() => i18n.changeLanguage(i18n.language == 'kn' ? "en" : "kn")}>{i18n.language == 'kn' ? "English" : "ಕನ್ನಡ"}</Button>
+          <Button type = "primary" className="orange-btn" onClick={() => i18n.changeLanguage(i18n.language == 'kn' ? "en" : "kn")}>{i18n.language == 'kn' ? "English" : "ಕನ್ನಡ"}</Button>
           <Statistics covidStats={props.covidStats} />
           <Helpline />
           <Row style={{ padding: "5px" }}>
