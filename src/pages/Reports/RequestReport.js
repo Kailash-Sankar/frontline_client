@@ -40,9 +40,9 @@ const RequestReport = ({
     setStatus(value);
   }
 
-  function onResultClose(id) {
+  function onResultClose(id, status) {
     const url = `/request/update/${id}`;
-    updateStatus(url, { status: "closed" });
+    updateStatus(url, { status: status });
   }
 
   function formatParams() {

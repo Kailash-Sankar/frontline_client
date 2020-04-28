@@ -41,6 +41,20 @@ a.alt {
   }
 }
 
+/* highligt color codes, nested for specificity */
+
+.lightup {
+  &:hover.cyan {
+    background-color: #e6fffb;
+  }
+  &:hover.orange {
+    background-color: #fff7e6;
+  }
+  &:hover.red {
+    background-color: #fff1f0;
+  }
+}
+
 .header {
   color: @orange;
   text-align: center;
