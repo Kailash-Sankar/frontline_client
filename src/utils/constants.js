@@ -11,7 +11,7 @@ export const contact = {
     "karnatakafightscorona@gmail.com",
   ],
   phone: ["080-22284420"],
-  whatsapp: ["9480850031", "9480850033"],
+  whatsapp: ["9480850031/9480850033", "8750971717 (Help Desk)"]
 };
 
 export const specLink =
@@ -21,3 +21,5 @@ export const helplineLinks = {
   kannada: "https://drive.google.com/open?id=1vBTp1pG92sjgv6U6LIHbCu7rC3R-b648",
   english: "https://drive.google.com/open?id=1Mv0CuqmqV5jBv2sX2utuqXfPHIZ01_V_",
 };
+
+export const galleryLink = "https://drive.google.com/folderview?id=19T3QuhTLAbjvuYQgRTc1lYyyq9292JLX";

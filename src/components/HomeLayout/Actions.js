@@ -30,6 +30,7 @@ const Actions = () => {
               <Button className="action-btn">
                 <img className="action-img" src={donateIco} />
                 {t("common.donate_funds")}
+
               </Button>
             </div>
           </Col>
@@ -39,7 +40,9 @@ const Actions = () => {
               <div className="goto-text">
                 <Button className="action-btn">
                   <img className="action-img" src={supportIco} />
+
                   {t("common.support_in_kind")}
+
                 </Button>
               </div>
             </Link>
