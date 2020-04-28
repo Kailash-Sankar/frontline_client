@@ -15,10 +15,10 @@ const Content = () => {
   ];
 
   const styleObj = {
-    "position": "absolute",
-    "color": "white",
-    "bottom": "1vw",
-    "right": "2vw"
+    position: "absolute",
+    color: "white",
+    bottom: "1vw",
+    right: "2vw",
   };
 
   return (
@@ -33,7 +33,15 @@ const Content = () => {
         </Col>
         <Col lg={16} md={24} sm={24} style={{ overflow: "hidden" }}>
           <ImageCarousel caurosalData={caurosalData} imageWidth="95%" />
-          <a href={galleryLink} style={styleObj} target="blank"> Gallery </a>
+          <a
+            href={galleryLink}
+            style={styleObj}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            {" "}
+            Gallery{" "}
+          </a>
         </Col>
       </Row>
       <Row>
