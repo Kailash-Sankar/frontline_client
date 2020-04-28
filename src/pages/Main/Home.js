@@ -66,8 +66,6 @@ const HomePage = (props) => {
           <Spacer display="block" height={5} />
           <Actions />
         </Col>
-
-
         <Col
           lg={6}
           sm={24}
