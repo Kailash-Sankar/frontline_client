@@ -18,17 +18,25 @@ export function ModeSelect({ mode, modes, onModeChange }) {
   );
 }
 
-export function StatusSelect({ status, onStatusChannge }){
+export const statusOptions = () => [
+  <Option key="open" className="lightup cyan">
+    Open
+  </Option>,
+  <Option key="invalid" className="lightup orange">
+    Invalid
+  </Option>,
+  <Option key="closed" className="lightup red">
+    Closed
+  </Option>,
+];
+
+export function StatusSelect({ status, onStatusChannge }) {
   return (
-    <Select
-      style={{ width: 100 }}
-      value={status}
-      onChange={onStatusChannge}>
+    <Select style={{ width: 100 }} value={status} onChange={onStatusChannge}>
       <Option value="">All</Option>
-      <Option value="open">Open</Option>
-      <Option value="closed">Closed</Option>
+      {statusOptions()}
     </Select>
-  )
+  );
 }
 
 export function RegionSelect({ region, regions, onRegionChange }) {
