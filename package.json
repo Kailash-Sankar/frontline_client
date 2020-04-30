@@ -14,7 +14,9 @@
     "scan": "npm audit && npm outdated",
     "comply": "license-checker --summary",
     "comply:prod": "license-checker --summary --production",
-    "check-types": "tsc"
+    "check-types": "tsc",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "husky": {
     "hooks": {
@@ -47,7 +49,8 @@
     "react-window": "^1.8.5",
     "redux": "^4.0.5",
     "redux-saga": "^1.1.3",
-    "reselect": "^4.0.0"
+    "reselect": "^4.0.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -100,5 +103,6 @@
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3",
     "webpack-merge": "^4.2.2"
-  }
+  },
+  "snyk": true
 }
