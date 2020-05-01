@@ -89,7 +89,7 @@
     "jest": "^25.5.3",
     "jest-canvas-mock": "^2.2.0",
     "less": "^3.11.1",
-    "less-loader": "^5.0.0",
+    "less-loader": "^6.0.0",
     "license-checker": "^25.0.1",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^3.0.0",
