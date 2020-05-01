@@ -16,7 +16,8 @@ export function createMap(data) {
 export function buildUserInfo(data) {
   const res = {
     name: data.name || "",
-    email: "__NA__",
+    email: data.email || "",
+    role: data.role || "",
   };
   return res;
 }
