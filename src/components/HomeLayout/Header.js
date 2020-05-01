@@ -8,7 +8,7 @@ const Header = () => (
   <Row>
     <Col span={24} className="layout-header">
       <Row>
-        <Col lg={6} md={6} sm={8} xs={8} style={{ textAlign: "center" }}>
+        <Col lg={6} md={6} sm={8} xs={8} className="state-image-container">
           <img src={StateLogo} className="state-logo" alt="Karnataka Gov" />
           <br />
         </Col>
