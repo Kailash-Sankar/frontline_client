@@ -104,12 +104,4 @@ function Report({
   );
 }
 
-/*
-  <div style={{ marginTop: 20 }}>
-    <Button type="primary" onClick={handleDownload}>
-      Download
-    </Button>
-  </div>
-*/
-
 export default connecter(Report);
