@@ -19,8 +19,6 @@ import Home from "./Home";
 import Login from "./Login";
 import Logout from "./Logout";
 import LoginRequired from "./LoginRequired";
-import NGO from "./NGO";
-import Authorize, { Fallback } from "@components/Authorize";
 
 const TopBar = lazy(() => import("@components/Navigation/TopBar"));
 const SideBar = lazy(() => import("@components/Navigation/SideBar"));
@@ -84,17 +82,6 @@ function App({ loggedIn, user, volunteerCount }) {
 
                     <Route path="/request">
                       <RequestForHelp {...pageProps} />
-                    </Route>
-
-                    <Route path="/NGO">
-                      <LoginRequired loggedIn={loggedIn}>
-                        <Authorize
-                          roles={["ngo", "admin"]}
-                          fallback={<Fallback.Page />}
-                        >
-                          <NGO />
-                        </Authorize>
-                      </LoginRequired>
                     </Route>
 
                     <Route path="/login">

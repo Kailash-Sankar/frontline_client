@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 const initialState = {
   volunteerCount: {},
   loggedIn: false,
-  user: { name: "", email: "", role: "" },
+  user: { name: "", email: "" }
 };
 
 const scope = "common";
@@ -15,22 +15,22 @@ export const types = applyScope(scope, [
   "SET_AUTH",
   "LOGIN",
   "SET_USER",
-  "LOGOUT",
+  "LOGOUT"
 ]);
 
 const commonReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.SET_COUNT:
       return update(state, {
-        volunteerCount: { $set: action.volunteerCount },
+        volunteerCount: { $set: action.volunteerCount }
       });
     case types.SET_AUTH:
       return update(state, {
-        loggedIn: { $set: action.loggedIn },
+        loggedIn: { $set: action.loggedIn }
       });
     case types.SET_USER:
       return update(state, {
-        user: { $set: action.user },
+        user: { $set: action.user }
       });
   }
   return state;
@@ -41,15 +41,15 @@ const mapDispatchToProps = (dispatch) => ({
   setCount: (count) =>
     dispatch({
       type: types.SET_COUNT,
-      count,
+      count
     }),
   setAuth: (loggedIn) =>
     dispatch({
       type: types.SET_AUTH,
-      loggedIn,
+      loggedIn
     }),
   login: (formData) => dispatch({ type: types.LOGIN, formData }),
-  logout: () => dispatch({ type: types.LOGOUT }),
+  logout: () => dispatch({ type: types.LOGOUT })
 });
 
 // common store connector
