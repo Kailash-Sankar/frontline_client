@@ -11,7 +11,7 @@ const ImageCarousel = (props) => {
     return (
       <div key={index} className="carousel">
         <img key={index} src={image.url} className="img" />;
-        <Button ghost small className="link-btn">
+        <Button ghost className="link-btn">
           <a href={galleryLink} rel="noopener noreferrer" target="_blank">
             View Gallery
           </a>

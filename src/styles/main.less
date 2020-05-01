@@ -203,7 +203,10 @@ a.alt {
 
 .cm-image-container {
   text-align: center;
-  padding-right: 20px;
+}
+
+.state-image-container {
+  text-align: center;
 }
 
 .logo-banner {
@@ -309,7 +312,7 @@ a.alt {
     height: 50px;
     font-size: 16px;
     font-weight: 700;
-    width: 210px;
+    width: 180px;
     text-align: left;
     &:hover {
       background-color: snow;
@@ -463,7 +466,6 @@ a.alt {
   }
   .layout-header div {
     align-items: center;
-    text-align: center;
     float: none;
   }
   .layout-header div img {
@@ -477,9 +479,6 @@ a.alt {
     text-align: center;
     float: none;
   }
-  .cm-image-container {
-    padding-right: 0px;
-  }
 }
 @media only screen and (max-width: 575px) {
   .text-large {
@@ -491,7 +490,7 @@ a.alt {
     font-size: 1.5rem;
   }
   .header-text {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     font-weight: 700;
   }
   .margin-adjust {
@@ -506,9 +505,9 @@ a.alt {
   .layout-header {
     align-items: center;
   }
+
   .layout-header div {
     align-items: center;
-    text-align: center;
     float: none;
   }
   .layout-header div img {
@@ -522,8 +521,23 @@ a.alt {
     text-align: center;
     float: none;
   }
+
   .cm-image-container {
-    padding-right: 0px;
+    text-align: right;
+  }
+
+  .state-image-container {
+    text-align: left;
+  }
+
+  .cm-logo {
+    max-width: 50px;
+    max-height: 50px;
+  }
+
+  .state-logo {
+    max-width: 50px;
+    max-height: 50px;
   }
 
   .carousel {
