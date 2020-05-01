@@ -87,12 +87,14 @@ function App({ loggedIn, user, volunteerCount }) {
                     </Route>
 
                     <Route path="/NGO">
-                      <Authorize
-                        roles={["ngo", "admin"]}
-                        fallback={<Fallback.Page />}
-                      >
-                        <NGO />
-                      </Authorize>
+                      <LoginRequired loggedIn={loggedIn}>
+                        <Authorize
+                          roles={["ngo", "admin"]}
+                          fallback={<Fallback.Page />}
+                        >
+                          <NGO />
+                        </Authorize>
+                      </LoginRequired>
                     </Route>
 
                     <Route path="/login">
