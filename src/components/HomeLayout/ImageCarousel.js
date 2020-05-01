@@ -1,23 +1,21 @@
 import React from "react";
-import { Carousel } from "antd";
+import { Carousel, Button } from "antd";
+import { galleryLink } from "@utils/constants";
 
 const ImageCarousel = (props) => {
-  //const minHeight = props.minHeight ? props.minHeight : '400px';
-  //const maxHeight = props.maxHeight ? props.maxHeight : '400px';
-  //const width = props.imageWidth ? props.imageWidth : "100%";
-
-  const styleObj = {
-    maxWidth: "100%",
-    height: "100%",
-    display: "block",
-    border: "1px solid #353535",
-    margin: "auto",
-  };
+  // const minHeight = props.minHeight ? props.minHeight : "400px";
+  // const maxHeight = props.maxHeight ? props.maxHeight : "400px";
+  // const width = props.imageWidth ? props.imageWidth : "100%";
 
   const caurosalData = props.caurosalData.map((image, index) => {
     return (
-      <div key={index}>
-        <img key={index} src={image.url} style={styleObj} />
+      <div key={index} className="carousel">
+        <img key={index} src={image.url} className="img" />;
+        <Button ghost small className="link-btn">
+          <a href={galleryLink} rel="noopener noreferrer" target="_blank">
+            View Gallery
+          </a>
+        </Button>
       </div>
     );
   });

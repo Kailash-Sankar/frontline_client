@@ -419,8 +419,29 @@ a.alt {
     margin-right: 4px;
   }
 }
-
 /* End Payment popup */
+
+.carousel {
+  max-width: 600px;
+  max-height: 400px;
+  overflow: hidden;
+
+  .img {
+    display: "block";
+    border: "1px solid #353535";
+    margin: "auto";
+  }
+
+  .link-btn {
+    position: absolute;
+    z-index: 9;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #33333352 !important; //yes, i know
+    border: 1px solid #33333373;
+  }
+}
 
 @media only screen and (max-width: 801px) {
   .header-text {
@@ -503,6 +524,13 @@ a.alt {
   }
   .cm-image-container {
     padding-right: 0px;
+  }
+
+  .carousel {
+    &.img {
+      width: 400px;
+      height: 250px;
+    }
   }
 }
 
