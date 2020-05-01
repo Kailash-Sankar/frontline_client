@@ -31,7 +31,13 @@ const Content = () => {
             <Row className="text-large margin-adjust">VOLUNTEER.</Row>
           </div>
         </Col>
-        <Col lg={16} md={24} sm={24} style={{ overflow: "hidden" }}>
+        <Col
+          lg={16}
+          md={24}
+          sm={24}
+          style={{ overflow: "hidden", width: "100%" }}
+        >
+          {" "}
           <ImageCarousel caurosalData={caurosalData} imageWidth="95%" />
           <a
             href={galleryLink}
