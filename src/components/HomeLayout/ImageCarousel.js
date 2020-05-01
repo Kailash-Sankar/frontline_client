@@ -7,8 +7,8 @@ const ImageCarousel = (props) => {
   //const width = props.imageWidth ? props.imageWidth : "100%";
 
   const styleObj = {
-    width: 600,
-    height: 400,
+    maxWidth: "100%",
+    height: "100%",
     display: "block",
     border: "1px solid #353535",
     margin: "auto",
@@ -17,7 +17,7 @@ const ImageCarousel = (props) => {
   const caurosalData = props.caurosalData.map((image, index) => {
     return (
       <div key={index}>
-        <img key={index} src={image.url} style={styleObj} />;
+        <img key={index} src={image.url} style={styleObj} />
       </div>
     );
   });
