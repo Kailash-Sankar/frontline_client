@@ -4,8 +4,5 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[markdown]": {
-    "editor.formatOnSave": false
-  },
   "prettier.arrowParens": "always"
 }

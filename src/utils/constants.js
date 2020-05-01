@@ -24,3 +24,8 @@ export const helplineLinks = {
 
 export const galleryLink =
   "https://drive.google.com/folderview?id=19T3QuhTLAbjvuYQgRTc1lYyyq9292JLX";
+
+export const NgoFormLink =
+  "https://docs.google.com/forms/d/e/1FAIpQLSdFsETYM_s3Rj-J69uiA-OHcAgK3HaZqnSjxUc6NCb5K8n6Mw/viewform?embedded=true";
+
+export const VolunteerFormLink = "https://forms.gle/q6AQAC4debLjYDwM7";
