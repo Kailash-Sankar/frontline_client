@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { Button, Result } from "antd";
 
 const Msg = () => (
-  <div>You do not have sufficient rights to view this page</div>
+  <div>You do not have sufficient rights to view this section</div>
 );
 
 const Page = () => {
