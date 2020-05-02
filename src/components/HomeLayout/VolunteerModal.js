@@ -1,5 +1,6 @@
 import React from "react";
 import { Modal, Button } from "antd";
+import { NgoFormLink, VolunteerFormLink } from "@utils/constants";
 
 const VolunteerModal = (props) => {
   return (
@@ -27,18 +28,16 @@ const VolunteerModal = (props) => {
         <p className="modal-txt">
           <span> Register as an </span>
           <span>
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSdFsETYM_s3Rj-J69uiA-OHcAgK3HaZqnSjxUc6NCb5K8n6Mw/viewform?embedded=true"
-              target="_new"
-            >
+            <a href={NgoFormLink} target="_blank" rel="noopener noreferrer">
               <Button type="primary">NGO</Button>
             </a>
           </span>
           <span>or</span>
           <span>
             <a
-              href="https://covid19.karnataka.gov.in/coronawarrior.html"
-              target="_new"
+              href={VolunteerFormLink}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <Button type="primary">{"Individual"}</Button>
             </a>

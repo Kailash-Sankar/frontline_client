@@ -5,9 +5,11 @@ import img2 from "@images/c2.jpg";
 //import img3 from "@images/c3.jpg";
 import ImageCarousel from "./ImageCarousel";
 
+
 import { useTranslation } from 'react-i18next';
 
 import { galleryLink } from "@utils/constants";
+
 
 
 const Content = () => {
@@ -25,6 +27,7 @@ const Content = () => {
     bottom: "1vw",
     right: "2vw",
   };
+
   return (
     <>
       <Row style={{ marginTop: "1vh" }}>
@@ -35,17 +38,13 @@ const Content = () => {
             <Row className="text-large margin-adjust">{t('volunteer')}.</Row>
           </div>
         </Col>
-        <Col lg={16} md={24} sm={24} style={{ overflow: "hidden" }}>
+        <Col
+          lg={16}
+          md={24}
+          sm={24}
+          style={{ overflow: "hidden", width: "100%" }}
+        >
           <ImageCarousel caurosalData={caurosalData} imageWidth="95%" />
-          <a
-            href={galleryLink}
-            style={styleObj}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            {" "}
-            Gallery{" "}
-          </a>
         </Col>
       </Row>
       <Row>
