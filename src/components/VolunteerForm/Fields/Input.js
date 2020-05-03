@@ -1,129 +1,141 @@
 import React from "react";
 import { Form, Input, DatePicker } from "antd";
 import { toNumber } from "../utils";
+import { useTranslation } from "react-i18next";
 const { TextArea } = Input;
 
-export const MobileField = ({
-  label = "Mobile Number",
-  name = "mobile",
-  placeholder = "Enter your mobile number",
-}) => (
-  <Form.Item
-    label={label}
-    name={name}
-    rules={[
-      {
-        required: true,
-        message: "Mobile number is required",
-      },
-      {
-        type: "number",
-        transform: toNumber,
-        message: "Invalid number format",
-      },
-      {
-        len: 10,
-        message: "Mobile number must be 10 digits",
-      },
-    ]}
-  >
-    <Input maxLength={10} placeholder={placeholder} />
-  </Form.Item>
-);
-
-export const ConfirmMobileField = () => (
-  <Form.Item
-    label="Confirm Mobile Number"
-    name="co_mobile"
-    dependencies={["mobile"]}
-    hasFeedback
-    rules={[
-      {
-        required: true,
-        message: "Mobile number confirmation is required",
-      },
-      {
-        type: "number",
-        transform: toNumber,
-        message: "Invalid number format",
-      },
-      ({ getFieldValue }) => ({
-        validator(rule, value) {
-          if (!value || getFieldValue("mobile") === value) {
-            return Promise.resolve();
-          }
-          return Promise.reject("The two numbers you entered do not match!");
+export const MobileField = () => {
+  const [t] = useTranslation();
+  return (
+    <Form.Item
+      label={t("form.label.mobile_number")}
+      name="mobile"
+      rules={[
+        {
+          required: true,
+          message: t("form.validation_messages.mobile_number_required"),
         },
-      }),
-    ]}
-  >
-    <Input maxLength={10} placeholder="Enter re-enter your mobile number" />
-  </Form.Item>
-);
+        {
+          type: "number",
+          transform: toNumber,
+          message: t("form.validation_messages.mobile_number_invalid_format"),
+        },
+        {
+          len: 10,
+          message: t("form.validation_messages.mobile_number_length"),
+        },
+      ]}
+    >
+      <Input maxLength={10} placeholder={t("placeholder.mobile_number")} />
+    </Form.Item>
+  )
+};
 
-export const AddressField = () => (
-  <Form.Item label="Address" name="address">
-    <TextArea
-      maxLength={100}
-      type="textarea"
-      rows={4}
-      placeholder="Enter your address"
-    />
-  </Form.Item>
-);
+export const ConfirmMobileField = () => {
+  const [t] = useTranslation();
+  return (
 
-export const PinField = () => (
-  <Form.Item
-    label="Pin Code"
-    name="pin"
-    rules={[
-      {
-        required: true,
-        message: "Pin code is required",
-      },
-      {
-        type: "number",
-        transform: toNumber,
-        message: "Invalid format",
-      },
-      {
-        len: 6,
-        message: "Pin must be 6 digits",
-      },
-    ]}
-  >
-    <Input maxLength={6} placeholder="Enter pin code" />
-  </Form.Item>
-);
+    <Form.Item
+      label={t("confirm_mobile_number")}
+      name="co_mobile"
+      dependencies={["mobile"]}
+      hasFeedback
+      rules={[
+        {
+          required: true,
+          message: t("form.validation_messages.mobile_number_required"),
+        },
+        {
+          type: "number",
+          transform: toNumber,
+          message: t("form.validation_messages.mobile_number_invalid_format"),
+        },
+        ({ getFieldValue }) => ({
+          validator(rule, value) {
+            if (!value || getFieldValue("mobile") === value) {
+              return Promise.resolve();
+            }
+            return Promise.reject("The two numbers you entered do not match!");
+          },
+        }),
+      ]}
+    >
+      <Input maxLength={10} placeholder={t("reenter_number")} />
+    </Form.Item>
+  )
+};
 
-export const NameField = ({
-  label = "Name",
-  placeholder = "Enter your full name",
-  name = "name",
-}) => (
-  <Form.Item
-    label={label}
-    name={name}
-    rules={[{ required: true, message: "Name is required" }]}
-  >
-    <Input maxLength={200} placeholder={placeholder} />
-  </Form.Item>
-);
+export const AddressField = () => {
+  const [t] = useTranslation();
+  return (
+    <Form.Item label={t("form.label.address")} name="address">
+      <TextArea
+        maxLength={100}
+        type="textarea"
+        rows={4}
+        placeholder={t("placeholder.enter_address")}
+      />
+    </Form.Item>
+  )
+};
 
-export const EmailField = () => (
-  <Form.Item
-    label="Email"
-    name="email"
-    rules={[
-      {
-        type: "email",
-        message: "Input is not a valid E-mail!",
-      },
-    ]}
-  >
-    <Input maxLength={200} placeholder="Enter an email id" />
-  </Form.Item>
-);
+export const PinField = () => {
+  const [t] = useTranslation();
+  return (
+    <Form.Item
+      label={t("form.label.pin_code")}
+      name="pin"
+      rules={[
+        {
+          required: true,
+          message: t("form.validation_messages.pin_code_required"),
+        },
+        {
+          type: "number",
+          transform: toNumber,
+          message: t("form.validation_messages.pin_code_invalid_format"),
+        },
+        {
+          len: 6,
+          message: t("form.validation_messages.pin_code_length"),
+        },
+      ]}
+    >
+      <Input maxLength={6} placeholder={t("placeholder.pin_code")} />
+    </Form.Item>
+  )
+};
+
+export const NameField = () => {
+  const [t] = useTranslation();
+  return (
+    <Form.Item
+      label={t("name")}
+      name={name}
+      rules={[{ required: true, message: t("form.validation_messages.name_required") }]}
+    >
+      <Input maxLength={200} placeholder={t("placeholder.name")} />
+    </Form.Item>
+  )
+};
+
+export const EmailField = () => {
+  const [t] = useTranslation();
+  return (
+    <Form.Item
+      label={t("form.label.email")}
+      name="email"
+      rules={[
+        {
+          type: "email",
+          message: t("form.validation_messages.email_validation"),
+        },
+      ]}
+    >
+      <Input maxLength={200} placeholder={t("placeholder.email")} />
+    </Form.Item>
+  )
+};
 
 export const DOBField = () => (
   <Form.Item name={["individual", "dob"]} label="Date of Birth">
@@ -199,15 +211,15 @@ export const NodalNameField = () => (
 export const NotesField = ({
   placeholder = "Leave additional notes here.",
 }) => (
-  <Form.Item label="Notes" name="notes">
-    <TextArea
-      maxLength={200}
-      type="textarea"
-      rows={4}
-      placeholder={placeholder}
-    />
-  </Form.Item>
-);
+    <Form.Item label="Notes" name="notes">
+      <TextArea
+        maxLength={200}
+        type="textarea"
+        rows={4}
+        placeholder={placeholder}
+      />
+    </Form.Item>
+  );
 
 export const AreaField = () => (
   <Form.Item label="Area" name="area">

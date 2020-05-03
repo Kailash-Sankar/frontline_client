@@ -1,6 +1,7 @@
 import React from "react";
 import { Form, Select, Cascader, Button } from "antd";
 import { specLink } from "@utils/constants";
+import { useTranslation } from "react-i18next";
 const { Option } = Select;
 
 const renderOptions = (options) =>
@@ -11,15 +12,18 @@ const renderOptionsObject = (options) =>
     <Option key={k.id}>{k.value || k.name}</Option>
   ));
 
-export const RegionSelect = ({ options }) => (
-  <Form.Item
-    label="Region"
-    name="region"
-    rules={[{ required: true, message: "Region is required" }]}
-  >
-    <Cascader placeholder="Select your region" options={options} />
-  </Form.Item>
-);
+export const RegionSelect = ({ options }) => {
+  const [t] = useTranslation();
+  return (
+    <Form.Item
+      label={t("form.label.region")}
+      name="region"
+      rules={[{ required: true, message: t("form.validation_messages.region_required") }]}
+    >
+      <Cascader placeholder={t("select_dropdown.select_region")} options={options} />
+    </Form.Item>
+  )
+};
 
 export const StateSelect = ({ options }) => (
   <Form.Item

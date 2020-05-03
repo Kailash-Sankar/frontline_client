@@ -5,6 +5,13 @@ import img2 from "@images/c2.jpg";
 //import img3 from "@images/c3.jpg";
 import ImageCarousel from "./ImageCarousel";
 
+
+import { useTranslation } from 'react-i18next';
+
+import { galleryLink } from "@utils/constants";
+
+
+
 const Content = () => {
   const caurosalData = [
     {
@@ -13,14 +20,22 @@ const Content = () => {
     },
   ];
 
+  const [t] = useTranslation();
+  const styleObj = {
+    position: "absolute",
+    color: "white",
+    bottom: "1vw",
+    right: "2vw",
+  };
+
   return (
     <>
       <Row style={{ marginTop: "1vh" }}>
         <Col lg={8} md={24} sm={24}>
           <div className="caption-co">
-            <Row className="text-large">DONATE.</Row>
-            <Row className="text-large margin-adjust">SUPPORT.</Row>
-            <Row className="text-large margin-adjust">VOLUNTEER.</Row>
+            <Row className="text-large">{t('donate')}</Row>
+            <Row className="text-large margin-adjust">{t('support')}</Row>
+            <Row className="text-large margin-adjust">{t('volunteer')}.</Row>
           </div>
         </Col>
         <Col
@@ -34,13 +49,7 @@ const Content = () => {
       </Row>
       <Row>
         <Col className="home-text-message">
-          Karnataka! While we gave our nation a global pedestal and millions
-          their dream jobs, we also strive to make sure that no one sleeps
-          hungry, no one is denied basic amenities and healthcare, no one feels
-          helpless. This is the call of humanity we answer every single day.
-          Today, when the world is fighting an unprecedented fight for survival,
-          the call just got louder. Let&apos;s do it yet again, our way -
-          Humane! Unique! Effective!
+          {t("content_about_ktk")}
         </Col>
       </Row>
     </>

@@ -4,6 +4,7 @@ import { Modal, Row, Col, Button } from "antd";
 import { WomanOutlined } from "@ant-design/icons";
 import { Spacer } from "@components/Utils";
 import { helplineLinks } from "@utils/constants";
+import { useTranslation } from 'react-i18next';
 
 const HelplineModal = ({ showModal, setShowModal }) => (
   <Modal
@@ -34,7 +35,7 @@ const HelplineModal = ({ showModal, setShowModal }) => (
 
 const Helpline = () => {
   const [showModal, setShowModal] = useState(false);
-
+  const [t] = useTranslation();
   return (
     <Row>
       <HelplineModal showModal={showModal} setShowModal={setShowModal} />
@@ -45,7 +46,7 @@ const Helpline = () => {
           onClick={() => setShowModal(true)}
         >
           <Button className="orange-btn">
-            <WomanOutlined /> Women&apos;s Helpline
+            <WomanOutlined /> {t("women_helpline")}
           </Button>
         </div>
       </Col>

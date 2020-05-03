@@ -1,0 +1,61 @@
+{
+    "donate_funds": "Donate Funds",
+    "support_in_kind": "SUPPORT IN KIND",
+    "volunteer": "VOLUNTEER",
+    "request_for_help": "Request For Help",
+    "content_about_ktk": "Karnataka! While we gave our nation a global pedestal and millions their dream jobs, we also strive to make sure that no one sleeps hungry, no one is denied basic amenities and healthcare, no one feels helpless. This is the call of humanity we answer every single day. Today, when the world is fighting an unprecedented fight for survival, the call just got louder. Let&apos;s do it yet again, our way - Humane! Unique! Effective!",
+    "get_involved": "Get Involved",
+    "donate": "Donate.",
+    "support": "Support.",
+    "women_helpline": "Women Helpline",
+    "name": "Name",
+    "confirm_mobile_number": "Confirm Mobile Number",
+    "submit": "Submit",
+    "reenter_number": "Enter re-enter your mobile number",
+    "form": {
+        "label": {
+            "address": "Address",
+            "pin_code": "Pin Code",
+            "email": "Email",
+            "region": "Region",
+            "mobile_number": "Mobile Number"
+        },
+        "validation_messages": {
+            "description": "Description is required.",
+            "area": "Area is required.",
+            "mobile_number_required": "Mobile number confirmation is required",
+            "mobile_number_invalid_format": "Invalid number format",
+            "mobile_number_length": "Mobile number must be 10 digits",
+            "pin_code_required": "Pin code is required",
+            "pin_code_invalid_format": "Invalid format",
+            "pin_code_length": "Pin must be 6 digits",
+            "email_validation": "Input is not a valid E-mail!",
+            "name_required": "Name is required",
+            "region_required": "Region is required"
+        }
+    },
+    "placeholder": {
+        "enter_address": "Enter your address",
+        "pin_code": "Enter pin code",
+        "email": "Enter an email id",
+        "name": "Enter your full name",
+        "mobile_number": "Enter your mobile number"
+    },
+    "request_for_help_form": {
+        "point_of_contact_name": "Point of Contact - Name",
+        "point_of_contact_mobile": "Point of Contact - Mobile",
+        "description": "Description",
+        "area": "Area",
+        "request_raised_by": "Request Raised By",
+        "help_required_at": "Help Required At",
+        "placeholder": {
+            "enter_point_of_contacts_name": "Enter point of contact's name",
+            "enter_point_of_contacts_mobile": "Enter point of contact's mobile number",
+            "description": "Please describe your request along with secondary contact info if any",
+            "area": "Enter area/locality"
+        }
+    },
+    "select_dropdown": {
+        "select_region": "Select your region"
+    }
+}

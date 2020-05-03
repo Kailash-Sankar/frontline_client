@@ -11,6 +11,7 @@ import {
   Actions,
   Helpline,
 } from "@components/HomeLayout";
+import { useTranslation } from 'react-i18next';
 
 import { connector } from "@store/homeContent";
 import axios from "axios";
@@ -48,6 +49,8 @@ const HomePage = (props) => {
     getCovidData();
   }, []);
 
+  const [t, i18n] = useTranslation();
+  const [currentLang, toggleLang] = i18n.language == 'en' ? ['en', 'kn'] : ['kn', 'en'];
   return (
     <div
       style={{
@@ -63,7 +66,6 @@ const HomePage = (props) => {
           <Spacer display="block" height={5} />
           <Actions />
         </Col>
-
         <Col
           lg={6}
           sm={24}
@@ -71,6 +73,7 @@ const HomePage = (props) => {
           md={6}
           className="gutter-row right-conteiner"
         >
+          <Button type="primary" className="orange-btn" onClick={() => i18n.changeLanguage(toggleLang)}>{currentLang == 'kn' ? "English" : "ಕನ್ನಡ"}</Button>
           <Statistics covidStats={props.covidStats} />
           <Helpline />
           <Row style={{ padding: "5px" }}>
@@ -93,7 +96,7 @@ const HomePage = (props) => {
             <Link to="/request">
               <Button type="primary" className="action-btn">
                 <img className="action-img" src={helpIco} />
-                Request for Help
+                {t('request_for_help')}
               </Button>
             </Link>
           </Affix>

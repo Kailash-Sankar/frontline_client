@@ -9,10 +9,12 @@ import volunteerIco from "@images/volunteer_ico.png";
 import PaymentModal from "./PaymentModal";
 import VolunteerModal from "./VolunteerModal";
 
+import { useTranslation } from 'react-i18next';
+
 const Actions = () => {
   const [showModal, setShowModal] = useState(false);
   const [showVolunteerModal, setshowVolunteerModal] = useState(false);
-
+  const [t] = useTranslation();
   return (
     <Row>
       <div className="home-actions">
@@ -27,7 +29,7 @@ const Actions = () => {
             <div className="goto-text" onClick={() => setShowModal(true)}>
               <Button className="action-btn">
                 <img className="action-img" src={donateIco} />
-                DONATE
+                {t("donate_funds")}
               </Button>
             </div>
           </Col>
@@ -37,7 +39,7 @@ const Actions = () => {
               <div className="goto-text">
                 <Button className="action-btn">
                   <img className="action-img" src={supportIco} />
-                  SUPPORT
+                  {t("support_in_kind")}
                 </Button>
               </div>
             </Link>
@@ -50,7 +52,7 @@ const Actions = () => {
             >
               <Button className="action-btn">
                 <img className="action-img" src={volunteerIco} />
-                VOLUNTEER
+                {t("volunteer")}
               </Button>
             </div>
           </Col>

@@ -3,6 +3,7 @@ import { Row, Col } from "antd";
 import { contact } from "@utils/constants";
 
 import { Typography } from "antd";
+import { useTranslation } from 'react-i18next';
 const { Text } = Typography;
 
 import {
@@ -20,6 +21,7 @@ const Footer = (props) => {
       : "#1d1e22";
     style.backgroundColor = backgrondColor;
   }
+  const [t] = useTranslation();
   return (
     <>
       <Row style={style} className="footer-container">
@@ -37,7 +39,7 @@ const Footer = (props) => {
               wordBreak: "break-word",
             }}
           >
-            Get Involved
+            {t('get_involved')}
           </Text>
         </Col>
 
