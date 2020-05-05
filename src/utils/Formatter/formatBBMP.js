@@ -11,12 +11,8 @@ function formatBbmp(bbmp = []) {
   let zoneArea = options.urban.map((el) => {
     bbmp.map((wardVal) => {
       let wardArea = el.children.find((x) => x.value === wardVal);
-      if (wardArea && true) {
-        let newArea = {};
-        newArea.pin = [wardArea.pin];
-        newArea.ward = wardVal;
-        newArea.zone = el.value;
-        res.push(newArea);
+      if (wardArea) {
+        res.push({ pin: [wardArea.pin], ward: wardVal, zone: el.value });
         visited.push(wardVal);
       }
     });
@@ -24,19 +20,17 @@ function formatBbmp(bbmp = []) {
   });
 
   // each bbmp ward
-  bbmp.map((area) => {
-    if (zoneArea.includes(area)) {
-      options.urban
-        .find((x) => x.value === area)
-        .children.map((ch) => {
-          let newArea = {};
-          newArea.pin = [ch.pin];
-          newArea.ward = area;
-          newArea.zone = ch.value;
-          res.push(newArea);
-        });
-    }
-  });
+  bbmp
+    .filter((el) => !visited.includes(el))
+    .map((zArea) => {
+      if (zoneArea.includes(zArea)) {
+        options.urban
+          .find((x) => x.value === zArea)
+          .children.map((ch) => {
+            res.push({ pin: [ch.pin], ward: ch.value, zone: zArea });
+          });
+      }
+    });
   return res;
 }
 
