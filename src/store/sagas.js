@@ -94,7 +94,6 @@ function* saveData(scope, action) {
 
 // volunteer and kind save actions
 function* saveNgoData(scope, action) {
-  console.log("saveNgoData called");
   try {
     const res = yield call(Api.saveNgoForm, action.formData);
     if (res.data.status === 1) {
