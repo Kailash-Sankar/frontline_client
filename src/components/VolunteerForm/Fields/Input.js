@@ -72,6 +72,23 @@ export const AddressField = () => (
   </Form.Item>
 );
 
+export const Covid19Field = () => (
+  <Form.Item
+    label="COVID 19 activities"
+    name="covid19"
+    rules={[
+      { required: true, message: "Activities undertaken so far is required" },
+    ]}
+  >
+    <TextArea
+      maxLength={100}
+      type="textarea"
+      rows={4}
+      placeholder="COVID 19 activities undertaken so far"
+    />
+  </Form.Item>
+);
+
 export const PinField = () => (
   <Form.Item
     label="Pin Code"
@@ -110,11 +127,15 @@ export const NameField = ({
   </Form.Item>
 );
 
-export const EmailField = () => (
+export const EmailField = ({ isRequired = false }) => (
   <Form.Item
     label="Email"
     name="email"
     rules={[
+      {
+        required: isRequired,
+        message: "Email is required",
+      },
       {
         type: "email",
         message: "Input is not a valid E-mail!",
@@ -161,8 +182,27 @@ export const OrgField = () => (
   </Form.Item>
 );
 
-export const RegNumField = () => (
-  <Form.Item label="Registration Number" name={["organization", "reg"]}>
+export const NgoNameField = () => (
+  <Form.Item
+    label="Organization name"
+    name="name"
+    rules={[{ required: true, message: "Organization name is required" }]}
+  >
+    <Input maxLength={25} placeholder="Enter organization name" />
+  </Form.Item>
+);
+
+export const RegNumField = ({
+  isRequired = false,
+  nameVal = ["organization", "reg"],
+}) => (
+  <Form.Item
+    label="Registration Number"
+    name={nameVal}
+    rules={[
+      { required: isRequired, message: "Registration number is required" },
+    ]}
+  >
     <Input
       maxLength={100}
       placeholder="Enter organization registration number"
@@ -170,11 +210,18 @@ export const RegNumField = () => (
   </Form.Item>
 );
 
-export const NOVField = () => (
+export const NOVField = ({
+  isRequired = false,
+  nameVal = ["organization", "nov"],
+}) => (
   <Form.Item
     label="Number of Volunteers"
-    name={["organization", "nov"]}
+    name={nameVal}
     rules={[
+      {
+        required: isRequired,
+        message: "Number of Volunteers is required",
+      },
       {
         type: "number",
         transform: toNumber,
@@ -186,10 +233,10 @@ export const NOVField = () => (
   </Form.Item>
 );
 
-export const NodalNameField = () => (
+export const NodalNameField = ({ nameVal = ["organization", "person"] }) => (
   <Form.Item
     label="Name of Nodal Person"
-    name={["organization", "person"]}
+    name={nameVal}
     rules={[{ required: true, message: "Name of Nodal Person is required" }]}
   >
     <Input maxLength={25} placeholder="Enter name of nodal person" />

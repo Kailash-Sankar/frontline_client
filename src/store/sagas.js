@@ -11,6 +11,7 @@ import { types as homeTypes } from "./homeContent";
 import { types as appealReportTypes } from "./appealReport";
 import { types as requestReportTypes } from "./requestReport";
 import { types as requestForHelpTypes } from "./requestForHelp";
+import { types as ngoSignupTypes } from "./ngoSignup";
 
 import notify from "@utils/Notification";
 import { authStorage } from "@utils/LocalStorage";
@@ -79,6 +80,23 @@ function* fetchAppeals() {
 function* saveData(scope, action) {
   try {
     const res = yield call(Api.saveForm, action.formData);
+    if (res.data.status === 1) {
+      notify.info(true, action.formData.name);
+      yield put({ type: scope.SET_RESET });
+    } else {
+      notify.info(false, res.data.message, res.data.data[0].msg);
+    }
+  } catch (err) {
+    console.log("save error", err);
+    notify.info(false, "Backend error", "Try posting data again");
+  }
+}
+
+// volunteer and kind save actions
+function* saveNgoData(scope, action) {
+  console.log("saveNgoData called");
+  try {
+    const res = yield call(Api.saveNgoForm, action.formData);
     if (res.data.status === 1) {
       notify.info(true, action.formData.name);
       yield put({ type: scope.SET_RESET });
@@ -255,6 +273,7 @@ export function* initSaga() {
   // save volunteers and kind
   yield takeLatest(volunteerTypes.SAVE, saveData, volunteerTypes);
   yield takeLatest(kindTypes.SAVE, saveData, kindTypes);
+  yield takeLatest(ngoSignupTypes.SAVE, saveNgoData, ngoSignupTypes);
 
   // save request for help form
   yield takeLatest(

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Modal, Button } from "antd";
 
 const VolunteerModal = (props) => {
@@ -27,12 +28,9 @@ const VolunteerModal = (props) => {
         <p className="modal-txt">
           <span> Register as an </span>
           <span>
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSdFsETYM_s3Rj-J69uiA-OHcAgK3HaZqnSjxUc6NCb5K8n6Mw/viewform?embedded=true"
-              target="_new"
-            >
+            <Link to="/ngo">
               <Button type="primary">NGO</Button>
-            </a>
+            </Link>
           </span>
           <span>or</span>
           <span>
