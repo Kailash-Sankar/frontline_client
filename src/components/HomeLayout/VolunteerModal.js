@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Modal, Button } from "antd";
+import { VolunteerFormLink } from "@utils/constants";
 
 const VolunteerModal = (props) => {
   return (
@@ -35,8 +36,9 @@ const VolunteerModal = (props) => {
           <span>or</span>
           <span>
             <a
-              href="https://covid19.karnataka.gov.in/coronawarrior.html"
-              target="_new"
+              href={VolunteerFormLink}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <Button type="primary">{"Individual"}</Button>
             </a>

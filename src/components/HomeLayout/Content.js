@@ -4,7 +4,6 @@ import { Row, Col } from "antd";
 import img2 from "@images/c2.jpg";
 //import img3 from "@images/c3.jpg";
 import ImageCarousel from "./ImageCarousel";
-import { galleryLink } from "@utils/constants";
 
 const Content = () => {
   const caurosalData = [
@@ -13,13 +12,6 @@ const Content = () => {
       url: img2,
     },
   ];
-
-  const styleObj = {
-    position: "absolute",
-    color: "white",
-    bottom: "1vw",
-    right: "2vw",
-  };
 
   return (
     <>
@@ -31,17 +23,13 @@ const Content = () => {
             <Row className="text-large margin-adjust">VOLUNTEER.</Row>
           </div>
         </Col>
-        <Col lg={16} md={24} sm={24} style={{ overflow: "hidden" }}>
+        <Col
+          lg={16}
+          md={24}
+          sm={24}
+          style={{ overflow: "hidden", width: "100%" }}
+        >
           <ImageCarousel caurosalData={caurosalData} imageWidth="95%" />
-          <a
-            href={galleryLink}
-            style={styleObj}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            {" "}
-            Gallery{" "}
-          </a>
         </Col>
       </Row>
       <Row>
