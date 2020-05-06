@@ -10,6 +10,7 @@ import {
   Header,
   Actions,
   Helpline,
+  TravelAssistance,
 } from "@components/HomeLayout";
 
 import { connector } from "@store/homeContent";
@@ -73,6 +74,7 @@ const HomePage = (props) => {
         >
           <Statistics covidStats={props.covidStats} />
           <Helpline />
+          <TravelAssistance />
           <Row style={{ padding: "5px" }}>
             <Col span="24">
               <TwitterWidget />
