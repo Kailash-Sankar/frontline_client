@@ -23,7 +23,7 @@ export const helplineLinks = {
 };
 
 export const travelLinks = [
-  { link: "https://mapit.gov.in/covid-19", label: "Madhya Pradesh" },
+  { link: "https://mapit.gov.in/covid-19/", label: "Madhya Pradesh" },
   { link: "https://www.digitalgujarat.gov.in/loginapp/CitizenLogin.aspx", label: "Gujarat" },
   { link: "https://covidhelp.punjab.gov.in", label: "Punjab" },
   { link: "https://covid19.mhpolice.in", label: "Maharashtra" },
@@ -34,13 +34,13 @@ export const travelLinks = [
   { link: "https://sevasindhu.karnataka.gov.in/Sevasindhu/English", label: "Karnataka" },
   { link: "http://dsclservices.org.in/uttarakhand-migrant-registration.php", label: "Uttarakhand" },
   { link: "https://covid19regd.odisha.gov.in/", label: "Odisha" },
-  { link: "goaonline.gov.in", label: "Goa " },
+  { link: "https://goaonline.gov.in", label: "Goa " },
   { link: "https://covid19jagratha.kerala.nic.in/", label: "Kerala" },
-  { link: "serviceonline.bihar.gov.in", label: "Bihar" },
-  { link: "jharkhandpravasi.in", label: "Jharkhand" },
-  { link: "http://cglabour.nic.in/covid19MigrantRegistrationService.aspx", label: "Chhattisgarh" },
+  { link: "https://serviceonline.bihar.gov.in", label: "Bihar" },
+  { link: "http://jharkhandpravasi.in", label: "Jharkhand" },
+  { link: "https://cglabour.nic.in/covid19MigrantRegistrationService.aspx", label: "Chhattisgarh" },
   { link: "http://spandana1.ap.gov.in/Registration/onlineRegistration", label: "Andhra Pradesh" },
-  { link: "Jansunwai.up.nic.in", label: "Uttar Pradesh" },
+  { link: "http://jansunwai.up.nic.in/", label: "Uttar Pradesh" },
 ]
 
 export const galleryLink =
