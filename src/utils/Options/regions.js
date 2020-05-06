@@ -1235,7 +1235,7 @@ const regions = [
       },
       {
         value: "6",
-        label: "Bvaluear"
+        label: "Bidar"
       },
       {
         value: "7",
