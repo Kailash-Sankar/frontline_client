@@ -15,12 +15,6 @@ import {
   AddressField,
 } from "./Fields/Input";
 
-// import {
-//   CommunicationsField,
-//   EntrepreneurialField,
-//   EssentialField,
-//   HealthField,
-// } from "./Fields/Multi";
 import { formatData } from "./utils";
 
 function NgoForm({ initialValues, regions, urban, onSubmit, reset }) {
