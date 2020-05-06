@@ -10,8 +10,8 @@ export const contact = {
     "karfightscorona@karnataka.gov.in",
     "karnatakafightscorona@gmail.com",
   ],
-  phone: ["080-22284420"],
-  whatsapp: ["9480850031", "9480850033"],
+  phone: ["080-22284420", "(10am - 6pm)"],
+  whatsapp: ["9480850031/9480850033", "8750971717 (Help Desk)"],
 };
 
 export const specLink =
@@ -41,5 +41,13 @@ export const travelLinks = [
   { link: "http://cglabour.nic.in/covid19MigrantRegistrationService.aspx", label: "Chhattisgarh" },
   { link: "http://spandana1.ap.gov.in/Registration/onlineRegistration", label: "Andhra Pradesh" },
   { link: "Jansunwai.up.nic.in", label: "Uttar Pradesh" },
-
 ]
+
+export const galleryLink =
+  "https://drive.google.com/folderview?id=19T3QuhTLAbjvuYQgRTc1lYyyq9292JLX";
+
+export const NgoFormLink =
+  "https://docs.google.com/forms/d/e/1FAIpQLSdFsETYM_s3Rj-J69uiA-OHcAgK3HaZqnSjxUc6NCb5K8n6Mw/viewform?embedded=true";
+
+export const VolunteerFormLink = "https://forms.gle/q6AQAC4debLjYDwM7";
+

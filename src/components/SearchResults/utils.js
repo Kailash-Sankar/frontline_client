@@ -1,5 +1,6 @@
 import React from "react";
-import { Button, Popconfirm } from "antd";
+import { Select, Popconfirm } from "antd";
+import { statusOptions } from "@components/SelectorPanel/SelectFields";
 
 // search results pagination format helper
 export function getPaginationObject(
@@ -19,20 +20,41 @@ export function getPaginationObject(
 }
 
 export function renderStatus(id, row, onResultClose) {
-  if (row.status == "open") {
-    return (
-      <Popconfirm
-        title="Are you sure want to close this request?"
-        onConfirm={() => onResultClose(id)}
-        onCancel={() => {}}
-        okText="Yes"
-        cancelText="No"
+  const [status, setStatus] = React.useState(row.status);
+  const [confirm, setConfirm] = React.useState(false);
+
+  const handleChange = (value) => {
+    setStatus(value);
+    setConfirm(true);
+  };
+
+  return (
+    <Popconfirm
+      title="Are you sure want to update this request?"
+      onConfirm={() => {
+        // update status, TODO: spinner
+        console.log("call", id, status);
+        onResultClose(id, status);
+        setConfirm(false);
+      }}
+      onCancel={() => {
+        // reset dropdown here
+        setStatus(row.status);
+        setConfirm(false);
+      }}
+      okText="Yes"
+      cancelText="No"
+      visible={confirm}
+    >
+      <Select
+        size={"small"}
+        placeholder="Actions"
+        value={status}
+        onChange={handleChange}
+        className="lightup red"
       >
-        <Button size={"small"} type="default" danger>
-          Close
-        </Button>
-      </Popconfirm>
-    );
-  }
-  return <span style={{ color: "red" }}>{row.status}</span>;
+        {statusOptions()}
+      </Select>
+    </Popconfirm>
+  );
 }

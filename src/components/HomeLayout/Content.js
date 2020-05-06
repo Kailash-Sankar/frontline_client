@@ -1,13 +1,15 @@
 import React from "react";
 import { Row, Col } from "antd";
-import carousel3 from "@images/carousel-3.jpg";
+
+import img2 from "@images/c2.jpg";
+//import img3 from "@images/c3.jpg";
 import ImageCarousel from "./ImageCarousel";
 
 const Content = () => {
   const caurosalData = [
     {
-      text: "img-3",
-      url: carousel3,
+      text: "img-2",
+      url: img2,
     },
   ];
 
@@ -21,7 +23,12 @@ const Content = () => {
             <Row className="text-large margin-adjust">VOLUNTEER.</Row>
           </div>
         </Col>
-        <Col lg={16} md={24} sm={24} style={{ overflow: "hidden" }}>
+        <Col
+          lg={16}
+          md={24}
+          sm={24}
+          style={{ overflow: "hidden", width: "100%" }}
+        >
           <ImageCarousel caurosalData={caurosalData} imageWidth="95%" />
         </Col>
       </Row>

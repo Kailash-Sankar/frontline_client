@@ -24,8 +24,8 @@ server.interceptors.response.use(
     return response;
   },
   function (error) {
-    console.log("Interceptor err", error.response);
-    if (error.response.status == 401) {
+    console.log("Interceptor err", error);
+    if (error && error.response && error.response.status == 401) {
       // clear auth token
       authStorage.remove();
       //location.reload();
