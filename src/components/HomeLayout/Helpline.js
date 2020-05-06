@@ -17,7 +17,7 @@ const TravelAssistanceModal = ({ showModal, setShowModal }) => (
     <div style={{ textAlign: "left" }}>
       <div className="modal-txt">
         {travelLinks.map((travel, index) => (
-          <p key={index}><a href={travel.link} target="_new" >
+          <p key={index}><a href={travel.link} target="_blank"  rel="noopener noreferrer">
             <Button type="link">{travel.label} </Button>
           </a></p>
         ))}
