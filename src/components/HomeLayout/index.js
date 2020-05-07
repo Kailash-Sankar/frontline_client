@@ -8,6 +8,7 @@ import Header from "./Header";
 import Content from "./Content";
 import Actions from "./Actions";
 import Helpline from "./Helpline";
+import TravelAssistance from "./TravelAssistance";
 
 export {
   PortalAppeals,
@@ -20,4 +21,5 @@ export {
   Content,
   Actions,
   Helpline,
+  TravelAssistance,
 };
