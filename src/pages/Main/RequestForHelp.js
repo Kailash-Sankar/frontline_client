@@ -4,7 +4,7 @@ import { connector } from "@store/requestForHelp";
 import options from "@utils/Options";
 
 const RequestForHelp = ({ reset, save }) => {
-  const initialValues = { region: ["KA", "5"] };
+  const initialValues = { region: ["KA", "5"], nop: "1" };
 
   const handleSubmit = (formData) => {
     formData["act"] = "request";
