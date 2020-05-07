@@ -70,7 +70,7 @@ const RequestForHelpForm = (props) => {
             },
           ]}
         >
-          <Input type="number" min="1" placeholder="Enter Number of Presons." />
+          <Input type="number" min="1" placeholder="Enter Number of Persons." />
         </Form.Item>
 
         <Form.Item
