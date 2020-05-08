@@ -26,6 +26,7 @@ const TopBar = lazy(() => import("@components/Navigation/TopBar"));
 const SideBar = lazy(() => import("@components/Navigation/SideBar"));
 
 const VolunteerSignup = lazy(() => import("./VolunteerSignup"));
+const NgoSignup = lazy(() => import("./NgoSignup"));
 const Kind = lazy(() => import("./Kind"));
 const Appeal = lazy(() => import("./Appeal"));
 const Report = lazy(() => import("./Report"));
@@ -64,6 +65,10 @@ function App({ loggedIn, user, volunteerCount }) {
                   <div className={styles.contentWrapper}>
                     <Route path="/volunteer">
                       <VolunteerSignup {...pageProps} />
+                    </Route>
+
+                    <Route path="/ngosignup">
+                      <NgoSignup {...pageProps} />
                     </Route>
 
                     <Route exact path="/kind">
