@@ -116,6 +116,16 @@ async function updateStatus(url, formData) {
   return res || null;
 }
 
+/**
+ * This function is used by the NGO form search to search data in the ngos collection
+ * @param {*} params The parameters on which search should be done
+ * @return Returns the search results
+ */
+async function searchNgoForm(params) {
+  const res = await server.post(`/ngo/search`, params);
+  return res.data.data || [];
+}
+
 export default {
   search,
   saveForm,
@@ -132,4 +142,5 @@ export default {
   exportKind,
   exportRequests,
   updateStatus,
+  searchNgoForm,
 };

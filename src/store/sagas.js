@@ -11,6 +11,7 @@ import { types as homeTypes } from "./homeContent";
 import { types as appealReportTypes } from "./appealReport";
 import { types as requestReportTypes } from "./requestReport";
 import { types as requestForHelpTypes } from "./requestForHelp";
+import { types as ngoReportTypes } from "./ngoReport";
 
 import notify from "@utils/Notification";
 import { authStorage } from "@utils/LocalStorage";
@@ -192,6 +193,29 @@ function* updateStatusVal(scope, action) {
   }
 }
 
+/**
+ * The search function to be called with parameters when the search is hit
+ * @param {*} scope
+ * @param {*} action
+ */
+function* searchNgoData(scope, action) {
+  try {
+    const res = yield call(Api.searchNgoForm, action.params);
+    yield put({ type: scope.SET_RESULT, result: res.docs || [] });
+    yield put({
+      type: scope.SET_PAGINATION,
+      pagination: formatPagination(res),
+    });
+  } catch (err) {
+    if (err.response.status === 401) {
+      notify.base("Session expired", "Please login again");
+      yield put({ type: commonTypes.LOGOUT });
+    } else {
+      notify.base("Error, please reload and try again");
+    }
+  }
+}
+
 export function* initSaga() {
   // reports
   yield takeLatest(reportTypes.SEARCH, search, reportTypes, Api.search);
@@ -208,6 +232,7 @@ export function* initSaga() {
     requestReportTypes,
     Api.searchRequests
   );
+  yield takeLatest(ngoReportTypes.SEARCH, searchNgoData, ngoReportTypes);
 
   // exports
   yield takeLatest(
@@ -250,6 +275,13 @@ export function* initSaga() {
     kindReportTypes.UPDATE_STATUS,
     updateStatusVal,
     kindReportTypes
+  );
+
+  // Update Status column of NGO
+  yield takeLatest(
+    ngoReportTypes.UPDATE_STATUS,
+    updateStatusVal,
+    ngoReportTypes
   );
 
   // save volunteers and kind
