@@ -10,6 +10,7 @@ import {
   PinField,
   NameField,
   ConfirmMobileField,
+  NOPField,
 } from "./Fields/Input";
 import { Section } from "./Fields/Other";
 
@@ -60,18 +61,7 @@ const RequestForHelpForm = (props) => {
           />
         </Form.Item>
 
-        <Form.Item
-          label="Number of Persons"
-          name="nop"
-          rules={[
-            {
-              required: true,
-              message: "Number of Persons is required.",
-            },
-          ]}
-        >
-          <Input type="number" min="1" placeholder="Enter Number of Persons." />
-        </Form.Item>
+        <NOPField />
 
         <Form.Item
           label="Area"

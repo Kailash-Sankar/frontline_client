@@ -221,17 +221,14 @@ export const NOPField = () => (
     name="nop"
     rules={[
       {
-        type: "number",
-        transform: toNumber,
-        message: "Invalid format",
-      },
-      {
         required: true,
         message: "Number of Persons is required",
       },
     ]}
   >
     <Input
+      type="number"
+      min="1"
       maxLength={5}
       placeholder="Enter number of individuals who need help"
     />
