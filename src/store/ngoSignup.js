@@ -6,18 +6,13 @@ import { pageSelector } from "./selectors";
 const scope = "ngoSignup";
 
 const initialState = {
-  mode: "ngosignup",
   reset: 1,
 };
 
-export const types = applyScope(scope, ["SET_MODE", "SET_RESET", "SAVE"]);
+export const types = applyScope(scope, ["SET_RESET", "SAVE"]);
 
 const ngoSignupReducer = (state = initialState, action) => {
   switch (action.type) {
-    case types.SET_MODE:
-      return update(state, {
-        mode: { $set: action.mode },
-      });
     case types.SET_RESET:
       return update(state, {
         reset: { $set: state.reset + 1 },
@@ -28,11 +23,6 @@ const ngoSignupReducer = (state = initialState, action) => {
 
 // dispatch actions
 const mapDispatchToProps = (dispatch) => ({
-  setMode: (mode) =>
-    dispatch({
-      type: types.SET_MODE,
-      mode,
-    }),
   setReset: () =>
     dispatch({
       type: types.SET_RESET,

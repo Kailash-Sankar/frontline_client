@@ -4,12 +4,11 @@ import { connecter } from "@store/ngoSignup";
 import options from "@utils/Options";
 import formatter from "@utils/Formatter";
 
-function NgoSignup({ reset, mode, save }) {
+function NgoSignup({ reset, save }) {
   useEffect(() => {}, []);
 
   function handleSubmit(formData) {
     if (formData) {
-      formData.mode = mode;
       formData.act = "ngo"; // fixed page type
 
       formatter(formData);
