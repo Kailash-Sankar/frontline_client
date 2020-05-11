@@ -48,7 +48,8 @@
     "redux": "^4.0.5",
     "redux-saga": "^1.1.3",
     "reselect": "^4.0.0",
-    "store-wrap": "^0.0.2"
+    "store-wrap": "^0.0.2",
+    "use-websocket-lite": "1.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
