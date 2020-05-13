@@ -12,6 +12,7 @@ import { types as appealReportTypes } from "./appealReport";
 import { types as requestReportTypes } from "./requestReport";
 import { types as requestForHelpTypes } from "./requestForHelp";
 import { types as ngoReportTypes } from "./ngoReport";
+import { types as ngoSignupTypes } from "./ngoSignup";
 
 import notify from "@utils/Notification";
 import { authStorage } from "@utils/LocalStorage";
@@ -92,6 +93,22 @@ function* saveData(scope, action) {
   }
 }
 
+// volunteer and kind save actions
+function* saveNgoData(scope, action) {
+  try {
+    const res = yield call(Api.saveNgoForm, action.formData);
+    if (res.data.status === 1) {
+      notify.info(true, action.formData.name);
+      yield put({ type: scope.SET_RESET });
+    } else {
+      notify.info(false, res.data.message, res.data.data[0].msg);
+    }
+  } catch (err) {
+    console.log("save error", err);
+    notify.info(false, "Backend error", "Try posting data again");
+  }
+}
+
 function* saveRequestForHelp(scope, action) {
   try {
     const res = yield call(Api.saveHelpRequest, action.formData);
@@ -125,7 +142,6 @@ function* saveAppealData(scope, action) {
 function* login(action) {
   try {
     const res = yield call(Api.login, action.formData);
-
     if (res.data.status == 1) {
       notify.base("Logged in Successfully!");
       const data = res.data.data;
@@ -193,29 +209,6 @@ function* updateStatusVal(scope, action) {
   }
 }
 
-/**
- * The search function to be called with parameters when the search is hit
- * @param {*} scope
- * @param {*} action
- */
-function* searchNgoData(scope, action) {
-  try {
-    const res = yield call(Api.searchNgoForm, action.params);
-    yield put({ type: scope.SET_RESULT, result: res.docs || [] });
-    yield put({
-      type: scope.SET_PAGINATION,
-      pagination: formatPagination(res),
-    });
-  } catch (err) {
-    if (err.response.status === 401) {
-      notify.base("Session expired", "Please login again");
-      yield put({ type: commonTypes.LOGOUT });
-    } else {
-      notify.base("Error, please reload and try again");
-    }
-  }
-}
-
 export function* initSaga() {
   // reports
   yield takeLatest(reportTypes.SEARCH, search, reportTypes, Api.search);
@@ -232,7 +225,12 @@ export function* initSaga() {
     requestReportTypes,
     Api.searchRequests
   );
-  yield takeLatest(ngoReportTypes.SEARCH, searchNgoData, ngoReportTypes);
+  yield takeLatest(
+    ngoReportTypes.SEARCH,
+    search,
+    ngoReportTypes,
+    Api.searchNgoForm
+  );
 
   // exports
   yield takeLatest(
@@ -258,6 +256,13 @@ export function* initSaga() {
     exportCSV,
     reportTypes,
     Api.exportKind
+  );
+  // NGO Export
+  yield takeLatest(
+    ngoReportTypes.EXPORT_CSV,
+    exportCSV,
+    ngoReportTypes,
+    Api.exportNgoForm
   );
 
   //update the status column of entry.
@@ -287,6 +292,7 @@ export function* initSaga() {
   // save volunteers and kind
   yield takeLatest(volunteerTypes.SAVE, saveData, volunteerTypes);
   yield takeLatest(kindTypes.SAVE, saveData, kindTypes);
+  yield takeLatest(ngoSignupTypes.SAVE, saveNgoData, ngoSignupTypes);
 
   // save request for help form
   yield takeLatest(

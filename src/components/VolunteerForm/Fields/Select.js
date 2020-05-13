@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Select, Cascader, Button } from "antd";
+import { Form, Select, Cascader, Button, TreeSelect } from "antd";
 import { specLink } from "@utils/constants";
 const { Option } = Select;
 
@@ -9,6 +9,11 @@ const renderOptions = (options) =>
 const renderOptionsObject = (options) =>
   Object.values(options).map((k) => (
     <Option key={k.id}>{k.value || k.name}</Option>
+  ));
+
+const renderOptionsLabel = (options) =>
+  Object.values(options).map((k) => (
+    <Option key={k.value}>{k.label || k.name}</Option>
   ));
 
 export const RegionSelect = ({ options }) => (
@@ -106,3 +111,40 @@ export const NonMedicalField = ({ options, onChange }) => (
     </Select>
   </Form.Item>
 );
+
+export const MultipleDistrictSelect = ({
+  options,
+  onChange,
+  nameVal = ["services", "operationalArea", "value"],
+}) => (
+  <Form.Item name={nameVal} label="District of Operation">
+    <Select
+      mode="multiple"
+      placeholder="multiple options can be selected"
+      onChange={onChange}
+    >
+      {renderOptionsLabel(options)}
+    </Select>
+  </Form.Item>
+);
+
+export const UrbanOperationalArea = ({
+  options,
+  onChange,
+  isVisible = false,
+}) =>
+  isVisible ? (
+    <Form.Item label="Name of Area(s) of Operations" name="bbmp">
+      <TreeSelect
+        {...{
+          treeData: options,
+          onChange: onChange,
+          treeCheckable: true,
+          showCheckedStrategy: TreeSelect.SHOW_PARENT,
+          placeholder: "Please select operational areas",
+        }}
+      />
+    </Form.Item>
+  ) : (
+    ""
+  );

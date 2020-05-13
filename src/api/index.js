@@ -46,6 +46,11 @@ async function saveForm(formData) {
   return res;
 }
 
+async function saveNgoForm(formData) {
+  const res = await server.post(`/ngo`, formData);
+  return res;
+}
+
 async function search(params) {
   const res = await server.post(`/search/`, params);
   return res.data.data || [];
@@ -126,6 +131,11 @@ async function searchNgoForm(params) {
   return res.data.data || [];
 }
 
+async function exportNgoForm(params) {
+  const res = await server.post(`/ngo/export/`, params);
+  return res.data.data || [];
+}
+
 export default {
   search,
   saveForm,
@@ -143,4 +153,6 @@ export default {
   exportRequests,
   updateStatus,
   searchNgoForm,
+  saveNgoForm,
+  exportNgoForm,
 };
