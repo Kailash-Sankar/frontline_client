@@ -26,8 +26,12 @@ function Wrapper() {
     getToken();
   }, [retryToken]);
 
+  const retryGetToken = () => {
+    setRetryToken((retryToken) => retryToken + 1);
+  };
+
   return token ? (
-    <NotificationPanel token={token} getToken={setRetryToken} />
+    <NotificationPanel token={token} getToken={retryGetToken} />
   ) : (
     "Initializing..."
   );
