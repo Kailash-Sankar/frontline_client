@@ -12,7 +12,6 @@ export const contact = {
     "karfightscorona@karnataka.gov.in",
     "karnatakafightscorona@gmail.com",
   ],
-  phone: ["080-22284420", "(10am - 6pm)"],
   whatsapp: ["9480850031/9480850033", "8750971717 (Help Desk)"],
 };
 

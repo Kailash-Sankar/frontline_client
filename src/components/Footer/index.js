@@ -8,7 +8,6 @@ const { Text } = Typography;
 import {
   WhatsAppOutlined,
   MailOutlined,
-  PhoneOutlined,
   GithubOutlined,
 } from "@ant-design/icons";
 
@@ -43,16 +42,6 @@ const Footer = (props) => {
 
         <Col span={21} className="footer-cell">
           <Row className="footer-box">
-            <Col offset={1}>
-              <span className="footer-icon">
-                <PhoneOutlined />
-              </span>
-              {contact.phone.map((x) => (
-                <span className="footer-item-wrap" key={x}>
-                  {x}
-                </span>
-              ))}
-            </Col>
             <Col offset={1}>
               <span className="footer-icon">
                 <WhatsAppOutlined />
