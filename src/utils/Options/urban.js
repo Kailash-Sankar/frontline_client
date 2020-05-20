@@ -1,13 +1,15 @@
 // source https://github.com/Dhaneshmonds/webiste-utilities/blob/master/state-districts.json
 const urban = [
   {
+    label: "Yelahanka",
+    value: "yelahanka",
     children: [
       {
         label: "Kempegowda Ward",
-        value: "Kempegowda",
+        value: "kempegowda ward",
         ward_no: 1,
-        pin: 560064,
-        area: [
+        pincode: 560064,
+        areas: [
           "Govindapura",
           "Kulappa Layout",
           "Vasudevapura",
@@ -40,10 +42,10 @@ const urban = [
       },
       {
         label: "Chowdeswari Ward",
-        value: "Chowdeswari",
+        value: "chowdeswari ward",
         ward_no: 2,
-        pin: 560064,
-        area: [
+        pincode: 560064,
+        areas: [
           "Harohalli",
           "Harohalli kere",
           "Kanchenahalli",
@@ -74,10 +76,10 @@ const urban = [
       },
       {
         label: "Atturu",
-        value: "Atturu",
+        value: "atturu",
         ward_no: 3,
-        pin: 560064,
-        area: [
+        pincode: 560064,
+        areas: [
           "Ananthapura",
           "Chikka Bettahalli",
           "Dodda Bettahalli",
@@ -115,10 +117,10 @@ const urban = [
       },
       {
         label: "Yelahanka Satellite Town",
-        value: "Yelahanka1",
+        value: "yelahanka satellite town",
         ward_no: 4,
-        pin: 560064,
-        area: [
+        pincode: 560064,
+        areas: [
           "Udaya Layout",
           "Mother Dairy",
           "Soma Nagar",
@@ -136,10 +138,10 @@ const urban = [
       },
       {
         label: "Jakkuru",
-        value: "Jakkuru",
+        value: "jakkuru",
         ward_no: 5,
-        pin: 560064,
-        area: [
+        pincode: 560064,
+        areas: [
           "Kattigenahalli",
           "Bellahalli",
           "Srinivasapura",
@@ -202,10 +204,10 @@ const urban = [
       },
       {
         label: "Thanisandra",
-        value: "Thanisandra",
+        value: "thanisandra",
         ward_no: 6,
-        pin: 560077,
-        area: [
+        pincode: 560077,
+        areas: [
           "Thanisandra",
           "Rachenahalli",
           "Dasarahalli",
@@ -253,10 +255,10 @@ const urban = [
       },
       {
         label: "Byatarayanapura",
-        value: "Byatarayanapura",
+        value: "byatarayanapura",
         ward_no: 7,
-        pin: 560092,
-        area: [
+        pincode: 560092,
+        areas: [
           "UAS Teacher Layout",
           "Jakkuru Aerodrome",
           "Jakkuru (P)",
@@ -292,10 +294,10 @@ const urban = [
       },
       {
         label: "Kodigehalli",
-        value: "Kodigehalli",
+        value: "kodigehalli",
         ward_no: 8,
-        pin: 560092,
-        area: [
+        pincode: 560092,
+        areas: [
           "Sahakara Nagar (P) B - C & D blocks -",
           "CQAL layout",
           "Kodigehalli village",
@@ -318,10 +320,10 @@ const urban = [
       },
       {
         label: "Vidyaranyapura",
-        value: "Vidyaranyapura",
+        value: "vidyaranyapura",
         ward_no: 9,
-        pin: "",
-        area: [
+        pincode: 560097,
+        areas: [
           "GKVK Campus",
           "M V Layout",
           "Virupakshpura",
@@ -352,10 +354,10 @@ const urban = [
       },
       {
         label: "Dodda Bommasandra",
-        value: "Dodda",
+        value: "dodda bommasandra",
         ward_no: 10,
-        pin: "",
-        area: [
+        pincode: 560097,
+        areas: [
           "Nanjappa Layout",
           "Chamundeshwari Layout",
           "Ramanna Layout",
@@ -380,10 +382,10 @@ const urban = [
       },
       {
         label: "Kuvempu Nagar",
-        value: "Kuvempu",
+        value: "kuvempu nagar",
         ward_no: 11,
-        pin: "",
-        area: [
+        pincode: 560058,
+        areas: [
           "Sudguru Layout",
           "Kanshiram nagar",
           "Anand Garden",
@@ -413,17 +415,17 @@ const urban = [
         ],
       },
     ],
-    label: "Yelahanka",
-    value: "Yelahanka",
   },
   {
+    label: "Dasarahalli",
+    value: "dasarahalli",
     children: [
       {
         label: "Shettihalli",
-        value: "Shettihalli",
+        value: "shettihalli",
         ward_no: 12,
-        pin: 560015,
-        area: [
+        pincode: 560015,
+        areas: [
           "Abbigere",
           "Myadarahalli",
           "Chikkasandra",
@@ -469,10 +471,10 @@ const urban = [
       },
       {
         label: "Mallasandra",
-        value: "Mallasandra",
+        value: "mallasandra",
         ward_no: 13,
-        pin: 560057,
-        area: [
+        pincode: 560057,
+        areas: [
           "Rajanna Layout",
           "Mallasandra (P)",
           "Ravindra Nagar",
@@ -486,10 +488,10 @@ const urban = [
       },
       {
         label: "Bagalakunte",
-        value: "Bagalakunte",
+        value: "bagalakunte",
         ward_no: 14,
-        pin: 560073,
-        area: [
+        pincode: 560073,
+        areas: [
           "Sidedahalli",
           "NMH Layout",
           "Soundarya Layout",
@@ -498,7 +500,7 @@ const urban = [
           "Meenakshi Garden Enclave",
           "Kirloskar plots",
           "Sampangi Layout",
-          "MEI Employees\u2019 Housing Colony",
+          "MEI Employees' Housing Colony",
           "Bagalakunte",
           "Bagalakunte Kere",
           "Manjunath Nagar",
@@ -511,17 +513,17 @@ const urban = [
       },
       {
         label: "T Dasarahalli",
-        value: "T",
+        value: "t dasarahalli",
         ward_no: 15,
-        pin: 560057,
-        area: ["T Dasarahalli Maheswari Nagar", "T Dasarahalli", "Om Colony"],
+        pincode: 560057,
+        areas: ["T Dasarahalli Maheswari Nagar", "T Dasarahalli", "Om Colony"],
       },
       {
         label: "Chokkasandra",
-        value: "Chokkasandra",
+        value: "chokkasandra",
         ward_no: 39,
-        pin: 560057,
-        area: [
+        pincode: 560057,
+        areas: [
           "Vikas Nagara",
           "Nagasandra Colony",
           "Vidhya Nagar",
@@ -540,10 +542,10 @@ const urban = [
       },
       {
         label: "Peenya industrial area",
-        value: "Peenya",
+        value: "peenya industrial area",
         ward_no: 41,
-        pin: 560058,
-        area: [
+        pincode: 560058,
+        areas: [
           "Shivapura",
           "Peenya Industrial Area III Phase",
           "Dugalamma Colony",
@@ -559,10 +561,10 @@ const urban = [
       },
       {
         label: "Rajagopal Nagar",
-        value: "Rajagopal",
+        value: "rajagopal nagar",
         ward_no: 70,
-        pin: 560058,
-        area: [
+        pincode: 560058,
+        areas: [
           "Rajagopal Nagar",
           "Byraveshwara Nagar",
           "Rajarajeshwari Nagar",
@@ -578,10 +580,10 @@ const urban = [
       },
       {
         label: "Hegganahalli",
-        value: "Hegganahalli",
+        value: "hegganahalli",
         ward_no: 71,
-        pin: 560091,
-        area: [
+        pincode: 560091,
+        areas: [
           "Maruthi Nagar",
           "Bairaveshwara Industrial Estate",
           "Lakshman Nagar",
@@ -592,17 +594,17 @@ const urban = [
         ],
       },
     ],
-    label: "Dasarahalli",
-    value: "Dasarahalli",
   },
   {
+    label: "West",
+    value: "west",
     children: [
       {
         label: "Jalahalli",
-        value: "Jalahalli",
+        value: "jalahalli",
         ward_no: 16,
-        pin: 560013,
-        area: [
+        pincode: 560013,
+        areas: [
           "HMT staff quarters",
           "Jalahalli",
           "BEL quarters",
@@ -613,10 +615,10 @@ const urban = [
       },
       {
         label: "J P Park",
-        value: "J",
+        value: "j p park",
         ward_no: 17,
-        pin: "",
-        area: [
+        pincode: "",
+        areas: [
           "Poornappa Garden",
           "Sundar Nagar",
           "Gokul Extension",
@@ -632,10 +634,10 @@ const urban = [
       },
       {
         label: "Aramane Nagara",
-        value: "Aramane",
+        value: "aramane nagara",
         ward_no: 35,
-        pin: 560003,
-        area: [
+        pincode: 560003,
+        areas: [
           "MS Ramaiah Nagar",
           "Indian Institute of Science Campus",
           "IAF Quarters",
@@ -652,10 +654,10 @@ const urban = [
       },
       {
         label: "Mattikere",
-        value: "Mattikere",
+        value: "mattikere_36",
         ward_no: 36,
-        pin: 560054,
-        area: [
+        pincode: 560054,
+        areas: [
           "Sanjivappa Garden",
           "Mattikere",
           "Netajinagar",
@@ -665,10 +667,10 @@ const urban = [
       },
       {
         label: "Yeshwanthpura",
-        value: "Yeshwanthpura",
+        value: "yeshwanthpura",
         ward_no: 37,
-        pin: 560022,
-        area: [
+        pincode: 560022,
+        areas: [
           "Yeshwanthpur",
           "HMT Layout",
           "Gurumurthy Layout",
@@ -684,10 +686,10 @@ const urban = [
       },
       {
         label: "HMT",
-        value: "HMT",
+        value: "hmt",
         ward_no: 38,
-        pin: 560013,
-        area: [
+        pincode: 560013,
+        areas: [
           "Muneshwara Nagar",
           "Yashwanthpur Industrial Area",
           "Platinum City",
@@ -701,10 +703,10 @@ const urban = [
       },
       {
         label: "Dodda bidarakallu",
-        value: "Dodda1",
+        value: "dodda bidarakallu",
         ward_no: 40,
-        pin: 560073,
-        area: [
+        pincode: 560073,
+        areas: [
           "Channanayakanahalli",
           "Jagannatha Rao Layout",
           "Gopalappa Layout",
@@ -740,10 +742,10 @@ const urban = [
       },
       {
         label: "Lakshmi Devi Nagara",
-        value: "Lakshmi",
+        value: "lakshmi devi nagara",
         ward_no: 42,
-        pin: 560058,
-        area: [
+        pincode: 560058,
+        areas: [
           "Goragunte Palya",
           "Subhash Chandra Bose Nagar",
           "Lakshmidevinagar",
@@ -757,10 +759,10 @@ const urban = [
       },
       {
         label: "Nandini layout",
-        value: "Nandini",
+        value: "nandini layout",
         ward_no: 43,
-        pin: 560096,
-        area: [
+        pincode: 560096,
+        areas: [
           "Kanteerva Stadium",
           "Jayachamaraja Layout",
           "AGB Layout",
@@ -779,11 +781,28 @@ const urban = [
         ],
       },
       {
+        label: "Marrappana palya",
+        value: "marrappana palya",
+        ward_no: 44,
+        pincode: "",
+        areas: [
+          "Gouthampura",
+          "RMC Yard",
+          "Marappana Palya",
+          "Mysore Sandal Soap Factory",
+          "Ashokpuram",
+          "Shankaranagar",
+          "Corporation Bank Officers quarters",
+          "Krishnanandanagar",
+          "Yeshwantpur Industrial Suburb Police Quarters",
+        ],
+      },
+      {
         label: "Mattikere",
-        value: "Mattikere1",
+        value: "mattikere_45",
         ward_no: 45,
-        pin: 560022,
-        area: [
+        pincode: 560022,
+        areas: [
           "Malleshwaram (P)",
           "Yeshwantpur Subedarpalya",
           "Nanjappa Reddy Colony",
@@ -791,17 +810,17 @@ const urban = [
       },
       {
         label: "Rajamahal Guttahalli",
-        value: "Rajamahal",
+        value: "rajamahal guttahalli",
         ward_no: 64,
-        pin: 560003,
-        area: ["Vaiyyalikaval (P)", "Malleswaram (P)", "Rajamahal Guttahalli"],
+        pincode: 560003,
+        areas: ["Vaiyyalikaval (P)", "Malleswaram (P)", "Rajamahal Guttahalli"],
       },
       {
         label: "Kadu Malleshwar Ward",
-        value: "Kadu",
+        value: "kadu malleshwar ward",
         ward_no: 65,
-        pin: 560003,
-        area: [
+        pincode: 560003,
+        areas: [
           "Malleshwaram",
           "Ranganathpuram",
           "Vaiyyalikaval (P)",
@@ -810,17 +829,17 @@ const urban = [
       },
       {
         label: "Subramanya Nagar",
-        value: "Subramanya",
+        value: "subramanya nagar",
         ward_no: 66,
-        pin: 560055,
-        area: ["Subramanya Nagar", "Milk colony"],
+        pincode: 560055,
+        areas: ["Subramanya Nagar", "Milk colony"],
       },
       {
         label: "Nagapura",
-        value: "Nagapura",
+        value: "nagapura",
         ward_no: 67,
-        pin: 560086,
-        area: [
+        pincode: 560086,
+        areas: [
           "Rajajinagar Industrial Suburb",
           "Geleyara Balaga Layout (P)",
           "West of Cord road 2nd Stage 1st Block",
@@ -829,10 +848,10 @@ const urban = [
       },
       {
         label: "Mahalakshmi Puram",
-        value: "Mahalakshmi",
+        value: "mahalakshmi puram",
         ward_no: 68,
-        pin: 560086,
-        area: [
+        pincode: 560086,
+        areas: [
           "Saraswathipuram",
           "Mahalakshimpuram North Layout",
           "SN Layout",
@@ -844,10 +863,10 @@ const urban = [
       },
       {
         label: "Laggere",
-        value: "Laggere",
+        value: "laggere",
         ward_no: 69,
-        pin: 560058,
-        area: [
+        pincode: 560058,
+        areas: [
           "Preethi Nagar",
           "Vidhana Soudha Layout",
           "Freedom Fighters Colony",
@@ -860,10 +879,10 @@ const urban = [
       },
       {
         label: "Herohalli",
-        value: "Herohalli",
+        value: "herohalli",
         ward_no: 72,
-        pin: 560091,
-        area: [
+        pincode: 560091,
+        areas: [
           "Horanadu Annapoorneshwari Layout",
           "Nagaravale Nagar",
           "Janapriya Nagar",
@@ -894,10 +913,10 @@ const urban = [
       },
       {
         label: "Kottegepalya",
-        value: "Kottegepalya",
+        value: "kottegepalya",
         ward_no: 73,
-        pin: 560091,
-        area: [
+        pincode: 560091,
+        areas: [
           "Kempegowda Nagara (P)",
           "Kempegowda Layout (P)",
           "Choudeshwari Nagar",
@@ -923,23 +942,23 @@ const urban = [
       },
       {
         label: "Shakthi Ganapathi Nagar",
-        value: "Shakthi",
+        value: "shakthi ganapathi nagar",
         ward_no: 74,
-        pin: 560079,
-        area: [
+        pincode: 560079,
+        areas: [
           "Basaveshwara Nagar",
           "Kirloskar Colony",
-          "NGO\u2019s Colony",
+          "NGO's Colony",
           "BEML Layout",
           "Shakthi Ganapati Nagar",
         ],
       },
       {
         label: "Shankar Matt",
-        value: "Shankar",
+        value: "shankar matt",
         ward_no: 75,
-        pin: 560079,
-        area: [
+        pincode: 560079,
+        areas: [
           "Jayachamarajanagar",
           "Kurubararahalli",
           "SVKNagar",
@@ -948,23 +967,23 @@ const urban = [
           "MGNagar",
           "Jayachamarajendranagara",
           "Sanjaygandhi nagar",
-          "Teacher\u2019s Colony",
+          "Teacher's Colony",
           "SriVenkateshwara Krupa Layout",
         ],
       },
       {
         label: "Gayithri Nagar",
-        value: "Gayithri",
+        value: "gayithri nagar",
         ward_no: 76,
-        pin: 560021,
-        area: ["Gayithri Nagar", "Sriramapuram North"],
+        pincode: 560021,
+        areas: ["Gayithri Nagar", "Sriramapuram North"],
       },
       {
         label: "Dattatreya Temple",
-        value: "Dattatreya",
+        value: "dattatreya temple",
         ward_no: 77,
-        pin: 560003,
-        area: [
+        pincode: 560003,
+        areas: [
           "Sudheendra Nagar",
           "swimming pool extension",
           "Kumara Park West",
@@ -972,10 +991,10 @@ const urban = [
       },
       {
         label: "Gandhinagar",
-        value: "Gandhinagar",
+        value: "gandhinagar",
         ward_no: 94,
-        pin: 560009,
-        area: [
+        pincode: 560009,
+        areas: [
           "Seshadripuram",
           "Ramakrishna Layout",
           "Nehru Nagar",
@@ -990,10 +1009,10 @@ const urban = [
       },
       {
         label: "Subhash Nagar",
-        value: "Subhash",
+        value: "subhash nagar",
         ward_no: 95,
-        pin: 560009,
-        area: [
+        pincode: 560009,
+        areas: [
           "Jai Bhimanagar Slum",
           "Swatantra Nagra",
           "PNR North nagar",
@@ -1007,10 +1026,10 @@ const urban = [
       },
       {
         label: "Okalipuram",
-        value: "Okalipuram",
+        value: "okalipuram",
         ward_no: 96,
-        pin: 560021,
-        area: [
+        pincode: 560021,
+        areas: [
           "Ramachandrapura",
           "Hanumanthapura",
           "Okalipuram",
@@ -1020,10 +1039,10 @@ const urban = [
       },
       {
         label: "Dayananda Nagar",
-        value: "Dayananda",
+        value: "dayananda nagar",
         ward_no: 97,
-        pin: 560021,
-        area: [
+        pincode: 560021,
+        areas: [
           "Yarappa Block",
           "Ambedkar Nagar",
           "Venkateshwra AK Colony",
@@ -1033,17 +1052,17 @@ const urban = [
       },
       {
         label: "Prakashnagar",
-        value: "Prakashnagar",
+        value: "prakashnagar",
         ward_no: 98,
-        pin: 560021,
-        area: ["Prakash Nagar"],
+        pincode: 560021,
+        areas: ["Prakash Nagar"],
       },
       {
         label: "Rajajinagar",
-        value: "Rajajinagar",
+        value: "rajajinagar",
         ward_no: 99,
-        pin: 560010,
-        area: [
+        pincode: 560010,
+        areas: [
           "Adaranha Layout",
           "Indira Nagar",
           "Manjunath Nagar",
@@ -1054,10 +1073,10 @@ const urban = [
       },
       {
         label: "Basaveshwara Nagar",
-        value: "Basaveshwara",
+        value: "basaveshwara nagar",
         ward_no: 100,
-        pin: 560079,
-        area: [
+        pincode: 560079,
+        areas: [
           "LIC colony",
           "Manjunath Nagar 3rd stage",
           "Saneguruvanahalli",
@@ -1066,10 +1085,10 @@ const urban = [
       },
       {
         label: "Kamakshipalya",
-        value: "Kamakshipalya",
+        value: "kamakshipalya",
         ward_no: 101,
-        pin: 560079,
-        area: [
+        pincode: 560079,
+        areas: [
           "BEML Layout",
           "West of Chord Road I Stage",
           "Meenakshi Nagar",
@@ -1083,10 +1102,10 @@ const urban = [
       },
       {
         label: "Vrisabhavathi Nagar",
-        value: "Vrisabhavathi",
+        value: "vrisabhavathi nagar",
         ward_no: 102,
-        pin: 560079,
-        area: [
+        pincode: 560079,
+        areas: [
           "Kamala Nagar",
           "Channigappa Layout",
           "Sanakki Bayalu",
@@ -1098,10 +1117,10 @@ const urban = [
       },
       {
         label: "Kaveripura west",
-        value: "Kaveripura",
+        value: "kaveripura west",
         ward_no: 103,
-        pin: 560079,
-        area: [
+        pincode: 560079,
+        areas: [
           "Kamakshipalya Industrial Estate",
           "Pete Chennappa Industrial Estate",
           "Kaveripura Priyadarshini Layout",
@@ -1119,10 +1138,10 @@ const urban = [
       },
       {
         label: "Govindaraj Nagar",
-        value: "Govindaraj",
+        value: "govindaraj nagar",
         ward_no: 104,
-        pin: 560040,
-        area: [
+        pincode: 560040,
+        areas: [
           "Prashanthanagar",
           "Corporation Colony",
           "BMP Colony",
@@ -1136,10 +1155,10 @@ const urban = [
       },
       {
         label: "Agrahara Dasarahalli",
-        value: "Agrahara",
+        value: "agrahara dasarahalli",
         ward_no: 105,
-        pin: 560079,
-        area: [
+        pincode: 560079,
+        areas: [
           "Indira Colony",
           "West of Chord Road 4th Stage",
           "Agrahara Dasarahalli",
@@ -1148,10 +1167,10 @@ const urban = [
       },
       {
         label: "Dr. Rajkumar Road",
-        value: "Dr.",
+        value: "dr. rajkumar road",
         ward_no: 106,
-        pin: 560010,
-        area: [
+        pincode: 560010,
+        areas: [
           "Rajajinagar Industrial Town",
           "Oddarapalya (P)",
           "Rajajjinagar 6th Block",
@@ -1160,10 +1179,10 @@ const urban = [
       },
       {
         label: "Shivanagara",
-        value: "Shivanagara",
+        value: "shivanagara",
         ward_no: 107,
-        pin: 560010,
-        area: [
+        pincode: 560010,
+        areas: [
           "Shivanagar",
           "Bovi Colony",
           "West Chord Road 6th Phase",
@@ -1173,10 +1192,10 @@ const urban = [
       },
       {
         label: "Sri Ramamandir",
-        value: "Sri",
+        value: "sri ramamandir",
         ward_no: 108,
-        pin: 560010,
-        area: [
+        pincode: 560010,
+        areas: [
           "Rajajinagar IV Block",
           "Rajajinagar V Block",
           "Rajajinagar VI Block (P)",
@@ -1188,10 +1207,10 @@ const urban = [
       },
       {
         label: "Chickpete",
-        value: "Chickpete",
+        value: "chickpete",
         ward_no: 109,
-        pin: 560053,
-        area: [
+        pincode: 560053,
+        areas: [
           "Akkipet (P)",
           "Sowrashtrapet",
           "Balepet",
@@ -1206,18 +1225,34 @@ const urban = [
         ],
       },
       {
+        label: "Cottonpete",
+        value: "cottonpete",
+        ward_no: 120,
+        pincode: "",
+        areas: [
+          "Aswathnagar",
+          "Keshavnagar",
+          "Nagammanagar",
+          "SBI staff quarters",
+          "Akkipet (P)",
+          "Sultanpet",
+          "Manavathipet",
+          "Cottonpet",
+        ],
+      },
+      {
         label: "Binnypet",
-        value: "Binnypet",
+        value: "binnypet",
         ward_no: 121,
-        pin: 560023,
-        area: ["Binnypet", "Gopalapura (P)", "Kempapura Agrahara (P)"],
+        pincode: 560023,
+        areas: ["Binnypet", "Gopalapura (P)", "Kempapura Agrahara (P)"],
       },
       {
         label: "Marenahalli",
-        value: "Marenahalli",
+        value: "marenahalli",
         ward_no: 125,
-        pin: 560040,
-        area: [
+        pincode: 560040,
+        areas: [
           "Amarjyothi Nagar",
           "Saraswathi Nagar",
           "Kanaka Nagar",
@@ -1226,10 +1261,10 @@ const urban = [
       },
       {
         label: "Maruthi Mandir",
-        value: "Maruthi",
+        value: "maruthi mandir",
         ward_no: 126,
-        pin: 560040,
-        area: [
+        pincode: 560040,
+        areas: [
           "Madhura Nagar",
           "Vinayaka Layout",
           "GKW Layout",
@@ -1239,10 +1274,10 @@ const urban = [
       },
       {
         label: "Mudalapalya",
-        value: "Mudalapalya",
+        value: "mudalapalya",
         ward_no: 127,
-        pin: 560072,
-        area: [
+        pincode: 560072,
+        areas: [
           "Panchasheela Nagar",
           "Lakkappa Garden",
           "Kurilingappa Garden",
@@ -1257,10 +1292,10 @@ const urban = [
       },
       {
         label: "Nagarabhavi",
-        value: "Nagarabhavi",
+        value: "nagarabhavi",
         ward_no: 128,
-        pin: 560072,
-        area: [
+        pincode: 560072,
+        areas: [
           "Chalukya Nagar",
           "Hoysala Nagar",
           "Nagarabhavi",
@@ -1276,10 +1311,10 @@ const urban = [
       },
       {
         label: "Nayandahalli",
-        value: "Nayandahalli",
+        value: "nayandahalli",
         ward_no: 131,
-        pin: 560039,
-        area: [
+        pincode: 560039,
+        areas: [
           "Nayandahalli",
           "Chandra Layout Extension",
           "Chandra Layout II Stage",
@@ -1289,10 +1324,10 @@ const urban = [
       },
       {
         label: "Padarayanapura",
-        value: "Padarayanapura",
+        value: "padarayanapura",
         ward_no: 135,
-        pin: 560026,
-        area: [
+        pincode: 560026,
+        areas: [
           "Arafat Nagar",
           "Vinayaka Nagar",
           "Jai Bharat Nagar",
@@ -1302,10 +1337,10 @@ const urban = [
       },
       {
         label: "Jagajivanaram Nagar",
-        value: "Jagajivanaram",
+        value: "jagajivanaram nagar",
         ward_no: 136,
-        pin: 560026,
-        area: [
+        pincode: 560026,
+        areas: [
           "Devaraj Urs Nagar",
           "Goripalya",
           "Old Guddadahalli",
@@ -1313,11 +1348,41 @@ const urban = [
         ],
       },
       {
+        label: "Rayapuram",
+        value: "rayapuram",
+        ward_no: 137,
+        pincode: "",
+        areas: [
+          "Padarayanpura (P)",
+          "Rayapuram",
+          "Ranganath Colony",
+          "Jagjivanram Nagar (P)",
+          "CAR Police Quarters (P)",
+        ],
+      },
+      {
+        label: "Chalavadipalya",
+        value: "chalavadipalya",
+        ward_no: 138,
+        pincode: "",
+        areas: [
+          "Sultannagar",
+          "Jaibhuminagar",
+          "Anjanappa Garden",
+          "Siddharth Nagar",
+          "Doreswamynagar",
+          "Bhangi Colony",
+          "Cheluvadipalya",
+          "CAR Police Quarters (P)",
+          "Giripuram",
+        ],
+      },
+      {
         label: "K R Market",
-        value: "K",
+        value: "k r market",
         ward_no: 139,
-        pin: 560002,
-        area: [
+        pincode: 560002,
+        areas: [
           "Cottonpet",
           "Ranasinghpet",
           "Old Tharagupet",
@@ -1328,28 +1393,43 @@ const urban = [
       },
       {
         label: "Chamrajpete",
-        value: "Chamrajpete",
+        value: "chamrajpete",
         ward_no: 140,
-        pin: 560018,
-        area: [
+        pincode: 560018,
+        areas: [
           "Ramachandra Agrahar",
           "Chamarajpet",
           "Raghavendra Colony",
           "Nanjamba Agrahara",
         ],
       },
+      {
+        label: "Azad Nagar",
+        value: "azad nagar",
+        ward_no: 141,
+        pincode: "",
+        areas: [
+          "Kasturba Nagar",
+          "Bhakta Markendeya Layout",
+          "Vittal Nagar",
+          "Adarsh Nagar",
+          "Azad Nagar",
+          "Madigarpalya (Valmiki Nagara)",
+          "Ramchandra Agrahara",
+        ],
+      },
     ],
-    label: "West zone",
-    value: "West",
   },
   {
+    label: "East",
+    value: "east",
     children: [
       {
         label: "Radhakrishna Temple",
-        value: "Radhakrishna",
+        value: "radhakrishna temple",
         ward_no: 18,
-        pin: 560094,
-        area: [
+        pincode: 560094,
+        areas: [
           "Lottegollanahalli",
           "Venkatachary Nagar",
           "HIG North By Outer Ring road colony",
@@ -1367,10 +1447,10 @@ const urban = [
       },
       {
         label: "Sanjaya nagar",
-        value: "Sanjaya",
+        value: "sanjaya nagar",
         ward_no: 19,
-        pin: 560094,
-        area: [
+        pincode: 560094,
+        areas: [
           "Bhupasandra",
           "Vinayaka Layout",
           "Excise colony",
@@ -1387,10 +1467,10 @@ const urban = [
       },
       {
         label: "Ganga nagar",
-        value: "Ganga",
+        value: "ganga nagar",
         ward_no: 20,
-        pin: 560032,
-        area: [
+        pincode: 560032,
+        areas: [
           "UAS Campus",
           "KEB Layout",
           "UAS Staff Quarters",
@@ -1404,10 +1484,10 @@ const urban = [
       },
       {
         label: "Hebbala",
-        value: "Hebbala",
+        value: "hebbala",
         ward_no: 21,
-        pin: 560024,
-        area: [
+        pincode: 560024,
+        areas: [
           "Hebbala",
           "Kunti Betta",
           "Chola Nagar",
@@ -1421,10 +1501,10 @@ const urban = [
       },
       {
         label: "Vishwanath Nagenahalli",
-        value: "Vishwanath",
+        value: "vishwanath nagenahalli",
         ward_no: 22,
-        pin: 560032,
-        area: [
+        pincode: 560032,
+        areas: [
           "Gosaiya Slum",
           "Guddahalli",
           "V Nagenahalli",
@@ -1437,10 +1517,10 @@ const urban = [
       },
       {
         label: "Nagavara",
-        value: "Nagavara",
+        value: "nagavara",
         ward_no: 23,
-        pin: 560045,
-        area: [
+        pincode: 560045,
+        areas: [
           "Govindapura",
           "Byrappa Layout",
           "Irshad Nagar",
@@ -1454,10 +1534,10 @@ const urban = [
       },
       {
         label: "HBR Layout",
-        value: "HBR",
+        value: "hbr layout",
         ward_no: 24,
-        pin: 560043,
-        area: [
+        pincode: 560043,
+        areas: [
           "Byraveshawar Layout",
           "Choudappa Layout",
           "North Hennuru",
@@ -1470,10 +1550,10 @@ const urban = [
       },
       {
         label: "Banasavadi",
-        value: "Banasavadi",
+        value: "banasavadi",
         ward_no: 27,
-        pin: 560033,
-        area: [
+        pincode: 560033,
+        areas: [
           "HRBR Layout 1st and 2nd Stage (P) Blocks",
           "PNS Layout",
           "Subbayya Palya Extension",
@@ -1491,10 +1571,10 @@ const urban = [
       },
       {
         label: "Kammanahalli",
-        value: "Kammanahalli",
+        value: "kammanahalli",
         ward_no: 28,
-        pin: 560084,
-        area: [
+        pincode: 560084,
+        areas: [
           "Kammanahalli",
           "Ramaswamy Palya",
           "Subbayya Palya",
@@ -1503,10 +1583,10 @@ const urban = [
       },
       {
         label: "Kacharakanahalli",
-        value: "Kacharakanahalli",
+        value: "kacharakanahalli",
         ward_no: 29,
-        pin: 560084,
-        area: [
+        pincode: 560084,
+        areas: [
           "Kariyanna Palya",
           "St. Thomas Town",
           "Kammanahalli",
@@ -1523,10 +1603,10 @@ const urban = [
       },
       {
         label: "Kadugondanahalli",
-        value: "Kadugondanahalli",
+        value: "kadugondanahalli",
         ward_no: 30,
-        pin: 560084,
-        area: [
+        pincode: 560084,
+        areas: [
           "Kadugondanahalli",
           "HRBR Layout 1st block",
           "Narasimha Layout KG Halli",
@@ -1535,11 +1615,27 @@ const urban = [
         ],
       },
       {
+        label: "Kushalnagar",
+        value: "kushalnagar",
+        ward_no: 31,
+        pincode: "",
+        areas: [
+          "Anwar block",
+          "Ashok Nagar",
+          "Kushal Nagar",
+          "Kadugondanahalli (P)",
+          "P and T Colony",
+          "Chikkanna Layout",
+          "Muslim Colony",
+          "Muneshwar Nagar",
+        ],
+      },
+      {
         label: "Kaval Bairasandra",
-        value: "Kaval",
+        value: "kaval bairasandra",
         ward_no: 32,
-        pin: 560032,
-        area: [
+        pincode: 560032,
+        areas: [
           "Dinnur",
           "Ranka Nagar",
           "P & T Colony",
@@ -1567,10 +1663,10 @@ const urban = [
       },
       {
         label: "Manorayanapalya",
-        value: "Manorayanapalya",
+        value: "manorayanapalya",
         ward_no: 33,
-        pin: 560032,
-        area: [
+        pincode: 560032,
+        areas: [
           "Bhuvaneshwarinagar",
           "Chamundinagar",
           "Dasappa Garden",
@@ -1584,10 +1680,10 @@ const urban = [
       },
       {
         label: "Gangenahalli",
-        value: "Gangenahalli",
+        value: "gangenahalli",
         ward_no: 34,
-        pin: 560032,
-        area: [
+        pincode: 560032,
+        areas: [
           "Ganganagar",
           "Dena Bank Colony",
           "Papanna Block",
@@ -1597,10 +1693,10 @@ const urban = [
       },
       {
         label: "Jayachamarajendra Nagar",
-        value: "Jayachamarajendra",
+        value: "jayachamarajendra nagar",
         ward_no: 46,
-        pin: 560006,
-        area: [
+        pincode: 560006,
+        areas: [
           "RT Nagar",
           "Hanumanthappa Layout",
           "Chunchappa Block",
@@ -1609,10 +1705,10 @@ const urban = [
       },
       {
         label: "Devara Jeevanahalli",
-        value: "Devara",
+        value: "devara jeevanahalli",
         ward_no: 47,
-        pin: 560045,
-        area: [
+        pincode: 560045,
+        areas: [
           "Modi Garden",
           "Bangaragiri Layout",
           "Doddanna Nagar",
@@ -1621,25 +1717,38 @@ const urban = [
         ],
       },
       {
+        label: "Muneshwara Nagar",
+        value: "muneshwara nagar",
+        ward_no: 48,
+        pincode: "",
+        areas: [
+          "Muneshwara Nagar",
+          "Muneshwara Nagar A block",
+          "Ambedkar Nagar",
+          "Periyar Nagar",
+          "Periyar Nagar AK colony",
+        ],
+      },
+      {
         label: "Lingarajapura",
-        value: "Lingarajapura",
+        value: "lingarajapura",
         ward_no: 49,
-        pin: 560084,
-        area: ["Lingarajapura", "Ramaswamy Palya"],
+        pincode: 560084,
+        areas: ["Lingarajapura", "Ramaswamy Palya"],
       },
       {
         label: "Benniganahalli",
-        value: "Benniganahalli",
+        value: "benniganahalli_50",
         ward_no: 50,
-        pin: 560016,
-        area: [""],
+        pincode: 560016,
+        areas: [""],
       },
       {
         label: "C.V.Raman Nagar",
-        value: "C.V.Raman",
+        value: "c.v.raman nagar",
         ward_no: 57,
-        pin: 560093,
-        area: [
+        pincode: 560093,
+        areas: [
           "Bhuvaneshwari Nagar",
           "Maruthi Nagar",
           "C V Raman Nagar",
@@ -1658,10 +1767,10 @@ const urban = [
       },
       {
         label: "New Thippasandra",
-        value: "New",
+        value: "new thippasandra",
         ward_no: 58,
-        pin: 560075,
-        area: [
+        pincode: 560075,
+        areas: [
           "Michael Palya",
           "HAL III Stage",
           "Seethappa Colony",
@@ -1683,13 +1792,13 @@ const urban = [
       },
       {
         label: "Maruthi Seva Nagar",
-        value: "Maruthi1",
+        value: "maruthi seva nagar",
         ward_no: 59,
-        pin: 560033,
-        area: [
+        pincode: 560033,
+        areas: [
           "BL Rice Nagar (St. Thomas town)",
           "Balaji Layout",
-          "D\u2019Costa Square",
+          "D'Costa Square",
           "Cooks town",
           "Vivekananda Nagar",
           "Jai Bharathi Nagar",
@@ -1703,10 +1812,10 @@ const urban = [
       },
       {
         label: "Sagayarapuram",
-        value: "Sagayarapuram",
+        value: "sagayarapuram",
         ward_no: 60,
-        pin: 560084,
-        area: [
+        pincode: 560084,
+        areas: [
           "Bagalur Layout",
           "Sagayapuram",
           "Richords town",
@@ -1714,11 +1823,24 @@ const urban = [
         ],
       },
       {
+        label: "S K Garden",
+        value: "s k garden",
+        ward_no: 61,
+        pincode: "",
+        areas: [
+          "Waheed Garden",
+          "Pottery Town",
+          "SK Garden",
+          "Devarajivanhalli (P)",
+          "ITI Colony",
+        ],
+      },
+      {
         label: "Ramaswamy Palya",
-        value: "Ramaswamy",
+        value: "ramaswamy palya",
         ward_no: 62,
-        pin: 560033,
-        area: [
+        pincode: 560033,
+        areas: [
           "Rajappa Block",
           "Kempaiah Block",
           "Gundappa Garden",
@@ -1735,24 +1857,23 @@ const urban = [
       },
       {
         label: "Jayamahal",
-        value: "Jayamahal",
+        value: "jayamahal",
         ward_no: 63,
-        pin: 560006,
-        area: [
+        pincode: 560006,
+        areas: [
           "Jayamahal Extension",
           "Railway Quarters",
           "Sultangutta",
           "Swamy Shivanandapuram (Taskar Town",
           "Balappa Garden",
-          "",
         ],
       },
       {
         label: "Pulikeshinagar",
-        value: "Pulikeshinagar",
+        value: "pulikeshinagar",
         ward_no: 78,
-        pin: 560005,
-        area: [
+        pincode: 560005,
+        areas: [
           "Pulikeshinagar",
           "Fraser Town",
           "Cleveland Town",
@@ -1762,10 +1883,10 @@ const urban = [
       },
       {
         label: "Sarvagna Nagar",
-        value: "Sarvagna",
+        value: "sarvagna nagar",
         ward_no: 79,
-        pin: 560032,
-        area: [
+        pincode: 560032,
+        areas: [
           "Sarvagna Nagar",
           "Doddakunte",
           "Kathlipalya",
@@ -1775,10 +1896,10 @@ const urban = [
       },
       {
         label: "Hoysala Nagar",
-        value: "Hoysala",
+        value: "hoysala nagar",
         ward_no: 80,
-        pin: 560043,
-        area: [
+        pincode: 560043,
+        areas: [
           "Jayarajanagar",
           "Lakshmipura",
           "Indiranagar 2nd Stage",
@@ -1792,10 +1913,10 @@ const urban = [
       },
       {
         label: "Jeevanbhima Nagar",
-        value: "Jeevanbhima",
+        value: "jeevanbhima nagar",
         ward_no: 88,
-        pin: 560075,
-        area: [
+        pincode: 560075,
+        areas: [
           "HAL 1st Stage",
           "HAL 2nd Stage (P)",
           "Kodihalli",
@@ -1807,10 +1928,10 @@ const urban = [
       },
       {
         label: "Jogupalya",
-        value: "Jogupalya",
+        value: "jogupalya",
         ward_no: 89,
-        pin: 560008,
-        area: [
+        pincode: 560008,
+        areas: [
           "Linagayanapalya",
           "Jogupalya",
           "Sarawathipura",
@@ -1826,10 +1947,10 @@ const urban = [
       },
       {
         label: "Ulsoor",
-        value: "Ulsoor",
+        value: "ulsoor",
         ward_no: 90,
-        pin: 560008,
-        area: [
+        pincode: 560008,
+        areas: [
           "Halsoor",
           "Gupta Layout",
           "Halsoor lake",
@@ -1838,17 +1959,52 @@ const urban = [
       },
       {
         label: "Bharathinagar",
-        value: "Bharathinagar",
+        value: "bharathinagar",
         ward_no: 91,
-        pin: 560038,
-        area: ["Bharathi Nagar", "Sivan Chetty Garden", "Tandaram Nagar"],
+        pincode: 560038,
+        areas: ["Bharathi Nagar", "Sivan Chetty Garden", "Tandaram Nagar"],
+      },
+      {
+        label: "Shivaji Nagar",
+        value: "shivaji nagar",
+        ward_no: 92,
+        pincode: "",
+        areas: ["Sultan Nagar", "Old Karacha Palya Shivaji Nagar (P)"],
+      },
+      {
+        label: "Vasanth Nagar",
+        value: "vasanth nagar",
+        ward_no: 93,
+        pincode: "",
+        areas: [
+          "Kumarapark East",
+          "Vasanth Nagar",
+          "RV Layout",
+          "Annayappa block",
+          "Kaverappa Layout",
+        ],
+      },
+      {
+        label: "Sampangiram Nagar",
+        value: "sampangiram nagar",
+        ward_no: 110,
+        pincode: 560027,
+        areas: [
+          "Sampangiram Nagar",
+          "Police Quarters",
+          "Sampangiram Nagar Extension",
+          "Cubbon Park",
+          "Vidhana Soudha",
+          "Shivaji Nagar (P)",
+          "Commercial Street",
+        ],
       },
       {
         label: "Shantala Nagar",
-        value: "Shantala",
+        value: "shantala nagar",
         ward_no: 111,
-        pin: 560025,
-        area: [
+        pincode: 560025,
+        areas: [
           "Shantala Nagar",
           "Ashok Nagar",
           "MEG Area",
@@ -1863,10 +2019,10 @@ const urban = [
       },
       {
         label: "Domlur",
-        value: "Domlur",
+        value: "domlur",
         ward_no: 112,
-        pin: 560071,
-        area: [
+        pincode: 560071,
+        areas: [
           "IndiraNagar",
           "Doopanahalli",
           "Domlur",
@@ -1875,11 +2031,69 @@ const urban = [
         ],
       },
       {
+        label: "Konena Agrahara",
+        value: "konena agrahara",
+        ward_no: 113,
+        pincode: "",
+        areas: [
+          "Corporation Colony",
+          "Muniyellappa Graden",
+          "Rustum Bhag Layout",
+          "Rustum Bhag",
+          "N R Layout",
+          "Murgesh Palya",
+          "K R Garden",
+          "Vinayaka Nagar",
+          "Manjunath Layout",
+          "Sowmya Layout",
+          "Air View Colony",
+          "Raviprakash Nagar",
+          "MES Colony",
+          "Konena Agrahara",
+          "Ramagiri Nagar",
+          "Sriram Nagar",
+          "Amnamma Layout",
+          "Muniyappa Layout",
+          "Cauvery Nagar",
+          "BDA Colony",
+          "Nanjappa reddy colony",
+        ],
+      },
+      {
+        label: "Benniganahalli",
+        value: "benniganahalli_113",
+        ward_no: 113,
+        pincode: "",
+        areas: [
+          "Gajendra Nagara",
+          "Old Byappanahalli",
+          "Ambedkar Nagar",
+          "Mallappa Garden",
+          "Sanjay Gandhi Nagar",
+          "Krishnaiah Palya",
+          "Income Tax Layout",
+          "Yarratippaiah Layout",
+          "NGEF Hosnagara",
+          "Sadananda Nagar",
+          "Benniganahali",
+          "Rajiv Nagar",
+          "Kasturi Nagar",
+          "Chikka Banaswadi",
+          "Pillareddy Nagar",
+          "Kulla Reddy Nagar",
+          "Doctor Layout",
+          "Lal Bahadur Nagar",
+          "Ramaiah Reddy Colony",
+          "B Channasandra",
+          "Bacchanna Layout",
+        ],
+      },
+      {
         label: "Agaram",
-        value: "Agaram",
+        value: "agaram",
         ward_no: 114,
-        pin: 560007,
-        area: [
+        pincode: 560007,
+        areas: [
           "Ulsoor",
           "Cambridge Layout",
           "Jeevan Kendra Layout",
@@ -1895,10 +2109,10 @@ const urban = [
       },
       {
         label: "Vannarpet",
-        value: "Vannarpet",
+        value: "vannarpet",
         ward_no: 115,
-        pin: 560047,
-        area: [
+        pincode: 560047,
+        areas: [
           "Sonenahalli",
           "Vannarpet",
           "Viveknagar",
@@ -1913,10 +2127,10 @@ const urban = [
       },
       {
         label: "Nilasandra",
-        value: "Nilasandra",
+        value: "nilasandra",
         ward_no: 116,
-        pin: 560047,
-        area: [
+        pincode: 560047,
+        areas: [
           "Neelasandra",
           "Anepalya (P)",
           "Dr Ambedkar Nagar",
@@ -1925,18 +2139,37 @@ const urban = [
           "EWS Corporation flats (P)",
         ],
       },
+      {
+        label: "Shanti Nagar",
+        value: "shanti nagar",
+        ward_no: 117,
+        pincode: 560027,
+        areas: [
+          "Shanthi Nagar",
+          "Richmond Town (P)",
+          "Langford Town",
+          "Anepalya (P)",
+          "Vinayaka Nagar",
+          "KSRTC quarters (P)",
+          "B & C Colony",
+          "Lakshminyamma Garden",
+          "Jalakanteshwara Nagara",
+          "Muniswamy Garden (P)",
+          "Akkitimmanahalli",
+        ],
+      },
     ],
-    label: "East Zone",
-    value: "East",
   },
   {
+    label: "Mahadevapura",
+    value: "mahadevapura",
     children: [
       {
         label: "Horamavu",
-        value: "Horamavu",
+        value: "horamavu",
         ward_no: 25,
-        pin: 560113,
-        area: [
+        pincode: 560113,
+        areas: [
           "Nagreshwara Nagenahalli",
           "Kottnur",
           "K. Naraynapura",
@@ -1978,10 +2211,10 @@ const urban = [
       },
       {
         label: "Ramamurthy Nagar",
-        value: "Ramamurthy",
+        value: "ramamurthy nagar",
         ward_no: 26,
-        pin: "",
-        area: [
+        pincode: "",
+        areas: [
           "Kalkere",
           "K. Channasandra",
           "Kanakanagara",
@@ -1997,10 +2230,10 @@ const urban = [
       },
       {
         label: "Vijinanapura",
-        value: "Vijinanapura",
+        value: "vijinanapura",
         ward_no: 51,
-        pin: 560049,
-        area: [
+        pincode: 560049,
+        areas: [
           "Kamalamma Layout",
           "Kodanda Reddy Layout",
           "Manjunath Layout",
@@ -2021,10 +2254,10 @@ const urban = [
       },
       {
         label: "Krishnarajapura",
-        value: "Krishnarajapura",
+        value: "krishnarajapura",
         ward_no: 52,
-        pin: 560036,
-        area: [
+        pincode: 560036,
+        areas: [
           "Krishnarajapura",
           "Hosa Basavanapura",
           "ITI Colony (P)",
@@ -2034,10 +2267,10 @@ const urban = [
       },
       {
         label: "Basavanapura",
-        value: "Basavanapura",
+        value: "basavanapura",
         ward_no: 53,
-        pin: 560049,
-        area: [
+        pincode: 560049,
+        areas: [
           "Devasandra Extension",
           "Hale Devasandra",
           "Gokul Extension",
@@ -2051,10 +2284,10 @@ const urban = [
       },
       {
         label: "Hoodi",
-        value: "Hoodi",
+        value: "hoodi",
         ward_no: 54,
-        pin: 560048,
-        area: [
+        pincode: 560048,
+        areas: [
           "Nellurupuram",
           "Vimanapura",
           "HAL Layout",
@@ -2068,10 +2301,10 @@ const urban = [
       },
       {
         label: "Devasandra",
-        value: "Devasandra",
+        value: "devasandra",
         ward_no: 55,
-        pin: 560036,
-        area: [
+        pincode: 560036,
+        areas: [
           "Duravani Nagar",
           "ITI Colony (P)",
           "Devasandra",
@@ -2087,10 +2320,10 @@ const urban = [
       },
       {
         label: "A Narayanapura",
-        value: "A",
+        value: "a narayanapura",
         ward_no: 56,
-        pin: 560016,
-        area: [
+        pincode: 560016,
+        areas: [
           "Jyothipuram",
           "Mahadevapura",
           "A Narayanpura",
@@ -2104,10 +2337,10 @@ const urban = [
       },
       {
         label: "Vijnana Nagar",
-        value: "Vijnana",
+        value: "vijnana nagar",
         ward_no: 81,
-        pin: 560075,
-        area: [
+        pincode: 560075,
+        areas: [
           "Chinnappa Colony",
           "ITI Employees Housing Colony",
           "A Narayanapura Extension",
@@ -2130,10 +2363,10 @@ const urban = [
       },
       {
         label: "Garudachar Palya",
-        value: "Garudachar",
+        value: "garudachar palya",
         ward_no: 82,
-        pin: 560048,
-        area: [
+        pincode: 560048,
+        areas: [
           "Mahadevapura",
           "Maheshwari Nagar",
           "Kaveri Nagar",
@@ -2164,10 +2397,10 @@ const urban = [
       },
       {
         label: "Kadugodi",
-        value: "Kadugodi",
+        value: "kadugodi",
         ward_no: 83,
-        pin: 560067,
-        area: [
+        pincode: 560067,
+        areas: [
           "Channasandra",
           "Kadugodi Plantation",
           "Maruthopu",
@@ -2194,10 +2427,10 @@ const urban = [
       },
       {
         label: "Hagadur",
-        value: "Hagadur",
+        value: "hagadur",
         ward_no: 84,
-        pin: "",
-        area: [
+        pincode: "",
+        areas: [
           "Gandhipuram",
           "Siddapura",
           "Nallurhalli",
@@ -2211,7 +2444,7 @@ const urban = [
           "Kodi",
           "Vinayaka Layout",
           "Sathya Sai Layout",
-          "D\u2019Souja Layout",
+          "D'Souja Layout",
           "Byrappa Layout",
           "Hagadur Colony",
           "Vinayakanagar",
@@ -2221,10 +2454,10 @@ const urban = [
       },
       {
         label: "Dodda Nekkundi",
-        value: "Dodda2",
+        value: "dodda nekkundi",
         ward_no: 85,
-        pin: 560117,
-        area: [
+        pincode: 560117,
+        areas: [
           "Ashreya Layout",
           "Dodda Nekkundi Industrial Estate",
           "Vishveshwaraiah Industrial Estate",
@@ -2259,10 +2492,10 @@ const urban = [
       },
       {
         label: "Marathahalli",
-        value: "Marathahalli",
+        value: "marathahalli",
         ward_no: 86,
-        pin: 560037,
-        area: [
+        pincode: 560037,
+        areas: [
           "Challaghatta",
           "Belur Nagasandra",
           "Challaghattapura",
@@ -2280,10 +2513,10 @@ const urban = [
       },
       {
         label: "HAL. Airport",
-        value: "HAL.",
+        value: "hal. airport",
         ward_no: 87,
-        pin: 560017,
-        area: [
+        pincode: 560017,
+        areas: [
           "Nellurupuram",
           "Vimanapura",
           "HAL Layout",
@@ -2297,10 +2530,10 @@ const urban = [
       },
       {
         label: "Varthuru",
-        value: "Varthuru",
+        value: "varthuru",
         ward_no: 149,
-        pin: 560087,
-        area: [
+        pincode: 560087,
+        areas: [
           "Chikka Belanduru",
           "Gunjuru",
           "Pannathur",
@@ -2332,10 +2565,10 @@ const urban = [
       },
       {
         label: "Bellandur",
-        value: "Bellandur",
+        value: "bellandur",
         ward_no: 150,
-        pin: 560103,
-        area: [
+        pincode: 560103,
+        areas: [
           "Green G line Layout",
           "Annaiah Layout",
           "Haraluru",
@@ -2393,261 +2626,17 @@ const urban = [
         ],
       },
     ],
-    label: "Mahadevapura",
-    value: "Mahadevapura",
   },
   {
-    children: [
-      {
-        label: "Kushalnagar",
-        value: "Kushalnagar",
-        ward_no: 31,
-        pin: "",
-        area: [
-          "Anwar block",
-          "Ashok Nagar",
-          "Kushal Nagar",
-          "Kadugondanahalli (P)",
-          "P and T Colony",
-          "Chikkanna Layout",
-          "Muslim Colony",
-          "Muneshwar Nagar",
-        ],
-      },
-      {
-        label: "Muneshwara Nagar",
-        value: "Muneshwara",
-        ward_no: 48,
-        pin: "",
-        area: [
-          "Muneshwara Nagar",
-          "Muneshwara Nagar A block",
-          "Ambedkar Nagar",
-          "Periyar Nagar",
-          "Periyar Nagar AK colony",
-        ],
-      },
-      {
-        label: "S K Garden",
-        value: "S",
-        ward_no: 61,
-        pin: "",
-        area: [
-          "Waheed Garden",
-          "Pottery Town",
-          "SK Garden",
-          "Devarajivanhalli (P)",
-          "ITI Colony",
-        ],
-      },
-      {
-        label: "Shivaji Nagar",
-        value: "Shivaji",
-        ward_no: 92,
-        pin: "",
-        area: ["Sultan Nagar", "Old Karacha Palya Shivaji Nagar (P)"],
-      },
-      {
-        label: "Vasanth Nagar",
-        value: "Vasanth",
-        ward_no: 93,
-        pin: "",
-        area: [
-          "Kumarapark East",
-          "Vasanth Nagar",
-          "RV Layout",
-          "Annayappa block",
-          "Kaverappa Layout",
-        ],
-      },
-      {
-        label: "Sampangiram Nagar",
-        value: "Sampangiram",
-        ward_no: 110,
-        pin: 560027,
-        area: [
-          "Sampangiram Nagar",
-          "Police Quarters",
-          "Sampangiram Nagar Extension",
-          "Cubbon Park",
-          "Vidhana Soudha",
-          "Shivaji Nagar (P)",
-          "Commercial Street",
-        ],
-      },
-      {
-        label: "Konena Agrahara",
-        value: "Konena",
-        ward_no: 113,
-        pin: "",
-        area: [
-          "Corporation Colony",
-          "Muniyellappa Graden",
-          "Rustum Bhag Layout",
-          "Rustum Bhag",
-          "N R Layout",
-          "Murgesh Palya",
-          "K R Garden",
-          "Vinayaka Nagar",
-          "Manjunath Layout",
-          "Sowmya Layout",
-          "Air View Colony",
-          "Raviprakash Nagar",
-          "MES Colony",
-          "Konena Agrahara",
-          "Ramagiri Nagar",
-          "Sriram Nagar",
-          "Amnamma Layout",
-          "Muniyappa Layout",
-          "Cauvery Nagar",
-          "BDA Colony",
-          "Nanjappa reddy colony",
-        ],
-      },
-      {
-        label: "Benniganahalli",
-        value: "Benniganahalli1",
-        ward_no: 113,
-        pin: "",
-        area: [
-          "Gajendra Nagara",
-          "Old Byappanahalli",
-          "Ambedkar Nagar",
-          "Mallappa Garden",
-          "Sanjay Gandhi Nagar",
-          "Krishnaiah Palya",
-          "Income Tax Layout",
-          "Yarratippaiah Layout",
-          "NGEF Hosnagara",
-          "Sadananda Nagar",
-          "Benniganahali",
-          "Rajiv Nagar",
-          "Kasturi Nagar",
-          "Chikka Banaswadi",
-          "Pillareddy Nagar",
-          "Kulla Reddy Nagar",
-          "Doctor Layout",
-          "Lal Bahadur Nagar",
-          "Ramaiah Reddy Colony",
-          "B Channasandra",
-          "Bacchanna Layout",
-        ],
-      },
-      {
-        label: "Shanti Nagar",
-        value: "Shanti",
-        ward_no: 117,
-        pin: 560027,
-        area: [
-          "Shanthi Nagar",
-          "Richmond Town (P)",
-          "Langford Town",
-          "Anepalya (P)",
-          "Vinayaka Nagar",
-          "KSRTC quarters (P)",
-          "B & C Colony",
-          "Lakshminyamma Garden",
-          "Jalakanteshwara Nagara",
-          "Muniswamy Garden (P)",
-          "Akkitimmanahalli",
-        ],
-      },
-    ],
-    label: "East",
-    value: "East1",
-  },
-  {
-    children: [
-      {
-        label: "Marrappana palya",
-        value: "Marrappana",
-        ward_no: 44,
-        pin: "",
-        area: [
-          "Gouthampura",
-          "RMC Yard",
-          "Marappana Palya",
-          "Mysore Sandal Soap Factory",
-          "Ashokpuram",
-          "Shankaranagar",
-          "Corporation Bank Officers quarters",
-          "Krishnanandanagar",
-          "Yeshwantpur Industrial Suburb Police Quarters",
-        ],
-      },
-      {
-        label: "Cottonpete",
-        value: "Cottonpete",
-        ward_no: 120,
-        pin: "",
-        area: [
-          "Aswathnagar",
-          "Keshavnagar",
-          "Nagammanagar",
-          "SBI staff quarters",
-          "Akkipet (P)",
-          "Sultanpet",
-          "Manavathipet",
-          "Cottonpet",
-        ],
-      },
-      {
-        label: "Rayapuram",
-        value: "Rayapuram",
-        ward_no: 137,
-        pin: "",
-        area: [
-          "Padarayanpura (P)",
-          "Rayapuram",
-          "Ranganath Colony",
-          "Jagjivanram Nagar (P)",
-          "CAR Police Quarters (P)",
-        ],
-      },
-      {
-        label: "Chalavadipalya",
-        value: "Chalavadipalya",
-        ward_no: 138,
-        pin: "",
-        area: [
-          "Sultannagar",
-          "Jaibhuminagar",
-          "Anjanappa Garden",
-          "Siddharth Nagar",
-          "Doreswamynagar",
-          "Bhangi Colony",
-          "Cheluvadipalya",
-          "CAR Police Quarters (P)",
-          "Giripuram",
-        ],
-      },
-      {
-        label: "Azad Nagar",
-        value: "Azad",
-        ward_no: 141,
-        pin: "",
-        area: [
-          "Kasturba Nagar",
-          "Bhakta Markendeya Layout",
-          "Vittal Nagar",
-          "Adarsh Nagar",
-          "Azad Nagar",
-          "Madigarpalya  (Valmiki Nagara)",
-          "Ramchandra Agrahara",
-        ],
-      },
-    ],
-    label: "West",
-    value: "West1",
-  },
-  {
+    label: "South",
+    value: "south",
     children: [
       {
         label: "Sudhama Nagar",
-        value: "Sudhama",
+        value: "sudhama nagar",
         ward_no: 118,
-        pin: 560027,
-        area: [
+        pincode: 560027,
+        areas: [
           "Raja Ram Mohan Roy Extension",
           "Srinivas Colony",
           "Vinoba Nagar",
@@ -2657,10 +2646,10 @@ const urban = [
       },
       {
         label: "Dharmaraya Swamy Nagara",
-        value: "Dharmaraya",
+        value: "dharmaraya swamy nagara",
         ward_no: 119,
-        pin: 560002,
-        area: [
+        pincode: 560002,
+        areas: [
           "Ganigarpete",
           "Halasurpet",
           "Kumbara Gundi",
@@ -2673,17 +2662,17 @@ const urban = [
       },
       {
         label: "JP Nagar (Kempapura agrahara)",
-        value: "JP",
+        value: "jp nagar (kempapura agrahara)",
         ward_no: 122,
-        pin: 560023,
-        area: ["Kempapura Agrahara (P)", "Mariyappana Palya"],
+        pincode: 560023,
+        areas: ["Kempapura Agrahara (P)", "Mariyappana Palya"],
       },
       {
         label: "Vijay Nagar",
-        value: "Vijay",
+        value: "vijay nagar",
         ward_no: 123,
-        pin: 560040,
-        area: [
+        pincode: 560040,
+        areas: [
           "Vijayanagar",
           "Hosahalli Extension (P)",
           "Cholurpalya",
@@ -2693,10 +2682,10 @@ const urban = [
       },
       {
         label: "Hosahalli",
-        value: "Hosahalli",
+        value: "hosahalli",
         ward_no: 124,
-        pin: 560040,
-        area: [
+        pincode: 560040,
+        areas: [
           "Hosahalli Extension (P)",
           "Hosahalli",
           "Vijayanagar 1st stage",
@@ -2710,10 +2699,10 @@ const urban = [
       },
       {
         label: "Attiguppe",
-        value: "Attiguppe",
+        value: "attiguppe",
         ward_no: 132,
-        pin: 560040,
-        area: [
+        pincode: 560040,
+        areas: [
           "Dwaraka Nagar",
           "Nisarga Layout",
           "Maruthi Nagar",
@@ -2732,10 +2721,10 @@ const urban = [
       },
       {
         label: "Hampi Nagar",
-        value: "Hampi",
+        value: "hampi nagar",
         ward_no: 133,
-        pin: 560104,
-        area: [
+        pincode: 560104,
+        areas: [
           "Hosahalli Extension",
           "RPC Layout",
           "Vijay Nagar 2nd Stage",
@@ -2745,10 +2734,10 @@ const urban = [
       },
       {
         label: "Bapujinagar",
-        value: "Bapujinagar",
+        value: "bapujinagar",
         ward_no: 134,
-        pin: 560026,
-        area: [
+        pincode: 560026,
+        areas: [
           "Shamanna Nagar",
           "Guddadahalli",
           "Manjunath Nagar",
@@ -2761,10 +2750,10 @@ const urban = [
       },
       {
         label: "Sunkenahalli",
-        value: "Sunkenahalli",
+        value: "sunkenahalli",
         ward_no: 142,
-        pin: 560004,
-        area: [
+        pincode: 560004,
+        areas: [
           "Vinayaka Extension",
           "Kempegowda Nagar",
           "Gandhi Bazar",
@@ -2774,10 +2763,10 @@ const urban = [
       },
       {
         label: "Vishveshwara Puram",
-        value: "Vishveshwara",
+        value: "vishveshwara puram",
         ward_no: 143,
-        pin: 560004,
-        area: [
+        pincode: 560004,
+        areas: [
           "Chikkanna Garden",
           "Parvathipura",
           "Mavalli",
@@ -2789,10 +2778,10 @@ const urban = [
       },
       {
         label: "Siddapura",
-        value: "Siddapura",
+        value: "siddapura",
         ward_no: 144,
-        pin: 560011,
-        area: [
+        pincode: 560011,
+        areas: [
           "Siddapura",
           "Dayananda Colony",
           "Arelempanahalli",
@@ -2802,10 +2791,10 @@ const urban = [
       },
       {
         label: "Hombegowda Nagara",
-        value: "Hombegowda",
+        value: "hombegowda nagara",
         ward_no: 145,
-        pin: 560027,
-        area: [
+        pincode: 560027,
+        areas: [
           "Sudhama Nagar",
           "Hombegowda Nagar",
           "Wilson Garden",
@@ -2816,10 +2805,10 @@ const urban = [
       },
       {
         label: "Lakkasandra",
-        value: "Lakkasandra",
+        value: "lakkasandra",
         ward_no: 146,
-        pin: 560030,
-        area: [
+        pincode: 560030,
+        areas: [
           "Pothulappa Garden",
           "Eramma Layout",
           "MICO Area",
@@ -2843,10 +2832,10 @@ const urban = [
       },
       {
         label: "Adugodi",
-        value: "Adugodi",
+        value: "adugodi",
         ward_no: 147,
-        pin: 560030,
-        area: [
+        pincode: 560030,
+        areas: [
           "Rajendra Nagar",
           "Rajendra Nagar slum",
           "Venkataswamy Reddy layout",
@@ -2864,10 +2853,10 @@ const urban = [
       },
       {
         label: "Ejipura",
-        value: "Ejipura",
+        value: "ejipura",
         ward_no: 148,
-        pin: 560047,
-        area: [
+        pincode: 560047,
+        areas: [
           "Ejipura",
           "Gowda Muniswamy Garden",
           "Chandra Reddy Layout",
@@ -2882,10 +2871,10 @@ const urban = [
       },
       {
         label: "Koramangala",
-        value: "Koramangala",
+        value: "koramangala",
         ward_no: 151,
-        pin: 560034,
-        area: [
+        pincode: 560034,
+        areas: [
           "K R Garden",
           "Koramangala 6th block",
           "KHB block",
@@ -2906,10 +2895,10 @@ const urban = [
       },
       {
         label: "Suddagunte Palya",
-        value: "Suddagunte",
+        value: "suddagunte palya",
         ward_no: 152,
-        pin: 560029,
-        area: [
+        pincode: 560029,
+        areas: [
           "Suddagunte palya",
           "Venakateshwar Layout",
           "Kaveri Layout",
@@ -2929,10 +2918,10 @@ const urban = [
       },
       {
         label: "Jayanagar",
-        value: "Jayanagar",
+        value: "jayanagar",
         ward_no: 153,
-        pin: 560041,
-        area: [
+        pincode: 560041,
+        areas: [
           "Basavangudi (P)",
           "Kanakanapalya",
           "Jayanagar 1st Block",
@@ -2945,10 +2934,10 @@ const urban = [
       },
       {
         label: "Basavanagudi",
-        value: "Basavanagudi",
+        value: "basavanagudi",
         ward_no: 154,
-        pin: 560004,
-        area: [
+        pincode: 560004,
+        areas: [
           "Basavanagudi (P)",
           "N R Colony",
           "Tata Silk Farm",
@@ -2957,10 +2946,10 @@ const urban = [
       },
       {
         label: "Hanumanth Nagar",
-        value: "Hanumanth",
+        value: "hanumanth nagar",
         ward_no: 155,
-        pin: 560004,
-        area: [
+        pincode: 560004,
+        areas: [
           "Gavipuram",
           "Lakshmipuram Main Road",
           "Brindavan Nagar",
@@ -2973,10 +2962,10 @@ const urban = [
       },
       {
         label: "Srinagar",
-        value: "Srinagar",
+        value: "srinagar",
         ward_no: 156,
-        pin: 560050,
-        area: [
+        pincode: 560050,
+        areas: [
           "Harishta Nagar",
           "Kalidasa Nagar",
           "Pipeline Weaver's Colony",
@@ -2992,10 +2981,10 @@ const urban = [
       },
       {
         label: "Gali Anjaneya Temple",
-        value: "Gali",
+        value: "gali anjaneya temple",
         ward_no: 157,
-        pin: 560026,
-        area: [
+        pincode: 560026,
+        areas: [
           "Karithimmanahalli",
           "Raghavendra Nagar",
           "Sanjaya Nagar",
@@ -3008,10 +2997,10 @@ const urban = [
       },
       {
         label: "Deepanjali Nagar",
-        value: "Deepanjali",
+        value: "deepanjali nagar",
         ward_no: 158,
-        pin: 560026,
-        area: [
+        pincode: 560026,
+        areas: [
           "Deepanajali Nagar",
           "Patel Puttana Industrial Estate",
           "FCI Layout",
@@ -3026,10 +3015,10 @@ const urban = [
       },
       {
         label: "Hosakerehalli",
-        value: "Hosakerehalli",
+        value: "hosakerehalli",
         ward_no: 161,
-        pin: 560085,
-        area: [
+        pincode: 560085,
+        areas: [
           "Banashankari 3 rd Stage",
           "Hosakerehalli",
           "Dattatreya Nagar",
@@ -3041,10 +3030,10 @@ const urban = [
       },
       {
         label: "Girinagar",
-        value: "Girinagar",
+        value: "girinagar",
         ward_no: 162,
-        pin: 560085,
-        area: [
+        pincode: 560085,
+        areas: [
           "Girinagar 1st Stage",
           "Girinagar 2nd Phases",
           "Writers Colony",
@@ -3059,10 +3048,10 @@ const urban = [
       },
       {
         label: "Katriguppe",
-        value: "Katriguppe",
+        value: "katriguppe",
         ward_no: 163,
-        pin: 560085,
-        area: [
+        pincode: 560085,
+        areas: [
           "Srinivasanagar (P)",
           "Siddhi Vinayaka Housing Colony",
           "Vivekananda Nagar",
@@ -3077,10 +3066,10 @@ const urban = [
       },
       {
         label: "Vidyapeeta Ward",
-        value: "Vidyapeeta",
+        value: "vidyapeeta ward",
         ward_no: 164,
-        pin: 560085,
-        area: [
+        pincode: 560085,
+        areas: [
           "Hanumath Nagar (P)",
           "Banasankari 1st stage",
           "Ashok Nagar",
@@ -3092,10 +3081,10 @@ const urban = [
       },
       {
         label: "Ganesh Mandir",
-        value: "Ganesh",
+        value: "ganesh mandir",
         ward_no: 165,
-        pin: 560070,
-        area: [
+        pincode: 560070,
+        areas: [
           "Banashankari 3rd Stage (p)",
           "Banashankari 2nd Stage",
           "Kempegouda Institute Of Medical Science",
@@ -3104,17 +3093,17 @@ const urban = [
       },
       {
         label: "Karisandra",
-        value: "Karisandra",
+        value: "karisandra",
         ward_no: 166,
-        pin: 560070,
-        area: ["JayaNagar 7th Block", "National College", "Karisandra"],
+        pincode: 560070,
+        areas: ["JayaNagar 7th Block", "National College", "Karisandra"],
       },
       {
         label: "Yediyur",
-        value: "Yediyur",
+        value: "yediyur",
         ward_no: 167,
-        pin: 560011,
-        area: [
+        pincode: 560011,
+        areas: [
           "Byrappa Block",
           "Krishna Block",
           "Tyagaraj Nagar",
@@ -3128,10 +3117,10 @@ const urban = [
       },
       {
         label: "Pattabhiram Nagar",
-        value: "Pattabhiram",
+        value: "pattabhiram nagar",
         ward_no: 168,
-        pin: 560041,
-        area: [
+        pincode: 560041,
+        areas: [
           "Jayanagar 4th Block",
           "Pattabhirama Nagar",
           "4th T Block ( Tilak Nagar)",
@@ -3140,10 +3129,10 @@ const urban = [
       },
       {
         label: "Byrasandra",
-        value: "Byrasandra",
+        value: "byrasandra",
         ward_no: 169,
-        pin: 560011,
-        area: [
+        pincode: 560011,
+        areas: [
           "Bairasandra Extension",
           "Jayanagar 3rd Block East",
           "Canara Bank Colony",
@@ -3153,10 +3142,10 @@ const urban = [
       },
       {
         label: "Jayanagar East",
-        value: "Jayanagar1",
+        value: "jayanagar east",
         ward_no: 170,
-        pin: 560069,
-        area: [
+        pincode: 560069,
+        areas: [
           "NAL Layout",
           "URS Colony",
           "Jayanagar 9th Block",
@@ -3166,10 +3155,10 @@ const urban = [
       },
       {
         label: "Gurappanapalya",
-        value: "Gurappanapalya",
+        value: "gurappanapalya",
         ward_no: 171,
-        pin: 560029,
-        area: [
+        pincode: 560029,
+        areas: [
           "Bismilla Nagar",
           "Tavarekere",
           "Gurappanapalya",
@@ -3179,10 +3168,10 @@ const urban = [
       },
       {
         label: "Madiwala",
-        value: "Madiwala",
+        value: "madiwala",
         ward_no: 172,
-        pin: 560068,
-        area: [
+        pincode: 560068,
+        areas: [
           "Tavarekere (P)",
           "Madduraman Nagar",
           "Chikka Madivala",
@@ -3195,10 +3184,10 @@ const urban = [
       },
       {
         label: "Jakkasandra",
-        value: "Jakkasandra",
+        value: "jakkasandra",
         ward_no: 173,
-        pin: 560034,
-        area: [
+        pincode: 560034,
+        areas: [
           "KSRP Quarters",
           "Teachers Colony",
           "Jakkasandra",
@@ -3209,10 +3198,10 @@ const urban = [
       },
       {
         label: "BTM Layout",
-        value: "BTM",
+        value: "btm layout",
         ward_no: 176,
-        pin: 560076,
-        area: [
+        pincode: 560076,
+        areas: [
           "Vysya Bank Colony",
           "MICO Layout",
           "Nainappa Setty playa",
@@ -3227,10 +3216,10 @@ const urban = [
       },
       {
         label: "JP Nagar",
-        value: "JP1",
+        value: "jp nagar",
         ward_no: 177,
-        pin: 560078,
-        area: [
+        pincode: 560078,
+        areas: [
           "JP Nagar 2nd Phase",
           "JP Nagar 3rd Phase",
           "JP Nagar 4th Phase (Sarakki Dollar Layout)",
@@ -3239,17 +3228,17 @@ const urban = [
       },
       {
         label: "Sarakki",
-        value: "Sarakki",
+        value: "sarakki",
         ward_no: 178,
-        pin: 560078,
-        area: ["Sarakki", "JP Nagar 6th Phase", "LIC Quarters"],
+        pincode: 560078,
+        areas: ["Sarakki", "JP Nagar 6th Phase", "LIC Quarters"],
       },
       {
         label: "Shakamari Nagar",
-        value: "Shakamari",
+        value: "shakamari nagar",
         ward_no: 179,
-        pin: 560070,
-        area: [
+        pincode: 560070,
+        areas: [
           "Jayanagar 8th Block",
           "Jayanagar 5th Block",
           "TMC Layout",
@@ -3259,11 +3248,11 @@ const urban = [
       },
       {
         label: "Banashankari Temple",
-        value: "Banashankari",
+        value: "banashankari temple",
         ward_no: 180,
-        pin: 560070,
-        area: [
-          "Teacher\u2019s Colony",
+        pincode: 560070,
+        areas: [
+          "Teacher's Colony",
           "Bhavani Nagar",
           "Eshwar Nagar",
           "Vivekanada Colony",
@@ -3275,10 +3264,10 @@ const urban = [
       },
       {
         label: "Kumarswamy Layout",
-        value: "Kumarswamy",
+        value: "kumarswamy layout",
         ward_no: 181,
-        pin: 560111,
-        area: [
+        pincode: 560111,
+        areas: [
           "Kadirenahalli",
           "Bendre Nagar",
           "Kumaraswamy layout 1st and 2nd stage",
@@ -3290,10 +3279,10 @@ const urban = [
       },
       {
         label: "Padmanabha Nagar",
-        value: "Padmanabha",
+        value: "padmanabha nagar",
         ward_no: 182,
-        pin: 560070,
-        area: [
+        pincode: 560070,
+        areas: [
           "Kattriguppe 4th phase (P)",
           "Padmanabhanagar",
           "RK layout",
@@ -3307,10 +3296,10 @@ const urban = [
       },
       {
         label: "Chikkalasandra",
-        value: "Chikkalasandra",
+        value: "chikkalasandra",
         ward_no: 183,
-        pin: 560061,
-        area: [
+        pincode: 560061,
+        areas: [
           "Rangappa Layout",
           "Katriguppe 3rd Phase",
           "Katriguppe 4th Phase",
@@ -3319,17 +3308,17 @@ const urban = [
         ],
       },
     ],
-    label: "South",
-    value: "South",
   },
   {
+    label: "RRNagar",
+    value: "rrnagar",
     children: [
       {
         label: "Jnana Bharathi",
-        value: "Jnana",
+        value: "jnana bharathi",
         ward_no: 129,
-        pin: 560056,
-        area: [
+        pincode: 560056,
+        areas: [
           "Bhairaveswara Layout",
           "Hanumantha Nagar",
           "Sunkadakatte",
@@ -3373,10 +3362,10 @@ const urban = [
       },
       {
         label: "Ullalu",
-        value: "Ullalu",
+        value: "ullalu",
         ward_no: 130,
-        pin: 560110,
-        area: [
+        pincode: 560110,
+        areas: [
           "Vishveshweraiah Nagar 6th Block",
           "Ambedkar Nagar",
           "Ullalu Upanagar",
@@ -3407,10 +3396,10 @@ const urban = [
       },
       {
         label: "Kengeri",
-        value: "Kengeri",
+        value: "kengeri",
         ward_no: 159,
-        pin: 560060,
-        area: [
+        pincode: 560060,
+        areas: [
           "Classic County Layout",
           "Gandhi Nagar",
           "Kengeri Satellite Town",
@@ -3430,17 +3419,17 @@ const urban = [
       },
       {
         label: "Rajarajeshwari Nagar",
-        value: "Rajarajeshwari",
+        value: "rajarajeshwari nagar",
         ward_no: 160,
-        pin: 560098,
-        area: [
+        pincode: 560098,
+        areas: [
           "Pramod House Building Society",
           "Puspagiri Nagar",
           "Bagegowda Layout",
           "P S Reddy Layout",
-          "P G D\u2019souza Layout",
+          "P G D'souza Layout",
           "Muneswara Nagar",
-          "Sharad D\u2019souza Layout",
+          "Sharad D'souza Layout",
           "Javarayanadoddi",
           "Suryavanshi Layout",
           "Rajarajeshwari Nagar 2nd stage",
@@ -3481,10 +3470,10 @@ const urban = [
       },
       {
         label: "Hemmigepura",
-        value: "Hemmigepura",
+        value: "hemmigepura",
         ward_no: 198,
-        pin: 560060,
-        area: [
+        pincode: 560060,
+        areas: [
           "Part I: Existing RR Nagar CMC ward No. 19",
           "Part II: Kengeri Upanagar (P)",
           "BEML Layout",
@@ -3529,17 +3518,17 @@ const urban = [
         ],
       },
     ],
-    label: "RRNagar",
-    value: "RRNagar",
   },
   {
+    label: "Bommanahalli",
+    value: "bommanahalli",
     children: [
       {
         label: "HSR Layout",
-        value: "HSR",
+        value: "hsr layout",
         ward_no: 174,
-        pin: 560102,
-        area: [
+        pincode: 560102,
+        areas: [
           "HSR Layout 1 to 4 and 6 and 7 sector",
           "Sector 5 (P)",
           "Vinayaka Nagar",
@@ -3556,10 +3545,10 @@ const urban = [
       },
       {
         label: "Bommanahalli",
-        value: "Bommanahalli1",
+        value: "bommanahalli_175",
         ward_no: 175,
-        pin: 560068,
-        area: [
+        pincode: 560068,
+        areas: [
           "Rupena Agrahara (P)",
           "Virat Nagar",
           "Krishna Reddy Layout",
@@ -3576,10 +3565,10 @@ const urban = [
       },
       {
         label: "Uttarahalli",
-        value: "Uttarahalli",
+        value: "uttarahalli",
         ward_no: 184,
-        pin: 560061,
-        area: [
+        pincode: 560061,
+        areas: [
           "Hanumagiri Hill",
           "Sriramachandrapur",
           "Naidu Layout",
@@ -3631,10 +3620,10 @@ const urban = [
       },
       {
         label: "Yelchenahalli",
-        value: "Yelchenahalli",
+        value: "yelchenahalli",
         ward_no: 185,
-        pin: 560111,
-        area: [
+        pincode: 560111,
+        areas: [
           "Ilyas Nagar",
           "Kanaka Nagar",
           "Geeta Colony",
@@ -3651,10 +3640,10 @@ const urban = [
       },
       {
         label: "Jaraganahalli",
-        value: "Jaraganahalli",
+        value: "jaraganahalli",
         ward_no: 186,
-        pin: 560111,
-        area: [
+        pincode: 560111,
+        areas: [
           "Shivananda Nagar",
           "Bheraveshwar Layout",
           "Chikkaswamy Layout",
@@ -3672,10 +3661,10 @@ const urban = [
       },
       {
         label: "Puttenahalli",
-        value: "Puttenahalli",
+        value: "puttenahalli",
         ward_no: 187,
-        pin: 560076,
-        area: [
+        pincode: 560076,
+        areas: [
           "JP Nagar 5th Phase",
           "Ayodhya Nagar",
           "Ramaswamy Layout",
@@ -3699,10 +3688,10 @@ const urban = [
       },
       {
         label: "Bilekhalli",
-        value: "Bilekhalli",
+        value: "bilekhalli",
         ward_no: 188,
-        pin: 560076,
-        area: [
+        pincode: 560076,
+        areas: [
           "Kuvempu Nagar",
           "BVS Layout",
           "Bilekhalli",
@@ -3727,10 +3716,10 @@ const urban = [
       },
       {
         label: "Hongasandra",
-        value: "Hongasandra",
+        value: "hongasandra",
         ward_no: 189,
-        pin: 560068,
-        area: [
+        pincode: 560068,
+        areas: [
           "Om Shakthi Layout",
           "NR Reddy Layout",
           "Gharebhavipalya",
@@ -3750,10 +3739,10 @@ const urban = [
       },
       {
         label: "Mangammanapalya",
-        value: "Mangammanapalya",
+        value: "mangammanapalya",
         ward_no: 190,
-        pin: 560068,
-        area: [
+        pincode: 560068,
+        areas: [
           "Mangammanapalya",
           "Madin Nagar",
           "Gangamma Layout",
@@ -3775,10 +3764,10 @@ const urban = [
       },
       {
         label: "Singasandra",
-        value: "Singasandra",
+        value: "singasandra",
         ward_no: 191,
-        pin: 560068,
-        area: [
+        pincode: 560068,
+        areas: [
           "Chikka Beguru",
           "AECS Layout",
           "SRK Layout Green Garden Layout",
@@ -3807,10 +3796,10 @@ const urban = [
       },
       {
         label: "Begur",
-        value: "Begur",
+        value: "begur",
         ward_no: 192,
-        pin: 560114,
-        area: [
+        pincode: 560114,
+        areas: [
           "Nobo Nagar",
           "K Agrahara",
           "Ramanashree Nagar",
@@ -3864,10 +3853,10 @@ const urban = [
       },
       {
         label: "Arakere",
-        value: "Arakere",
+        value: "arakere",
         ward_no: 193,
-        pin: 560076,
-        area: [
+        pincode: 560076,
+        areas: [
           "Omkar Nagar",
           "Syndicate Bank Colony",
           "Srinivasalu Layout",
@@ -3902,10 +3891,10 @@ const urban = [
       },
       {
         label: "Gottigere",
-        value: "Gottigere",
+        value: "gottigere",
         ward_no: 194,
-        pin: 560083,
-        area: [
+        pincode: 560083,
+        areas: [
           "JP Nagar 8th Phase",
           "Brookes Heaven Layout",
           "Lakshman Layout",
@@ -3932,10 +3921,10 @@ const urban = [
       },
       {
         label: "Konankunte",
-        value: "Konankunte",
+        value: "konankunte",
         ward_no: 195,
-        pin: 560062,
-        area: [
+        pincode: 560062,
+        areas: [
           "Omshakthi Layout",
           "Puttenahalli",
           "Raghavendra Nagar",
@@ -3972,10 +3961,10 @@ const urban = [
       },
       {
         label: "Anjanapura",
-        value: "Anjanapura",
+        value: "anjanapura",
         ward_no: 196,
-        pin: 560108,
-        area: [
+        pincode: 560108,
+        areas: [
           "Soudhamini Layout",
           "Muneshwar Nagar",
           "Avalahalli Colony",
@@ -3986,15 +3975,15 @@ const urban = [
           "JP Nagar 9th Phase",
           "Anjanapura",
           "Anjanapura II",
-          "III",
-          "IV",
-          "V",
-          "V G",
-          "VI",
-          "VII",
-          "VIII",
-          "X",
-          "XI",
+          "Anjanapura III",
+          "Anjanapura IV",
+          "Anjanapura V",
+          "Anjanapura V G",
+          "Anjanapura VI",
+          "Anjanapura VII",
+          "Anjanapura VIII",
+          "Anjanapura X",
+          "Anjanapura XI",
           "Jeethendra Nagar",
           "Kidwal Layout",
           "Classic Layout",
@@ -4008,10 +3997,10 @@ const urban = [
       },
       {
         label: "Vasanthpura",
-        value: "Vasanthpura",
+        value: "vasanthpura",
         ward_no: 197,
-        pin: 560061,
-        area: [
+        pincode: 560061,
+        areas: [
           "Part I: Existing RR Nagar CMC Ward 29 containing following localities : Sarvabhouma Nagar",
           "KSRTC Layout",
           "Gaundanapalya (P)",
@@ -4043,8 +4032,6 @@ const urban = [
         ],
       },
     ],
-    label: "Bommanahalli",
-    value: "Bommanahalli",
   },
 ];
 
