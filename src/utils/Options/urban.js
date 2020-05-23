@@ -3,7 +3,7 @@ const urban = [
   {
     label: "Yelahanka",
     value: "yelahanka",
-    children: [
+    wards: [
       {
         label: "Kempegowda Ward",
         value: "kempegowda ward",
@@ -419,7 +419,7 @@ const urban = [
   {
     label: "Dasarahalli",
     value: "dasarahalli",
-    children: [
+    wards: [
       {
         label: "Shettihalli",
         value: "shettihalli",
@@ -598,7 +598,7 @@ const urban = [
   {
     label: "West",
     value: "west",
-    children: [
+    wards: [
       {
         label: "Jalahalli",
         value: "jalahalli",
@@ -1423,7 +1423,7 @@ const urban = [
   {
     label: "East",
     value: "east",
-    children: [
+    wards: [
       {
         label: "Radhakrishna Temple",
         value: "radhakrishna temple",
@@ -2163,7 +2163,7 @@ const urban = [
   {
     label: "Mahadevapura",
     value: "mahadevapura",
-    children: [
+    wards: [
       {
         label: "Horamavu",
         value: "horamavu",
@@ -2630,7 +2630,7 @@ const urban = [
   {
     label: "South",
     value: "south",
-    children: [
+    wards: [
       {
         label: "Sudhama Nagar",
         value: "sudhama nagar",
@@ -3312,7 +3312,7 @@ const urban = [
   {
     label: "RRNagar",
     value: "rrnagar",
-    children: [
+    wards: [
       {
         label: "Jnana Bharathi",
         value: "jnana bharathi",
@@ -3522,7 +3522,7 @@ const urban = [
   {
     label: "Bommanahalli",
     value: "bommanahalli",
-    children: [
+    wards: [
       {
         label: "HSR Layout",
         value: "hsr layout",
