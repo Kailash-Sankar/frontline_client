@@ -1,13 +1,19 @@
 import React from "react";
 import { Table } from "antd";
 import Details from "./Details";
-import { getPaginationObject } from "../utils";
+import { getPaginationObject, renderStatus } from "../utils";
 
 /**
- * Function is used to render the search results of the Volunteer form
+ * This function is used to render the Ngo search results on the page.
  * @param {*} param0
  */
-function SearchResults({ result, pagination, onPageChange, onShowSizeChange }) {
+function NGOSearchResults({
+  result,
+  pagination,
+  onPageChange,
+  onShowSizeChange,
+  onResultClose,
+}) {
   const columns = [
     {
       title: "Name",
@@ -15,24 +21,25 @@ function SearchResults({ result, pagination, onPageChange, onShowSizeChange }) {
       key: "name",
     },
     {
-      title: "Type",
-      dataIndex: "mode",
-    },
-    {
-      title: "Region",
-      dataIndex: "region",
-    },
-    {
       title: "Mobile",
       dataIndex: "mobile",
     },
     {
-      title: "Signup Date",
+      title: "Date",
       dataIndex: "createdAt",
     },
     {
-      title: "Availability",
-      dataIndex: "availability",
+      title: "Contact Person",
+      dataIndex: "person",
+    },
+    {
+      title: "Covid-19 Services",
+      dataIndex: "covid19",
+    },
+    {
+      title: "Action",
+      dataIndex: "_id",
+      render: (id, row) => renderStatus(id, row, onResultClose),
     },
   ];
 
@@ -63,4 +70,4 @@ function SearchResults({ result, pagination, onPageChange, onShowSizeChange }) {
   );
 }
 
-export default SearchResults;
+export default NGOSearchResults;
