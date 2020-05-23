@@ -117,7 +117,16 @@ export const MultipleDistrictSelect = ({
   onChange,
   nameVal = ["services", "operationalArea", "value"],
 }) => (
-  <Form.Item name={nameVal} label="District of Operation">
+  <Form.Item
+    name={nameVal}
+    label="District of Operation"
+    rules={[
+      {
+        required: true,
+        message: "Please select at least one operational area",
+      },
+    ]}
+  >
     <Select
       mode="multiple"
       placeholder="multiple options can be selected"
