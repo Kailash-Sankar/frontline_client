@@ -15,7 +15,7 @@ import {
   AddressField,
 } from "./Fields/Input";
 
-import { formatData } from "./utils";
+import { formatData, formatZoneInfoForTree } from "./utils";
 
 function NgoForm({ initialValues, regions, urban, onSubmit, reset }) {
   const [form] = Form.useForm();
@@ -76,7 +76,7 @@ function NgoForm({ initialValues, regions, urban, onSubmit, reset }) {
         />
 
         <UrbanOperationalArea
-          options={urban}
+          options={formatZoneInfoForTree(urban)}
           isVisible={district.includes("5")}
         />
 
