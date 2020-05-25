@@ -29,7 +29,7 @@
   },
   "license": "ISC",
   "dependencies": {
-    "antd": "^4.2.0",
+    "antd": "^4.2.5",
     "axios": "^0.19.2",
     "classnames": "^2.2.6",
     "core-js": "^3.6.5",
