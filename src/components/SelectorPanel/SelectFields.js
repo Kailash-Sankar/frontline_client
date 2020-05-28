@@ -30,11 +30,24 @@ export const statusOptions = () => [
   </Option>,
 ];
 
-export function StatusSelect({ status, onStatusChannge }) {
+/**
+ * Based on the act type, if that is ngo then this form is choosen.
+ * NGO form has a different status than any other forms
+ */
+export const ngoStatusOptions = () => [
+  <Option key="new" className="lightup cyan">
+    New
+  </Option>,
+  <Option key="verified" className="lightup orange">
+    Verified
+  </Option>,
+];
+
+export function StatusSelect({ status, onStatusChannge, act }) {
   return (
     <Select style={{ width: 100 }} value={status} onChange={onStatusChannge}>
       <Option value="">All</Option>
-      {statusOptions()}
+      {act && act === "ngo" ? ngoStatusOptions() : statusOptions()}
     </Select>
   );
 }
