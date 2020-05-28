@@ -31,6 +31,7 @@ const Kind = lazy(() => import("./Kind"));
 const Appeal = lazy(() => import("./Appeal"));
 const Report = lazy(() => import("./Report"));
 const RequestForHelp = lazy(() => import("./RequestForHelp"));
+const SearchForReports = lazy(() => import("./SearchForReports"));
 
 const { Content, Footer } = Layout;
 
@@ -73,6 +74,12 @@ function App({ loggedIn, user, volunteerCount }) {
 
                     <Route exact path="/kind">
                       <Kind {...pageProps} />
+                    </Route>
+
+                    <Route path="/searchrequests">
+                      <LoginRequired loggedIn={loggedIn}>
+                        <SearchForReports {...pageProps} />
+                      </LoginRequired>
                     </Route>
 
                     <Route exact path="/appeal">

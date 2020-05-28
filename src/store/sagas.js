@@ -12,6 +12,7 @@ import { types as appealReportTypes } from "./appealReport";
 import { types as requestReportTypes } from "./requestReport";
 import { types as requestForHelpTypes } from "./requestForHelp";
 import { types as ngoSignupTypes } from "./ngoSignup";
+import { types as searchWithMobileTypes } from "./SearchWithMobile";
 
 import notify from "@utils/Notification";
 import { authStorage } from "@utils/LocalStorage";
@@ -224,6 +225,12 @@ export function* initSaga() {
     search,
     requestReportTypes,
     Api.searchRequests
+  );
+  yield takeLatest(
+    searchWithMobileTypes.SEARCH,
+    search,
+    searchWithMobileTypes,
+    Api.searchrequestWithMobile
   );
 
   // exports
