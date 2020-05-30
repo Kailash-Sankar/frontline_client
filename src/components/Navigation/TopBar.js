@@ -10,14 +10,14 @@ import { NavLink, Link, useLocation } from "react-router-dom";
 import {
   HomeOutlined,
   SafetyOutlined,
-  MailOutlined,
   SettingOutlined,
-  StarOutlined,
+  //StarOutlined,
   FileSearchOutlined,
   DeploymentUnitOutlined,
   FormOutlined,
   GlobalOutlined,
   PicLeftOutlined,
+  FileProtectOutlined,
 } from "@ant-design/icons";
 
 const { Header } = Layout;
@@ -45,17 +45,19 @@ const TopBar = ({ loggedIn, user }) => {
 
           <Menu.Item key="/policies">
             <Link to="/policies">
-              <MailOutlined />
+              <FileProtectOutlined />
               <span className="nav-text">Policies</span>
             </Link>
           </Menu.Item>
 
-          <SubMenu icon={<StarOutlined />} title="Quick Links">
+          {/*
+         <SubMenu icon={<StarOutlined />} title="Quick Links">
             <Menu.Item key="ql:womens_helpline">
               Women&apos;s Helpline
             </Menu.Item>
             <Menu.Item key="ql:travel_assistance">Travel Assistance</Menu.Item>
           </SubMenu>
+          */}
 
           {loggedIn ? (
             <SubMenu icon={<SettingOutlined />} title="Admin">
