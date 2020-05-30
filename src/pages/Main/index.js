@@ -21,8 +21,8 @@ import LoginRequired from "./LoginRequired";
 import NGO from "./NGO";
 import Authorize, { Fallback } from "@components/Authorize";
 
-import Policies from "@components/Content/Policies";
-import About from "@components/Content/About";
+const Policies = lazy(() => import("@components/Content/Policies"));
+const About = lazy(() => import("@components/Content/About"));
 
 const TopBar = lazy(() => import("@components/Navigation/TopBar"));
 
