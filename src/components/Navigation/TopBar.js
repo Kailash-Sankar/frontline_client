@@ -1,45 +1,109 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { Layout } from "antd";
-import { Spacer } from "@components/Utils";
-import * as styles from "./index.module.less";
-import StateLogo from "@images/state-logo.webp";
 
 import { LogoutOutlined } from "@ant-design/icons";
 
+import { Menu } from "antd";
+const { SubMenu } = Menu;
+import { NavLink, Link, useLocation } from "react-router-dom";
+
+import {
+  HomeOutlined,
+  SafetyOutlined,
+  MailOutlined,
+  SettingOutlined,
+  StarOutlined,
+  FileSearchOutlined,
+  DeploymentUnitOutlined,
+  FormOutlined,
+  GlobalOutlined,
+  PicLeftOutlined,
+} from "@ant-design/icons";
+
 const { Header } = Layout;
 const TopBar = ({ loggedIn, user }) => {
+  const location = useLocation();
+  let selected = location.pathname;
+
   return (
-    <Header style={{ background: "#fff", padding: 0 }}>
-      <div className={styles.headFlex}>
-        <div className={styles.logoWrap}>
-          <Link to="/">
-            <img src={StateLogo} className="state-logo" />
-            <span style={{ paddingLeft: "10px" }}>Sankalpa</span>
-          </Link>
-        </div>
+    <Header style={{ minHeight: "auto", padding: 0 }}>
+      <div className="home-nav-bar">
+        <Menu selectedKeys={[selected]} mode="horizontal" theme="dark">
+          <Menu.Item key="/">
+            <Link to="/">
+              <HomeOutlined />
+              <span className="nav-text">Home</span>
+            </Link>
+          </Menu.Item>
 
-        <div className={styles.statusWrap}></div>
+          <Menu.Item key="/about">
+            <Link to="/about">
+              <SafetyOutlined />
+              <span className="nav-text">About</span>
+            </Link>
+          </Menu.Item>
 
-        <div className={styles.userWrap}>
-          <Spacer width={20} />
-          {
-            loggedIn ? (
-              <span>
-                <span className={styles.userLabel}>Hello, {user.name}</span>
-                <Spacer width={20} />
-                <Link to="/logout">
-                  <LogoutOutlined />
+          <Menu.Item key="/policies">
+            <Link to="/policies">
+              <MailOutlined />
+              <span className="nav-text">Policies</span>
+            </Link>
+          </Menu.Item>
+
+          <SubMenu icon={<StarOutlined />} title="Quick Links">
+            <Menu.Item key="ql:womens_helpline">
+              Women&apos;s Helpline
+            </Menu.Item>
+            <Menu.Item key="ql:travel_assistance">Travel Assistance</Menu.Item>
+          </SubMenu>
+
+          {loggedIn ? (
+            <SubMenu icon={<SettingOutlined />} title="Admin">
+              <Menu.Item key="/profile" disabled>
+                Hello, {user.name}
+              </Menu.Item>
+
+              <Menu.Item key="/volunteer" disabled>
+                <Link to="/volunteer">
+                  <DeploymentUnitOutlined />
+                  <span className="nav-text">Volunteer</span>
                 </Link>
-              </span>
-            ) : (
-              ""
-            )
-            // <Link to="/login">
-            //   <LoginOutlined />
-            // </Link>
-          }
-        </div>
+              </Menu.Item>
+
+              <Menu.Item key="/kind">
+                <Link to="/kind">
+                  <GlobalOutlined />
+                  <span className="nav-text">Support in Kind</span>
+                </Link>
+              </Menu.Item>
+
+              <Menu.Item key="/appeal">
+                <Link to="/appeal">
+                  <PicLeftOutlined />
+                  <span className="nav-text">Appeal</span>
+                </Link>
+              </Menu.Item>
+
+              <Menu.Item key="/request">
+                <Link to="/request">
+                  <FormOutlined />
+                  <span className="nav-text">Request for help</span>
+                </Link>
+              </Menu.Item>
+
+              <Menu.Item key="/report">
+                <Link to="/report">
+                  <FileSearchOutlined />
+                  <span className="nav-text">Reports</span>
+                </Link>
+              </Menu.Item>
+
+              <Menu.Item key="logout" icon={<LogoutOutlined />}>
+                <NavLink to="/logout">Logout</NavLink>
+              </Menu.Item>
+            </SubMenu>
+          ) : null}
+        </Menu>
       </div>
     </Header>
   );

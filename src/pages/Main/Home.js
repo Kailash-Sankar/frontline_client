@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { Row, Col, Affix, Button } from "antd";
 import { Spacer } from "@components/Utils";
-import Footer from "@components/Footer";
-import { Link } from "react-router-dom";
+import { Switch, Route, Link } from "react-router-dom";
+
 import {
   Statistics,
   TwitterWidget,
@@ -15,9 +15,7 @@ import {
 
 import { connector } from "@store/homeContent";
 import axios from "axios";
-
 import background from "@images/background.png";
-
 import helpIco from "@images/help_ico.png";
 
 const HomePage = (props) => {
@@ -60,7 +58,14 @@ const HomePage = (props) => {
         <Col lg={18} xs={24} sm={24} md={18} className="gutter-row">
           <Header />
           <Spacer display="block" height={10} />
-          <Content />
+          <Switch>
+            <Route exact path="/">
+              <Content />
+            </Route>
+            <Route path="/terms">
+              <div>This is a test</div>
+            </Route>
+          </Switch>
           <Spacer display="block" height={5} />
           <Actions />
         </Col>
@@ -86,7 +91,7 @@ const HomePage = (props) => {
       <Row>
         <Col span={24}>
           <Spacer display="block" height={20} />
-          <Footer noBackground={true} />
+
           <Affix
             offsetBottom={20}
             style={{ position: "fixed", right: 30, bottom: 30 }}

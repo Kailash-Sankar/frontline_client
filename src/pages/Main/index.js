@@ -11,7 +11,6 @@ import * as styles from "./index.module.less";
 
 import store from "@store/root";
 import { connecter } from "@store/common";
-import classnames from "classnames";
 
 import PageFooter from "@components/Footer";
 
@@ -22,8 +21,10 @@ import LoginRequired from "./LoginRequired";
 import NGO from "./NGO";
 import Authorize, { Fallback } from "@components/Authorize";
 
+import Policies from "@components/Content/Policies";
+import About from "@components/Content/About";
+
 const TopBar = lazy(() => import("@components/Navigation/TopBar"));
-const SideBar = lazy(() => import("@components/Navigation/SideBar"));
 
 const VolunteerSignup = lazy(() => import("./VolunteerSignup"));
 const NgoSignup = lazy(() => import("./NgoSignup"));
@@ -46,21 +47,24 @@ function App({ loggedIn, user, volunteerCount }) {
           </div>
         }
       >
+        <TopBar
+          loggedIn={loggedIn}
+          user={user}
+          volunteerCount={volunteerCount}
+        />
         <Switch>
           <Route exact path="/">
             <Home {...pageProps} />
           </Route>
+          <Route path="/policies">
+            <Policies />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
           <Route>
             <Layout>
-              <SideBar loggedIn={loggedIn} />
-
-              <Layout className={classnames({ [styles.layout]: loggedIn })}>
-                <TopBar
-                  loggedIn={loggedIn}
-                  user={user}
-                  volunteerCount={volunteerCount}
-                />
-
+              <Layout>
                 <Content className={styles.content}>
                   <div className={styles.contentWrapper}>
                     <Route path="/volunteer">
@@ -110,13 +114,13 @@ function App({ loggedIn, user, volunteerCount }) {
                     </Route>
                   </div>
                 </Content>
-                <Footer style={{ textAlign: "center" }}>
-                  <PageFooter />
-                </Footer>
               </Layout>
             </Layout>
           </Route>
         </Switch>
+        <Footer style={{ textAlign: "center" }}>
+          <PageFooter />
+        </Footer>
       </Suspense>
     </Router>
   );

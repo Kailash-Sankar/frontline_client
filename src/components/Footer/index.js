@@ -9,7 +9,7 @@ import {
   WhatsAppOutlined,
   MailOutlined,
   PhoneOutlined,
-  GithubOutlined
+  GithubOutlined,
 } from "@ant-design/icons";
 
 const Footer = (props) => {
@@ -78,13 +78,13 @@ const Footer = (props) => {
           </Row>
         </Col>
       </Row>
-      <div style={{ textAlign: "center" }}>
+      <div style={{ textAlign: "center", backgroundColor: "rgb(29, 30, 34)" }}>
         <a
           className="alt"
           href="https://github.com/Kailash-Sankar/frontline_client/"
         >
-          Developed by Volunteers, SPYKK App Labs &amp; SAP Labs India, hosted by IIIT-B | Open
-          sourced <GithubOutlined />
+          Developed by Volunteers, SPYKK App Labs &amp; SAP Labs India, hosted
+          by IIIT-B | Open sourced <GithubOutlined />
         </a>
       </div>
     </>

@@ -15,10 +15,13 @@
   min-height: 100vh;
   width: 100vw;
   overflow-x: hidden;
+  flex-direction: column;
 }
 
-a {
-  color: #002140;
+.footer-container {
+  a {
+    color: #002140;
+  }
 }
 
 a.alt {
@@ -61,10 +64,6 @@ a.alt {
   color: @orange;
   text-align: center;
   text-decoration: underline;
-}
-
-.ant-layout-header {
-  min-height: 75px;
 }
 
 .showcase {
@@ -147,13 +146,55 @@ a.alt {
 
 /* Home content Styles */
 
+// overriding antd styles to match our theme
+// TODO: this should be done using modifyVars at a build time
+.ant-layout-header {
+  height: 65px;
+  border-bottom: 1px solid #786534;
+}
+
+.ant-layout-footer {
+  border-top: 1px solid #786534;
+}
+
+.home-nav-bar {
+  text-align: center;
+  flex: 1;
+
+  .ant-menu.ant-menu-dark,
+  .ant-menu-dark .ant-menu-sub {
+    color: rgba(255, 255, 255, 0.65);
+    background: #313030a3;
+  }
+  .ant-menu.ant-menu-dark .ant-menu-item-selected,
+  .ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected {
+    background-color: #1f262d;
+  }
+
+  .ant-menu-dark .ant-menu-item-active:hover {
+    a,
+    .anticon {
+      color: snow;
+    }
+  }
+  a {
+    color: rgba(255, 255, 255, 0.65);
+  }
+}
+
+.ant-menu {
+  a {
+    color: snow;
+  }
+}
+
 .layout-conteiner {
   width: 100%;
   text-align: left;
   color: #fff;
-  padding-left: 1%;
+  padding-left: 0.2%;
   padding-right: 0.2%;
-  padding-top: 5px;
+  padding-top: 0;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
