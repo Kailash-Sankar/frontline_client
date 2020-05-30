@@ -12,7 +12,7 @@ function formatBbmp(bbmp = []) {
     bbmp.map((wardVal) => {
       let wardArea = el.children.find((x) => x.value === wardVal);
       if (wardArea) {
-        res.push({ pin: [wardArea.pin], ward: wardVal, zone: el.value });
+        res.push({ pin: [wardArea.pincode], ward: wardVal, zone: el.value });
         visited.push(wardVal);
       }
     });
@@ -27,7 +27,7 @@ function formatBbmp(bbmp = []) {
         options.urban
           .find((x) => x.value === zArea)
           .children.map((ch) => {
-            res.push({ pin: [ch.pin], ward: ch.value, zone: zArea });
+            res.push({ pin: [ch.pincode], ward: ch.value, zone: zArea });
           });
       }
     });
