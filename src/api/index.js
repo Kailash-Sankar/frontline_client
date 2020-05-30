@@ -109,6 +109,12 @@ async function authCheck() {
   return res;
 }
 
+// get websocket token
+async function getWebsocketToken() {
+  const res = await server.get(`/auth/token/ws`);
+  return res;
+}
+
 // -- home page --
 async function getHomePageData(url) {
   const res = await server.get(url);
@@ -142,6 +148,7 @@ export default {
   getVolunteerCount,
   login,
   authCheck,
+  getWebsocketToken,
   getHomePageData,
   saveAppealForm,
   searchAppeals,
