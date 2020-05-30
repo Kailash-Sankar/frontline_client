@@ -43,12 +43,21 @@ const TopBar = ({ loggedIn, user }) => {
             </Link>
           </Menu.Item>
 
-          <Menu.Item key="/policies">
-            <Link to="/policies">
-              <FileProtectOutlined />
-              <span className="nav-text">Policies</span>
-            </Link>
-          </Menu.Item>
+          <SubMenu icon={<FileProtectOutlined />} title="Policies">
+            <Menu.Item key="/terms">
+              <Link to="/terms">
+                <FileProtectOutlined />
+                <span className="nav-text">Terms and Conditions</span>
+              </Link>
+            </Menu.Item>
+
+            <Menu.Item key="/privacy-policy">
+              <Link to="/privacy-policy">
+                <FileProtectOutlined />
+                <span className="nav-text">Privacy Policy</span>
+              </Link>
+            </Menu.Item>
+          </SubMenu>
 
           {/*
          <SubMenu icon={<StarOutlined />} title="Quick Links">

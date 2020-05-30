@@ -21,7 +21,8 @@ import LoginRequired from "./LoginRequired";
 import NGO from "./NGO";
 import Authorize, { Fallback } from "@components/Authorize";
 
-const Policies = lazy(() => import("@components/Content/Policies"));
+const PrivacyPolicy = lazy(() => import("@components/Content/PrivacyPolicy"));
+const Terms = lazy(() => import("@components/Content/Terms"));
 const About = lazy(() => import("@components/Content/About"));
 
 const TopBar = lazy(() => import("@components/Navigation/TopBar"));
@@ -56,8 +57,11 @@ function App({ loggedIn, user, volunteerCount }) {
           <Route exact path="/">
             <Home {...pageProps} />
           </Route>
-          <Route path="/policies">
-            <Policies />
+          <Route path="/privacy-policy">
+            <PrivacyPolicy />
+          </Route>
+          <Route path="/terms">
+            <Terms />
           </Route>
           <Route path="/about">
             <About />
