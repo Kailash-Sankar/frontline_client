@@ -2,7 +2,7 @@ import React from "react";
 import SelectorPanel from "@components/SelectorPanel";
 import { NGOSearchResults } from "@components/SearchResults";
 import { Empty } from "antd";
-import { connecter } from "@store/NGOReport";
+import { connecter } from "@store/ngoReport";
 import options from "@utils/Options";
 import { formatSearchQuery } from "../utils";
 import ExportButton from "@components/Misc/ExportButton";
