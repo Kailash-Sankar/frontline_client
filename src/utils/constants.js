@@ -73,3 +73,4 @@ export const VolunteerFormLink = "https://forms.gle/q6AQAC4debLjYDwM7";
 
 // TODO: setup via proxy
 export const socketUrl = "ws://localhost:3080";
+
