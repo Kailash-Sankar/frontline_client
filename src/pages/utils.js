@@ -46,12 +46,14 @@ export function formatSearchQuery({
   dateRange,
   status,
 }) {
+  let filteredRegion;
+  if (region instanceof Array && region.length > 1) {
+    filteredRegion = region.map((x) => x);
+    filteredRegion.shift();
+  } else filteredRegion = region;
   const params = {
     mode: mode || "all",
-    region:
-      region instanceof Array && region.length > 1
-        ? region.shift()
-        : region || "all",
+    region: filteredRegion || "all",
     ...formatService(service),
     ...formatDateRange(dateRange),
   };
