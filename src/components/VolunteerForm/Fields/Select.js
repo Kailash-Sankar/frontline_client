@@ -112,7 +112,7 @@ export const NonMedicalField = ({ options, onChange }) => (
   </Form.Item>
 );
 
-export const MultipleDistrictSelect = ({
+export const MultipleDistrictSelect_OLD = ({
   options,
   onChange,
   nameVal = ["services", "operationalArea", "value"],
@@ -134,6 +134,34 @@ export const MultipleDistrictSelect = ({
     >
       {renderOptionsLabel(options)}
     </Select>
+  </Form.Item>
+);
+
+export const MultipleDistrictSelect = ({
+  options,
+  onChange,
+  nameVal = ["services", "operationalArea", "value"],
+}) => (
+  <Form.Item
+    name={nameVal}
+    label="District of Operation"
+    rules={[
+      {
+        required: true,
+        message: "Please select at least one operational area",
+      },
+    ]}
+  >
+    <TreeSelect
+      {...{
+        treeData: options,
+        onChange: onChange,
+        treeCheckable: true,
+        showCheckedStrategy: TreeSelect.SHOW_PARENT,
+        placeholder: "Multiple/All options can be selected",
+      }}
+      treeDefaultExpandAll
+    />
   </Form.Item>
 );
 

@@ -48,7 +48,10 @@ export function formatSearchQuery({
 }) {
   const params = {
     mode: mode || "all",
-    region: region || "all",
+    region:
+      region instanceof Array && region.length > 1
+        ? region.shift()
+        : region || "all",
     ...formatService(service),
     ...formatDateRange(dateRange),
   };

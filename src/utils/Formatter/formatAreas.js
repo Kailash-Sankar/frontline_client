@@ -1,7 +1,7 @@
 // format service data from form  => db
 import options from "@utils/Options";
 
-function formatBbmp(bbmp = []) {
+export function formatBbmp(bbmp = []) {
   if (bbmp.length == 0) {
     return bbmp;
   }
@@ -12,7 +12,7 @@ function formatBbmp(bbmp = []) {
     bbmp.map((wardVal) => {
       let wardArea = el.children.find((x) => x.value === wardVal);
       if (wardArea) {
-        res.push({ pin: [wardArea.pincode], ward: wardVal, zone: el.value });
+        res.push({ pincode: wardArea.pincode, ward: wardVal, zone: el.value });
         visited.push(wardVal);
       }
     });
@@ -27,11 +27,21 @@ function formatBbmp(bbmp = []) {
         options.urban
           .find((x) => x.value === zArea)
           .children.map((ch) => {
-            res.push({ pin: [ch.pincode], ward: ch.value, zone: zArea });
+            res.push({ pincode: ch.pincode, ward: ch.value, zone: zArea });
           });
       }
     });
   return res;
 }
 
-export default formatBbmp;
+export function formatNgoDistrict(district = []) {
+  if (district.length == 0) {
+    return district;
+  } else if (district.length == 1 && district[0] == "KA") {
+    district = options.regions
+      .find((x) => x.value === "KA")
+      .children.map((ch) => ch.value);
+  }
+  district.unshift("KA");
+  return district;
+}

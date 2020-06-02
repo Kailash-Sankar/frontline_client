@@ -60,6 +60,8 @@ export function RegionSelect({ region, regions, onRegionChange }) {
       options={regions}
       value={region}
       onChange={onRegionChange}
+      expandTrigger="hover"
+      changeOnSelect
     />
   );
 }
