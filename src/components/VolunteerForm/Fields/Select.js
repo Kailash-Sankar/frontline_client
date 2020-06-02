@@ -11,11 +11,6 @@ const renderOptionsObject = (options) =>
     <Option key={k.id}>{k.value || k.name}</Option>
   ));
 
-const renderOptionsLabel = (options) =>
-  Object.values(options).map((k) => (
-    <Option key={k.value}>{k.label || k.name}</Option>
-  ));
-
 export const RegionSelect = ({ options }) => (
   <Form.Item
     label="Region"
@@ -108,31 +103,6 @@ export const NonMedicalField = ({ options, onChange }) => (
   >
     <Select mode="multiple" onChange={onChange}>
       {renderOptionsObject(options)}
-    </Select>
-  </Form.Item>
-);
-
-export const MultipleDistrictSelect_OLD = ({
-  options,
-  onChange,
-  nameVal = ["services", "operationalArea", "value"],
-}) => (
-  <Form.Item
-    name={nameVal}
-    label="District of Operation"
-    rules={[
-      {
-        required: true,
-        message: "Please select at least one operational area",
-      },
-    ]}
-  >
-    <Select
-      mode="multiple"
-      placeholder="multiple options can be selected"
-      onChange={onChange}
-    >
-      {renderOptionsLabel(options)}
     </Select>
   </Form.Item>
 );
