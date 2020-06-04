@@ -11,18 +11,19 @@ module.exports = merge(common, {
     proxy: [
       {
         context: ["/api"],
-        target: "http://0.0.0.0:3080/",
+        target:
+          "http://ec2-34-222-175-59.us-west-2.compute.amazonaws.com:34716/",
         secure: false,
         changeOrigin: true,
-        logLevel: "debug"
-      }
-    ]
+        logLevel: "debug",
+      },
+    ],
   },
   devtool: "inline-source-map",
   watch: true,
   watchOptions: {
     aggregateTimeout: 300,
     poll: 1000,
-    ignored: /node_modules/
-  }
+    ignored: /node_modules/,
+  },
 });
