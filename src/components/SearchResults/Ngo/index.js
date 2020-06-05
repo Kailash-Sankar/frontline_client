@@ -1,7 +1,7 @@
 import React from "react";
 import { Table } from "antd";
 import Details from "./Details";
-import { getPaginationObject, renderStatus } from "../utils";
+import { getPaginationObject } from "../utils"; //renderStatus
 
 /**
  * This function is used to render the Ngo search results on the page.
@@ -12,8 +12,8 @@ function NGOSearchResults({
   pagination,
   onPageChange,
   onShowSizeChange,
-  onResultClose,
 }) {
+  //onResultClose,
   const columns = [
     {
       title: "Name",
@@ -36,12 +36,12 @@ function NGOSearchResults({
       title: "Covid-19 Services",
       dataIndex: "covid19",
     },
-    {
-      title: "Action",
-      dataIndex: "_id",
-      render: (id, row) => renderStatus(id, row, onResultClose),
-    },
   ];
+  // {
+  //   title: "Action",
+  //   dataIndex: "_id",
+  //   render: (id, row) => renderStatus(id, row, onResultClose),
+  // },
 
   return (
     <div>

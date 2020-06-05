@@ -13,7 +13,7 @@ import { reportInitState } from "./helpers/initialState";
 const scope = "ngoReport";
 
 const initialState = { ...reportInitState };
-initialState.status = "New";
+initialState.status = "new";
 
 export const types = applyScope(scope, reportTypes);
 
