@@ -11,11 +11,6 @@ const renderOptionsObject = (options) =>
     <Option key={k.id}>{k.value || k.name}</Option>
   ));
 
-const renderOptionsLabel = (options) =>
-  Object.values(options).map((k) => (
-    <Option key={k.value}>{k.label || k.name}</Option>
-  ));
-
 export const RegionSelect = ({ options }) => (
   <Form.Item
     label="Region"
@@ -127,13 +122,16 @@ export const MultipleDistrictSelect = ({
       },
     ]}
   >
-    <Select
-      mode="multiple"
-      placeholder="multiple options can be selected"
-      onChange={onChange}
-    >
-      {renderOptionsLabel(options)}
-    </Select>
+    <TreeSelect
+      {...{
+        treeData: options,
+        onChange: onChange,
+        treeCheckable: true,
+        showCheckedStrategy: TreeSelect.SHOW_PARENT,
+        placeholder: "Multiple/All options can be selected",
+      }}
+      treeDefaultExpandAll
+    />
   </Form.Item>
 );
 

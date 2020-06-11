@@ -70,17 +70,18 @@ function NgoForm({ initialValues, regions, urban, onSubmit, reset }) {
         <AddressField />
 
         <MultipleDistrictSelect
-          options={regions.find((x) => x.id === "17").children}
+          options={regions}
           onChange={onDistrictChange}
           nameVal={"region"}
         />
 
         <UrbanOperationalArea
           options={formatZoneInfoForTree(urban)}
-          isVisible={district.includes("5")}
+          isVisible={district.includes("KA") || district.includes("5")}
         />
 
         <Covid19Field />
+
         <NOVField isRequired={true} nameVal={"nov"} />
 
         <Form.Item {...tailFormItemLayout}>

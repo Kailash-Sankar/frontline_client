@@ -27,29 +27,25 @@ function SearchResults({ result, pagination, onPageChange, onShowSizeChange }) {
     },
   ];
   return (
-    <div>
-      <div>
-        <Table
-          columns={columns}
-          dataSource={result}
-          rowKey={(r) => r._id}
-          expandable={{
-            expandedRowRender: (record) => (
-              <p>
-                <Tag color="blue">Description</Tag>
-                {record.desc}
-              </p>
-            ),
-          }}
-          pagination={getPaginationObject(
-            pagination,
-            onPageChange,
-            onShowSizeChange
-          )}
-          size="middle"
-        />
-      </div>
-    </div>
+    <Table
+      scroll={{ x: true }}
+      columns={columns}
+      dataSource={result}
+      rowKey={(r) => r._id}
+      expandable={{
+        expandedRowRender: (record) => (
+          <p>
+            <Tag color="blue">Description</Tag>
+            {record.desc}
+          </p>
+        ),
+      }}
+      pagination={getPaginationObject(
+        pagination,
+        onPageChange,
+        onShowSizeChange
+      )}
+    />
   );
 }
 

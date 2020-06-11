@@ -11,7 +11,6 @@ import * as styles from "./index.module.less";
 
 import store from "@store/root";
 import { connecter } from "@store/common";
-import classnames from "classnames";
 
 import PageFooter from "@components/Footer";
 
@@ -19,11 +18,14 @@ import Home from "./Home";
 import Login from "./Login";
 import Logout from "./Logout";
 import LoginRequired from "./LoginRequired";
-import NGO from "./NGO";
+import Demo from "./Demo";
 import Authorize, { Fallback } from "@components/Authorize";
 
+const PrivacyPolicy = lazy(() => import("@components/Content/PrivacyPolicy"));
+const Terms = lazy(() => import("@components/Content/Terms"));
+const About = lazy(() => import("@components/Content/About"));
+
 const TopBar = lazy(() => import("@components/Navigation/TopBar"));
-const SideBar = lazy(() => import("@components/Navigation/SideBar"));
 
 const VolunteerSignup = lazy(() => import("./VolunteerSignup"));
 const NgoSignup = lazy(() => import("./NgoSignup"));
@@ -47,21 +49,27 @@ function App({ loggedIn, user, volunteerCount }) {
           </div>
         }
       >
+        <TopBar
+          loggedIn={loggedIn}
+          user={user}
+          volunteerCount={volunteerCount}
+        />
         <Switch>
           <Route exact path="/">
             <Home {...pageProps} />
           </Route>
+          <Route path="/privacy-policy">
+            <PrivacyPolicy />
+          </Route>
+          <Route path="/terms">
+            <Terms />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
           <Route>
             <Layout>
-              <SideBar loggedIn={loggedIn} />
-
-              <Layout className={classnames({ [styles.layout]: loggedIn })}>
-                <TopBar
-                  loggedIn={loggedIn}
-                  user={user}
-                  volunteerCount={volunteerCount}
-                />
-
+              <Layout>
                 <Content className={styles.content}>
                   <div className={styles.contentWrapper}>
                     <Route path="/volunteer">
@@ -98,13 +106,13 @@ function App({ loggedIn, user, volunteerCount }) {
                       <RequestForHelp {...pageProps} />
                     </Route>
 
-                    <Route path="/NGO">
+                    <Route path="/demo">
                       <LoginRequired loggedIn={loggedIn}>
                         <Authorize
-                          roles={["ngo", "admin"]}
+                          roles={["ngo", "admin", "staff"]}
                           fallback={<Fallback.Page />}
                         >
-                          <NGO />
+                          <Demo />
                         </Authorize>
                       </LoginRequired>
                     </Route>
@@ -117,13 +125,13 @@ function App({ loggedIn, user, volunteerCount }) {
                     </Route>
                   </div>
                 </Content>
-                <Footer style={{ textAlign: "center" }}>
-                  <PageFooter />
-                </Footer>
               </Layout>
             </Layout>
           </Route>
         </Switch>
+        <Footer style={{ textAlign: "center" }}>
+          <PageFooter />
+        </Footer>
       </Suspense>
     </Router>
   );

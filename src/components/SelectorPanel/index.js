@@ -9,7 +9,7 @@ import { ModeSelect, RegionSelect, StatusSelect } from "./SelectFields";
 import { ServiceSelector } from "./TreeSelects";
 
 const { RangePicker } = DatePicker;
-const dateFormatList = ['DD/MM/YYYY', 'DD/MM/YYYY'];
+const dateFormatList = ["DD/MM/YYYY", "DD/MM/YYYY"];
 
 function SelectorPanel({
   // customer props
@@ -34,6 +34,8 @@ function SelectorPanel({
   onStatusChange,
 
   onSubmit,
+  // act props
+  act,
 }) {
   //console.log("sp", arguments[0]);
   return (
@@ -59,38 +61,44 @@ function SelectorPanel({
         />
       </div>
       <Spacer />
-      { service && 1==0 ?
+      {service && 1 == 0 ? (
+        <React.Fragment>
+          <div className={styles.selectorCo}>
+            <span>Services</span>
+            <ServiceSelector
+              service={service}
+              services={services}
+              onChange={onServiceChange}
+            />
+          </div>
 
-        (<React.Fragment><div className={styles.selectorCo}>
-          <span>Services</span>
-          <ServiceSelector
-            service={service}
-            services={services}
-            onChange={onServiceChange}
-          />
-        </div>
+          <Spacer />
+        </React.Fragment>
+      ) : null}
 
-        <Spacer /></React.Fragment>)
-      : null}
+      {dateRange ? (
+        <React.Fragment>
+          <div className={styles.selectorCo}>
+            <span>Date Range</span>
+            <RangePicker
+              defaultValue={dateRange}
+              format={dateFormatList}
+              onChange={onDateRangeChange}
+            />
+          </div>
+          <Spacer />
+        </React.Fragment>
+      ) : null}
 
-      { dateRange ?
-        (<React.Fragment>
-        <div className={styles.selectorCo}>
-          <span>Date Range</span>
-          <RangePicker
-            defaultValue={dateRange}
-            format={dateFormatList}
-            onChange={onDateRangeChange}/>
-        </div>
-        <Spacer />
-        </React.Fragment>)
-      : null }
-
-        <div className={styles.selectorCo}>
-          <span>Status</span>
-          <StatusSelect status={status} onStatusChannge={onStatusChange} />
-        </div>
-        <Spacer />
+      <div className={styles.selectorCo}>
+        <span>Status</span>
+        <StatusSelect
+          status={status}
+          onStatusChannge={onStatusChange}
+          act={act}
+        />
+      </div>
+      <Spacer />
 
       <div className={styles.selectorCo}>
         <span>&nbsp;</span>

@@ -1,6 +1,9 @@
 import React from "react";
 import { Select, Popconfirm } from "antd";
-import { statusOptions } from "@components/SelectorPanel/SelectFields";
+import {
+  statusOptions,
+  ngoStatusOptions,
+} from "@components/SelectorPanel/SelectFields";
 
 // search results pagination format helper
 export function getPaginationObject(
@@ -53,7 +56,7 @@ export function renderStatus(id, row, onResultClose) {
         onChange={handleChange}
         className="lightup red"
       >
-        {statusOptions()}
+        {row.act && row.act === "ngo" ? ngoStatusOptions() : statusOptions()}
       </Select>
     </Popconfirm>
   );

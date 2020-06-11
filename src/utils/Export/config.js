@@ -80,6 +80,21 @@ const reportSectionList = {
       "meta",
     ],
   },
+  ngo: {
+    sections: [
+      "status",
+      "email_verified",
+      "name",
+      "email",
+      "mobile",
+      "alt_mob",
+      "address",
+      "reg",
+      "person",
+      "nov",
+      "covid19",
+    ],
+  },
 };
 
 const buildHeaders = (section, headers, rename) => {
