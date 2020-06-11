@@ -19,8 +19,8 @@ const columns = [
   },
   {
     title: "Pins",
-    dataIndex: "pincodes",
-    key: "pincodes",
+    dataIndex: "pincode",
+    key: "pincode",
   },
 ];
 
@@ -79,7 +79,7 @@ function formatBbmpZoneInfo(record) {
       bbmp.push({
         zone: e.zone,
         ward: e.ward,
-        pincodes: e.pincodes.join(", "),
+        pincode: e.pincode,
         key: e._id,
       })
     );

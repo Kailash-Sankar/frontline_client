@@ -23,7 +23,7 @@ const Footer = (props) => {
     <>
       <Row style={style} className="footer-container">
         <Col
-          span={3}
+          span={4}
           style={{ paddingLeft: 5, paddingRight: 3 }}
           className="border-right flex-center"
         >
@@ -40,7 +40,7 @@ const Footer = (props) => {
           </Text>
         </Col>
 
-        <Col span={21} className="footer-cell">
+        <Col span={20} className="footer-cell">
           <Row className="footer-box">
             <Col offset={1}>
               <span className="footer-icon">
