@@ -2,9 +2,6 @@ import React from "react";
 import { Row, Col } from "antd";
 import { contact } from "@utils/constants";
 
-import { Typography } from "antd";
-const { Text } = Typography;
-
 import {
   WhatsAppOutlined,
   MailOutlined,
@@ -27,17 +24,16 @@ const Footer = (props) => {
           style={{ paddingLeft: 5, paddingRight: 3 }}
           className="border-right flex-center"
         >
-          <Text
-            strong
+          <div
             style={{
+              fontSize: "1em",
               color: "snow",
-              minWidth: 70,
               display: "inline-block",
               wordBreak: "break-word",
             }}
           >
             Get Involved
-          </Text>
+          </div>
         </Col>
 
         <Col span={20} className="footer-cell">
