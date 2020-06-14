@@ -46,6 +46,11 @@ async function saveForm(formData) {
   return res;
 }
 
+async function saveNgoForm(formData) {
+  const res = await server.post(`/ngo`, formData);
+  return res;
+}
+
 async function search(params) {
   const res = await server.post(`/search/`, params);
   return res.data.data || [];
@@ -104,6 +109,12 @@ async function authCheck() {
   return res;
 }
 
+// get websocket token
+async function getWebsocketToken() {
+  const res = await server.get(`/auth/token/ws`);
+  return res;
+}
+
 // -- home page --
 async function getHomePageData(url) {
   const res = await server.get(url);
@@ -116,12 +127,28 @@ async function updateStatus(url, formData) {
   return res || null;
 }
 
+/**
+ * This function is used by the NGO form search to search data in the ngos collection
+ * @param {*} params The parameters on which search should be done
+ * @return Returns the search results
+ */
+async function searchNgoForm(params) {
+  const res = await server.post(`/ngo/search`, params);
+  return res.data.data || [];
+}
+
+async function exportNgoForm(params) {
+  const res = await server.post(`/ngo/export/`, params);
+  return res.data.data || [];
+}
+
 export default {
   search,
   saveForm,
   getVolunteerCount,
   login,
   authCheck,
+  getWebsocketToken,
   getHomePageData,
   saveAppealForm,
   searchAppeals,
@@ -132,4 +159,7 @@ export default {
   exportKind,
   exportRequests,
   updateStatus,
+  searchNgoForm,
+  saveNgoForm,
+  exportNgoForm,
 };

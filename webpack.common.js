@@ -69,11 +69,13 @@ module.exports = {
           {
             loader: "less-loader",
             options: {
-              javascriptEnabled: true,
-              paths: [
-                path.resolve(__dirname, "./src/styles"),
-                path.resolve(__dirname, "node_modules"),
-              ],
+              lessOptions: {
+                javascriptEnabled: true,
+                paths: [
+                  path.resolve(__dirname, "./src/styles"),
+                  path.resolve(__dirname, "node_modules"),
+                ],
+              },
             },
           },
         ],

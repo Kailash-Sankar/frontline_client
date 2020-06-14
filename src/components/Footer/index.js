@@ -2,13 +2,10 @@ import React from "react";
 import { Row, Col } from "antd";
 import { contact } from "@utils/constants";
 
-import { Typography } from "antd";
-const { Text } = Typography;
-
 import {
   WhatsAppOutlined,
   MailOutlined,
-  GithubOutlined
+  GithubOutlined,
 } from "@ant-design/icons";
 
 const Footer = (props) => {
@@ -23,24 +20,23 @@ const Footer = (props) => {
     <>
       <Row style={style} className="footer-container">
         <Col
-          span={3}
+          span={4}
           style={{ paddingLeft: 5, paddingRight: 3 }}
           className="border-right flex-center"
         >
-          <Text
-            strong
+          <div
             style={{
+              fontSize: "1em",
               color: "snow",
-              minWidth: 70,
               display: "inline-block",
               wordBreak: "break-word",
             }}
           >
             Get Involved
-          </Text>
+          </div>
         </Col>
 
-        <Col span={21} className="footer-cell">
+        <Col span={20} className="footer-cell">
           <Row className="footer-box">
             <Col offset={1}>
               <span className="footer-icon">
@@ -67,13 +63,13 @@ const Footer = (props) => {
           </Row>
         </Col>
       </Row>
-      <div style={{ textAlign: "center" }}>
+      <div style={{ textAlign: "center", backgroundColor: "rgb(29, 30, 34)" }}>
         <a
           className="alt"
           href="https://github.com/Kailash-Sankar/frontline_client/"
         >
-          Developed by Volunteers, SPYKK App Labs &amp; SAP Labs India, hosted by IIIT-B | Open
-          sourced <GithubOutlined />
+          Developed by Volunteers, SPYKK App Labs &amp; SAP Labs India, hosted
+          by IIIT-B | Open sourced <GithubOutlined />
         </a>
       </div>
     </>

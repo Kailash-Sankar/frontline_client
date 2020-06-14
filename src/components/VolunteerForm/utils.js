@@ -16,3 +16,8 @@ export function formatData(data) {
     data.dob = data.dob.format();
   }
 }
+
+export function formatZoneInfoForTree(urban) {
+  urban.map((x) => (x.children = x.wards));
+  return urban;
+}
