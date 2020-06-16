@@ -36,7 +36,7 @@
     "immutability-helper": "^3.0.2",
     "jsonexport": "^2.4.1",
     "memoize-one": "^5.1.1",
-    "moment-timezone": "^0.5.28",
+    "moment-timezone": "^0.5.31",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
