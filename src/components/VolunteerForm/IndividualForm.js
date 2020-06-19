@@ -2,13 +2,7 @@ import React, { useEffect } from "react";
 import { Form, Button } from "antd";
 import { formItemLayout, tailFormItemLayout } from "./layout";
 
-import {
-  AvailabilitySelect,
-  QualificationSelect,
-  ProfessionSelect,
-  GenderSelect,
-  RegionSelect,
-} from "./Fields/Select";
+import { GenderSelect, RegionSelect, Expertise } from "./Fields/Select";
 
 import {
   MobileField,
@@ -18,28 +12,14 @@ import {
   NameField,
   EmailField,
   DOBField,
-  NotesField,
-  AreaField,
+  CityName,
+  AadharField,
+  OtherExpertise,
 } from "./Fields/Input";
-
-import {
-  CommunicationsField,
-  EntrepreneurialField,
-  EssentialField,
-  HealthField,
-} from "./Fields/Multi";
 
 import { formatData } from "./utils";
 
-function IndividualForm({
-  initialValues,
-  other,
-  regions,
-  domain,
-  services,
-  onSubmit,
-  reset,
-}) {
+function IndividualForm({ initialValues, other, regions, onSubmit, reset }) {
   const [form] = Form.useForm();
   const { resetFields } = form;
 
@@ -53,6 +33,12 @@ function IndividualForm({
     onSubmit(values);
   }
 
+  const [expertise, setExpertise] = React.useState("");
+
+  function onExpertiseChange(value) {
+    setExpertise(value);
+  }
+
   return (
     <div>
       <Form
@@ -63,29 +49,27 @@ function IndividualForm({
         //hideRequiredMark={true}
       >
         <NameField />
-        <EmailField />
-        <DOBField />
-        <GenderSelect options={other.genderOptions} />
+        <EmailField isRequired={true} />
+        <DOBField isRequired={true} />
+        <GenderSelect options={other.genderOptions} isRequired={true} />
 
         <MobileField />
         <ConfirmMobileField />
 
+        <AadharField isRequired={true} />
+
         <AddressField />
+        <CityName />
         <PinField />
 
         <RegionSelect options={regions} />
-        <AreaField />
 
-        <AvailabilitySelect options={domain.availabilityOptions} />
-        <QualificationSelect options={domain.qualificationOptions} />
-        <ProfessionSelect options={domain.professionOptions} />
+        <Expertise
+          options={other.expertiseOptions}
+          onChange={onExpertiseChange}
+        />
 
-        <EssentialField options={services.essentialOptions} />
-        <HealthField options={services.healthOptions} />
-        <CommunicationsField options={services.communicationOptions} />
-        <EntrepreneurialField options={services.entrepreneurialOptions} />
-
-        <NotesField />
+        <OtherExpertise isVisible={expertise == "other"} />
 
         <Form.Item {...tailFormItemLayout}>
           <Button type="primary" htmlType="submit">

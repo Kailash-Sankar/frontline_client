@@ -146,17 +146,25 @@ export const EmailField = ({ isRequired = false }) => (
   </Form.Item>
 );
 
-export const DOBField = () => (
-  <Form.Item name={["individual", "dob"]} label="Date of Birth">
+export const DOBField = ({ isRequired = false }) => (
+  <Form.Item
+    name={["individual", "dob"]}
+    label="Date of Birth"
+    rules={[{ required: isRequired, message: "Date of Birth is required" }]}
+  >
     <DatePicker />
   </Form.Item>
 );
 
-export const AadharField = () => (
+export const AadharField = ({ isRequired = false }) => (
   <Form.Item
     label="Aadhar Number"
     name={["individual", "aadhar"]}
     rules={[
+      {
+        required: isRequired,
+        message: "Email is required",
+      },
       {
         type: "number",
         transform: toNumber,
@@ -262,6 +270,16 @@ export const AreaField = () => (
   </Form.Item>
 );
 
+export const CityName = () => (
+  <Form.Item
+    label="City"
+    name="city"
+    rules={[{ required: true, message: "City is required" }]}
+  >
+    <Input maxLength={25} placeholder="Enter your city" />
+  </Form.Item>
+);
+
 export const NOPField = () => (
   <Form.Item
     label="Number of Persons"
@@ -281,3 +299,20 @@ export const NOPField = () => (
     />
   </Form.Item>
 );
+
+export const OtherExpertise = ({
+  placeholder = "Enter your expertise here.",
+  isVisible = false,
+}) =>
+  isVisible ? (
+    <Form.Item label="Other expertise" name={["individual", "expertise_other"]}>
+      <TextArea
+        maxLength={200}
+        type="textarea"
+        rows={4}
+        placeholder={placeholder}
+      />
+    </Form.Item>
+  ) : (
+    ""
+  );

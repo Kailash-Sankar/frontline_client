@@ -6,7 +6,7 @@ import { pageSelector } from "./selectors";
 const scope = "volunteerSingup";
 
 const initialState = {
-  mode: "organization",
+  mode: "individual",
   reset: 1,
 };
 

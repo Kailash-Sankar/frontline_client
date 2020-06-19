@@ -61,9 +61,25 @@ export const ProfessionSelect = ({ options }) => (
   </Form.Item>
 );
 
-export const GenderSelect = ({ options }) => (
-  <Form.Item label="Gender" name={["individual", "gender"]}>
+export const GenderSelect = ({ options, isRequired = false }) => (
+  <Form.Item
+    label="Gender"
+    name={["individual", "gender"]}
+    rules={[{ required: isRequired, message: "Gender is required" }]}
+  >
     <Select placeholder="Select a value">{renderOptions(options)}</Select>
+  </Form.Item>
+);
+
+export const Expertise = ({ options, onChange }) => (
+  <Form.Item
+    label="Expertise"
+    name={["individual", "Expertise"]}
+    rules={[{ required: true, message: "Expertise is required" }]}
+  >
+    <Select placeholder="Select a value" onChange={onChange}>
+      {renderOptions(options)}
+    </Select>
   </Form.Item>
 );
 

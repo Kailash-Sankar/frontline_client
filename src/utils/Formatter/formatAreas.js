@@ -42,6 +42,6 @@ export function formatNgoDistrict(district = []) {
       .find((x) => x.value === "KA")
       .children.map((ch) => ch.value);
   }
-  district.unshift("KA");
+  if (district[0] != "KA") district.unshift("KA");
   return district;
 }
