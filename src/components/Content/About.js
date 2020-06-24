@@ -75,7 +75,7 @@ const About = () => (
             />
           </div>
           <p>SPYKK Labs (Swaroop, Kannan, Kailash, Kishore and Rajeesh)</p>
-          <p>SAP Labs (Harish, Pavitra, Lakshmisha and Team)</p>
+          <p>SAP Labs (Harish, Pavithra, Lakshmisha and Team)</p>
           <p>IIIT-B (Vivek) &ndash; Hosting Partner</p>
           <p>We acknowledge the contributions of:</p>
           <p>Reap Benefit (Kuldeep, Gautam)</p>
