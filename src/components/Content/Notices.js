@@ -26,7 +26,7 @@ const columns = [
 
 const data = [
   {
-    date: '04-Jun-2020',
+    date: '24-Jun-2020',
     description: 'Donations made by all organizations',
     document: "https://drive.google.com/file/d/1keNkLiGJxQ-ahd03mU4_WOMONBQpSkWt/view?usp=drivesdk",
   },
