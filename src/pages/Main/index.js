@@ -24,6 +24,7 @@ import Authorize, { Fallback } from "@components/Authorize";
 const PrivacyPolicy = lazy(() => import("@components/Content/PrivacyPolicy"));
 const Terms = lazy(() => import("@components/Content/Terms"));
 const About = lazy(() => import("@components/Content/About"));
+const Notices = lazy(() => import("@components/Content/Notices"));
 
 const TopBar = lazy(() => import("@components/Navigation/TopBar"));
 
@@ -65,6 +66,9 @@ function App({ loggedIn, user, volunteerCount }) {
           </Route>
           <Route path="/about">
             <About />
+          </Route>
+          <Route path="/notices">
+            <Notices />
           </Route>
           <Route>
             <Layout>

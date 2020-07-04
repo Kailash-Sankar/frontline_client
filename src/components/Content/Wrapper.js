@@ -3,7 +3,7 @@ import { Row, Col } from "antd";
 
 const Wrapper = ({ children }) => {
   return (
-    <Row style={{ marginTop: "1vh", paddingLeft: "1%", flex: 1 }}>
+    <Row style={{ marginTop: "1vh", paddingLeft: "1%", flex: 1, marginLeft: "auto", marginRight: "auto" }}>
       <Col className="home-text-message">{children}</Col>
     </Row>
   );
