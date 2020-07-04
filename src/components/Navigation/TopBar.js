@@ -11,7 +11,7 @@ import {
   HomeOutlined,
   SafetyOutlined,
   SettingOutlined,
-  //StarOutlined,
+  StarOutlined,
   FileSearchOutlined,
   DeploymentUnitOutlined,
   FormOutlined,
@@ -58,6 +58,13 @@ const TopBar = ({ loggedIn, user }) => {
               </Link>
             </Menu.Item>
           </SubMenu>
+
+          <Menu.Item key="/notices">
+            <Link to="/notices">
+              <StarOutlined />
+              <span className="nav-text">Notices</span>
+            </Link>
+          </Menu.Item>
 
           {/*
          <SubMenu icon={<StarOutlined />} title="Quick Links">
