@@ -1,11 +1,10 @@
 import React, { useEffect } from "react";
-import { IndividualForm, OrganizationForm } from "@components/VolunteerForm";
-import FormToggle from "@components/FormToggle";
+import { IndividualForm } from "@components/VolunteerForm";
 import { connecter } from "@store/volunteerSignup";
 import options from "@utils/Options";
 import formatter from "@utils/Formatter";
 
-function VolunteerSignup({ reset, mode, setMode, save }) {
+function VolunteerSignup({ reset, mode, save }) {
   useEffect(() => {}, []);
 
   function handleSubmit(formData) {
@@ -26,27 +25,13 @@ function VolunteerSignup({ reset, mode, setMode, save }) {
   return (
     <div style={{ textAlign: "left" }}>
       <h2>Volunteer Signup Form</h2>
-      <FormToggle
-        value={mode}
-        handleChange={setMode}
-        options={options.other.modeOptions}
-      />
       <div style={{ marginTop: 30 }}>
-        {mode === "individual" ? (
-          <IndividualForm
-            onSubmit={handleSubmit}
-            reset={reset}
-            {...options}
-            initialValues={initialValues}
-          />
-        ) : (
-          <OrganizationForm
-            onSubmit={handleSubmit}
-            reset={reset}
-            {...options}
-            initialValues={initialValues}
-          />
-        )}
+        <IndividualForm
+          onSubmit={handleSubmit}
+          reset={reset}
+          {...options}
+          initialValues={initialValues}
+        />
       </div>
     </div>
   );

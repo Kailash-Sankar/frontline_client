@@ -14,15 +14,15 @@ module.exports = merge(common, {
         target: "http://0.0.0.0:3080/",
         secure: false,
         changeOrigin: true,
-        logLevel: "debug"
-      }
-    ]
+        logLevel: "debug",
+      },
+    ],
   },
   devtool: "inline-source-map",
   watch: true,
   watchOptions: {
     aggregateTimeout: 300,
     poll: 1000,
-    ignored: /node_modules/
-  }
+    ignored: /node_modules/,
+  },
 });

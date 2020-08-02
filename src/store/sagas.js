@@ -13,6 +13,7 @@ import { types as requestReportTypes } from "./requestReport";
 import { types as requestForHelpTypes } from "./requestForHelp";
 import { types as ngoReportTypes } from "./ngoReport";
 import { types as ngoSignupTypes } from "./ngoSignup";
+import { types as searchWithMobileTypes } from "./SearchWithMobile";
 
 import notify from "@utils/Notification";
 import { authStorage } from "@utils/LocalStorage";
@@ -230,6 +231,13 @@ export function* initSaga() {
     search,
     ngoReportTypes,
     Api.searchNgoForm
+  );
+
+  yield takeLatest(
+    searchWithMobileTypes.SEARCH,
+    search,
+    searchWithMobileTypes,
+    Api.searchrequestWithMobile
   );
 
   // exports

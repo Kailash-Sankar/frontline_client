@@ -13,6 +13,7 @@ import requestReportReducer from "./requestReport";
 import appealReducer from "./appeal";
 import appealReportReducer from "./appealReport";
 import requestForHelpReducer from "./requestForHelp";
+import searchWithMobileReducer from "./SearchWithMobile";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -28,6 +29,7 @@ const rootReducer = combineReducers({
   appealReport: appealReportReducer,
   requestReport: requestReportReducer,
   requestForHelp: requestForHelpReducer,
+  searchWithMobile: searchWithMobileReducer,
   ngoReport: ngoReportReducer,
 });
 

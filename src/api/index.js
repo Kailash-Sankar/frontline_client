@@ -72,6 +72,11 @@ async function searchAppeals(params) {
   return res.data.data || [];
 }
 
+async function searchrequestWithMobile(params) {
+  const res = await server.post(`/request/search/`, params);
+  return res.data.data || [];
+}
+
 async function fetchAppeals() {
   const res = await server.get(`/appeal/recent`);
   return res.data.data || [];
@@ -161,5 +166,6 @@ export default {
   updateStatus,
   searchNgoForm,
   saveNgoForm,
+  searchrequestWithMobile,
   exportNgoForm,
 };
