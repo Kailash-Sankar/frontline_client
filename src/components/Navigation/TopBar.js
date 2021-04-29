@@ -60,10 +60,14 @@ const TopBar = ({ loggedIn, user }) => {
           </SubMenu>
 
           <Menu.Item key="/notices">
-            <Link to="/notices">
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="https://www.dropbox.com/sh/4hpvld7ky4ofx3a/AABEQkjKgovLsjOBU1wBWVE5a?dl=0"
+            >
               <StarOutlined />
-              <span className="nav-text">Notices</span>
-            </Link>
+              <span className="nav-text">Awareness</span>
+            </a>
           </Menu.Item>
 
           {/*

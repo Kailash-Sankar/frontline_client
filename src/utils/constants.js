@@ -8,10 +8,7 @@ export const queryLimit = 100;
 export const defaultLimit = 10;
 
 export const contact = {
-  email: [
-    "karfightscorona@karnataka.gov.in",
-    "karnatakafightscorona@gmail.com",
-  ],
+  email: ["karnatakafightscorona@gmail.com"],
   whatsapp: ["9480850031/9480850033", "8750971717 (Help Desk)"],
 };
 
@@ -73,4 +70,3 @@ export const VolunteerFormLink = "https://forms.gle/q6AQAC4debLjYDwM7";
 
 // TODO: setup via proxy
 export const socketUrl = "ws://localhost:3080";
-
