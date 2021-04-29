@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Row, Col, Button } from "antd";
 
+import donateIco from "@images/donate_ico.png";
 import supportIco from "@images/support_ico.png";
 import volunteerIco from "@images/volunteer_ico.png";
 
@@ -21,16 +22,16 @@ const Actions = () => {
         />
 
         <Row>
-          {/* <Col lg={8} sm={24} xs={24} className="bottom-btn-containers">
+          <Col lg={8} sm={24} xs={24} className="bottom-btn-containers">
             <div className="goto-text" onClick={() => setShowModal(true)}>
               <Button className="action-btn">
                 <img className="action-img" src={donateIco} />
                 DONATE
               </Button>
             </div>
-          </Col> */}
+          </Col>
 
-          <Col lg={24} sm={24} xs={24} className="bottom-btn-containers">
+          <Col lg={8} sm={24} xs={24} className="bottom-btn-containers">
             <div
               className="goto-text"
               onClick={() => {
@@ -43,16 +44,13 @@ const Actions = () => {
               }}
             >
               <Button className="action-btn">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <img className="action-img" src={volunteerIco} />
                 VOLUNTEER
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               </Button>
             </div>
           </Col>
-        </Row>
-        <Row>
-          <Col lg={24} sm={24} xs={24} className="bottom-btn-containers-alt">
+
+          <Col lg={8} sm={24} xs={24} className="bottom-btn-containers-alt">
             <a
               rel="noreferrer"
               target="_blank"
