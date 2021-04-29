@@ -7,7 +7,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --colors",
-    "start": "NODE_ENV=development webpack-dev-server --open --config webpack.dev.js --host 0.0.0.0",
+    "start": "set NODE_ENV=development && webpack-dev-server --open --config webpack.dev.js --host 0.0.0.0 --port 3001",
     "lint-check": "eslint 'src/**/*.{js,ts,jsx,tsx}'",
     "lint-fix": "eslint --fix 'src/**/*.{js,ts,jsx,tsx}'",
     "build": "NODE_ENV=production webpack --config webpack.prod.js",
@@ -15,11 +15,6 @@
     "comply": "license-checker --summary",
     "comply:prod": "license-checker --summary --production",
     "check-types": "tsc"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint-fix"
-    }
   },
   "keywords": [],
   "author": "Kailash Sankar",

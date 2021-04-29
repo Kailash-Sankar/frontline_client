@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { Row, Col, Affix, Button } from "antd";
+import { Row, Col } from "antd";
 import { Spacer } from "@components/Utils";
-import { Switch, Route, Link } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 import {
   Statistics,
@@ -9,14 +9,12 @@ import {
   Content,
   Header,
   Actions,
-  Helpline,
   // TravelAssistance,
 } from "@components/HomeLayout";
 
 import { connector } from "@store/homeContent";
 import axios from "axios";
 import background from "@images/background.png";
-import helpIco from "@images/help_ico.png";
 
 const HomePage = (props) => {
   useEffect(() => {
@@ -78,7 +76,7 @@ const HomePage = (props) => {
           className="gutter-row right-conteiner"
         >
           <Statistics covidStats={props.covidStats} />
-          <Helpline />
+          {/* <Helpline /> */}
           {/* <TravelAssistance /> */}
           <Row style={{ padding: "5px" }}>
             <Col span="24">
@@ -88,7 +86,7 @@ const HomePage = (props) => {
         </Col>
       </Row>
 
-      <Row>
+      {/* <Row>
         <Col span={24}>
           <Spacer display="block" height={20} />
 
@@ -105,7 +103,7 @@ const HomePage = (props) => {
             </Link>
           </Affix>
         </Col>
-      </Row>
+      </Row> */}
     </div>
   );
 };

@@ -18,7 +18,6 @@ const Content = () => {
       <Row style={{ marginTop: "1vh", paddingLeft: "1%" }}>
         <Col lg={8} md={24} sm={24}>
           <div className="caption-co">
-            <Row className="text-large">DONATE.</Row>
             <Row className="text-large margin-adjust">SUPPORT.</Row>
             <Row className="text-large margin-adjust">VOLUNTEER.</Row>
           </div>
