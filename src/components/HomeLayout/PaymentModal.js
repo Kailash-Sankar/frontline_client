@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal, Button, Row, Col, List } from "antd";
+import { Modal, Row, Col, List } from "antd";
 
 const PaymentModal = (props) => {
   return (
@@ -10,17 +10,6 @@ const PaymentModal = (props) => {
       onCancel={() => props.setShowModal(false)}
       footer={null}
     >
-      <p style={{ textAlign: "center", marginBottom: "15px" }}>
-        <a
-          href="https://cmrf.karnataka.gov.in/English/index.html"
-          target="_new"
-        >
-          <Button type="primary">
-            {"Donate to the Chief Minister's Relief Fund"}
-          </Button>
-        </a>
-      </p>
-      <p className="payment-seperator-text">OR</p>
       <Row>
         <Col span={24}>
           <h3 className="payment-header">
@@ -30,7 +19,7 @@ const PaymentModal = (props) => {
             style={{ fontWeight: "600", fontSize: "12px", textAlign: "center" }}
           >
             *Eligible to receive CSR funds towards disaster management for
-            Covid-19 management and containment.
+            COVID-19 management and containment.
           </div>
           <List>
             <List.Item>
